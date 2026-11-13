@@ -113,6 +113,9 @@ export default function App() {
   const [targetBrightness, setTargetBrightness] = useState<number>(4);
   const [targetSpeed, setTargetSpeed] = useState<number>(2);
   const [targetDirection, setTargetDirection] = useState<number>(0);
+  const [autoApply, setAutoApply] = useState<boolean>(true);
+  const [paintMode, setPaintMode] = useState<boolean>(false);
+  const [activePattern, setActivePattern] = useState<string | null>(null);
 
   // Live Simulation Frame State (when previewing animations)
   const [livePreview, setLivePreview] = useState<boolean>(false);
@@ -305,26 +308,88 @@ export default function App() {
     };
   }, [livePreview, activeTab, targetModeId, keys, currentColor, targetSpeed, targetBrightness]);
 
-  // Key Selection
+  // Hardware Commit Helper: Direct write to /api/lighting/per-key
+  const commitPerKeyEdits = async (edits: Record<string, string>, toastMsg?: string) => {
+    try {
+      setSyncing(true);
+      const res = await fetch("/api/lighting/per-key", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ edits }),
+      });
+      const updatedKeys = await parseResponse<KeyLedInfo[]>(res, "Hardware per-key write failed");
+      setKeys(updatedKeys);
+      const hwMap: Record<string, string> = {};
+      for (const k of updatedKeys) {
+        hwMap[k.ui_key.toLowerCase()] = k.color;
+      }
+      setHardwareColors(hwMap);
+      setStagedEdits({});
+      setHistory([{}]);
+      setHistoryIndex(0);
+      if (toastMsg) showToast(toastMsg);
+
+      const newState = await safeFetchJson<LightingState>("/api/lighting/state");
+      if (newState) setLightingState(newState);
+    } catch (err: any) {
+      showToast(err.message || "Failed to commit per-key edits", "error");
+    } finally {
+      setSyncing(false);
+    }
+  };
+
+  // Switch hardware profile to custom mode (277 / HW 21)
+  const handleSwitchToPerKeyMode = async () => {
+    setActiveTab("perKey");
+    setLivePreview(false);
+    setActivePattern(null);
+    try {
+      setSyncing(true);
+      const res = await fetch("/api/lighting/state", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mode: 277,
+          brightness: targetBrightness,
+          speed: 0,
+        }),
+      });
+      const updatedState = await parseResponse<LightingState>(res, "Failed to switch to Per-Key mode");
+      setLightingState(updatedState);
+      showToast("Switched keyboard to Interactive Per-Key Mode!");
+    } catch (err: any) {
+      console.warn("Could not notify hardware of per-key switch:", err);
+    } finally {
+      setSyncing(false);
+    }
+  };
+
+  // Key Selection & Click-to-Paint
   const handleSelectKey = (uiKey: string, multiSelect: boolean) => {
-    setSelectedKeys((prev) => {
-      const next = new Set(prev);
-      if (multiSelect) {
+    if (multiSelect) {
+      setSelectedKeys((prev) => {
+        const next = new Set(prev);
         if (next.has(uiKey)) {
           next.delete(uiKey);
         } else {
           next.add(uiKey);
         }
+        return next;
+      });
+      return;
+    }
+
+    setSelectedKeys(new Set([uiKey]));
+
+    if (paintMode && activeTab === "perKey") {
+      setActivePattern(null);
+      if (autoApply) {
+        commitPerKeyEdits({ [uiKey]: currentColor });
       } else {
-        if (next.size === 1 && next.has(uiKey)) {
-          next.clear();
-        } else {
-          next.clear();
-          next.add(uiKey);
-        }
+        const updated = { ...stagedEdits, [uiKey]: currentColor };
+        pushToHistory(updated);
       }
-      return next;
-    });
+    }
   };
 
   const handleQuickSelect = (group: string) => {
@@ -373,77 +438,148 @@ export default function App() {
     });
   };
 
-  // Color Change with Live Staging on Selected Keys
+  // Color Change with Live Staging or Instant Auto-Apply
   const handleChangeColor = (newColor: string) => {
     setCurrentColor(newColor);
-    if (selectedKeys.size > 0 && activeTab === "perKey") {
-      const updated = { ...stagedEdits };
-      selectedKeys.forEach((key) => {
-        updated[key] = newColor;
-      });
-      pushToHistory(updated);
+    if (activeTab === "perKey") {
+      // Dynamic pattern recoloring
+      if (activePattern === "glitch") {
+        const glitch = generateCyberpunkGlitch(keys, newColor);
+        if (autoApply) commitPerKeyEdits(glitch, `Cyber Glitch recolored to ${newColor}`);
+        else pushToHistory(glitch);
+        return;
+      }
+      if (activePattern === "gamer") {
+        const gamer = generateGamerHighlight(keys, newColor, "#111827");
+        if (autoApply) commitPerKeyEdits(gamer, `FPS Gamer recolored to ${newColor}`);
+        else pushToHistory(gamer);
+        return;
+      }
+      if (activePattern === "solid") {
+        const solid: Record<string, string> = {};
+        for (const k of keys) solid[k.ui_key.toLowerCase()] = newColor;
+        if (autoApply) commitPerKeyEdits(solid, `Solid fill recolored to ${newColor}`);
+        else pushToHistory(solid);
+        return;
+      }
+
+      // Selected keys recoloring
+      if (selectedKeys.size > 0) {
+        const edits: Record<string, string> = {};
+        selectedKeys.forEach((key) => {
+          edits[key] = newColor;
+        });
+        if (autoApply) {
+          commitPerKeyEdits(edits, `Applied ${newColor} to ${selectedKeys.size} key(s) on keyboard`);
+        } else {
+          const updated = { ...stagedEdits, ...edits };
+          pushToHistory(updated);
+        }
+      }
     } else if (activeTab === "presets") {
       handleUpdatePresetParam(undefined, undefined, undefined, newColor);
     }
   };
 
-  // Staged Edits Actions
+  // Staged Edits & Pattern Actions
   const handleStageSelectionColor = () => {
     if (selectedKeys.size === 0) return;
-    const updated = { ...stagedEdits };
+    const edits: Record<string, string> = {};
     selectedKeys.forEach((key) => {
-      updated[key] = currentColor;
+      edits[key] = currentColor;
     });
-    pushToHistory(updated);
-    showToast(`Staged ${currentColor} on ${selectedKeys.size} key(s)`);
+    setActivePattern(null);
+
+    if (autoApply) {
+      commitPerKeyEdits(edits, `Applied ${currentColor} to ${selectedKeys.size} key(s) on keyboard`);
+    } else {
+      const updated = { ...stagedEdits, ...edits };
+      pushToHistory(updated);
+      showToast(`Staged ${currentColor} on ${selectedKeys.size} key(s)`);
+    }
   };
 
   const handleSolidFill = () => {
+    setActivePattern("solid");
     const updated: Record<string, string> = {};
     for (const k of keys) {
       updated[k.ui_key.toLowerCase()] = currentColor;
     }
-    pushToHistory(updated);
-    showToast(`Staged solid fill (${currentColor}) across all keys`);
+    if (autoApply) {
+      commitPerKeyEdits(updated, `Applied solid fill (${currentColor}) across keyboard`);
+    } else {
+      pushToHistory(updated);
+      showToast(`Staged solid fill (${currentColor}) across all keys`);
+    }
   };
 
   const handleTwoColorSplit = () => {
+    setActivePattern("split");
     const split = generateTwoColorSplit(keys, currentColor, "#7B2CBF");
-    pushToHistory({ ...stagedEdits, ...split });
-    showToast("Staged Alphas & Modifiers two-color split");
+    if (autoApply) {
+      commitPerKeyEdits(split, "Applied Alphas & Modifiers two-color split to keyboard");
+    } else {
+      pushToHistory({ ...stagedEdits, ...split });
+      showToast("Staged Alphas & Modifiers two-color split");
+    }
   };
 
   const handleRainbowWave = () => {
+    setActivePattern("rainbow");
     const wave = generateRainbowWave(keys, 0);
-    pushToHistory({ ...stagedEdits, ...wave });
-    showToast("Staged Rainbow Wave gradient across keyboard");
+    if (autoApply) {
+      commitPerKeyEdits(wave, "Applied Rainbow Wave gradient across keyboard");
+    } else {
+      pushToHistory({ ...stagedEdits, ...wave });
+      showToast("Staged Rainbow Wave gradient across keyboard");
+    }
   };
 
   const handleGravaStarFluid = () => {
+    setActivePattern("fluid");
     const fluid = generateGravaStarFluidWave(keys, 0);
-    pushToHistory({ ...stagedEdits, ...fluid });
-    showToast("Staged GravaStar Mercury fluid plasma wave across keyboard");
+    if (autoApply) {
+      commitPerKeyEdits(fluid, "Applied GravaStar Mercury fluid plasma wave across keyboard");
+    } else {
+      pushToHistory({ ...stagedEdits, ...fluid });
+      showToast("Staged GravaStar Mercury fluid plasma wave across keyboard");
+    }
   };
 
   const handleGamerHighlight = () => {
+    setActivePattern("gamer");
     const gamer = generateGamerHighlight(keys, currentColor, "#111827");
-    pushToHistory({ ...stagedEdits, ...gamer });
-    showToast("Staged FPS Gamer highlight (WASD & Arrows)");
+    if (autoApply) {
+      commitPerKeyEdits(gamer, `Applied FPS Gamer highlight (${currentColor}) to keyboard`);
+    } else {
+      pushToHistory({ ...stagedEdits, ...gamer });
+      showToast("Staged FPS Gamer highlight (WASD & Arrows)");
+    }
   };
 
   const handleCyberGlitch = () => {
+    setActivePattern("glitch");
     const glitch = generateCyberpunkGlitch(keys, currentColor);
-    pushToHistory({ ...stagedEdits, ...glitch });
-    showToast(`Staged Cyber Glitch in ${currentColor} across keyboard`);
+    if (autoApply) {
+      commitPerKeyEdits(glitch, `Applied Cyber Glitch (${currentColor}) across keyboard`);
+    } else {
+      pushToHistory({ ...stagedEdits, ...glitch });
+      showToast(`Staged Cyber Glitch in ${currentColor} across keyboard`);
+    }
   };
 
   const handleClearBoard = () => {
+    setActivePattern(null);
     const blackout: Record<string, string> = {};
     for (const k of keys) {
       blackout[k.ui_key.toLowerCase()] = "#000000";
     }
-    pushToHistory(blackout);
-    showToast("Staged blackout (all LEDs off)");
+    if (autoApply) {
+      commitPerKeyEdits(blackout, "Blackout: all keyboard LEDs turned off");
+    } else {
+      pushToHistory(blackout);
+      showToast("Staged blackout (all LEDs off)");
+    }
   };
 
   const handleDiscardChanges = () => {
@@ -834,10 +970,7 @@ export default function App() {
             {/* Navigation Menu */}
             <nav className="space-y-1">
               <button
-                onClick={() => {
-                  setActiveTab("perKey");
-                  setLivePreview(false);
-                }}
+                onClick={handleSwitchToPerKeyMode}
                 className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
                   activeTab === "perKey"
                     ? "bg-purple-600/20 text-purple-300 border border-purple-500/40 shadow-sm"
@@ -1047,10 +1180,7 @@ export default function App() {
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div className="flex items-center space-x-2">
                 <button
-                  onClick={() => {
-                    setActiveTab("perKey");
-                    setLivePreview(false);
-                  }}
+                  onClick={handleSwitchToPerKeyMode}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${
                     activeTab === "perKey"
                       ? "bg-purple-600 text-white shadow-lg shadow-purple-900/40"
@@ -1127,6 +1257,11 @@ export default function App() {
                 onGlitchEffect={handleCyberGlitch}
                 onClearBoard={handleClearBoard}
                 isSyncing={syncing}
+                autoApply={autoApply}
+                onToggleAutoApply={() => setAutoApply((prev) => !prev)}
+                paintMode={paintMode}
+                onTogglePaintMode={() => setPaintMode((prev) => !prev)}
+                activePattern={activePattern}
               />
             )}
 
@@ -1188,6 +1323,7 @@ export default function App() {
                   onApplyToSelection={handleStageSelectionColor}
                   onApplyToAll={handleSolidFill}
                   selectedCount={selectedKeys.size}
+                  autoApply={autoApply}
                 />
 
                 <EffectsPanel

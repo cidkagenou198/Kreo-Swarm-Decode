@@ -7,6 +7,7 @@ interface ColorPickerPanelProps {
   onApplyToSelection: () => void;
   onApplyToAll: () => void;
   selectedCount: number;
+  autoApply?: boolean;
 }
 
 const DEFAULT_SWATCHES = [
@@ -35,6 +36,7 @@ export function ColorPickerPanel({
   onApplyToSelection,
   onApplyToAll,
   selectedCount,
+  autoApply = true,
 }: ColorPickerPanelProps) {
   const [recentColors, setRecentColors] = useState<string[]>([
     "#00E5FF",
@@ -190,7 +192,7 @@ export function ColorPickerPanel({
           className="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-900/30 transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center space-x-1.5"
         >
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Stage on Selected ({selectedCount})</span>
+          <span>{autoApply ? `Apply to Selected (${selectedCount})` : `Stage on Selected (${selectedCount})`}</span>
         </button>
 
         <button

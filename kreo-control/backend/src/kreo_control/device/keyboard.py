@@ -286,6 +286,15 @@ class KreoKeyboard:
 
             # 2. Build and write custom light frame (planar format for both wired and wireless)
             base_frame = self._cached_custom_frame
+            if base_frame is None or len(base_frame) != CUSTOM_FRAME_SIZE:
+                try:
+                    if dev.connection_type == ConnectionType.WIRED:
+                        base_frame = read_custom_light_wired(transport)
+                    else:
+                        base_frame = read_custom_light_wireless(transport)
+                except Exception:
+                    base_frame = None
+
             new_frame = build_planar_custom_frame(edits, base_frame)
             if dev.connection_type == ConnectionType.WIRED:
                 write_custom_light_wired(transport, new_frame)
