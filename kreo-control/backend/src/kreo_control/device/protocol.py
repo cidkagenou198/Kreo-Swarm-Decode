@@ -360,7 +360,13 @@ def _write_wireless_chunked(
     *,
     chunk_delay: float = 0.005,
 ) -> None:
-    """Send payload in 14-byte chunks with 20-byte framing and verified ACK handshake to 2.4 GHz wireless receiver."""
+    """Send payload in 14-byte chunks with 20-byte framing and verified per-chunk ACK to 2.4 GHz wireless receiver."""
+    # Drain stale input packets before starting chunk transmission
+    for _ in range(30):
+        stale = transport.read(64, timeout_ms=3)
+        if not stale:
+            break
+
     total_chunks = max(1, (len(payload) + WIRELESS_CHUNK_SIZE - 1) // WIRELESS_CHUNK_SIZE)
 
     for index in range(total_chunks):
@@ -379,14 +385,19 @@ def _write_wireless_chunked(
         for attempt in range(3):
             bytes_written = transport.write(packet)
             if bytes_written <= 0:
-                time.sleep(0.005)
+                time.sleep(0.004)
                 continue
 
-            # Read ACK packet from wireless receiver
-            ack = transport.read(64, timeout_ms=150)
-            if len(ack) > 1 and ack[0] == WIRELESS_REPORT_ID and ack[1] == command:
+            # Read matching ACK packet from wireless receiver
+            ack = transport.read(64, timeout_ms=100)
+            if (
+                len(ack) > 3
+                and ack[0] == WIRELESS_REPORT_ID
+                and ack[1] == command
+                and ack[3] == index
+            ):
                 break
-            time.sleep(0.005)
+            time.sleep(0.004)
 
         if chunk_delay > 0:
             time.sleep(chunk_delay)
