@@ -113,10 +113,11 @@ def build_profile_write(
     mode_id: int,
     brightness_level: int,
     speed: int,
+    direction: int = 0,
     effect_type: int = 1,
 ) -> bytes:
     """
-    Construct a validated 128-byte profile with updated mode, brightness, and speed.
+    Construct a validated 128-byte profile with updated mode, brightness, speed, and direction.
     Uses golden truth SinoWealth hardware effect IDs from Dev/kb/KB.ini.
     """
     updated = bytearray(profile)
@@ -126,6 +127,8 @@ def build_profile_write(
         updated[1] = 21
         updated[2] = effective_brightness & 0xFF
         updated[3] = 0
+        updated[4] = direction & 0x01
+        updated[5] = 0
         updated[9] = 1
         updated[10] = 21
     else:
@@ -133,6 +136,8 @@ def build_profile_write(
         updated[1] = hw_effect & 0xFF
         updated[2] = brightness_level & 0xFF
         updated[3] = speed & 0xFF
+        updated[4] = direction & 0x01
+        updated[5] = 0 if effect_type == 0 else 1
         updated[9] = 0
         updated[10] = hw_effect & 0xFF
 

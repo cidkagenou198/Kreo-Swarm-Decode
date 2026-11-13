@@ -492,6 +492,7 @@ export default function App() {
           mode: modeId,
           brightness: targetBrightness,
           speed: targetSpeed,
+          direction: targetDirection,
           color: currentColor,
         }),
       });
@@ -506,6 +507,39 @@ export default function App() {
     }
   };
 
+  // Live parameter updater for speed, brightness, and direction
+  const handleUpdatePresetParam = async (
+    newBrightness?: number,
+    newSpeed?: number,
+    newDirection?: number
+  ) => {
+    const b = newBrightness !== undefined ? newBrightness : targetBrightness;
+    const s = newSpeed !== undefined ? newSpeed : targetSpeed;
+    const d = newDirection !== undefined ? newDirection : targetDirection;
+
+    if (newBrightness !== undefined) setTargetBrightness(newBrightness);
+    if (newSpeed !== undefined) setTargetSpeed(newSpeed);
+    if (newDirection !== undefined) setTargetDirection(newDirection);
+
+    try {
+      const res = await fetch("/api/lighting/state", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mode: targetModeId,
+          brightness: b,
+          speed: s,
+          direction: d,
+          color: currentColor,
+        }),
+      });
+      const updatedState = await parseResponse<LightingState>(res, "Failed to update preset");
+      setLightingState(updatedState);
+    } catch {
+      // Background silent update
+    }
+  };
+
   // Hardware Commit: Apply Preset Animation
   const handleApplyPreset = async () => {
     try {
@@ -517,6 +551,7 @@ export default function App() {
           mode: targetModeId,
           brightness: targetBrightness,
           speed: targetSpeed,
+          direction: targetDirection,
           color: currentColor,
         }),
       });
@@ -1150,9 +1185,9 @@ export default function App() {
                   direction={targetDirection}
                   livePreview={livePreview}
                   onChangeMode={handleSelectAndApplyMode}
-                  onChangeBrightness={setTargetBrightness}
-                  onChangeSpeed={setTargetSpeed}
-                  onChangeDirection={setTargetDirection}
+                  onChangeBrightness={(val) => handleUpdatePresetParam(val, undefined, undefined)}
+                  onChangeSpeed={(val) => handleUpdatePresetParam(undefined, val, undefined)}
+                  onChangeDirection={(val) => handleUpdatePresetParam(undefined, undefined, val)}
                   onToggleLivePreview={() => setLivePreview(!livePreview)}
                   onApplyPreset={handleApplyPreset}
                 />

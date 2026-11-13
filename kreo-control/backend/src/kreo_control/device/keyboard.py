@@ -140,9 +140,10 @@ class KreoKeyboard:
         mode: str | int,
         brightness: int = 3,
         speed: int = 2,
+        direction: int = 0,
         color: str | None = None,
     ) -> LightingState:
-        """Apply a hardware lighting mode, brightness, speed, and optional color."""
+        """Apply a hardware lighting mode, brightness, speed, direction, and optional color."""
         # Resolve mode ID
         if isinstance(mode, int):
             mode_id = mode
@@ -171,7 +172,8 @@ class KreoKeyboard:
                 mode_id=mode_id,
                 brightness_level=min(4, max(0, brightness)),
                 speed=min(4, max(0, speed)),
-                effect_type=1 if color is not None else 0,
+                direction=min(1, max(0, direction)),
+                effect_type=1 if (color is not None and mode_id == STATIC_MODE_ID) else 0,
             )
 
             # Write profile
@@ -296,13 +298,7 @@ class KreoKeyboard:
             led_map = load_swarm75_led_map()
             keys: list[KeyLedInfo] = []
             for entry in led_map:
-                u = entry.ui_key.lower()
-                if u in edits:
-                    color = edits[u]
-                elif new_frame and len(new_frame) == CUSTOM_FRAME_SIZE:
-                    color = parse_planar_custom_light_color(new_frame, entry.led_index)
-                else:
-                    color = "#273240"
+                color = parse_planar_custom_light_color(new_frame, entry.led_index)
 
                 keys.append(
                     KeyLedInfo(

@@ -49,6 +49,7 @@ class GlobalLightingRequest(BaseModel):
     mode: str | int
     brightness: int = Field(ge=0, le=4, default=3)
     speed: int = Field(ge=0, le=4, default=2)
+    direction: int = Field(ge=0, le=1, default=0)
     color: str | None = None
 
 

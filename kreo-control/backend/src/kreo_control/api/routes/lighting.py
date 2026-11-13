@@ -60,13 +60,14 @@ def get_lighting_state() -> LightingState:
 
 @router.post("/state", response_model=LightingState)
 def set_lighting_state(request: GlobalLightingRequest) -> LightingState:
-    """Set global lighting preset, brightness, speed, and optional color."""
+    """Set global lighting preset, brightness, speed, direction, and optional color."""
     try:
         kb = KreoKeyboard.auto_connect()
         return kb.set_global_lighting(
             mode=request.mode,
             brightness=request.brightness,
             speed=request.speed,
+            direction=request.direction,
             color=request.color,
         )
     except Exception as exc:
