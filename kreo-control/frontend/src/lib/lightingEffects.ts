@@ -138,6 +138,45 @@ export function generateGamerHighlight(
 }
 
 /**
+ * Cyberpunk Glitch effect: Digital glitch artifact clusters across the key matrix
+ * rendered in the user's selected color with digital scanlines, accents, and dark keys.
+ */
+export function generateCyberpunkGlitch(
+  keys: KeyLedInfo[],
+  primaryColor: string = "#FF0033",
+  secondaryColor?: string
+): Record<string, string> {
+  const edits: Record<string, string> = {};
+  const [r, g, b] = hexToRgb(primaryColor);
+  const dimColor = rgbToHex(Math.round(r * 0.15), Math.round(g * 0.15), Math.round(b * 0.15));
+  const brightGlitch = secondaryColor || rgbToHex(
+    Math.min(255, Math.round(r * 1.2 + 40)),
+    Math.min(255, Math.round(g * 1.2 + 40)),
+    Math.min(255, Math.round(b * 1.2 + 40))
+  );
+
+  for (const k of keys) {
+    const col = k.col || 0;
+    const row = k.row || 0;
+    // Chaotic hash noise function
+    const hash = Math.sin(col * 12.9898 + row * 78.233 + (col ^ row)) * 43758.5453;
+    const noise = hash - Math.floor(hash);
+
+    const u = k.ui_key.toLowerCase();
+    if (noise > 0.65) {
+      edits[u] = primaryColor;
+    } else if (noise > 0.45) {
+      edits[u] = brightGlitch;
+    } else if (noise > 0.20) {
+      edits[u] = dimColor;
+    } else {
+      edits[u] = "#000000";
+    }
+  }
+  return edits;
+}
+
+/**
  * GravaStar Fluid Wave preset: Multi-harmonic liquid plasma across 2D key matrix.
  */
 export function generateGravaStarFluidWave(

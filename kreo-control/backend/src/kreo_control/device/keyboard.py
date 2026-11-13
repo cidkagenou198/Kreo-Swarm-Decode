@@ -173,30 +173,30 @@ class KreoKeyboard:
                 brightness_level=min(4, max(0, brightness)),
                 speed=min(4, max(0, speed)),
                 direction=min(1, max(0, direction)),
-                effect_type=1 if (color is not None and mode_id == STATIC_MODE_ID) else 0,
+                effect_type=0 if color is not None else 1,
             )
 
             # Write profile
             if dev.connection_type == ConnectionType.WIRED:
                 write_profile_wired(transport, updated_profile)
-                if color and mode_id == STATIC_MODE_ID:
+                if color:
                     try:
                         table = read_light_table_wired(transport)
-                        updated_table = update_light_table_color(table, STATIC_MODE_ID, hex_to_rgb(color))
+                        updated_table = update_light_table_color(table, mode_id, hex_to_rgb(color))
                         write_light_table_wired(transport, updated_table)
                         self._cached_table = updated_table
                     except Exception:
-                        self._cached_profile = bytes([0x00] * 128)
+                        pass
             else:
                 write_profile_wireless(transport, updated_profile)
-                if color and mode_id == STATIC_MODE_ID:
+                if color:
                     try:
                         table = read_light_table_wireless(transport)
-                        updated_table = update_light_table_color(table, STATIC_MODE_ID, hex_to_rgb(color))
+                        updated_table = update_light_table_color(table, mode_id, hex_to_rgb(color))
                         write_light_table_wireless(transport, updated_table)
                         self._cached_table = updated_table
                     except Exception:
-                        self._cached_profile = bytes([0x00] * 128)
+                        pass
 
             time.sleep(0.02)
             self._cached_profile = updated_profile

@@ -39,6 +39,7 @@ import {
   generateRainbowWave,
   generateTwoColorSplit,
   generateGravaStarFluidWave,
+  generateCyberpunkGlitch,
   computeSimulationFrame,
 } from "./lib/lightingEffects";
 
@@ -381,6 +382,8 @@ export default function App() {
         updated[key] = newColor;
       });
       pushToHistory(updated);
+    } else if (activeTab === "presets") {
+      handleUpdatePresetParam(undefined, undefined, undefined, newColor);
     }
   };
 
@@ -426,6 +429,12 @@ export default function App() {
     const gamer = generateGamerHighlight(keys, currentColor, "#111827");
     pushToHistory({ ...stagedEdits, ...gamer });
     showToast("Staged FPS Gamer highlight (WASD & Arrows)");
+  };
+
+  const handleCyberGlitch = () => {
+    const glitch = generateCyberpunkGlitch(keys, currentColor);
+    pushToHistory({ ...stagedEdits, ...glitch });
+    showToast(`Staged Cyber Glitch in ${currentColor} across keyboard`);
   };
 
   const handleClearBoard = () => {
@@ -507,19 +516,22 @@ export default function App() {
     }
   };
 
-  // Live parameter updater for speed, brightness, and direction
+  // Live parameter updater for speed, brightness, direction, and color
   const handleUpdatePresetParam = async (
     newBrightness?: number,
     newSpeed?: number,
-    newDirection?: number
+    newDirection?: number,
+    newColor?: string
   ) => {
     const b = newBrightness !== undefined ? newBrightness : targetBrightness;
     const s = newSpeed !== undefined ? newSpeed : targetSpeed;
     const d = newDirection !== undefined ? newDirection : targetDirection;
+    const c = newColor !== undefined ? newColor : currentColor;
 
     if (newBrightness !== undefined) setTargetBrightness(newBrightness);
     if (newSpeed !== undefined) setTargetSpeed(newSpeed);
     if (newDirection !== undefined) setTargetDirection(newDirection);
+    if (newColor !== undefined) setCurrentColor(newColor);
 
     try {
       const res = await fetch("/api/lighting/state", {
@@ -530,7 +542,7 @@ export default function App() {
           brightness: b,
           speed: s,
           direction: d,
-          color: currentColor,
+          color: c,
         }),
       });
       const updatedState = await parseResponse<LightingState>(res, "Failed to update preset");
@@ -1112,6 +1124,7 @@ export default function App() {
                 onRainbowWave={handleRainbowWave}
                 onGravaStarFluid={handleGravaStarFluid}
                 onGamerHighlight={handleGamerHighlight}
+                onGlitchEffect={handleCyberGlitch}
                 onClearBoard={handleClearBoard}
                 isSyncing={syncing}
               />

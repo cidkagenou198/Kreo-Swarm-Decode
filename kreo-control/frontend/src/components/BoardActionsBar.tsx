@@ -9,6 +9,7 @@ import {
   SlidersHorizontal,
   Flame,
   Check,
+  Zap,
 } from "lucide-react";
 
 interface BoardActionsBarProps {
@@ -24,6 +25,7 @@ interface BoardActionsBarProps {
   onRainbowWave: () => void;
   onGravaStarFluid: () => void;
   onGamerHighlight: () => void;
+  onGlitchEffect: () => void;
   onClearBoard: () => void;
   isSyncing: boolean;
 }
@@ -41,6 +43,7 @@ export function BoardActionsBar({
   onRainbowWave,
   onGravaStarFluid,
   onGamerHighlight,
+  onGlitchEffect,
   onClearBoard,
   isSyncing,
 }: BoardActionsBarProps) {
@@ -97,6 +100,15 @@ export function BoardActionsBar({
           >
             <Crosshair className="w-3 h-3 text-emerald-400" />
             <span>FPS Gamer</span>
+          </button>
+
+          <button
+            onClick={onGlitchEffect}
+            className="px-2.5 py-1 rounded-lg bg-red-950/70 hover:bg-red-900/80 text-rose-300 font-semibold border border-rose-600/40 transition flex items-center space-x-1 shadow-sm"
+            title="Generate Cyberpunk Glitch clusters in your selected color"
+          >
+            <Zap className="w-3 h-3 text-rose-400" />
+            <span>Cyber Glitch</span>
           </button>
 
           <button
