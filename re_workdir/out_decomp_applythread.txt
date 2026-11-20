@@ -1,0 +1,82 @@
+=== FUN_00404f90 @ 00404f90  size=476  completed=true ===
+
+void FUN_00404f90(undefined4 *param_1)
+
+{
+  int iVar1;
+  int *piVar2;
+  int *piVar3;
+  DWORD DVar4;
+  undefined4 uVar5;
+  wchar_t *lpText;
+  int unaff_EBX;
+  int iVar6;
+  HWND hWnd;
+  HANDLE pvStack_8;
+  undefined4 uStack_4;
+  
+  (*DAT_0064a278)(L"Start apply thread");
+  pvStack_8 = (HANDLE)param_1[3];
+  uStack_4 = param_1[4];
+  iVar1 = param_1[1];
+  do {
+    do {
+      while (DVar4 = WaitForMultipleObjects(2,&pvStack_8,0,0xffffffff), DVar4 != 0) {
+        if (DVar4 == 1) {
+          (*DAT_0064a278)(L"thread exit");
+          __endthread();
+          return;
+        }
+      }
+      piVar2 = *(int **)(iVar1 + 0x43c);
+    } while (((piVar2 == (int *)0x0) || (piVar2[0x30] == 0)) ||
+            (piVar3 = *(int **)(piVar2[0x30] + 0x18), piVar3 == (int *)0x0));
+    uVar5 = (**(code **)(*piVar3 + 0x14))(param_1[5],param_1[7]);
+    (*DAT_0064a278)(L"Start Apply: hDevice=0x%x, nFlag=0x%x, nData=0x%x",uVar5);
+    hWnd = (HWND)0x0;
+    if ((param_1[5] & 0x8000) != 0) {
+      iVar6 = 0;
+      do {
+        Sleep(100);
+        hWnd = FindWindowW((LPCWSTR)0x0,(LPCWSTR)*param_1);
+        if (hWnd != (HWND)0x0) break;
+        iVar6 = iVar6 + 1;
+      } while (iVar6 < 0x14);
+    }
+    iVar6 = (**(code **)(*piVar3 + 0x14))();
+    if ((iVar6 == 0) && (DAT_00645a58 == 0)) {
+      if (hWnd != (HWND)0x0) {
+        PostMessageW(hWnd,0x10,0,0);
+      }
+      if ((param_1[5] & 0x10000) != 0) {
+        SetEvent(*(HANDLE *)(iVar1 + 0x918));
+      }
+    }
+    else {
+      iVar6 = *piVar3;
+      uVar5 = (**(code **)(*piVar2 + 0x17c))(hWnd,param_1[6],param_1[5],param_1[7]);
+      iVar6 = (**(code **)(iVar6 + 0x34))(uVar5);
+      if (iVar6 == 0) {
+        if ((piVar3[1] == 0x3632) && (*(int *)(DAT_006589f8 + -0xc) != 0)) {
+          lpText = (wchar_t *)FUN_00405200();
+        }
+        else {
+          lpText = L"     Settings failed!      ";
+        }
+        MessageBoxW((HWND)param_1[2],lpText,L"Error",0x30);
+      }
+      if (hWnd != (HWND)0x0) {
+        PostMessageW(hWnd,0x10,0,0);
+        Sleep(0x14);
+        PostMessageW(hWnd,0x10,0,0);
+      }
+      if ((param_1[5] & 0x10000) != 0) {
+        SetEvent(*(HANDLE *)(unaff_EBX + 0x918));
+      }
+      (*DAT_0064a278)(L"Apply Over");
+    }
+  } while( true );
+}
+
+
+

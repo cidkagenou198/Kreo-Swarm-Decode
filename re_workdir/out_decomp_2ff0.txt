@@ -1,0 +1,3036 @@
+=== FUN_00432280 @ 00432280  size=3853  completed=true ===
+
+void __fastcall FUN_00432280(CWnd *param_1)
+
+{
+  code *pcVar1;
+  uint uVar2;
+  HWND pHVar3;
+  int *piVar4;
+  CSimpleStringT<wchar_t,0> *pCVar5;
+  undefined4 uVar6;
+  int iVar7;
+  uint uVar8;
+  _TREEITEM *p_Var9;
+  undefined4 *puVar10;
+  int iVar11;
+  CWnd *pCVar12;
+  int iVar13;
+  int unaff_EBX;
+  int iVar14;
+  code *pcVar15;
+  uint uVar16;
+  CSimpleStringT<wchar_t,0> **ppCVar17;
+  CWnd *pCStack_138;
+  int iStack_134;
+  undefined4 uStack_124;
+  undefined1 *puStack_120;
+  CWnd *pCStack_11c;
+  undefined2 *puStack_118;
+  CWnd *pCStack_114;
+  CWnd **ppCStack_110;
+  CWnd *pCStack_10c;
+  CWnd *pCStack_108;
+  CWnd *pCStack_104;
+  CWnd *pCStack_100;
+  undefined *puStack_fc;
+  CWnd *pCStack_f8;
+  CWnd *pCStack_f4;
+  CWnd *pCStack_f0;
+  CWnd *pCStack_ec;
+  int iStack_e8;
+  LONG *pLStack_e4;
+  CWnd *pCStack_e0;
+  undefined2 *puStack_dc;
+  CWnd *pCStack_d8;
+  tagRECT tStack_d4;
+  undefined4 uStack_c4;
+  int iVar18;
+  undefined4 uVar19;
+  CWnd *pCVar20;
+  LONG LVar21;
+  undefined4 uVar22;
+  undefined4 uVar23;
+  undefined4 uStack_9c;
+  CWnd *pCStack_8c;
+  int iStack_88;
+  CSimpleStringT<wchar_t,0> **local_84;
+  int iStack_80;
+  CSimpleStringT<wchar_t,0> *pCStack_7c;
+  int iStack_78;
+  CWnd *local_74;
+  int iStack_70;
+  CSimpleStringT<wchar_t,0> *pCStack_6c;
+  tagRECT tStack_68;
+  int iStack_58;
+  int iStack_54;
+  undefined1 auStack_50 [4];
+  CWnd *pCStack_4c;
+  tagRECT atStack_48 [3];
+  void *local_14;
+  undefined1 *puStack_10;
+  int iStack_c;
+  
+  iStack_c = 0xffffffff;
+  puStack_10 = &LAB_005ced13;
+  local_14 = ExceptionList;
+  uStack_9c = (CWnd *)(DAT_0063c674 ^ (uint)(auStack_50 + -0x48));
+  ExceptionList = &local_14;
+  pHVar3 = GetParent(*(HWND *)(param_1 + 0x20));
+  local_74 = CWnd::FromHandle(pHVar3);
+  local_84 = (CSimpleStringT<wchar_t,0> **)(*(int *)(*(int *)(local_74 + 0xc0) + 0x20) + 0x18);
+  piVar4 = (int *)FUN_0049dfbc();
+  if (piVar4 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_004039e0();
+  }
+  iStack_80 = (**(code **)(*piVar4 + 0xc))();
+  iStack_80 = iStack_80 + 0x10;
+  iStack_c = 0;
+  FUN_00403220();
+  pCVar5 = (CSimpleStringT<wchar_t,0> *)FUN_0049df42();
+  iStack_c._0_1_ = 1;
+  pCStack_6c = pCVar5;
+  if (pCVar5 == (CSimpleStringT<wchar_t,0> *)0x0) {
+    pCVar5 = (CSimpleStringT<wchar_t,0> *)0x0;
+  }
+  else {
+    if (1 < *(int *)(iStack_80 + -4)) {
+      ATL::CSimpleStringT<wchar_t,0>::Fork
+                ((CSimpleStringT<wchar_t,0> *)&iStack_80,*(int *)(iStack_80 + -0xc));
+    }
+    *(undefined ***)pCVar5 = Gdiplus::Bitmap::vftable;
+    pCStack_7c = (CSimpleStringT<wchar_t,0> *)0x0;
+    uVar6 = GdipCreateBitmapFromFile();
+    *(undefined4 *)(pCVar5 + 8) = uVar6;
+    *(CSimpleStringT<wchar_t,0> **)(pCVar5 + 4) = pCStack_7c;
+  }
+  iStack_c = (uint)iStack_c._1_3_ << 8;
+  *(CSimpleStringT<wchar_t,0> **)(param_1 + 0x78) = pCVar5;
+  pCStack_7c = (CSimpleStringT<wchar_t,0> *)0x0;
+  iVar7 = GdipGetImageWidth();
+  if (iVar7 != 0) {
+    *(int *)(pCVar5 + 8) = iVar7;
+  }
+  if ((pCStack_7c == (CSimpleStringT<wchar_t,0> *)0x0) &&
+     (*(undefined4 **)(param_1 + 0x78) != (undefined4 *)0x0)) {
+    (**(code **)**(undefined4 **)(param_1 + 0x78))();
+    FUN_0049df7c();
+    *(undefined4 *)(param_1 + 0x78) = 0;
+  }
+  SetRect(atStack_48,0,0x1e,0xda,0x276);
+  if (DAT_006450d4 != 0) {
+    SetRect(&tStack_68,atStack_48[0].right + 1,0x1c9,
+            *(int *)(param_1 + 0x5634) - *(int *)(param_1 + 0x562c),
+            *(int *)(param_1 + 0x5638) - *(int *)(param_1 + 0x5630));
+    uVar6 = FUN_0041e360();
+    *(undefined4 *)(param_1 + 0x5628) = uVar6;
+  }
+  tStack_d4.bottom = *(LONG *)(param_1 + 0x5628);
+  uStack_c4 = (CWnd *)0x0;
+  tStack_d4.right = 0x4324c2;
+  FUN_004744d0();
+  uVar6 = DAT_00645094;
+  *(int *)(param_1 + 0x2f1c) = DAT_00645068;
+  *(undefined4 *)(param_1 + 0x2f18) = uVar6;
+  InvalidateRect(*(HWND *)(param_1 + 0x2ecc),(RECT *)0x0,1);
+  uVar2 = DAT_00645090 >> 0x10;
+  uVar8 = DAT_00645090 & 0xff;
+  uVar16 = DAT_00645090 >> 8;
+  *(uint *)(param_1 + 0x2f08) =
+       ((DAT_006450a0 & 0xff | 0xffffff00) << 8 | DAT_006450a0 >> 8 & 0xff) << 8 |
+       DAT_006450a0 >> 0x10 & 0xff;
+  *(uint *)(param_1 + 0x2f0c) = ((uVar8 | 0xffffff00) << 8 | uVar16 & 0xff) << 8 | uVar2 & 0xff;
+  *(undefined4 *)(param_1 + 0x2f14) = 0x1a;
+  SendMessageW(*(HWND *)(param_1 + 0x2ecc),0x111b,0x1a,0);
+  *(undefined4 *)(param_1 + 0x2f20) = 0;
+  *(undefined4 *)(param_1 + 0x2ff0) = 0;
+  iStack_88 = 0;
+  *(undefined ***)(param_1 + 0x2fe4) = &PTR_vftable_0063e4f0;
+  pCStack_7c = (CSimpleStringT<wchar_t,0> *)&DAT_00658b50;
+  do {
+    pCVar5 = pCStack_7c;
+    iVar7 = *(int *)pCStack_7c;
+    if (*(int *)(iVar7 + -0xc) == 0) break;
+    if (1 < *(int *)(iVar7 + -4)) {
+      ATL::CSimpleStringT<wchar_t,0>::Fork(pCStack_7c,*(int *)(iVar7 + -0xc));
+    }
+    for (puVar10 = *(undefined4 **)(param_1 + 0x2fc0);
+        (puVar10 != (undefined4 *)0x0 && (*(int *)*puVar10 != -0x10000));
+        puVar10 = (undefined4 *)puVar10[1]) {
+    }
+    uStack_c4 = (CWnd *)0x4325d1;
+    p_Var9 = CTreeCtrl::InsertItem
+                       ((CTreeCtrl *)(param_1 + 0x2eac),1,*(wchar_t **)pCVar5,0,0,0,0,0,
+                        (_TREEITEM *)0xffff0000,(_TREEITEM *)0xffff0002);
+    if (p_Var9 == (_TREEITEM *)0x0) {
+LAB_00432624:
+      FUN_00474240();
+    }
+    else {
+      puVar10 = _malloc(0x24);
+      if (puVar10 != (undefined4 *)0x0) {
+        *puVar10 = p_Var9;
+        puVar10[4] = iStack_88;
+        puVar10[5] = 0;
+        puVar10[1] = 0;
+        puVar10[3] = 0;
+        puVar10[7] = 0xf;
+        puVar10[6] = 1;
+        puVar10[8] = 0;
+        FUN_0044c5d0();
+        InvalidateRect(*(HWND *)(param_1 + 0x2ecc),(RECT *)0x0,1);
+        goto LAB_00432624;
+      }
+    }
+    iStack_88 = iStack_88 + 1;
+    pCStack_7c = pCStack_7c + 4;
+  } while ((int)pCStack_7c < 0x658b64);
+  SetRect(&tStack_68,0x424,0x1af,0x436,0x1c1);
+  tStack_d4.bottom = 0x4326a9;
+  uStack_c4 = param_1;
+  FUN_00462d60();
+  FUN_0045aa00();
+  iStack_88 = *(int *)(local_74 + 0x155c);
+  if (iStack_88 == 0) {
+    iStack_88 = *(int *)(local_74 + 0x1558);
+  }
+  if (iStack_88 != 0) {
+    iVar7 = *(int *)(param_1 + 0x5634);
+    iVar18 = *(int *)(param_1 + 0x562c);
+    iVar14 = atStack_48[0].right - atStack_48[0].left;
+    pCStack_7c = (CSimpleStringT<wchar_t,0> *)0x0;
+    iVar11 = GdipGetImageWidth();
+    if (iVar11 != 0) {
+      *(int *)(iStack_88 + 8) = iVar11;
+    }
+    iStack_70 = ((uint)(((iVar7 - iVar18) - (int)pCStack_7c) - iVar14) >> 1) + atStack_48[0].right;
+    iVar7 = *(int *)(param_1 + 0x5638);
+    iVar18 = *(int *)(param_1 + 0x5630);
+    pCStack_7c = (CSimpleStringT<wchar_t,0> *)0x0;
+    iVar14 = GdipGetImageHeight();
+    iVar11 = iStack_88;
+    if (iVar14 != 0) {
+      *(int *)(iStack_88 + 8) = iVar14;
+    }
+    uVar16 = ((iVar7 - iVar18) - (int)pCStack_7c) - 0xb7U >> 1;
+    pCStack_7c = (CSimpleStringT<wchar_t,0> *)0x0;
+    iVar7 = GdipGetImageHeight();
+    if (iVar7 != 0) {
+      *(int *)(iVar11 + 8) = iVar7;
+    }
+    pCStack_6c = pCStack_7c;
+    iStack_78 = 0;
+    iVar7 = GdipGetImageWidth();
+    if (iVar7 != 0) {
+      *(int *)(iVar11 + 8) = iVar7;
+    }
+    pcVar15 = SetRect_exref;
+    SetRect((LPRECT)(param_1 + 0x84),iStack_70,uVar16,iStack_78 + iStack_70,
+            (int)(pCStack_6c + uVar16));
+    iVar7 = FUN_00467c80();
+    *(int *)(param_1 + 0x2ea8) = iVar7;
+    *(undefined4 *)(iVar7 + 0x1784) = 2;
+    iVar7 = *(int *)((int)local_84 + 0x2ef4);
+    iVar18 = *(int *)(param_1 + 0x2ea8);
+    iStack_88 = 0;
+    if (0 < *(int *)(iVar18 + 0x1764)) {
+      pCStack_7c = (CSimpleStringT<wchar_t,0> *)(iVar18 + 0x8c);
+      do {
+        iStack_88 = iStack_88 + 1;
+        *(uint *)pCStack_7c = (-(uint)(iVar7 != 1) & 0xffffffab) + 0xff;
+        pCStack_7c = pCStack_7c + 0x28;
+      } while (iStack_88 < *(int *)(iVar18 + 0x1764));
+    }
+    *(undefined4 *)(*(int *)(param_1 + 0x2ea8) + 0x178c) = *(undefined4 *)((int)local_84 + 0x2ef4);
+    pCVar12 = *(CWnd **)(*(int *)(param_1 + 0x2ea8) + 0x1774);
+    pCStack_7c = (CSimpleStringT<wchar_t,0> *)0x10000;
+    if (0 < (int)pCVar12) {
+      piVar4 = (int *)(*(int *)(param_1 + 0x2ea8) + 0x9c);
+      local_74 = pCVar12;
+      do {
+        pCVar5 = (CSimpleStringT<wchar_t,0> *)*piVar4;
+        if ((0 < piVar4[2] - (int)pCVar5) && ((int)pCVar5 < (int)pCStack_7c)) {
+          pCStack_7c = pCVar5;
+        }
+        piVar4 = piVar4 + 10;
+        local_74 = local_74 + -1;
+      } while (local_74 != (CWnd *)0x0);
+    }
+    uVar16 = 0;
+    *(CSimpleStringT<wchar_t,0> **)(param_1 + 0x5574) =
+         pCStack_7c + ((LPRECT)(param_1 + 0x84))->left;
+    if (DAT_00645a44 == 0) goto LAB_00432937;
+    *(undefined4 *)(*(int *)(param_1 + 0x2ea8) + 0x178c) = 0;
+    if (*(int *)((int)local_84 + 0x2d10) < 1) goto LAB_00432937;
+    pCStack_7c = (CSimpleStringT<wchar_t,0> *)0x0;
+    do {
+      uVar6 = FUN_00427120();
+      iVar7 = *(int *)(param_1 + 0x2ea8);
+      if (uVar16 < 0x90) {
+        *(undefined4 *)(pCStack_7c + iVar7 + 0xac) = uVar6;
+        InvalidateRect(*(HWND *)(iVar7 + 0x20),(RECT *)0x0,1);
+      }
+      pCStack_7c = pCStack_7c + 0x28;
+      uVar16 = uVar16 + 1;
+    } while ((int)uVar16 < *(int *)((int)local_84 + 0x2d10));
+  }
+  pcVar15 = SetRect_exref;
+LAB_00432937:
+  pCVar12 = param_1 + 0xa4;
+  (*pcVar15)();
+  pCVar20 = (CWnd *)0x20a;
+  uVar19 = 0x1fe;
+  iVar18 = 0xfa;
+  uStack_c4 = (CWnd *)&pCStack_7c;
+  tStack_d4.bottom = 0x432981;
+  (*pcVar15)();
+  uVar22 = DAT_006450bc;
+  uVar23 = DAT_006450b8;
+  tStack_68.bottom = (LONG)pCStack_8c;
+  iStack_54 = (int)local_84;
+  uVar6 = *(undefined4 *)(param_1 + 0x5628);
+  iStack_58 = iStack_88;
+  iVar7 = *(int *)(param_1 + 0x78);
+  pCStack_4c = pCStack_8c;
+  atStack_48[0].left = iStack_88;
+  atStack_48[0].top = (LONG)local_84;
+  *(undefined4 *)(param_1 + 0x31c8) = 0x801;
+  *(int *)(param_1 + 0x4024) = iVar7;
+  uVar16 = 0;
+  tStack_68.right = unaff_EBX;
+  if (iVar7 != 0) {
+    tStack_d4.right = *(undefined4 *)(iVar7 + 4);
+    tStack_d4.bottom = (LONG)&uStack_9c;
+    uStack_9c = (CWnd *)0x0;
+    tStack_d4.top = 0x432a11;
+    iVar11 = GdipGetImageWidth();
+    if (iVar11 != 0) {
+      *(int *)(iVar7 + 8) = iVar11;
+    }
+    uVar16 = (uint)uStack_9c;
+  }
+  tStack_d4.bottom = 0;
+  tStack_d4.right = 0x68;
+  tStack_d4.left = (LONG)auStack_50;
+  pCStack_d8 = (CWnd *)0x50000000;
+  puStack_dc = &DAT_005fb080;
+  pCStack_e0 = (CWnd *)0x0;
+  *(uint *)(param_1 + 0x3ff8) = uVar16;
+  pLStack_e4 = (LONG *)0x432a46;
+  tStack_d4.top = (LONG)param_1;
+  iVar11 = Create();
+  if (iVar11 != 0) {
+    *(undefined4 *)(param_1 + 0x4028) = uVar6;
+    *(LONG *)(param_1 + 0x402c) = tStack_68.right;
+    *(LONG *)(param_1 + 0x4030) = tStack_68.bottom;
+    *(int *)(param_1 + 0x4034) = iStack_58;
+    tStack_d4.right = iStack_58 - tStack_68.right;
+    *(int *)(param_1 + 0x4038) = iStack_54;
+    tStack_d4.top = ((iStack_54 - tStack_68.bottom) + -3) / 2;
+    tStack_d4.bottom = tStack_d4.top + 3;
+    tStack_d4.left = 0;
+    pCStack_d8 = param_1 + 0x4010;
+    puStack_dc = (undefined2 *)0x432a9b;
+    (*pcVar15)();
+    *(undefined4 *)(param_1 + 0x4008) = uVar23;
+    *(undefined4 *)(param_1 + 0x400c) = uVar22;
+    *(undefined4 *)(param_1 + 0x4020) = 0;
+  }
+  tStack_d4.bottom = 0x432ad1;
+  FUN_00448ad0();
+  tStack_d4.bottom = (int)local_84 + 2;
+  tStack_d4.right = iStack_88 + 0x3c;
+  tStack_d4.top = (LONG)(pCStack_8c + -2);
+  tStack_d4.left = iStack_88 + 10;
+  pCStack_d8 = (CWnd *)&iStack_80;
+  puStack_dc = (undefined2 *)0x432af4;
+  (*pcVar15)();
+  iStack_58 = iStack_88;
+  iVar13 = iStack_88 - unaff_EBX;
+  tStack_68.bottom = (LONG)pCStack_8c;
+  iVar14 = (int)pCStack_8c - iVar7;
+  puStack_dc = (undefined2 *)0x0;
+  iVar11 = *(int *)(param_1 + 0x5628);
+  pLStack_e4 = &tStack_68.top;
+  iStack_e8 = 0x5000000b;
+  pCStack_ec = (CWnd *)&DAT_005fb080;
+  pCStack_f0 = (CWnd *)0x432b63;
+  pCStack_e0 = param_1;
+  pCStack_f8 = (CWnd *)iVar18;
+  puStack_fc = (undefined *)uVar19;
+  local_74 = (CWnd *)iVar7;
+  tStack_68.top = iVar7;
+  (**(code **)(*(int *)(param_1 + 0x4f44) + 0x13c))();
+  pCStack_f0 = (CWnd *)tStack_d4.right;
+  pCStack_f4 = (CWnd *)tStack_d4.right;
+  pCStack_104 = (CWnd *)iStack_88;
+  pCStack_100 = (CWnd *)local_84;
+  pCStack_108 = (CWnd *)0x432b91;
+  iVar7 = (int)pCStack_f8;
+  FUN_0045ab70();
+  uVar23 = DAT_00645074;
+  uVar6 = DAT_0064506c;
+  *(undefined4 *)(param_1 + 0x4fe0) = DAT_00645070;
+  *(undefined4 *)(param_1 + 0x4fe4) = uVar6;
+  *(undefined4 *)(param_1 + 0x4fe8) = uVar23;
+  *(undefined4 *)(param_1 + 0x5004) = 0;
+  if (DAT_0063e4f4 != 0) {
+    *(undefined ***)(param_1 + 0x50a4) = &PTR_vftable_0063e4f0;
+  }
+  *(undefined4 *)(param_1 + 0x50ac) = DAT_006451e8;
+  iVar18 = DAT_00645068;
+  pCStack_f0 = (CWnd *)0x0;
+  pCStack_f4 = (CWnd *)0x1;
+  pCStack_f8 = (CWnd *)DAT_00645068;
+  *(int *)(param_1 + 0x4fe4) = DAT_00645068;
+  puStack_fc = &DAT_00600728;
+  *(int *)(param_1 + 0x4fe0) = iVar18;
+  *(int *)(param_1 + 0x4fe8) = iVar18;
+  pCStack_100 = (CWnd *)0x432c0a;
+  FUN_004035e0();
+  puStack_fc = (undefined *)0x432c0f;
+  FUN_0045ad30();
+  pCStack_f0 = (CWnd *)0x432c1a;
+  CGdiObject::DeleteObject((CGdiObject *)(param_1 + 0x509c));
+  pCStack_f4 = pCVar12;
+  puStack_fc = (undefined *)iVar11;
+  pCStack_f0 = (CWnd *)(iVar13 + 0x34);
+  pCStack_f8 = (CWnd *)(iVar13 + 0x28);
+  pCStack_100 = (CWnd *)(auStack_50 + -0x68);
+  *(undefined ***)(param_1 + 0x50a4) = &PTR_vftable_0063e4f8;
+  pCStack_104 = (CWnd *)0x432c41;
+  (*pcVar15)();
+  ppCVar17 = (CSimpleStringT<wchar_t,0> **)uStack_c4;
+  LVar21 = tStack_d4.bottom;
+  pCStack_e0 = (CWnd *)DAT_006450bc;
+  puStack_dc = (undefined2 *)DAT_006450b8;
+  uStack_9c = (CWnd *)tStack_d4.right;
+  tStack_d4.left = *(LONG *)(param_1 + 0x5628);
+  pCStack_8c = (CWnd *)tStack_d4.right;
+  tStack_d4.top = *(LONG *)(param_1 + 0x78);
+  iStack_88 = tStack_d4.bottom;
+  local_84 = (CSimpleStringT<wchar_t,0> **)uStack_c4;
+  *(undefined4 *)(param_1 + 0x40b0) = 0x802;
+  *(LONG *)(param_1 + 0x4f0c) = tStack_d4.top;
+  pCVar12 = (CWnd *)0x0;
+  iVar18 = iVar7;
+  iStack_80 = iVar7;
+  if (tStack_d4.top != 0) {
+    pCStack_108 = *(CWnd **)(tStack_d4.top + 4);
+    pCStack_104 = (CWnd *)&pCStack_d8;
+    pCStack_d8 = (CWnd *)0x0;
+    pCStack_10c = (CWnd *)0x432cd2;
+    iVar11 = GdipGetImageWidth();
+    if (iVar11 != 0) {
+      *(int *)(tStack_d4.top + 8) = iVar11;
+    }
+    pCVar12 = pCStack_d8;
+  }
+  pCStack_104 = (CWnd *)0x0;
+  pCStack_108 = (CWnd *)0x68;
+  ppCStack_110 = &pCStack_8c;
+  pCStack_114 = (CWnd *)0x50000000;
+  puStack_118 = &DAT_005fb080;
+  pCStack_11c = (CWnd *)0x0;
+  *(CWnd **)(param_1 + 0x4ee0) = pCVar12;
+  puStack_120 = (undefined1 *)0x432d07;
+  pCStack_10c = param_1;
+  iVar11 = Create();
+  if (iVar11 != 0) {
+    *(LONG *)(param_1 + 0x4f10) = tStack_d4.left;
+    *(CWnd **)(param_1 + 0x4f14) = uStack_9c;
+    *(LONG *)(param_1 + 0x4f18) = LVar21;
+    *(CSimpleStringT<wchar_t,0> ***)(param_1 + 0x4f1c) = ppCVar17;
+    pCStack_108 = (CWnd *)((int)ppCVar17 - (int)uStack_9c);
+    *(int *)(param_1 + 0x4f20) = iVar7;
+    pCStack_10c = (CWnd *)(((iVar7 - LVar21) + -3) / 2);
+    pCStack_104 = pCStack_10c + 3;
+    ppCStack_110 = (CWnd **)0x0;
+    pCStack_114 = param_1 + 0x4ef8;
+    puStack_118 = (undefined2 *)0x432d5c;
+    (*pcVar15)();
+    *(undefined2 **)(param_1 + 0x4ef0) = puStack_dc;
+    *(CWnd **)(param_1 + 0x4ef4) = pCStack_e0;
+    *(undefined4 *)(param_1 + 0x4f08) = 0;
+  }
+  pCStack_104 = (CWnd *)0x432d8c;
+  FUN_00448ad0();
+  pCStack_104 = (CWnd *)(iVar18 + 2);
+  pCStack_108 = (CWnd *)((int)uStack_c4 + 0x3c);
+  pCStack_10c = (CWnd *)(tStack_d4.bottom + -2);
+  ppCStack_110 = (CWnd **)((int)uStack_c4 + 10);
+  pCStack_114 = (CWnd *)(auStack_50 + -0x6c);
+  puStack_118 = (undefined2 *)0x432daf;
+  (*pcVar15)();
+  iStack_e8 = (int)uStack_c4 - tStack_d4.right;
+  pLStack_e4 = (LONG *)(tStack_d4.bottom - tStack_d4.top);
+  puStack_118 = (undefined2 *)0x0;
+  uStack_9c = (CWnd *)tStack_d4.right;
+  pCStack_f4 = *(CWnd **)(param_1 + 0x5628);
+  puStack_120 = auStack_50 + -0x50;
+  uStack_124 = 0x5000000b;
+  pCStack_11c = param_1;
+  LVar21 = tStack_d4.top;
+  pCVar12 = (CWnd *)tStack_d4.right;
+  (**(code **)(*(int *)(param_1 + 0x50d0) + 0x13c))();
+  pCStack_138 = pCStack_f8;
+  iStack_134 = (int)puStack_fc;
+  FUN_0045ab70(uStack_c4,iVar18);
+  uVar23 = DAT_00645074;
+  uVar6 = DAT_0064506c;
+  *(undefined4 *)(param_1 + 0x516c) = DAT_00645070;
+  *(undefined4 *)(param_1 + 0x5170) = uVar6;
+  *(undefined4 *)(param_1 + 0x5174) = uVar23;
+  *(undefined4 *)(param_1 + 0x5190) = 0;
+  if (DAT_0063e4f4 != 0) {
+    *(undefined ***)(param_1 + 0x5230) = &PTR_vftable_0063e4f0;
+  }
+  *(undefined4 *)(param_1 + 0x5238) = DAT_006451e8;
+  iVar7 = DAT_00645068;
+  pCStack_f8 = (CWnd *)&iStack_134;
+  iStack_134 = DAT_00645068;
+  *(int *)(param_1 + 0x5170) = DAT_00645068;
+  pCStack_138 = (CWnd *)&DAT_00600730;
+  *(int *)(param_1 + 0x516c) = iVar7;
+  *(int *)(param_1 + 0x5174) = iVar7;
+  FUN_004035e0();
+  pCStack_138 = (CWnd *)0x432eca;
+  FUN_0045ad30();
+  CGdiObject::DeleteObject((CGdiObject *)(param_1 + 0x5228));
+  *(undefined ***)(param_1 + 0x5230) = &PTR_vftable_0063e4f8;
+  iStack_134 = 0x432ef1;
+  GetWindowRect(*(HWND *)(param_1 + 0x407c),(LPRECT)(auStack_50 + -100));
+  CWnd::ScreenToClient(param_1,(tagRECT *)(auStack_50 + -100));
+  iStack_e8 = iVar14;
+  pCStack_ec = pCVar12;
+  pCStack_f0 = (CWnd *)LVar21;
+  pCStack_f4 = pCVar20;
+  iVar7 = iStack_e8 + 0x31;
+  pCVar12 = pCStack_f4 + 0x45;
+  iStack_134 = iStack_e8 + 0x19;
+  pCStack_138 = pCStack_f4 + 0x2d;
+  (*pcVar15)(&pCStack_f4);
+  (**(code **)(*(int *)(param_1 + 0x5578) + 0x13c))(0x68,param_1);
+  CWnd::MoveWindow(param_1 + 0x5578,(int)ppCStack_110,(int)pCStack_10c,
+                   (int)pCStack_108 - (int)ppCStack_110,(int)pCStack_104 - (int)pCStack_10c,1);
+  *(undefined4 *)(param_1 + 0x55ec) = 0xff;
+  InvalidateRect(*(HWND *)(param_1 + 0x5598),(RECT *)0x0,1);
+  *(undefined4 *)(param_1 + 0x5604) = 0x969696;
+  *(undefined4 *)(param_1 + 0x5600) = 0x969696;
+  *(undefined4 *)(param_1 + 0x5608) = 0;
+  *(undefined4 *)(param_1 + 0x55f4) = 0;
+  CWnd::ShowWindow(param_1 + 0x5578,5);
+  iVar18 = (int)pCStack_10c + 0x12;
+  ppCVar17 = (CSimpleStringT<wchar_t,0> **)((int)pCStack_108 + 0x1c);
+  iVar14 = (int)pCStack_10c + 5;
+  iVar13 = (int)pCStack_108 + 0xf;
+  (*pcVar15)(&ppCStack_110);
+  FUN_00462d60(param_1,L"check_nr.png",L"check_nr.png",param_1 + 0x53e8,1,0,uStack_124,puStack_120,
+               pCStack_11c,puStack_118);
+  (*pcVar15)(&uStack_124,(*(int *)(param_1 + 0x5634) - *(int *)(param_1 + 0x562c)) + -0x25d,0x1ea,
+             (*(int *)(param_1 + 0x5634) - *(int *)(param_1 + 0x562c)) + -0x8c,0x26c);
+  pCStack_138 = pCStack_138 + 0x78;
+  pCStack_100 = pCVar12 + 0x78;
+  iVar11 = *(int *)(param_1 + 0x5628);
+  pCStack_104 = (CWnd *)iStack_134;
+  pCVar12 = param_1 + 0xc4;
+  pCStack_108 = pCStack_138;
+  puStack_fc = (undefined *)iVar7;
+  if (iVar11 != 0) {
+    if (*(undefined4 **)(param_1 + 0x138) != (undefined4 *)0x0) {
+      uVar6 = (**(code **)**(undefined4 **)(param_1 + 0x138))(0);
+      FUN_0049df7c(uVar6);
+      *(undefined4 *)(param_1 + 0x138) = 0;
+    }
+    uVar6 = FUN_00463470(iVar11,0,pCStack_108,pCStack_104,pCStack_100,puStack_fc);
+    *(undefined4 *)(param_1 + 0x138) = uVar6;
+  }
+  pcVar1 = *(code **)(*(int *)pCVar12 + 0x54);
+  iVar11 = 0x50000000;
+  *(undefined4 *)(param_1 + 0x2ea0) = 0;
+  (*pcVar1)(0,0,0x50000000,&pCStack_138,param_1,0x68,0);
+  CWnd::MoveWindow(pCVar12,iVar13,iVar14,(int)ppCVar17 - iVar13,iVar18 - iVar14,1);
+  FUN_00405d40();
+  CWnd::ShowWindow(pCVar12,5);
+  (*pcVar15)(param_1 + 0x94,0x10e,4,0x226,0x1a);
+  pCStack_10c = (CWnd *)0xffffffff;
+  piVar4 = (int *)(iVar11 + -4);
+  LOCK();
+  iVar7 = *piVar4;
+  *piVar4 = *piVar4 + -1;
+  UNLOCK();
+  if (iVar7 + -1 < 1) {
+    (**(code **)(**(int **)(iVar11 + -0x10) + 4))((undefined4 *)(iVar11 + -0x10));
+  }
+  ExceptionList = pCStack_114;
+  return;
+}
+
+
+
+=== FUN_0041e650 @ 0041e650  size=12641  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __fastcall FUN_0041e650(int param_1)
+
+{
+  CEdit *pCVar1;
+  CWnd CVar2;
+  int iVar3;
+  uint uVar4;
+  uint uVar5;
+  void *pvVar6;
+  LONG LVar7;
+  LONG LVar8;
+  HWND pHVar9;
+  int *piVar10;
+  int iVar11;
+  undefined4 *puVar12;
+  undefined4 uVar13;
+  uint uVar14;
+  int iVar15;
+  undefined4 *puVar16;
+  CWnd *pCVar17;
+  int iVar18;
+  CWnd *pCVar19;
+  LONG *pLVar20;
+  tagRECT *ptVar21;
+  int unaff_ESI;
+  CWnd **ppCVar22;
+  wchar_t *pwVar23;
+  int iVar24;
+  code *pcVar25;
+  wchar_t *pwVar26;
+  char *pcVar27;
+  CWnd *pCVar28;
+  LPCWSTR lpString;
+  undefined4 uStack_934;
+  undefined4 uVar29;
+  undefined4 uStack_90c;
+  tagRECT tStack_908;
+  wchar_t *pwStack_8f8;
+  tagRECT tStack_8f4;
+  undefined4 uStack_8e4;
+  int iStack_8e0;
+  CWnd *pCStack_8dc;
+  int iStack_8d8;
+  undefined4 uStack_8d4;
+  LONG LVar30;
+  int iStack_8bc;
+  CWnd *pCStack_8b8;
+  int iStack_8b4;
+  int iStack_8b0;
+  CWnd *pCStack_8ac;
+  tagRECT tStack_8a8;
+  CWnd *pCStack_898;
+  int iStack_894;
+  int iStack_890;
+  int iStack_88c;
+  CWnd *pCStack_888;
+  CWnd *pCStack_884;
+  int iStack_880;
+  int iStack_87c;
+  int iStack_878;
+  wchar_t *pwStack_864;
+  CWnd *pCStack_860;
+  undefined4 uStack_85c;
+  wchar_t **ppwVar31;
+  undefined4 uStack_834;
+  int iVar32;
+  undefined1 *puStack_824;
+  int *piStack_820;
+  undefined1 auStack_81c [8];
+  int iStack_814;
+  CWnd *pCStack_810;
+  CWnd *pCStack_80c;
+  LPRECT ptStack_808;
+  tagRECT tStack_804;
+  int iStack_7f4;
+  int iStack_7f0;
+  wchar_t *pwStack_7ec;
+  CWnd *pCStack_7e8;
+  undefined *puStack_7e4;
+  undefined *local_7e0;
+  wchar_t *pwStack_7dc;
+  CWnd *apCStack_7d8 [4];
+  wchar_t *pwStack_7c8;
+  CWnd *pCStack_7c4;
+  int iStack_7c0;
+  wchar_t *pwStack_7bc;
+  wchar_t *pwStack_7b8;
+  CWnd *pCStack_7b4;
+  int iStack_7b0;
+  wchar_t *pwStack_7ac;
+  CWnd *apCStack_7a8 [12];
+  tagRECT atStack_778 [5];
+  undefined4 uStack_728;
+  undefined4 uStack_724;
+  undefined4 uStack_720;
+  undefined4 uStack_71c;
+  undefined4 uStack_718;
+  undefined4 uStack_714;
+  undefined4 uStack_710;
+  undefined4 uStack_70c;
+  undefined4 uStack_708;
+  undefined4 uStack_704;
+  wchar_t awStack_700 [2];
+  wchar_t awStack_6fc [2];
+  wchar_t awStack_6f8 [2];
+  wchar_t awStack_6f4 [2];
+  wchar_t wStack_6f0;
+  undefined4 uStack_6ee;
+  undefined4 uStack_6ea;
+  undefined4 uStack_6e6;
+  undefined4 uStack_6e2;
+  undefined4 uStack_6de;
+  undefined2 uStack_6da;
+  undefined4 uStack_6d8;
+  undefined4 uStack_6d4;
+  undefined4 uStack_6d0;
+  undefined2 uStack_6cc;
+  undefined4 uStack_6ca;
+  undefined4 uStack_6c6;
+  undefined4 uStack_6c2;
+  undefined4 uStack_6be;
+  undefined4 uStack_6ba;
+  undefined4 uStack_6b6;
+  undefined2 uStack_6b2;
+  wchar_t awStack_6b0 [2];
+  wchar_t awStack_6ac [2];
+  wchar_t awStack_6a8 [2];
+  wchar_t awStack_6a4 [2];
+  wchar_t awStack_6a0 [2];
+  wchar_t wStack_69c;
+  undefined4 uStack_69a;
+  undefined4 uStack_696;
+  undefined4 uStack_692;
+  undefined4 uStack_68e;
+  undefined2 uStack_68a;
+  wchar_t awStack_688 [2];
+  wchar_t awStack_684 [2];
+  wchar_t awStack_680 [2];
+  wchar_t awStack_67c [2];
+  wchar_t awStack_678 [2];
+  wchar_t awStack_674 [2];
+  undefined4 uStack_670;
+  undefined4 uStack_66c;
+  undefined4 uStack_668;
+  undefined4 uStack_664;
+  char acStack_660 [32];
+  undefined4 uStack_640;
+  undefined4 uStack_63c;
+  wchar_t awStack_638 [2];
+  wchar_t awStack_634 [2];
+  wchar_t awStack_630 [2];
+  wchar_t awStack_62c [2];
+  wchar_t wStack_628;
+  undefined4 uStack_626;
+  undefined4 uStack_622;
+  undefined4 uStack_61e;
+  undefined4 uStack_61a;
+  undefined4 uStack_616;
+  undefined2 uStack_612;
+  undefined4 uStack_610;
+  undefined4 uStack_60c;
+  undefined4 uStack_608;
+  undefined4 uStack_604;
+  undefined4 uStack_600;
+  undefined4 uStack_5fc;
+  undefined4 uStack_5f8;
+  undefined4 uStack_5f4;
+  undefined4 uStack_5f0;
+  undefined4 uStack_5ec;
+  wchar_t awStack_5e8 [2];
+  wchar_t awStack_5e4 [2];
+  wchar_t awStack_5e0 [2];
+  wchar_t awStack_5dc [2];
+  wchar_t awStack_5d8 [2];
+  wchar_t wStack_5d4;
+  undefined4 uStack_5d2;
+  undefined4 uStack_5ce;
+  undefined4 uStack_5ca;
+  undefined4 uStack_5c6;
+  undefined2 uStack_5c2;
+  wchar_t awStack_5c0 [2];
+  wchar_t awStack_5bc [2];
+  wchar_t awStack_5b8 [2];
+  wchar_t awStack_5b4 [2];
+  wchar_t awStack_5b0 [2];
+  wchar_t awStack_5ac [2];
+  undefined4 uStack_5a8;
+  undefined4 uStack_5a4;
+  undefined4 uStack_5a0;
+  undefined4 uStack_59c;
+  wchar_t awStack_598 [2];
+  wchar_t awStack_594 [2];
+  wchar_t awStack_590 [2];
+  wchar_t awStack_58c [2];
+  wchar_t awStack_588 [2];
+  wchar_t awStack_584 [2];
+  undefined4 uStack_580;
+  undefined4 uStack_57c;
+  undefined4 uStack_578;
+  undefined4 uStack_574;
+  wchar_t awStack_570 [2];
+  wchar_t awStack_56c [2];
+  wchar_t awStack_568 [2];
+  wchar_t awStack_564 [2];
+  wchar_t wStack_560;
+  undefined4 uStack_55e;
+  undefined4 uStack_55a;
+  undefined4 uStack_556;
+  undefined4 uStack_552;
+  undefined4 uStack_54e;
+  undefined2 uStack_54a;
+  wchar_t awStack_548 [2];
+  wchar_t awStack_544 [2];
+  wchar_t awStack_540 [2];
+  wchar_t awStack_53c [2];
+  wchar_t wStack_538;
+  undefined4 uStack_536;
+  undefined4 uStack_532;
+  undefined4 uStack_52e;
+  undefined4 uStack_52a;
+  undefined4 uStack_526;
+  undefined2 uStack_522;
+  wchar_t awStack_520 [2];
+  wchar_t awStack_51c [2];
+  wchar_t awStack_518 [2];
+  wchar_t awStack_514 [2];
+  wchar_t wStack_510;
+  undefined4 uStack_50e;
+  undefined4 uStack_50a;
+  undefined4 uStack_506;
+  undefined4 uStack_502;
+  undefined4 uStack_4fe;
+  undefined2 uStack_4fa;
+  wchar_t awStack_4f8 [2];
+  wchar_t awStack_4f4 [2];
+  wchar_t awStack_4f0 [2];
+  wchar_t awStack_4ec [2];
+  wchar_t awStack_4e8 [2];
+  wchar_t awStack_4e4 [2];
+  undefined4 uStack_4e0;
+  undefined4 uStack_4dc;
+  undefined4 uStack_4d8;
+  undefined4 uStack_4d4;
+  wchar_t awStack_4d0 [2];
+  wchar_t awStack_4cc [2];
+  wchar_t awStack_4c8 [2];
+  wchar_t awStack_4c4 [2];
+  wchar_t awStack_4c0 [2];
+  wchar_t awStack_4bc [2];
+  undefined4 uStack_4b8;
+  undefined4 uStack_4b4;
+  undefined4 uStack_4b0;
+  undefined4 uStack_4ac;
+  wchar_t awStack_4a8 [2];
+  wchar_t awStack_4a4 [2];
+  wchar_t awStack_4a0 [2];
+  wchar_t awStack_49c [2];
+  wchar_t awStack_498 [2];
+  wchar_t awStack_494 [2];
+  undefined4 uStack_490;
+  undefined4 uStack_48c;
+  undefined4 uStack_488;
+  undefined4 uStack_484;
+  wchar_t awStack_480 [2];
+  wchar_t awStack_47c [2];
+  wchar_t awStack_478 [2];
+  wchar_t awStack_474 [2];
+  wchar_t awStack_470 [2];
+  undefined4 uStack_46c;
+  undefined4 uStack_468;
+  undefined4 uStack_464;
+  undefined4 uStack_460;
+  undefined4 uStack_45c;
+  wchar_t awStack_458 [2];
+  wchar_t awStack_454 [2];
+  wchar_t awStack_450 [2];
+  wchar_t awStack_44c [2];
+  wchar_t awStack_448 [2];
+  wchar_t wStack_444;
+  undefined4 uStack_442;
+  undefined4 uStack_43e;
+  undefined4 uStack_43a;
+  undefined4 uStack_436;
+  undefined2 uStack_432;
+  wchar_t awStack_430 [2];
+  wchar_t awStack_42c [2];
+  wchar_t awStack_428 [2];
+  wchar_t awStack_424 [2];
+  wchar_t awStack_420 [2];
+  wchar_t wStack_41c;
+  undefined4 uStack_41a;
+  undefined4 uStack_416;
+  undefined4 uStack_412;
+  undefined4 uStack_40e;
+  undefined2 uStack_40a;
+  wchar_t awStack_408 [2];
+  wchar_t awStack_404 [2];
+  wchar_t awStack_400 [2];
+  wchar_t awStack_3fc [2];
+  wchar_t awStack_3f8 [2];
+  wchar_t wStack_3f4;
+  undefined4 uStack_3f2;
+  undefined4 uStack_3ee;
+  undefined4 uStack_3ea;
+  undefined4 uStack_3e6;
+  undefined2 uStack_3e2;
+  wchar_t awStack_3e0 [2];
+  wchar_t awStack_3dc [2];
+  wchar_t awStack_3d8 [2];
+  wchar_t awStack_3d4 [2];
+  wchar_t awStack_3d0 [2];
+  wchar_t wStack_3cc;
+  undefined4 uStack_3ca;
+  undefined4 uStack_3c6;
+  undefined4 uStack_3c2;
+  undefined4 uStack_3be;
+  undefined2 uStack_3ba;
+  wchar_t awStack_3b8 [2];
+  wchar_t awStack_3b4 [2];
+  wchar_t awStack_3b0 [2];
+  wchar_t awStack_3ac [2];
+  wchar_t awStack_3a8 [2];
+  wchar_t wStack_3a4;
+  undefined4 uStack_3a2;
+  undefined4 uStack_39e;
+  undefined4 uStack_39a;
+  undefined4 uStack_396;
+  undefined2 uStack_392;
+  wchar_t awStack_390 [13];
+  undefined4 uStack_376;
+  undefined4 uStack_372;
+  undefined4 uStack_36e;
+  undefined2 uStack_36a;
+  wchar_t awStack_368 [13];
+  undefined4 uStack_34e;
+  undefined4 uStack_34a;
+  undefined4 uStack_346;
+  undefined2 uStack_342;
+  wchar_t awStack_340 [2];
+  wchar_t awStack_33c [2];
+  wchar_t awStack_338 [2];
+  wchar_t awStack_334 [2];
+  wchar_t awStack_330 [2];
+  wchar_t wStack_32c;
+  undefined4 uStack_32a;
+  undefined4 uStack_326;
+  undefined4 uStack_322;
+  undefined4 uStack_31e;
+  undefined2 uStack_31a;
+  wchar_t awStack_318 [2];
+  wchar_t awStack_314 [2];
+  wchar_t awStack_310 [2];
+  wchar_t awStack_30c [2];
+  wchar_t awStack_308 [2];
+  undefined4 uStack_304;
+  undefined4 uStack_300;
+  undefined4 uStack_2fc;
+  undefined4 uStack_2f8;
+  undefined4 uStack_2f4;
+  wchar_t awStack_2f0 [2];
+  wchar_t awStack_2ec [2];
+  wchar_t awStack_2e8 [2];
+  wchar_t awStack_2e4 [2];
+  wchar_t awStack_2e0 [2];
+  wchar_t awStack_2dc [2];
+  undefined4 uStack_2d8;
+  undefined4 uStack_2d4;
+  undefined4 uStack_2d0;
+  undefined4 uStack_2cc;
+  wchar_t awStack_2c8 [15];
+  undefined4 uStack_2aa;
+  undefined4 uStack_2a6;
+  undefined2 uStack_2a2;
+  wchar_t awStack_2a0 [2];
+  wchar_t awStack_29c [2];
+  wchar_t awStack_298 [2];
+  wchar_t awStack_294 [2];
+  wchar_t awStack_290 [2];
+  wchar_t awStack_28c [2];
+  undefined4 uStack_288;
+  undefined4 uStack_284;
+  undefined4 uStack_280;
+  undefined4 uStack_27c;
+  wchar_t awStack_278 [2];
+  wchar_t awStack_274 [2];
+  wchar_t awStack_270 [2];
+  wchar_t awStack_26c [2];
+  wchar_t awStack_268 [2];
+  wchar_t awStack_264 [2];
+  undefined4 uStack_260;
+  undefined4 uStack_25c;
+  undefined4 uStack_258;
+  undefined4 uStack_254;
+  wchar_t awStack_250 [2];
+  wchar_t awStack_24c [2];
+  wchar_t awStack_248 [2];
+  wchar_t awStack_244 [2];
+  wchar_t awStack_240 [2];
+  wchar_t awStack_23c [2];
+  undefined4 uStack_238;
+  undefined4 uStack_234;
+  undefined4 uStack_230;
+  undefined4 uStack_22c;
+  wchar_t awStack_228 [12];
+  undefined1 auStack_210 [216];
+  uint uStack_138;
+  void *pvStack_130;
+  uint uStack_128;
+  undefined1 uStack_120;
+  uint local_1c;
+  void *local_14;
+  undefined1 *puStack_10;
+  undefined4 uStack_c;
+  
+  uStack_c = 0xffffffff;
+  puStack_10 = &LAB_005cd0ed;
+  local_14 = ExceptionList;
+  local_1c = DAT_0063c674 ^ (uint)&puStack_824;
+  ExceptionList = &local_14;
+  atStack_778[0].right = param_1;
+  pHVar9 = GetParent(*(HWND *)(param_1 + 0x20));
+  tStack_804.top = (LONG)CWnd::FromHandle(pHVar9);
+  local_7e0 = (undefined *)(*(int *)(*(int *)(tStack_804.top + 0xc0) + 0x20) + 0x18);
+  FUN_004265d0();
+  piVar10 = (int *)FUN_0049dfbc();
+  if (piVar10 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_004039e0();
+  }
+  iVar11 = (**(code **)(*piVar10 + 0xc))();
+  tStack_804.left = iVar11 + 0x10;
+  uStack_c = 0;
+  piVar10 = (int *)FUN_0049dfbc();
+  if (piVar10 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_004039e0();
+  }
+  iVar11 = (**(code **)(*piVar10 + 0xc))();
+  apCStack_7d8[3] = (CWnd *)(iVar11 + 0x10);
+  uStack_c._0_1_ = 1;
+  FUN_00403220();
+  piVar10 = (int *)FUN_0049df42();
+  uStack_c._0_1_ = 2;
+  piStack_820 = piVar10;
+  if (piVar10 == (int *)0x0) {
+    piVar10 = (int *)0x0;
+  }
+  else {
+    if (1 < *(int *)(tStack_804.left + -4)) {
+      ATL::CSimpleStringT<wchar_t,0>::Fork
+                ((CSimpleStringT<wchar_t,0> *)&tStack_804,*(int *)(tStack_804.left + -0xc));
+    }
+    *piVar10 = (int)Gdiplus::Bitmap::vftable;
+    ptStack_808 = (LPRECT)0x0;
+    iVar11 = GdipCreateBitmapFromFile();
+    piVar10[2] = iVar11;
+    piVar10[1] = (int)ptStack_808;
+  }
+  uStack_c = CONCAT31(uStack_c._1_3_,1);
+  *(int **)(param_1 + 0x3000) = piVar10;
+  *(undefined4 **)(param_1 + 0x3374) = &DAT_00658854;
+  *(undefined4 *)(param_1 + 0x3310) = 0x11;
+  *(undefined4 **)(param_1 + 0x3378) = &DAT_00658858;
+  *(undefined4 *)(param_1 + 0x3314) = 0x13;
+  *(undefined4 **)(param_1 + 0x337c) = &DAT_0065885c;
+  *(undefined4 *)(param_1 + 0x3318) = 0x12;
+  *(undefined4 **)(param_1 + 0x3380) = &DAT_00658860;
+  *(undefined4 *)(param_1 + 0x331c) = 0x14;
+  *(undefined4 **)(param_1 + 0x3384) = &DAT_00658864;
+  *(undefined4 *)(param_1 + 0x3320) = 0x15;
+  uStack_728 = DAT_005ff170;
+  uStack_71c = DAT_005ff17c;
+  uStack_718 = 0;
+  uStack_714 = 0;
+  uStack_710 = 0;
+  uStack_70c = 0;
+  uStack_708 = 0;
+  uStack_704 = 0;
+  awStack_6f8[0] = u_ms_right_005ff180[4];
+  awStack_6f8[1] = u_ms_right_005ff180[5];
+  uStack_724 = DAT_005ff174;
+  uStack_720 = DAT_005ff178;
+  uStack_6ee = 0;
+  uStack_6ea = 0;
+  uStack_6e6 = 0;
+  uStack_6e2 = 0;
+  uStack_6de = 0;
+  uStack_6da = 0;
+  awStack_700[0] = u_ms_right_005ff180[0];
+  awStack_700[1] = u_ms_right_005ff180[1];
+  awStack_6fc[0] = u_ms_right_005ff180[2];
+  awStack_6fc[1] = u_ms_right_005ff180[3];
+  uStack_6d8 = DAT_005ff194;
+  awStack_6f4[0] = u_ms_right_005ff180[6];
+  awStack_6f4[1] = u_ms_right_005ff180[7];
+  wStack_6f0 = u_ms_right_005ff180[8];
+  uStack_6cc = DAT_005ff1a0;
+  uStack_6d4 = _DAT_005ff198;
+  uStack_6d0 = DAT_005ff19c;
+  uStack_6ca = 0;
+  uStack_6c6 = 0;
+  uStack_6c2 = 0;
+  uStack_6be = 0;
+  uStack_6ba = 0;
+  uStack_6b6 = 0;
+  uStack_6b2 = 0;
+  awStack_6b0[0] = u_ms_forward_005ff1a4[0];
+  awStack_6b0[1] = u_ms_forward_005ff1a4[1];
+  awStack_6ac[0] = u_ms_forward_005ff1a4[2];
+  awStack_6ac[1] = u_ms_forward_005ff1a4[3];
+  awStack_6a8[0] = u_ms_forward_005ff1a4[4];
+  awStack_6a8[1] = u_ms_forward_005ff1a4[5];
+  awStack_6a4[0] = u_ms_forward_005ff1a4[6];
+  awStack_6a4[1] = u_ms_forward_005ff1a4[7];
+  awStack_6a0[0] = u_ms_forward_005ff1a4[8];
+  awStack_6a0[1] = u_ms_forward_005ff1a4[9];
+  wStack_69c = u_ms_forward_005ff1a4[10];
+  uStack_69a = 0;
+  uStack_696 = 0;
+  uStack_692 = 0;
+  uStack_68e = 0;
+  uStack_68a = 0;
+  awStack_688[0] = u_ms_backward_005ff1bc[0];
+  awStack_688[1] = u_ms_backward_005ff1bc[1];
+  awStack_680[0] = u_ms_backward_005ff1bc[4];
+  awStack_680[1] = u_ms_backward_005ff1bc[5];
+  awStack_684[0] = u_ms_backward_005ff1bc[2];
+  awStack_684[1] = u_ms_backward_005ff1bc[3];
+  awStack_67c[0] = u_ms_backward_005ff1bc[6];
+  awStack_67c[1] = u_ms_backward_005ff1bc[7];
+  awStack_674[0] = u_ms_backward_005ff1bc[10];
+  awStack_674[1] = u_ms_backward_005ff1bc[0xb];
+  pCStack_80c = (CWnd *)&uStack_728;
+  awStack_678[0] = u_ms_backward_005ff1bc[8];
+  awStack_678[1] = u_ms_backward_005ff1bc[9];
+  uStack_670 = 0;
+  uStack_66c = 0;
+  uStack_668 = 0;
+  uStack_664 = 0;
+  piVar10 = (int *)(param_1 + 0x32fc);
+  puStack_824 = (undefined1 *)0x5;
+  do {
+    __snwprintf_s(awStack_228,0x104,0x103,L"%sskins\\fun55x55\\%s.png",&DAT_0064a048,
+                  (char *)pCStack_80c);
+    puVar12 = (undefined4 *)FUN_0049df42();
+    if (puVar12 == (undefined4 *)0x0) {
+      puVar12 = (undefined4 *)0x0;
+    }
+    else {
+      piStack_820 = &iStack_7f0;
+      puStack_824 = auStack_210;
+      *puVar12 = Gdiplus::Bitmap::vftable;
+      iStack_7f0 = 0;
+      uVar13 = GdipCreateBitmapFromFile();
+      puVar12[2] = uVar13;
+      puVar12[1] = iStack_7f0;
+    }
+    piStack_820 = &iStack_7f0;
+    *piVar10 = (int)puVar12;
+    puStack_824 = (undefined1 *)puVar12[1];
+    iStack_7f0 = 0;
+    iVar11 = GdipGetImageWidth();
+    if (iVar11 != 0) {
+      puVar12[2] = iVar11;
+    }
+    if ((iStack_7f0 == 0) && ((undefined4 *)*piVar10 != (undefined4 *)0x0)) {
+      piStack_820 = (int *)0x0;
+      puStack_824 = (undefined1 *)0x41ead8;
+      puStack_824 = (undefined1 *)(*(code *)**(undefined4 **)*piVar10)();
+      FUN_0049df7c();
+      *piVar10 = 0;
+    }
+    pCStack_80c = pCStack_80c + 0x28;
+    piVar10 = piVar10 + 1;
+    puStack_824 = puStack_824 + -1;
+  } while (puStack_824 != (undefined1 *)0x0);
+  apCStack_7a8[0] = (CWnd *)&DAT_00658888;
+  apCStack_7a8[1] = (CWnd *)&DAT_006588a0;
+  apCStack_7a8[2] = (CWnd *)&DAT_0065888c;
+  apCStack_7a8[3] = (CWnd *)&DAT_00658890;
+  apCStack_7a8[4] = (CWnd *)&DAT_00658894;
+  apCStack_7a8[5] = (CWnd *)&DAT_00658898;
+  apCStack_7a8[6] = (CWnd *)&DAT_0065889c;
+  apCStack_7a8[7] = (CWnd *)&DAT_006588b0;
+  apCStack_7a8[8] = (CWnd *)&DAT_006588b8;
+  apCStack_7a8[9] = (CWnd *)&DAT_006588ac;
+  apCStack_7a8[10] = (CWnd *)&DAT_006588b4;
+  apCStack_7a8[0xb] = (CWnd *)&DAT_006588bc;
+  atStack_778[0].left = (LONG)&DAT_006588a4;
+  atStack_778[0].top = (LONG)&DAT_006588a8;
+  ppCVar22 = apCStack_7a8;
+  puVar12 = (undefined4 *)(param_1 + 0x32c4);
+  for (iVar11 = 0xe; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *puVar12 = *ppCVar22;
+    ppCVar22 = ppCVar22 + 1;
+    puVar12 = puVar12 + 1;
+  }
+  apCStack_7a8[0] = (CWnd *)0x22;
+  apCStack_7a8[1] = (CWnd *)0x28;
+  apCStack_7a8[2] = (CWnd *)0x23;
+  apCStack_7a8[3] = (CWnd *)0x24;
+  apCStack_7a8[4] = (CWnd *)0x25;
+  apCStack_7a8[5] = (CWnd *)0x26;
+  apCStack_7a8[6] = (CWnd *)0x27;
+  apCStack_7a8[7] = (CWnd *)0x34;
+  apCStack_7a8[8] = (CWnd *)0x31;
+  apCStack_7a8[9] = (CWnd *)0x30;
+  apCStack_7a8[10] = (CWnd *)0x32;
+  apCStack_7a8[0xb] = (CWnd *)0x39;
+  atStack_778[0].left = 0x29;
+  atStack_778[0].top = 0x2a;
+  ppCVar22 = apCStack_7a8;
+  puVar12 = (undefined4 *)(param_1 + 0x31ac);
+  for (iVar11 = 0xe; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *puVar12 = *ppCVar22;
+    ppCVar22 = ppCVar22 + 1;
+    puVar12 = puVar12 + 1;
+  }
+  awStack_458[0] = u_media_play_005ff204[0];
+  awStack_458[1] = u_media_play_005ff204[1];
+  awStack_44c[0] = u_media_play_005ff204[6];
+  awStack_44c[1] = u_media_play_005ff204[7];
+  awStack_450[0] = u_media_play_005ff204[4];
+  awStack_450[1] = u_media_play_005ff204[5];
+  uStack_442 = 0;
+  uStack_43e = 0;
+  uStack_43a = 0;
+  uStack_436 = 0;
+  uStack_432 = 0;
+  awStack_454[0] = u_media_play_005ff204[2];
+  awStack_454[1] = u_media_play_005ff204[3];
+  awStack_430[0] = u_media_mute_005ff21c[0];
+  awStack_430[1] = u_media_mute_005ff21c[1];
+  awStack_448[0] = u_media_play_005ff204[8];
+  awStack_448[1] = u_media_play_005ff204[9];
+  wStack_444 = u_media_play_005ff204[10];
+  awStack_424[0] = u_media_mute_005ff21c[6];
+  awStack_424[1] = u_media_mute_005ff21c[7];
+  awStack_42c[0] = u_media_mute_005ff21c[2];
+  awStack_42c[1] = u_media_mute_005ff21c[3];
+  awStack_428[0] = u_media_mute_005ff21c[4];
+  awStack_428[1] = u_media_mute_005ff21c[5];
+  uStack_41a = 0;
+  uStack_416 = 0;
+  uStack_412 = 0;
+  uStack_40e = 0;
+  uStack_40a = 0;
+  awStack_420[0] = u_media_mute_005ff21c[8];
+  awStack_420[1] = u_media_mute_005ff21c[9];
+  wStack_41c = u_media_mute_005ff21c[10];
+  awStack_408[0] = u_media_stop_005ff234[0];
+  awStack_408[1] = u_media_stop_005ff234[1];
+  awStack_404[0] = u_media_stop_005ff234[2];
+  awStack_404[1] = u_media_stop_005ff234[3];
+  awStack_400[0] = u_media_stop_005ff234[4];
+  awStack_400[1] = u_media_stop_005ff234[5];
+  awStack_3fc[0] = u_media_stop_005ff234[6];
+  awStack_3fc[1] = u_media_stop_005ff234[7];
+  uStack_3f2 = 0;
+  uStack_3ee = 0;
+  uStack_3ea = 0;
+  uStack_3e6 = 0;
+  uStack_3e2 = 0;
+  awStack_3e0[0] = u_media_prev_005ff24c[0];
+  awStack_3e0[1] = u_media_prev_005ff24c[1];
+  awStack_3f8[0] = u_media_stop_005ff234[8];
+  awStack_3f8[1] = u_media_stop_005ff234[9];
+  wStack_3f4 = u_media_stop_005ff234[10];
+  awStack_3d4[0] = u_media_prev_005ff24c[6];
+  awStack_3d4[1] = u_media_prev_005ff24c[7];
+  awStack_3dc[0] = u_media_prev_005ff24c[2];
+  awStack_3dc[1] = u_media_prev_005ff24c[3];
+  awStack_3d8[0] = u_media_prev_005ff24c[4];
+  awStack_3d8[1] = u_media_prev_005ff24c[5];
+  uStack_3ca = 0;
+  uStack_3c6 = 0;
+  uStack_3c2 = 0;
+  uStack_3be = 0;
+  uStack_3ba = 0;
+  awStack_3d0[0] = u_media_prev_005ff24c[8];
+  awStack_3d0[1] = u_media_prev_005ff24c[9];
+  wStack_3cc = u_media_prev_005ff24c[10];
+  awStack_3b8[0] = u_media_next_005ff264[0];
+  awStack_3b8[1] = u_media_next_005ff264[1];
+  awStack_3b4[0] = u_media_next_005ff264[2];
+  awStack_3b4[1] = u_media_next_005ff264[3];
+  awStack_3b0[0] = u_media_next_005ff264[4];
+  awStack_3b0[1] = u_media_next_005ff264[5];
+  awStack_3ac[0] = u_media_next_005ff264[6];
+  awStack_3ac[1] = u_media_next_005ff264[7];
+  awStack_3a8[0] = u_media_next_005ff264[8];
+  awStack_3a8[1] = u_media_next_005ff264[9];
+  uStack_3a2 = 0;
+  uStack_39e = 0;
+  uStack_39a = 0;
+  uStack_396 = 0;
+  uStack_392 = 0;
+  wStack_3a4 = u_media_next_005ff264[10];
+  pwVar23 = L"media_volinc";
+  pwVar26 = awStack_390;
+  for (iVar11 = 6; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *(undefined4 *)pwVar26 = *(undefined4 *)pwVar23;
+    pwVar23 = pwVar23 + 2;
+    pwVar26 = pwVar26 + 2;
+  }
+  *pwVar26 = *pwVar23;
+  uStack_376 = 0;
+  uStack_372 = 0;
+  uStack_36e = 0;
+  uStack_36a = 0;
+  pwVar23 = L"media_voldec";
+  pwVar26 = awStack_368;
+  for (iVar11 = 6; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *(undefined4 *)pwVar26 = *(undefined4 *)pwVar23;
+    pwVar23 = pwVar23 + 2;
+    pwVar26 = pwVar26 + 2;
+  }
+  *pwVar26 = *pwVar23;
+  uStack_34e = 0;
+  uStack_34a = 0;
+  uStack_346 = 0;
+  uStack_342 = 0;
+  awStack_340[0] = u_media_home_005ff2b4[0];
+  awStack_340[1] = u_media_home_005ff2b4[1];
+  awStack_338[0] = u_media_home_005ff2b4[4];
+  awStack_338[1] = u_media_home_005ff2b4[5];
+  awStack_33c[0] = u_media_home_005ff2b4[2];
+  awStack_33c[1] = u_media_home_005ff2b4[3];
+  awStack_334[0] = u_media_home_005ff2b4[6];
+  awStack_334[1] = u_media_home_005ff2b4[7];
+  awStack_330[0] = u_media_home_005ff2b4[8];
+  awStack_330[1] = u_media_home_005ff2b4[9];
+  wStack_32c = u_media_home_005ff2b4[10];
+  uStack_32a = 0;
+  uStack_326 = 0;
+  uStack_322 = 0;
+  uStack_31e = 0;
+  uStack_31a = 0;
+  awStack_318[0] = u_media_cal_005ff2cc[0];
+  awStack_318[1] = u_media_cal_005ff2cc[1];
+  awStack_30c[0] = u_media_cal_005ff2cc[6];
+  awStack_30c[1] = u_media_cal_005ff2cc[7];
+  awStack_314[0] = u_media_cal_005ff2cc[2];
+  awStack_314[1] = u_media_cal_005ff2cc[3];
+  uStack_304 = 0;
+  uStack_300 = 0;
+  uStack_2fc = 0;
+  uStack_2f8 = 0;
+  uStack_2f4 = 0;
+  awStack_308[0] = u_media_cal_005ff2cc[8];
+  awStack_308[1] = u_media_cal_005ff2cc[9];
+  awStack_2ec[0] = u_media_email_005ff2e0[2];
+  awStack_2ec[1] = u_media_email_005ff2e0[3];
+  awStack_310[0] = u_media_cal_005ff2cc[4];
+  awStack_310[1] = u_media_cal_005ff2cc[5];
+  awStack_2e8[0] = u_media_email_005ff2e0[4];
+  awStack_2e8[1] = u_media_email_005ff2e0[5];
+  awStack_2e0[0] = u_media_email_005ff2e0[8];
+  awStack_2e0[1] = u_media_email_005ff2e0[9];
+  awStack_2f0[0] = u_media_email_005ff2e0[0];
+  awStack_2f0[1] = u_media_email_005ff2e0[1];
+  awStack_2dc[0] = u_media_email_005ff2e0[10];
+  awStack_2dc[1] = u_media_email_005ff2e0[0xb];
+  uStack_2d8 = 0;
+  uStack_2d4 = 0;
+  uStack_2d0 = 0;
+  uStack_2cc = 0;
+  awStack_2e4[0] = u_media_email_005ff2e0[6];
+  awStack_2e4[1] = u_media_email_005ff2e0[7];
+  pwVar23 = L"media_computer";
+  pwVar26 = awStack_2c8;
+  for (iVar11 = 7; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *(undefined4 *)pwVar26 = *(undefined4 *)pwVar23;
+    pwVar23 = pwVar23 + 2;
+    pwVar26 = pwVar26 + 2;
+  }
+  *pwVar26 = *pwVar23;
+  uStack_2aa = 0;
+  uStack_2a6 = 0;
+  uStack_2a2 = 0;
+  awStack_29c[0] = u_media_favor_005ff318[2];
+  awStack_29c[1] = u_media_favor_005ff318[3];
+  awStack_290[0] = u_media_favor_005ff318[8];
+  awStack_290[1] = u_media_favor_005ff318[9];
+  awStack_2a0[0] = u_media_favor_005ff318[0];
+  awStack_2a0[1] = u_media_favor_005ff318[1];
+  awStack_298[0] = u_media_favor_005ff318[4];
+  awStack_298[1] = u_media_favor_005ff318[5];
+  uStack_288 = 0;
+  uStack_284 = 0;
+  uStack_280 = 0;
+  uStack_27c = 0;
+  awStack_294[0] = u_media_favor_005ff318[6];
+  awStack_294[1] = u_media_favor_005ff318[7];
+  awStack_28c[0] = u_media_favor_005ff318[10];
+  awStack_28c[1] = u_media_favor_005ff318[0xb];
+  awStack_274[0] = u_media_briup_005ff330[2];
+  awStack_274[1] = u_media_briup_005ff330[3];
+  awStack_278[0] = u_media_briup_005ff330[0];
+  awStack_278[1] = u_media_briup_005ff330[1];
+  awStack_270[0] = u_media_briup_005ff330[4];
+  awStack_270[1] = u_media_briup_005ff330[5];
+  awStack_268[0] = u_media_briup_005ff330[8];
+  awStack_268[1] = u_media_briup_005ff330[9];
+  awStack_26c[0] = u_media_briup_005ff330[6];
+  awStack_26c[1] = u_media_briup_005ff330[7];
+  awStack_264[0] = u_media_briup_005ff330[10];
+  awStack_264[1] = u_media_briup_005ff330[0xb];
+  uStack_260 = 0;
+  uStack_25c = 0;
+  uStack_258 = 0;
+  uStack_254 = 0;
+  awStack_250[0] = u_media_bridn_005ff348[0];
+  awStack_250[1] = u_media_bridn_005ff348[1];
+  awStack_24c[0] = u_media_bridn_005ff348[2];
+  awStack_24c[1] = u_media_bridn_005ff348[3];
+  awStack_248[0] = u_media_bridn_005ff348[4];
+  awStack_248[1] = u_media_bridn_005ff348[5];
+  awStack_244[0] = u_media_bridn_005ff348[6];
+  awStack_244[1] = u_media_bridn_005ff348[7];
+  awStack_240[0] = u_media_bridn_005ff348[8];
+  awStack_240[1] = u_media_bridn_005ff348[9];
+  pCStack_80c = (CWnd *)awStack_458;
+  awStack_23c[0] = u_media_bridn_005ff348[10];
+  awStack_23c[1] = u_media_bridn_005ff348[0xb];
+  uStack_238 = 0;
+  uStack_234 = 0;
+  uStack_230 = 0;
+  uStack_22c = 0;
+  piVar10 = (int *)(param_1 + 0x3174);
+  puStack_824 = (undefined1 *)0xe;
+  do {
+    __snwprintf_s(awStack_228,0x104,0x103,L"%sskins\\fun55x55\\%s.png",&DAT_0064a048,
+                  (char *)pCStack_80c);
+    puVar12 = (undefined4 *)FUN_0049df42();
+    if (puVar12 == (undefined4 *)0x0) {
+      puVar12 = (undefined4 *)0x0;
+    }
+    else {
+      piStack_820 = &iStack_7f0;
+      puStack_824 = auStack_210;
+      *puVar12 = Gdiplus::Bitmap::vftable;
+      iStack_7f0 = 0;
+      uVar13 = GdipCreateBitmapFromFile();
+      puVar12[2] = uVar13;
+      puVar12[1] = iStack_7f0;
+    }
+    piStack_820 = &iStack_7f0;
+    *piVar10 = (int)puVar12;
+    puStack_824 = (undefined1 *)puVar12[1];
+    iStack_7f0 = 0;
+    iVar11 = GdipGetImageWidth();
+    if (iVar11 != 0) {
+      puVar12[2] = iVar11;
+    }
+    if ((iStack_7f0 == 0) && ((undefined4 *)*piVar10 != (undefined4 *)0x0)) {
+      piStack_820 = (int *)0x0;
+      puStack_824 = (undefined1 *)0x41f25a;
+      puStack_824 = (undefined1 *)(*(code *)**(undefined4 **)*piVar10)();
+      FUN_0049df7c();
+      *piVar10 = 0;
+    }
+    pCStack_80c = (CWnd *)((int)pCStack_80c + 0x28);
+    piVar10 = piVar10 + 1;
+    puStack_824 = puStack_824 + -1;
+  } while (puStack_824 != (undefined1 *)0x0);
+  apCStack_7a8[0] = (CWnd *)&DAT_00658b98;
+  apCStack_7a8[1] = (CWnd *)&DAT_00658b9c;
+  apCStack_7a8[2] = (CWnd *)&DAT_00658ba0;
+  apCStack_7a8[3] = (CWnd *)&DAT_00658ba8;
+  apCStack_7a8[4] = (CWnd *)&DAT_00658bac;
+  apCStack_7a8[5] = (CWnd *)&DAT_00658ba4;
+  apCStack_7a8[6] = (CWnd *)&DAT_00658bb0;
+  apCStack_7a8[7] = (CWnd *)&DAT_00658bb4;
+  apCStack_7a8[8] = (CWnd *)&DAT_00658bb8;
+  apCStack_7a8[9] = (CWnd *)&DAT_00658884;
+  apCStack_7a8[10] = (CWnd *)&DAT_00658bc0;
+  apCStack_7a8[0xb] = (CWnd *)&DAT_00658bc4;
+  atStack_778[0].left = (LONG)&DAT_00658bc8;
+  ppCVar22 = apCStack_7a8;
+  puVar12 = (undefined4 *)(param_1 + 0x3140);
+  for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *puVar12 = *ppCVar22;
+    ppCVar22 = ppCVar22 + 1;
+    puVar12 = puVar12 + 1;
+  }
+  apCStack_7a8[0] = (CWnd *)0x51;
+  apCStack_7a8[1] = (CWnd *)0x52;
+  apCStack_7a8[2] = (CWnd *)0x54;
+  apCStack_7a8[3] = (CWnd *)0x56;
+  apCStack_7a8[4] = (CWnd *)0x57;
+  apCStack_7a8[5] = (CWnd *)0x55;
+  apCStack_7a8[6] = (CWnd *)0x5a;
+  apCStack_7a8[7] = (CWnd *)0x43;
+  apCStack_7a8[8] = (CWnd *)0x48;
+  apCStack_7a8[9] = (CWnd *)0xa2;
+  apCStack_7a8[10] = (CWnd *)0x61;
+  apCStack_7a8[0xb] = (CWnd *)0x62;
+  atStack_778[0].left = 99;
+  ppCVar22 = apCStack_7a8;
+  puVar12 = (undefined4 *)(param_1 + 0x303c);
+  for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *puVar12 = *ppCVar22;
+    ppCVar22 = ppCVar22 + 1;
+    puVar12 = puVar12 + 1;
+  }
+  pwVar23 = L"adv_closewindow";
+  pcVar27 = acStack_660;
+  for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
+    *(undefined4 *)pcVar27 = *(undefined4 *)pwVar23;
+    pwVar23 = pwVar23 + 2;
+    pcVar27 = pcVar27 + 4;
+  }
+  uStack_640 = 0;
+  uStack_63c = 0;
+  awStack_630[0] = u_adv_lock_005ff380[4];
+  awStack_630[1] = u_adv_lock_005ff380[5];
+  awStack_638[0] = u_adv_lock_005ff380[0];
+  awStack_638[1] = u_adv_lock_005ff380[1];
+  uStack_626 = 0;
+  uStack_622 = 0;
+  uStack_61e = 0;
+  uStack_61a = 0;
+  uStack_616 = 0;
+  uStack_612 = 0;
+  awStack_634[0] = u_adv_lock_005ff380[2];
+  awStack_634[1] = u_adv_lock_005ff380[3];
+  awStack_62c[0] = u_adv_lock_005ff380[6];
+  awStack_62c[1] = u_adv_lock_005ff380[7];
+  uStack_610 = DAT_005ff394;
+  wStack_628 = u_adv_lock_005ff380[8];
+  uStack_60c = DAT_005ff398;
+  uStack_604 = DAT_005ff3a0;
+  uStack_608 = DAT_005ff39c;
+  uStack_600 = 0;
+  uStack_5fc = 0;
+  uStack_5f8 = 0;
+  uStack_5f4 = 0;
+  uStack_5f0 = 0;
+  uStack_5ec = 0;
+  awStack_5e8[0] = u_adv_zoomin_005ff3a4[0];
+  awStack_5e8[1] = u_adv_zoomin_005ff3a4[1];
+  awStack_5e4[0] = u_adv_zoomin_005ff3a4[2];
+  awStack_5e4[1] = u_adv_zoomin_005ff3a4[3];
+  awStack_5e0[0] = u_adv_zoomin_005ff3a4[4];
+  awStack_5e0[1] = u_adv_zoomin_005ff3a4[5];
+  awStack_5dc[0] = u_adv_zoomin_005ff3a4[6];
+  awStack_5dc[1] = u_adv_zoomin_005ff3a4[7];
+  wStack_5d4 = u_adv_zoomin_005ff3a4[10];
+  uStack_5d2 = 0;
+  uStack_5ce = 0;
+  uStack_5ca = 0;
+  uStack_5c6 = 0;
+  uStack_5c2 = 0;
+  awStack_5b8[0] = u_adv_zoomout_005ff3bc[4];
+  awStack_5b8[1] = u_adv_zoomout_005ff3bc[5];
+  awStack_5ac[0] = u_adv_zoomout_005ff3bc[10];
+  awStack_5ac[1] = u_adv_zoomout_005ff3bc[0xb];
+  awStack_5d8[0] = u_adv_zoomin_005ff3a4[8];
+  awStack_5d8[1] = u_adv_zoomin_005ff3a4[9];
+  uStack_5a8 = 0;
+  uStack_5a4 = 0;
+  uStack_5a0 = 0;
+  uStack_59c = 0;
+  awStack_5bc[0] = u_adv_zoomout_005ff3bc[2];
+  awStack_5bc[1] = u_adv_zoomout_005ff3bc[3];
+  awStack_590[0] = u_adv_desktop_005ff3d4[4];
+  awStack_590[1] = u_adv_desktop_005ff3d4[5];
+  awStack_5c0[0] = u_adv_zoomout_005ff3bc[0];
+  awStack_5c0[1] = u_adv_zoomout_005ff3bc[1];
+  awStack_5b0[0] = u_adv_zoomout_005ff3bc[8];
+  awStack_5b0[1] = u_adv_zoomout_005ff3bc[9];
+  awStack_584[0] = u_adv_desktop_005ff3d4[10];
+  awStack_584[1] = u_adv_desktop_005ff3d4[0xb];
+  awStack_5b4[0] = u_adv_zoomout_005ff3bc[6];
+  awStack_5b4[1] = u_adv_zoomout_005ff3bc[7];
+  awStack_594[0] = u_adv_desktop_005ff3d4[2];
+  awStack_594[1] = u_adv_desktop_005ff3d4[3];
+  uStack_580 = 0;
+  uStack_57c = 0;
+  uStack_578 = 0;
+  uStack_574 = 0;
+  awStack_598[0] = u_adv_desktop_005ff3d4[0];
+  awStack_598[1] = u_adv_desktop_005ff3d4[1];
+  awStack_588[0] = u_adv_desktop_005ff3d4[8];
+  awStack_588[1] = u_adv_desktop_005ff3d4[9];
+  awStack_568[0] = u_adv_task_005ff3ec[4];
+  awStack_568[1] = u_adv_task_005ff3ec[5];
+  awStack_58c[0] = u_adv_desktop_005ff3d4[6];
+  awStack_58c[1] = u_adv_desktop_005ff3d4[7];
+  awStack_56c[0] = u_adv_task_005ff3ec[2];
+  awStack_56c[1] = u_adv_task_005ff3ec[3];
+  uStack_55e = 0;
+  uStack_55a = 0;
+  uStack_556 = 0;
+  uStack_552 = 0;
+  uStack_54e = 0;
+  uStack_54a = 0;
+  awStack_570[0] = u_adv_task_005ff3ec[0];
+  awStack_570[1] = u_adv_task_005ff3ec[1];
+  awStack_548[0] = u_adv_undo_005ff400[0];
+  awStack_548[1] = u_adv_undo_005ff400[1];
+  awStack_564[0] = u_adv_task_005ff3ec[6];
+  awStack_564[1] = u_adv_task_005ff3ec[7];
+  wStack_560 = u_adv_task_005ff3ec[8];
+  awStack_53c[0] = u_adv_undo_005ff400[6];
+  awStack_53c[1] = u_adv_undo_005ff400[7];
+  awStack_544[0] = u_adv_undo_005ff400[2];
+  awStack_544[1] = u_adv_undo_005ff400[3];
+  awStack_540[0] = u_adv_undo_005ff400[4];
+  awStack_540[1] = u_adv_undo_005ff400[5];
+  uStack_536 = 0;
+  uStack_532 = 0;
+  uStack_52e = 0;
+  uStack_52a = 0;
+  uStack_526 = 0;
+  uStack_522 = 0;
+  wStack_538 = u_adv_undo_005ff400[8];
+  awStack_520[0] = u_adv_save_005ff414[0];
+  awStack_520[1] = u_adv_save_005ff414[1];
+  awStack_51c[0] = u_adv_save_005ff414[2];
+  awStack_51c[1] = u_adv_save_005ff414[3];
+  wStack_510 = u_adv_save_005ff414[8];
+  uStack_50e = 0;
+  uStack_50a = 0;
+  uStack_506 = 0;
+  uStack_502 = 0;
+  uStack_4fe = 0;
+  uStack_4fa = 0;
+  awStack_4f0[0] = u_adv_disable_005ff428[4];
+  awStack_4f0[1] = u_adv_disable_005ff428[5];
+  awStack_4e4[0] = u_adv_disable_005ff428[10];
+  awStack_4e4[1] = u_adv_disable_005ff428[0xb];
+  awStack_518[0] = u_adv_save_005ff414[4];
+  awStack_518[1] = u_adv_save_005ff414[5];
+  awStack_514[0] = u_adv_save_005ff414[6];
+  awStack_514[1] = u_adv_save_005ff414[7];
+  uStack_4e0 = 0;
+  uStack_4dc = 0;
+  uStack_4d8 = 0;
+  uStack_4d4 = 0;
+  awStack_4f8[0] = u_adv_disable_005ff428[0];
+  awStack_4f8[1] = u_adv_disable_005ff428[1];
+  awStack_4f4[0] = u_adv_disable_005ff428[2];
+  awStack_4f4[1] = u_adv_disable_005ff428[3];
+  awStack_4c8[0] = u_adv_lockwin_005ff440[4];
+  awStack_4c8[1] = u_adv_lockwin_005ff440[5];
+  awStack_4ec[0] = u_adv_disable_005ff428[6];
+  awStack_4ec[1] = u_adv_disable_005ff428[7];
+  awStack_4e8[0] = u_adv_disable_005ff428[8];
+  awStack_4e8[1] = u_adv_disable_005ff428[9];
+  awStack_4bc[0] = u_adv_lockwin_005ff440[10];
+  awStack_4bc[1] = u_adv_lockwin_005ff440[0xb];
+  awStack_4d0[0] = u_adv_lockwin_005ff440[0];
+  awStack_4d0[1] = u_adv_lockwin_005ff440[1];
+  awStack_4cc[0] = u_adv_lockwin_005ff440[2];
+  awStack_4cc[1] = u_adv_lockwin_005ff440[3];
+  uStack_4b8 = 0;
+  uStack_4b4 = 0;
+  uStack_4b0 = 0;
+  uStack_4ac = 0;
+  awStack_4c4[0] = u_adv_lockwin_005ff440[6];
+  awStack_4c4[1] = u_adv_lockwin_005ff440[7];
+  awStack_4c0[0] = u_adv_lockwin_005ff440[8];
+  awStack_4c0[1] = u_adv_lockwin_005ff440[9];
+  awStack_4a0[0] = u_adv_lockall_005ff458[4];
+  awStack_4a0[1] = u_adv_lockall_005ff458[5];
+  awStack_4a8[0] = u_adv_lockall_005ff458[0];
+  awStack_4a8[1] = u_adv_lockall_005ff458[1];
+  awStack_4a4[0] = u_adv_lockall_005ff458[2];
+  awStack_4a4[1] = u_adv_lockall_005ff458[3];
+  awStack_494[0] = u_adv_lockall_005ff458[10];
+  awStack_494[1] = u_adv_lockall_005ff458[0xb];
+  awStack_49c[0] = u_adv_lockall_005ff458[6];
+  awStack_49c[1] = u_adv_lockall_005ff458[7];
+  awStack_498[0] = u_adv_lockall_005ff458[8];
+  awStack_498[1] = u_adv_lockall_005ff458[9];
+  uStack_490 = 0;
+  uStack_48c = 0;
+  uStack_488 = 0;
+  uStack_484 = 0;
+  awStack_480[0] = u_adv_reset_005ff470[0];
+  awStack_480[1] = u_adv_reset_005ff470[1];
+  awStack_47c[0] = u_adv_reset_005ff470[2];
+  awStack_47c[1] = u_adv_reset_005ff470[3];
+  awStack_478[0] = u_adv_reset_005ff470[4];
+  awStack_478[1] = u_adv_reset_005ff470[5];
+  awStack_474[0] = u_adv_reset_005ff470[6];
+  awStack_474[1] = u_adv_reset_005ff470[7];
+  awStack_470[0] = u_adv_reset_005ff470[8];
+  awStack_470[1] = u_adv_reset_005ff470[9];
+  uStack_46c = 0;
+  uStack_468 = 0;
+  uStack_464 = 0;
+  uStack_460 = 0;
+  uStack_45c = 0;
+  pCStack_80c = (CWnd *)acStack_660;
+  piVar10 = (int *)(param_1 + 0x3008);
+  puStack_824 = (undefined1 *)0xd;
+  do {
+    __snwprintf_s(awStack_228,0x104,0x103,L"%sskins\\fun55x55\\%s.png",&DAT_0064a048,
+                  (char *)pCStack_80c);
+    puVar12 = (undefined4 *)FUN_0049df42();
+    if (puVar12 == (undefined4 *)0x0) {
+      puVar12 = (undefined4 *)0x0;
+    }
+    else {
+      piStack_820 = &iStack_7f0;
+      puStack_824 = auStack_210;
+      *puVar12 = Gdiplus::Bitmap::vftable;
+      iStack_7f0 = 0;
+      uVar13 = GdipCreateBitmapFromFile();
+      puVar12[2] = uVar13;
+      puVar12[1] = iStack_7f0;
+    }
+    piStack_820 = &iStack_7f0;
+    *piVar10 = (int)puVar12;
+    puStack_824 = (undefined1 *)puVar12[1];
+    iStack_7f0 = 0;
+    iVar32 = 0x41f97f;
+    iVar11 = GdipGetImageWidth();
+    if (iVar11 != 0) {
+      puVar12[2] = iVar11;
+    }
+    if ((iStack_7f0 == 0) && ((undefined4 *)*piVar10 != (undefined4 *)0x0)) {
+      piStack_820 = (int *)0x0;
+      puStack_824 = (undefined1 *)0x41f99b;
+      puStack_824 = (undefined1 *)(*(code *)**(undefined4 **)*piVar10)();
+      iVar32 = 0x41f9a1;
+      FUN_0049df7c();
+      *piVar10 = 0;
+    }
+    pCStack_80c = pCStack_80c + 0x28;
+    piVar10 = piVar10 + 1;
+    puStack_824 = puStack_824 + -1;
+  } while (puStack_824 != (undefined1 *)0x0);
+  SetRect((LPRECT)auStack_81c,0,0x7d,0xda,*(int *)(param_1 + 0x33a0) - *(int *)(param_1 + 0x3398));
+  if (*(char *)((int)local_7e0 + 0x2d66) == '\0') {
+    auStack_81c._4_4_ = auStack_81c._4_4_ + -0x37;
+  }
+  pwStack_7c8 = (wchar_t *)auStack_81c._0_4_;
+  pwStack_7bc = (wchar_t *)pCStack_810;
+  pCStack_7c4 = (CWnd *)auStack_81c._4_4_;
+  ptStack_808 = (LPRECT)(param_1 + 0x2ff0);
+  iStack_7c0 = iStack_814;
+  SetRect(ptStack_808,iStack_814,0x1ca,*(int *)(param_1 + 0x339c) - *(int *)(param_1 + 0x3394),
+          *(int *)(param_1 + 0x33a0) - *(int *)(param_1 + 0x3398));
+  if (DAT_006450d4 != 0) {
+    uVar13 = FUN_0041e360();
+    *(undefined4 *)(param_1 + 0x3390) = uVar13;
+  }
+  pwStack_7dc = (wchar_t *)auStack_81c._0_4_;
+  pwStack_7b8 = (wchar_t *)auStack_81c._0_4_;
+  piStack_820 = *(int **)(param_1 + 0x3390);
+  pwStack_7ac = (wchar_t *)pCStack_810;
+  apCStack_7d8[1] = (CWnd *)iStack_814;
+  apCStack_7d8[2] = pCStack_810;
+  iStack_7b0 = iStack_814;
+  apCStack_7d8[0] = (CWnd *)auStack_81c._4_4_;
+  pCStack_7b4 = (CWnd *)auStack_81c._4_4_;
+  (**(code **)(*(int *)(param_1 + 0x2d28) + 0x148))();
+  *(undefined4 *)(param_1 + 0x2d90) = 0x14;
+  SendMessageW(*(HWND *)(param_1 + 0x2d48),0x111b,0x14,0);
+  FUN_004727e0();
+  if (*(int *)(param_1 + 0x2dc8) == 0) {
+    (**(code **)(*(int *)(param_1 + 0x2da8) + 0x13c))();
+    SendMessageW(*(HWND *)(param_1 + 0x2dc8),0x403,0,1000);
+    SendMessageW(*(HWND *)(param_1 + 0x2dc8),0x401,0,0);
+  }
+  CWnd::EnableToolTips((CWnd *)(param_1 + 0x2d28),1);
+  *(undefined4 *)(param_1 + 0x2e18) = 0xc;
+  *(undefined4 *)(param_1 + 0x2da4) = 0;
+  FUN_00472860();
+  uVar13 = DAT_00645094;
+  *(undefined4 *)(param_1 + 0x2d98) = DAT_00645068;
+  *(undefined4 *)(param_1 + 0x2d94) = uVar13;
+  InvalidateRect(*(HWND *)(param_1 + 0x2d48),(RECT *)0x0,1);
+  uVar5 = DAT_00645090 >> 0x10;
+  uVar14 = DAT_00645090 & 0xff;
+  uVar4 = DAT_00645090 >> 8;
+  *(uint *)(param_1 + 0x2d84) =
+       ((DAT_006450a0 & 0xff | 0xffffff00) << 8 | DAT_006450a0 >> 8 & 0xff) << 8 |
+       DAT_006450a0 >> 0x10 & 0xff;
+  *(uint *)(param_1 + 0x2d88) = ((uVar14 | 0xffffff00) << 8 | uVar4 & 0xff) << 8 | uVar5 & 0xff;
+  *(undefined4 *)(param_1 + 0x2d90) = 0x1c;
+  SendMessageW(*(HWND *)(param_1 + 0x2d48),0x111b,0x1c,0);
+  pCVar28 = apCStack_7a8[10];
+  iVar11 = *(int *)(apCStack_7a8[10] + 0x3000);
+  *(undefined ***)(apCStack_7a8[10] + 0x2e60) = &PTR_vftable_0063e4f0;
+  *(undefined4 *)(apCStack_7a8[10] + 0x2d9c) = 0;
+  *(undefined4 *)(apCStack_7a8[10] + 0x2e6c) = 0;
+  if (iVar11 != 0) {
+    uStack_834 = (tagRECT *)0x0;
+    iVar15 = GdipGetImageHeight();
+    if (iVar15 != 0) {
+      *(int *)(iVar11 + 8) = iVar15;
+    }
+    iVar11 = *(int *)(pCVar28 + 0x3000);
+    auStack_81c._0_4_ = (wchar_t *)0x0;
+    iVar15 = GdipGetImageWidth();
+    if (iVar15 != 0) {
+      *(int *)(iVar11 + 8) = iVar15;
+    }
+    *(undefined4 *)(param_1 + 0x2e24) = auStack_81c._0_4_;
+    iVar11 = *(int *)(param_1 + 0x2d90);
+    if (0 < *(int *)(param_1 + 0x2d90)) {
+      iVar11 = (int)uStack_834;
+    }
+    *(int *)(param_1 + 0x2e28) = iVar11;
+  }
+  FUN_00474060();
+  *(undefined4 *)(pCVar28 + 0x2e78) = 2;
+  FUN_0041e500();
+  if (DAT_0064513c != 0) {
+    FUN_00403220();
+    uStack_85c = (CWnd *)0x41fcfb;
+    puVar12 = (undefined4 *)FUN_0049df42();
+    local_1c._0_1_ = 3;
+    if (puVar12 != (undefined4 *)0x0) {
+      if (1 < *(int *)(iStack_814 + -4)) {
+        ATL::CSimpleStringT<wchar_t,0>::Fork
+                  ((CSimpleStringT<wchar_t,0> *)&iStack_814,*(int *)(iStack_814 + -0xc));
+      }
+      *puVar12 = Gdiplus::Bitmap::vftable;
+      uVar13 = GdipCreateBitmapFromFile();
+      puVar12[2] = uVar13;
+      puVar12[1] = 0;
+    }
+    local_1c = CONCAT31(local_1c._1_3_,1);
+    uStack_85c = (CWnd *)0x41fd7f;
+    SetRect(&tStack_804,(int)(apCStack_7d8[0] + 4),(int)apCStack_7d8[3],
+            (int)(apCStack_7d8[0] + 0xa4),(int)apCStack_7d8[3] + 0x16);
+    uVar13 = *(undefined4 *)(pCVar28 + 0x3390);
+    pwStack_7ec = (wchar_t *)tStack_804.left;
+    local_7e0 = (undefined *)tStack_804.bottom;
+    ptStack_808 = (LPRECT)(tStack_804.bottom - tStack_804.top);
+    puStack_7e4 = (undefined *)tStack_804.right;
+    puVar12 = (undefined4 *)0x0;
+    pCStack_7e8 = (CWnd *)tStack_804.top;
+    pCStack_7c4 = (CWnd *)tStack_804.top;
+    pwStack_7c8 = (wchar_t *)tStack_804.left;
+    uStack_85c = (CWnd *)0x41fde7;
+    (**(code **)(*(int *)(pCVar28 + 0x2b80) + 0x13c))();
+    pwStack_864 = (wchar_t *)auStack_81c._0_4_;
+    pCStack_860 = (CWnd *)uVar13;
+    uStack_85c = (CWnd *)uVar13;
+    FUN_0045ab70();
+    uVar13 = DAT_00645074;
+    pwStack_864 = DAT_0064506c;
+    *(undefined4 *)(pCVar28 + 0x2c1c) = DAT_00645070;
+    *(wchar_t **)(pCVar28 + 0x2c20) = pwStack_864;
+    *(undefined4 *)(pCVar28 + 0x2c24) = uVar13;
+    *(undefined4 *)(pCVar28 + 0x2c40) = 0;
+    if (DAT_0063e4f4 != 0) {
+      *(undefined ***)(pCVar28 + 0x2ce0) = &PTR_vftable_0063e4f0;
+    }
+    *(undefined4 *)(pCVar28 + 0x2ce8) = DAT_006451e8;
+    pvVar6 = DAT_00658c58;
+    uStack_85c = (CWnd *)0x0;
+    pCStack_860 = (CWnd *)0x19;
+    ppwVar31 = &pwStack_864;
+    piVar10 = (int *)((int)DAT_00658c58 + -0x10);
+    puVar16 = (undefined4 *)(**(code **)(**(int **)((int)DAT_00658c58 + -0x10) + 0x10))();
+    if ((*(int *)((int)pvVar6 + -4) < 0) || (puVar16 != (undefined4 *)*piVar10)) {
+      piVar10 = (int *)(**(code **)*puVar16)();
+      if (piVar10 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+        FUN_00403790();
+      }
+      piVar10[1] = *(int *)((int)pvVar6 + -0xc);
+      iStack_878 = 0x41fed9;
+      _memcpy_s(piVar10 + 4,*(int *)((int)pvVar6 + -0xc) * 2 + 2,pvVar6,
+                *(int *)((int)pvVar6 + -0xc) * 2 + 2);
+    }
+    else {
+      LOCK();
+      *(int *)((int)pvVar6 + -4) = *(int *)((int)pvVar6 + -4) + 1;
+      UNLOCK();
+    }
+    *ppwVar31 = (wchar_t *)(piVar10 + 4);
+    FUN_0045ad30();
+    *(undefined ***)(pCVar28 + 0x2ce0) = &PTR_vftable_0063e4f8;
+    if (puVar12 == (undefined4 *)0x0) {
+      uStack_85c = (CWnd *)0x0;
+    }
+    else {
+      if (*(undefined4 **)(pCVar28 + 0x2be4) != (undefined4 *)0x0) {
+        uStack_85c = (CWnd *)0x1;
+        pCStack_860 = (CWnd *)0x41ff13;
+        (**(code **)**(undefined4 **)(pCVar28 + 0x2be4))();
+      }
+      pCStack_860 = (CWnd *)puVar12[1];
+      uStack_85c = (CWnd *)(auStack_81c + -0x2c);
+      pwStack_864 = L"삅ʹ䎉謈ы咋ဤ䒍⠤児咉ᰤ䓇〤";
+      iVar11 = GdipGetImageHeight();
+      if (iVar11 != 0) {
+        puVar12[2] = iVar11;
+      }
+      pCStack_860 = (CWnd *)puVar12[1];
+      uStack_85c = (CWnd *)(auStack_81c + -0x14);
+      pwStack_864 = L"삅ʹ䎉謈⑔刨咋ᠤjj쎋䟨ﺏ觿摆䛇p";
+      iVar11 = GdipGetImageWidth();
+      if (iVar11 != 0) {
+        puVar12[2] = iVar11;
+      }
+      pCStack_860 = (CWnd *)0x0;
+      pwStack_864 = (wchar_t *)0x0;
+      uStack_85c = (CWnd *)0;
+      uVar13 = FUN_00408eb0();
+      *(undefined4 *)(pCVar28 + 0x2be4) = uVar13;
+      *(undefined4 *)(pCVar28 + 0x2bf0) = 0;
+      uStack_85c = (CWnd *)0x0;
+      pCStack_860 = (CWnd *)0x41ff7d;
+      uStack_85c = (CWnd *)(**(code **)*puVar12)();
+    }
+    pCStack_860 = (CWnd *)0x41ff87;
+    FUN_0049df7c();
+  }
+  uStack_85c = (CWnd *)0x41ffb3;
+  SetRect((LPRECT)(auStack_81c + -0x10),(int)((int)apCStack_7d8[2] + -0x1a),iVar32 + -0x18,
+          (int)(puStack_824 + -8),iVar32 + -6);
+  uStack_85c = (CWnd *)0x0;
+  pCStack_860 = pCVar28 + 0x6a4;
+  pwStack_864 = L"new_ov.png";
+  FUN_00462d60();
+  uStack_85c = (CWnd *)0x420019;
+  SetRect((LPRECT)(auStack_81c + -0x10),unaff_ESI + -0x1a,iVar32,unaff_ESI + -8,(int)piStack_820);
+  uStack_85c = (CWnd *)0x0;
+  pCStack_860 = pCVar28 + 0x830;
+  pwStack_864 = L"del_ov.png";
+  FUN_00462d60();
+  uStack_85c = (CWnd *)0x42007f;
+  SetRect((LPRECT)(auStack_81c + -0x10),unaff_ESI + -0x1a,iVar32,unaff_ESI + -8,(int)piStack_820);
+  uStack_85c = (CWnd *)0x0;
+  pCStack_860 = pCVar28 + 0xcd4;
+  pwStack_864 = L"rename_ov.png";
+  FUN_00462d60();
+  uStack_85c = (CWnd *)0x4200e5;
+  SetRect((LPRECT)(auStack_81c + -0x10),unaff_ESI + -0x1a,iVar32,unaff_ESI + -8,(int)piStack_820);
+  uStack_85c = (CWnd *)0x0;
+  pCStack_860 = pCVar28 + 0x9bc;
+  pwStack_864 = L"import_ov.png";
+  FUN_00462d60();
+  uStack_85c = (CWnd *)0x42014b;
+  SetRect((LPRECT)(auStack_81c + -0x10),unaff_ESI + -0x1a,iVar32,unaff_ESI + -8,(int)piStack_820);
+  uStack_85c = (CWnd *)0x0;
+  pCStack_860 = pCVar28 + 0xb48;
+  pwStack_864 = L"export_ov.png";
+  FUN_00462d60();
+  FUN_0045aa00();
+  FUN_0045aa00();
+  FUN_0045aa00();
+  FUN_0045aa00();
+  FUN_0045aa00();
+  pCStack_80c = (CWnd *)((int)apCStack_7d8[2] + 1);
+  uStack_85c = (CWnd *)0x42020d;
+  SetRect((LPRECT)(auStack_81c + -0x10),(int)pCStack_80c,*(int *)(pCVar28 + 0x2ff4) + -0x1b,
+          (int)apCStack_7d8[2] + 0x87,*(int *)(pCVar28 + 0x2ff4));
+  uStack_85c = (CWnd *)0x1;
+  pCStack_860 = pCVar28 + 0xfec;
+  pwStack_864 = L"button01_nr.png";
+  FUN_00462d60();
+  uStack_85c = (CWnd *)0x420277;
+  SetRect((LPRECT)(auStack_81c + -0x10),(int)(puStack_824 + 1),iVar32,(int)(puStack_824 + 0x87),
+          (int)piStack_820);
+  pCStack_860 = pCVar28 + 0x1178;
+  uStack_85c = (CWnd *)0x1;
+  pwStack_864 = L"button01_nr.png";
+  FUN_00462d60();
+  uStack_85c = (CWnd *)0x4202e1;
+  SetRect((LPRECT)(auStack_81c + -0x10),(int)(puStack_824 + 1),iVar32,(int)(puStack_824 + 0x87),
+          (int)piStack_820);
+  uStack_85c = (CWnd *)0x1;
+  pCStack_860 = pCVar28 + 0x1304;
+  pwStack_864 = L"button01_nr.png";
+  FUN_00462d60();
+  if (DAT_00645a74 != '\0') {
+    uStack_85c = (CWnd *)0x420354;
+    SetRect((LPRECT)(auStack_81c + -0x10),(int)(puStack_824 + 1),iVar32,(int)(puStack_824 + 0x87),
+            (int)piStack_820);
+    uStack_85c = (CWnd *)0x1;
+    pCStack_860 = pCVar28 + 0x1490;
+    pwStack_864 = L"button01_nr.png";
+    FUN_00462d60();
+  }
+  uStack_85c = (CWnd *)0x4203be;
+  SetRect((LPRECT)(auStack_81c + -0x10),(int)(puStack_824 + 1),iVar32,(int)(puStack_824 + 0x87),
+          (int)piStack_820);
+  uStack_85c = (CWnd *)0x1;
+  pCStack_860 = pCVar28 + 0x161c;
+  pwStack_864 = L"button01_nr.png";
+  FUN_00462d60();
+  uStack_85c = (CWnd *)0x420428;
+  SetRect((LPRECT)(auStack_81c + -0x10),(int)(puStack_824 + 1),iVar32,(int)(puStack_824 + 0x87),
+          (int)piStack_820);
+  uStack_85c = (CWnd *)0x1;
+  pCStack_860 = pCVar28 + 0x17a8;
+  pwStack_864 = L"button01_nr.png";
+  FUN_00462d60();
+  if (*(int *)(pCVar28 + 0x1094) != 1) {
+    *(undefined4 *)(pCVar28 + 0x1094) = 1;
+    InvalidateRect(*(HWND *)(pCVar28 + 0x100c),(RECT *)0x0,1);
+  }
+  pCVar17 = pCVar28 + 0x1088;
+  uStack_834 = (tagRECT *)0x6;
+  do {
+    if (((pCVar17 != (CWnd *)0x9c) && (*(int *)(pCVar17 + -0x7c) != 0)) &&
+       (*(undefined ***)(pCVar17 + 0xc4) = &PTR_vftable_0063e500, iVar11 = DAT_006450c4,
+       pwVar23 = DAT_0064506c, DAT_006450c4 != 0)) {
+      *(undefined4 *)pCVar17 = DAT_00645070;
+      *(wchar_t **)(pCVar17 + 4) = pwVar23;
+      *(int *)(pCVar17 + 8) = iVar11;
+    }
+    pCVar17 = pCVar17 + 0x18c;
+    uStack_834 = (tagRECT *)((int)uStack_834 + -1);
+  } while (uStack_834 != (tagRECT *)0x0);
+  if (DAT_006451ec != 0) {
+    FUN_0045aa00();
+    FUN_0045aa00();
+    FUN_0045aa00();
+    if ((pCVar28 != (CWnd *)0xffffeb70) && (*(int *)(pCVar28 + 0x14b0) != 0)) {
+      FUN_0045aa00();
+    }
+    FUN_0045aa00();
+    FUN_0045aa00();
+  }
+  uStack_85c = (CWnd *)0x420573;
+  SetRect((LPRECT)(auStack_81c + -0x10),0x424,0x1af,0x436,0x1c1);
+  uStack_85c = (CWnd *)0x0;
+  pCStack_860 = pCVar28 + 0x1934;
+  pwStack_864 = L"save_ov.png";
+  FUN_00462d60();
+  FUN_0045aa00();
+  uStack_85c = (CWnd *)0x4205e7;
+  SetRect((LPRECT)(auStack_81c + -0x10),(int)(puStack_824 + 0x14),iVar32,(int)(puStack_824 + 0x26),
+          (int)piStack_820);
+  uStack_85c = (CWnd *)0x0;
+  pCStack_860 = pCVar28 + 0xe60;
+  pwStack_864 = L"reset_ov.png";
+  FUN_00462d60();
+  FUN_0045aa00();
+  iVar11 = *(int *)((int)pCStack_810 + 0x1558);
+  if (iVar11 != 0) {
+    if ((*(CWnd **)(iStack_7f0 + 0x2d14) == (CWnd *)0x0) ||
+       (iStack_7f4 = *(int *)(iStack_7f0 + 0x2d18), iStack_7f4 == 0)) {
+      iVar24 = (int)apCStack_7d8[2] - (int)apCStack_7d8[0];
+      iVar32 = *(int *)(pCVar28 + 0x339c);
+      iVar15 = *(int *)(pCVar28 + 0x3394);
+      iVar18 = GdipGetImageWidth();
+      if (iVar18 != 0) {
+        *(int *)(iVar11 + 8) = iVar18;
+      }
+      iVar18 = *(int *)(auStack_81c._4_4_ + 0xc);
+      iVar3 = *(int *)(auStack_81c._4_4_ + 4);
+      pCStack_80c = (CWnd *)(((uint)((iVar32 - iVar15) - iVar24) >> 1) + (int)apCStack_7d8[2]);
+      iVar32 = *(int *)(pCVar28 + 0x33a0);
+      iVar15 = *(int *)(pCVar28 + 0x3398);
+      iVar24 = GdipGetImageHeight();
+      if (iVar24 != 0) {
+        *(int *)(iVar11 + 8) = iVar24;
+      }
+      iStack_7f4 = (((iVar32 - iVar15) - (iVar18 - iVar3)) - 0x1bU >> 1) + 10;
+    }
+    else {
+      pCStack_80c = *(CWnd **)(iStack_7f0 + 0x2d14);
+    }
+    iVar32 = GdipGetImageHeight();
+    if (iVar32 != 0) {
+      *(int *)(iVar11 + 8) = iVar32;
+    }
+    auStack_81c._0_4_ = (wchar_t *)0x0;
+    iVar32 = GdipGetImageWidth();
+    if (iVar32 != 0) {
+      *(int *)(iVar11 + 8) = iVar32;
+    }
+    uStack_85c = (CWnd *)0x420769;
+    SetRect((LPRECT)(pCVar28 + 0x33a4),(int)pCStack_80c,iStack_7f4,
+            (int)(pCStack_80c + auStack_81c._0_4_),iStack_7f4);
+    uStack_85c = *(CWnd **)(pCVar28 + 0x3390);
+    pCStack_860 = pCVar28;
+    pwStack_864 = (wchar_t *)pCStack_810;
+    iVar11 = FUN_00467c80();
+    *(int *)(pCVar28 + 0x2d18) = iVar11;
+    *(undefined4 *)(iVar11 + 0x84) = *(undefined4 *)(iStack_7f0 + 0x2d08);
+    *(undefined4 *)(*(int *)(pCVar28 + 0x2d18) + 0x1778) = *(undefined4 *)(iStack_7f0 + 0x2d0c);
+  }
+  FUN_00403220();
+  uStack_85c = (CWnd *)0x4207df;
+  piVar10 = (int *)FUN_0049df42();
+  local_1c._0_1_ = 4;
+  if (piVar10 == (int *)0x0) {
+    auStack_81c._0_4_ = (int *)0x0;
+  }
+  else {
+    if (1 < *(int *)(iStack_814 + -4)) {
+      ATL::CSimpleStringT<wchar_t,0>::Fork
+                ((CSimpleStringT<wchar_t,0> *)&iStack_814,*(int *)(iStack_814 + -0xc));
+    }
+    *piVar10 = (int)Gdiplus::Bitmap::vftable;
+    pCStack_810 = (CWnd *)0x0;
+    iVar11 = GdipCreateBitmapFromFile();
+    piVar10[2] = iVar11;
+    piVar10[1] = (int)pCStack_810;
+    auStack_81c._0_4_ = piVar10;
+  }
+  uVar13 = auStack_81c._0_4_;
+  local_1c = CONCAT31(local_1c._1_3_,1);
+  ptStack_808 = (LPRECT)0x0;
+  iVar11 = GdipGetImageWidth();
+  if (iVar11 != 0) {
+    *(int *)(uVar13 + 8) = iVar11;
+  }
+  apCStack_7a8[0xb] = (CWnd *)0x0;
+  iVar11 = GdipGetImageHeight();
+  if (iVar11 != 0) {
+    *(int *)(uVar13 + 8) = iVar11;
+  }
+  pcVar25 = SetRect_exref;
+  iVar32 = 0;
+  iVar11 = 0;
+  do {
+    if ((*(uint *)(iStack_7f0 + 0x2d38) & 1 << ((byte)iVar11 & 0x1f)) == 0) {
+      iVar32 = iVar32 + 1;
+    }
+    iVar11 = iVar11 + 1;
+  } while (iVar11 < 4);
+  iVar11 = iVar32 * 0x56 + -1;
+  if (*(char *)(iStack_7f0 + 0x2d3d) == '\x01') {
+    iVar15 = *(int *)(*(int *)(pCVar28 + 0x2d18) + 0x1774);
+    iVar24 = 0;
+    if (0 < iVar15) {
+      piVar10 = (int *)(*(int *)(pCVar28 + 0x2d18) + 0xa4);
+      do {
+        if ((0 < *piVar10 - piVar10[-2]) && (iVar24 < *piVar10)) {
+          iVar24 = *piVar10;
+        }
+        piVar10 = piVar10 + 10;
+        iVar15 = iVar15 + -1;
+      } while (iVar15 != 0);
+    }
+    pCVar17 = (CWnd *)((*(int *)(pCVar28 + 0x33a4) - iVar11) + iVar24);
+  }
+  else if (*(char *)(iStack_7f0 + 0x2d3d) == '\0') {
+    pCVar17 = (CWnd *)(((*(int *)(pCVar28 + 0x33ac) - *(int *)(pCVar28 + 0x33a4)) - iVar11) / 2 +
+                      *(int *)(pCVar28 + 0x33a4));
+  }
+  else {
+    pCVar17 = pCStack_80c;
+  }
+  uStack_85c = (CWnd *)0x420940;
+  SetRect(atStack_778,(int)pCVar17,*(int *)(pCVar28 + 0x33a8) + -0x37,(int)(pCVar17 + 0x55),
+          *(int *)(pCVar28 + 0x33a8) + -10);
+  pLVar20 = &atStack_778[0].right;
+  pCStack_810 = (CWnd *)0x3;
+  do {
+    uStack_85c = (CWnd *)0x420966;
+    SetRect((LPRECT)(pLVar20 + 2),*pLVar20 + 1,pLVar20[-1],*pLVar20 + 0x56,pLVar20[1]);
+    pLVar20 = pLVar20 + 4;
+    pCStack_810 = pCStack_810 + -1;
+  } while (pCStack_810 != (CWnd *)0x0);
+  apCStack_7d8[0] = pCVar28 + 0x74;
+  apCStack_7d8[2] = pCVar28 + 0x38c;
+  ptVar21 = atStack_778;
+  apCStack_7d8[1] = pCVar28 + 0x200;
+  apCStack_7d8[3] = pCVar28 + 0x518;
+  pwStack_7ec = (wchar_t *)&DAT_00658ab4;
+  pCStack_7e8 = (CWnd *)&DAT_00658ab8;
+  puStack_7e4 = &DAT_00658abc;
+  local_7e0 = &DAT_00658ac0;
+  iStack_7f4 = 0;
+  uStack_834 = ptVar21;
+  do {
+    if ((*(uint *)(iStack_7f0 + 0x2d38) & 1 << ((byte)iStack_7f4 & 0x1f)) == 0) {
+      piStack_820 = (int *)ptVar21->bottom;
+      pCStack_810 = apCStack_7d8[iStack_7f4 + -5];
+      pCStack_80c = apCStack_7d8[iStack_7f4];
+      uStack_85c = (CWnd *)0x0;
+      pCStack_860 = (CWnd *)0x1;
+      puStack_824 = (undefined1 *)ptVar21->right;
+      pwStack_864 = *(wchar_t **)(pCVar28 + 0x3390);
+      FUN_00462c40();
+      FUN_0045aad0();
+      if ((*(int *)((&DAT_00658d98)[iStack_7f4] + -0xc) != 0) || (DAT_006451ec != 0)) {
+        FUN_0045aa00();
+        ptVar21 = uStack_834;
+      }
+      ptVar21 = ptVar21 + 1;
+      pcVar25 = SetRect_exref;
+      pCVar28 = apCStack_7a8[10];
+      uStack_834 = ptVar21;
+    }
+    iStack_7f4 = iStack_7f4 + 1;
+  } while (iStack_7f4 < 4);
+  if (iVar32 == 1) {
+    CWnd::ShowWindow(apCStack_7d8[0],0);
+  }
+  (*(code *)**(undefined4 **)auStack_81c._0_4_)();
+  FUN_0049df7c();
+  uVar13 = auStack_81c._0_4_;
+  uStack_85c = pCVar28 + 0x3324;
+  pCStack_860 = (CWnd *)0x420b3f;
+  (*pcVar25)();
+  pCVar17 = pCVar28 + 0x332c;
+  iVar11 = 4;
+  do {
+    pCStack_860 = *(CWnd **)(pCVar17 + 4);
+    pwStack_864 = (wchar_t *)(*(int *)pCVar17 + 0x7b);
+    (*pcVar25)();
+    pCVar17 = pCVar17 + 0x10;
+    iVar11 = iVar11 + -1;
+  } while (iVar11 != 0);
+  pCStack_860 = (CWnd *)(((*(int *)(uVar13 + 0xc) - *(int *)(uVar13 + 4)) + -0x82) / 2 +
+                         *(int *)(pCVar28 + 0x2ff4) + 0x37);
+  pwStack_864 = (wchar_t *)
+                (((*(int *)(uVar13 + 8) - *(int *)uVar13) + -0x271) / 2 + *(int *)uVar13 + 0x37);
+  (*pcVar25)();
+  pCStack_860 = pCVar28 + 0x31ec;
+  uStack_85c = (CWnd *)0x6;
+  do {
+    iStack_880 = *(int *)pCStack_860 + 0x28;
+    iStack_878 = *(int *)pCStack_860 + 0x5f;
+    iStack_87c = *(int *)(pCStack_860 + -4);
+    pCStack_884 = pCStack_860 + 8;
+    pCStack_888 = (CWnd *)0x420be3;
+    (*pcVar25)();
+    pCStack_860 = pCStack_860 + 0x10;
+    uStack_85c = (CWnd *)((int)uStack_85c + -1);
+  } while (uStack_85c != (CWnd *)0x0);
+  iStack_878 = *(int *)(pCVar28 + 0x31ec);
+  iStack_87c = *(int *)(pCVar28 + 0x31f0) + 0x14;
+  iStack_880 = *(int *)(pCVar28 + 0x31e4);
+  pCStack_884 = pCVar28 + 0x3254;
+  pCStack_888 = (CWnd *)0x420c1c;
+  uStack_85c = (CWnd *)iStack_87c;
+  (*pcVar25)();
+  pCVar17 = pCVar28 + 0x325c;
+  iVar11 = 6;
+  do {
+    pCStack_888 = *(CWnd **)(pCVar17 + 4);
+    iStack_894 = *(int *)pCVar17 + 0x28;
+    iStack_88c = *(int *)pCVar17 + 0x5f;
+    iStack_890 = *(int *)(pCVar17 + -4);
+    pCStack_898 = pCVar17 + 8;
+    tStack_8a8.bottom = 0x420c4c;
+    (*pcVar25)();
+    pCVar17 = pCVar17 + 0x10;
+    iVar11 = iVar11 + -1;
+  } while (iVar11 != 0);
+  iStack_894 = ((*(int *)(uVar13 + 8) - *(int *)uVar13) + -0x24e) / 2 + *(int *)uVar13;
+  iStack_890 = ((*(int *)(uVar13 + 0xc) - *(int *)(uVar13 + 4)) + -0x78) / 2 +
+               *(int *)(pCVar28 + 0x2ff4);
+  pCStack_888 = (CWnd *)(iStack_890 + 0x32);
+  iStack_88c = iStack_894 + 0x32;
+  pCStack_898 = pCVar28 + 0x3070;
+  tStack_8a8.bottom = 0x420c92;
+  (*pcVar25)();
+  pCStack_888 = pCVar28 + 0x3078;
+  pCStack_884 = (CWnd *)0x6;
+  do {
+    tStack_8a8.bottom = *(LONG *)(pCStack_888 + 4);
+    tStack_8a8.left = *(int *)pCStack_888 + 0x28;
+    tStack_8a8.right = *(int *)pCStack_888 + 0x5a;
+    tStack_8a8.top = *(LONG *)(pCStack_888 + -4);
+    pCStack_8ac = pCStack_888 + 8;
+    iStack_8b0 = 0x420cc0;
+    (*pcVar25)();
+    pCStack_888 = pCStack_888 + 0x10;
+    pCStack_884 = (CWnd *)((int)pCStack_884 + -1);
+  } while (pCStack_884 != (CWnd *)0x0);
+  tStack_8a8.right = *(LONG *)(pCVar28 + 0x3078);
+  tStack_8a8.bottom = *(int *)(pCVar28 + 0x307c) + 0x46;
+  tStack_8a8.top = *(int *)(pCVar28 + 0x307c) + 0x14;
+  tStack_8a8.left = *(LONG *)(pCVar28 + 0x3070);
+  pCStack_8ac = pCVar28 + 0x30e0;
+  iStack_8b0 = 0x420cf9;
+  pCStack_884 = (CWnd *)tStack_8a8.top;
+  (*pcVar25)();
+  tStack_8a8.bottom = (LONG)(pCVar28 + 0x30e8);
+  pCStack_898 = (CWnd *)0x5;
+  do {
+    iStack_8b0 = *(int *)(tStack_8a8.bottom + 4);
+    iStack_8bc = *(int *)tStack_8a8.bottom + 0x28;
+    iStack_8b4 = *(int *)tStack_8a8.bottom + 0x5a;
+    pCStack_8b8 = *(CWnd **)(tStack_8a8.bottom + -4);
+    (*pcVar25)();
+    tStack_8a8.bottom = tStack_8a8.bottom + 0x10;
+    pCStack_898 = (CWnd *)((int)pCStack_898 + -1);
+  } while (pCStack_898 != (CWnd *)0x0);
+  iStack_894 = *(int *)uVar13;
+  iStack_88c = *(int *)(uVar13 + 8);
+  iStack_890 = *(int *)(uVar13 + 4);
+  pCStack_888 = *(CWnd **)(uVar13 + 0xc);
+  iStack_8bc = ((iStack_88c - iStack_894) + -0xfa) / 2 + iStack_894;
+  pCStack_8b8 = (CWnd *)((((int)pCStack_888 - iStack_890) + -0x16) / 2 + iStack_890);
+  iStack_8b0 = (int)pCStack_8b8 + 0x16;
+  iStack_8b4 = iStack_8bc + 0xfa;
+  (*pcVar25)();
+  pCVar1 = (CEdit *)(pCVar28 + 0x2484);
+  uStack_8d4 = (tagRECT *)0x420da8;
+  CEdit::Create(pCVar1,0x50000000,&tStack_8a8,pCVar28,0x511);
+  if (pCVar1 == (CEdit *)0x0) {
+    pHVar9 = (HWND)0x0;
+  }
+  else {
+    pHVar9 = *(HWND *)(pCVar28 + 0x24a4);
+  }
+  uStack_8d4 = (tagRECT *)0x420dc4;
+  SendMessageW(pHVar9,0x30,DAT_0063e4f4,1);
+  CWnd::ModifyStyle((CWnd *)pCVar1,0,1,0);
+  *(undefined4 *)(pCVar28 + 0x24dc) = 1;
+  *(undefined4 *)(pCVar28 + 0x24e0) = 1;
+  pCVar17 = (CWnd *)(tStack_8a8.bottom + 0x1c);
+  iVar11 = tStack_8a8.left + 0xd;
+  pCVar19 = (CWnd *)(tStack_8a8.bottom + 0xf);
+  uStack_8d4 = &tStack_8a8;
+  *(undefined4 *)(pCVar28 + 0x24d8) = 0;
+  iStack_8d8 = 0x420e08;
+  LVar30 = tStack_8a8.left;
+  (*pcVar25)();
+  uStack_8e4 = iStack_8bc;
+  iStack_8e0 = (int)pCStack_8b8;
+  tStack_8f4.bottom = 0;
+  pCStack_8dc = (CWnd *)iStack_8b4;
+  iStack_8d8 = iStack_8b0;
+  tStack_8f4.right = 1;
+  tStack_8f4.top = (LONG)(pCVar28 + 0x2550);
+  tStack_8f4.left = 0x5fe7dc;
+  pwStack_8f8 = L"check_nr.png";
+  tStack_908.right = 0x420e52;
+  tStack_908.bottom = (LONG)pCVar28;
+  FUN_00462d60();
+  iStack_8d8 = iStack_8b0;
+  uStack_8e4 = iStack_8bc + 0x42;
+  pCStack_8dc = (CWnd *)(iStack_8bc + 0x4f);
+  iStack_8e0 = (int)pCStack_8b8;
+  tStack_8f4.bottom = (LONG)&iStack_8bc;
+  tStack_8f4.right = 0x420e72;
+  (*pcVar25)();
+  tStack_8f4.right = (LONG)pCVar17;
+  tStack_8f4.top = iVar11;
+  tStack_8f4.left = (LONG)pCVar19;
+  pwStack_8f8 = (wchar_t *)LVar30;
+  tStack_908.bottom = 0;
+  tStack_908.right = 1;
+  tStack_908.top = (LONG)(pCVar28 + 0x2868);
+  tStack_908.left = 0x5fe7dc;
+  iVar11 = (int)pwStack_8f8;
+  FUN_00462d60();
+  pwStack_8f8 = (wchar_t *)(iVar11 + 0x42);
+  tStack_8f4.top = iVar11 + 0x4f;
+  tStack_908.bottom = (int)register0x00000010 + -0x8d0;
+  tStack_908.right = 0x420ed7;
+  (*pcVar25)();
+  tStack_908.left = iStack_8e0;
+  tStack_908.top = (LONG)pCStack_8dc;
+  tStack_908.right = iStack_8d8;
+  FUN_00462d60();
+  tStack_908.right = iStack_8d8;
+  iVar11 = uStack_8e4 + 0x42;
+  tStack_908.top = uStack_8e4 + 0x4f;
+  tStack_908.left = iStack_8e0;
+  (*pcVar25)();
+  FUN_00462d60();
+  (*pcVar25)();
+  FUN_00403220();
+  FUN_00403220();
+  if (1 < *(int *)(iStack_8bc + -4)) {
+    ATL::CSimpleStringT<wchar_t,0>::Fork
+              ((CSimpleStringT<wchar_t,0> *)&iStack_8bc,*(int *)(iStack_8bc + -0xc));
+  }
+  if (1 < *(int *)(tStack_8f4.left + -4)) {
+    ATL::CSimpleStringT<wchar_t,0>::Fork
+              ((CSimpleStringT<wchar_t,0> *)&tStack_8f4,*(int *)(tStack_8f4.left + -0xc));
+  }
+  iVar32 = 0x982;
+  tStack_8a8.top = tStack_908.left;
+  tStack_8a8.bottom = tStack_908.right;
+  tStack_8a8.right = tStack_908.top;
+  LVar30 = tStack_908.left;
+  tStack_8a8.left = iVar11;
+  (**(code **)(*(int *)(pCVar28 + 0x21bc) + 0x148))();
+  *(undefined4 *)(pCVar28 + 0x2224) = 0x14;
+  SendMessageW(*(HWND *)(pCVar28 + 0x21dc),0x111b,0x14,0);
+  FUN_004727e0();
+  if (*(int *)(pCVar28 + 0x225c) == 0) {
+    (**(code **)(*(int *)(pCVar28 + 0x223c) + 0x13c))();
+    SendMessageW(*(HWND *)(pCVar28 + 0x225c),0x403,0,1000);
+    SendMessageW(*(HWND *)(pCVar28 + 0x225c),0x401,0,0);
+  }
+  CWnd::EnableToolTips(pCVar28 + 0x21bc,1);
+  *(undefined4 *)(pCVar28 + 0x22ac) = 0xc;
+  *(undefined4 *)(pCVar28 + 0x2238) = 0;
+  FUN_00472860();
+  uVar13 = DAT_00645068;
+  *(undefined4 *)(pCVar28 + 0x2228) = DAT_00645094;
+  *(undefined4 *)(pCVar28 + 0x222c) = uVar13;
+  InvalidateRect(*(HWND *)(pCVar28 + 0x21dc),(RECT *)0x0,1);
+  uVar5 = DAT_00645090 >> 0x10;
+  uVar14 = DAT_00645090 & 0xff;
+  uVar4 = DAT_00645090 >> 8;
+  *(uint *)(pCVar28 + 0x2218) =
+       ((DAT_006450a0 & 0xff | 0xffffff00) << 8 | DAT_006450a0 >> 8 & 0xff) << 8 |
+       DAT_006450a0 >> 0x10 & 0xff;
+  *(uint *)(pCVar28 + 0x221c) = ((uVar14 | 0xffffff00) << 8 | uVar4 & 0xff) << 8 | uVar5 & 0xff;
+  *(undefined4 *)(pCVar28 + 0x2224) = 0x18;
+  SendMessageW(*(HWND *)(pCVar28 + 0x21dc),0x111b,0x18,0);
+  *(undefined ***)(pCVar28 + 0x22f0) = &PTR_vftable_0063e4f0;
+  *(undefined ***)(pCVar28 + 0x22f4) = &PTR_vftable_0063e4f0;
+  *(undefined4 *)(pCVar28 + 0x2230) = DAT_00645088;
+  *(undefined4 *)(pCVar28 + 0x2300) = 1;
+  FUN_00474060();
+  *(undefined ***)(pCVar28 + 0x22f4) = &PTR_vftable_0063e500;
+  *(undefined ***)(pCVar28 + 0x22f0) = &PTR_vftable_0063e500;
+  SetRect(&tStack_8f4,0x1e1,(int)&uStack_8e4 + 1,0x272,(int)register0x00000010 + -0x8cf);
+  LVar8 = tStack_8f4.right;
+  LVar7 = tStack_8f4.left;
+  pCStack_8dc = (CWnd *)tStack_8f4.left;
+  iStack_8d8 = tStack_8f4.top;
+  uStack_8d4 = (tagRECT *)tStack_8f4.right;
+  pwStack_8f8 = (wchar_t *)(tStack_8f4.bottom - tStack_8f4.top);
+  iStack_8b4 = tStack_8f4.top;
+  pCStack_8b8 = (CWnd *)tStack_8f4.left;
+  lpString = L"";
+  (**(code **)(*(int *)(pCVar28 + 0x1ac0) + 0x13c))();
+  FUN_0045ab70(iVar11,LVar30,0x52000027);
+  uVar13 = DAT_00645074;
+  pwVar23 = DAT_0064506c;
+  *(undefined4 *)(pCVar28 + 0x1b5c) = DAT_00645070;
+  *(wchar_t **)(pCVar28 + 0x1b60) = pwVar23;
+  *(undefined4 *)(pCVar28 + 0x1b64) = uVar13;
+  *(undefined4 *)(pCVar28 + 0x1b80) = 0;
+  if (DAT_0063e4f4 != 0) {
+    *(undefined ***)(pCVar28 + 0x1c20) = &PTR_vftable_0063e4f0;
+  }
+  *(undefined4 *)(pCVar28 + 0x1c28) = DAT_006451e8;
+  pvVar6 = DAT_006588fc;
+  piVar10 = (int *)((int)DAT_006588fc + -0x10);
+  puVar12 = (undefined4 *)(**(code **)(**(int **)((int)DAT_006588fc + -0x10) + 0x10))();
+  if ((*(int *)((int)pvVar6 + -4) < 0) || (puVar12 != (undefined4 *)*piVar10)) {
+    piVar10 = (int *)(**(code **)*puVar12)(*(undefined4 *)((int)pvVar6 + -0xc),2);
+    if (piVar10 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+      FUN_00403790();
+    }
+    piVar10[1] = *(int *)((int)pvVar6 + -0xc);
+    _memcpy_s(piVar10 + 4,*(int *)((int)pvVar6 + -0xc) * 2 + 2,pvVar6,
+              *(int *)((int)pvVar6 + -0xc) * 2 + 2);
+  }
+  else {
+    LOCK();
+    *(int *)((int)pvVar6 + -4) = *(int *)((int)pvVar6 + -4) + 1;
+    UNLOCK();
+  }
+  FUN_0045ad30();
+  CGdiObject::DeleteObject((CGdiObject *)(pCVar28 + 0x1c18));
+  *(undefined ***)(pCVar28 + 0x1c20) = &PTR_vftable_0063e4f8;
+  SetRect(&tStack_908,iVar32 + 0x1e,(int)pCVar28,iVar32 + 0x2d,(int)(pCVar28 + 0xf));
+  FUN_00462d60(pCVar28,L"radio_nr.png",L"radio_nr.png",pCVar28 + 0x1c4c,1,0,tStack_908.left);
+  SetRect(&tStack_908,tStack_908.left,tStack_908.bottom + 0xd,tStack_908.right,
+          tStack_908.bottom + 0x1c);
+  FUN_00462d60(pCVar28,L"radio_nr.png",L"radio_nr.png",pCVar28 + 0x1dd8,1,0,tStack_908.left);
+  SetRect(&tStack_908,tStack_908.left,tStack_908.bottom + 0xd,tStack_908.right,
+          tStack_908.bottom + 0x1c);
+  FUN_00462d60(pCVar28,L"radio_nr.png",L"radio_nr.png",pCVar28 + 0x1f64,1,0,tStack_908.left);
+  if (*(int *)(pCVar28 + 0x200c) != 1) {
+    *(undefined4 *)(pCVar28 + 0x200c) = 1;
+    InvalidateRect(*(HWND *)(pCVar28 + 0x1f84),(RECT *)0x0,1);
+  }
+  SetRect(&tStack_908,tStack_908.left + 0x16,tStack_908.bottom + 8,tStack_908.left + 0x52,
+          tStack_908.bottom + 0x1a);
+  pCVar1 = (CEdit *)(pCVar28 + 0x20f0);
+  CEdit::Create(pCVar1,0x50002000,&tStack_908,pCVar28,0x514);
+  if (pCVar1 == (CEdit *)0x0) {
+    pHVar9 = (HWND)0x0;
+  }
+  else {
+    pHVar9 = *(HWND *)(pCVar28 + 0x2110);
+  }
+  SendMessageW(pHVar9,0x30,DAT_0063e4f4,1);
+  uVar13 = 0;
+  CWnd::ModifyStyle((CWnd *)pCVar1,0,1,0);
+  FID_conflict_SetWindowTextW(pCVar1,(HWND)&DAT_005ff6e0,lpString);
+  LVar30 = tStack_8f4.left;
+  *(undefined4 *)(pCVar28 + 0x21b4) = 1;
+  *(undefined4 *)(pCVar28 + 0x21ac) = 1;
+  *(undefined4 *)(pCVar28 + 0x21b0) = 0xff;
+  iVar11 = iRam000001e1;
+  uStack_934 = 0;
+  uStack_90c = 0;
+  iVar32 = 0x90;
+  pCVar17 = (CWnd *)tStack_8f4.left;
+  do {
+    if (pCVar17[3] == (CWnd)0x2) {
+      CVar2 = pCVar17[5];
+      if (CVar2 == (CWnd)0xe2) {
+        uStack_934 = 1;
+      }
+      else if (CVar2 == (CWnd)0xc1) {
+        uStack_90c = 1;
+      }
+      else if ((CVar2 == (CWnd)0xc4) || (CVar2 == (CWnd)0xc5)) {
+        uVar13 = 1;
+      }
+    }
+    pCVar17 = pCVar17 + 0x10;
+    iVar32 = iVar32 + -1;
+  } while (iVar32 != 0);
+  iVar32 = iRam000001e5 + 1;
+  uVar29 = uRam000001e9;
+  iStack_880 = FUN_0049df42();
+  uStack_120 = 5;
+  if (iStack_880 == 0) {
+    iVar15 = 0;
+  }
+  else {
+    iVar15 = FUN_004766b0();
+  }
+  uStack_120 = 1;
+  *(int *)(pCVar28 + 0x33b4) = iVar15;
+  *(undefined4 *)(iVar15 + 0xd00) = *(undefined4 *)(LVar30 + 0x2d30);
+  *(undefined4 *)(*(int *)(pCVar28 + 0x33b4) + 0xd04) = *(undefined4 *)(LVar30 + 0x2d38);
+  *(undefined4 *)(*(int *)(pCVar28 + 0x33b4) + 0xd08) = uStack_934;
+  *(undefined4 *)(*(int *)(pCVar28 + 0x33b4) + 0xd0c) = uStack_90c;
+  *(undefined4 *)(*(int *)(pCVar28 + 0x33b4) + 0xd10) = uVar13;
+  iVar15 = *(int *)(pCVar28 + 0x33b4);
+  iVar24 = *(int *)(pCVar28 + 0x3390);
+  iStack_8d8 = iVar32;
+  uStack_8d4 = (tagRECT *)uVar29;
+  if (*(undefined4 **)(iVar15 + 0x74) != (undefined4 *)0x0) {
+    (**(code **)**(undefined4 **)(iVar15 + 0x74))();
+    FUN_0049df7c();
+    *(undefined4 *)(iVar15 + 0x74) = 0;
+  }
+  uVar13 = FUN_00463470(iVar24,DAT_006450a0,iVar11);
+  *(undefined4 *)(iVar15 + 0x74) = uVar13;
+  (**(code **)(**(int **)(pCVar28 + 0x33b4) + 0x13c))();
+  CWnd::MoveWindow(*(CWnd **)(pCVar28 + 0x33b4),(int)piVar10,iVar24,iVar11 - (int)piVar10,
+                   iVar32 - iVar24,1);
+  CWnd::ShowWindow(*(CWnd **)(pCVar28 + 0x33b4),5);
+  *(undefined4 *)(*(int *)(pCVar28 + 0x33b4) + 0xcf8) = *(undefined4 *)(pCVar28 + 0x2d18);
+  FUN_00424670();
+  uStack_128 = uStack_128 & 0xffffff00;
+  piVar10 = (int *)(tStack_8f4.bottom + -4);
+  LOCK();
+  iVar11 = *piVar10;
+  *piVar10 = *piVar10 + -1;
+  UNLOCK();
+  if (iVar11 + -1 < 1) {
+    (**(code **)(**(int **)(tStack_8f4.bottom + -0x10) + 4))();
+  }
+  uStack_128 = 0xffffffff;
+  pCVar28 = (CWnd *)(LVar8 + (-4 - LVar7));
+  LOCK();
+  iVar11 = *(int *)pCVar28;
+  *(int *)pCVar28 = *(int *)pCVar28 + -1;
+  UNLOCK();
+  if (iVar11 + -1 < 1) {
+    (**(code **)(**(int **)(LVar8 + (-0x10 - LVar7)) + 4))();
+  }
+  ExceptionList = pvStack_130;
+  __security_check_cookie(uStack_138 ^ (int)register0x00000010 - 0x940U);
+  return;
+}
+
+
+
+=== FUN_00421b50 @ 00421b50  size=1693  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00421b50(CWnd *param_1)
+
+{
+  CWnd *this;
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  int xLeft;
+  undefined4 uVar4;
+  int *piVar5;
+  undefined4 *puVar6;
+  CWnd *pCVar7;
+  undefined1 auStack_62 [2];
+  int local_60;
+  int local_5c;
+  int local_58;
+  undefined4 *local_54;
+  tagRECT local_50;
+  tagRECT local_40;
+  tagRECT local_30;
+  tagRECT tStack_20;
+  void *local_c;
+  undefined1 *puStack_8;
+  int iStack_4;
+  
+  this = param_1;
+  iStack_4 = 0xffffffff;
+  puStack_8 = &LAB_005c8b33;
+  local_c = ExceptionList;
+  uVar1 = DAT_0063c674 ^ (uint)(auStack_62 + -0x12);
+  ExceptionList = &local_c;
+  if (DAT_00645a64 == 1) {
+    local_60 = _DAT_0063df6c;
+    GetClientRect(*(HWND *)(param_1 + 0x20),&local_30);
+    GetWindowRect(*(HWND *)(this + 0x2d48),&local_50);
+    CWnd::ScreenToClient(this,&local_50);
+    iVar2 = FUN_005a2ec0(uVar1);
+    iVar3 = FUN_005a2ec0();
+    xLeft = FUN_005a2ec0();
+    SetRect(&local_50,xLeft,iVar3,iVar2,local_30.bottom);
+    CWnd::MoveWindow(this + 0x2d28,local_50.left,local_50.top,local_50.right - local_50.left,
+                     local_50.bottom - local_50.top,1);
+    FUN_004743f0();
+    FUN_00463850(this);
+    FUN_004743f0();
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    FUN_00463850(this);
+    pCVar7 = this + 0xfec;
+    iVar2 = 6;
+    do {
+      if ((pCVar7 != (CWnd *)0x0) && (*(int *)(pCVar7 + 0x20) != 0)) {
+        FUN_00463850(this);
+      }
+      pCVar7 = pCVar7 + 0x18c;
+      iVar2 = iVar2 + -1;
+    } while (iVar2 != 0);
+    iVar2 = 3;
+    do {
+      FUN_00463850(this);
+      iVar2 = iVar2 + -1;
+    } while (iVar2 != 0);
+    pCVar7 = this + 0x332c;
+    param_1 = (CWnd *)0x5;
+    do {
+      local_58 = _DAT_0063df6c;
+      local_58 = FUN_005a2ec0();
+      local_5c = FUN_005a2ec0();
+      local_54 = (undefined4 *)FUN_005a2ec0();
+      iVar2 = FUN_005a2ec0();
+      SetRect((LPRECT)(pCVar7 + -8),iVar2,(int)local_54,local_5c,local_58);
+      pCVar7 = pCVar7 + 0x10;
+      param_1 = (CWnd *)((int)param_1 + -1);
+    } while (param_1 != (CWnd *)0x0);
+    pCVar7 = this + 0x31ec;
+    param_1 = (CWnd *)0xe;
+    do {
+      local_54 = (undefined4 *)_DAT_0063df6c;
+      local_54 = (undefined4 *)FUN_005a2ec0();
+      local_58 = FUN_005a2ec0();
+      local_5c = FUN_005a2ec0();
+      iVar2 = FUN_005a2ec0();
+      SetRect((LPRECT)(pCVar7 + -8),iVar2,local_5c,local_58,(int)local_54);
+      pCVar7 = pCVar7 + 0x10;
+      param_1 = (CWnd *)((int)param_1 + -1);
+    } while (param_1 != (CWnd *)0x0);
+    pCVar7 = this + 0x3078;
+    param_1 = (CWnd *)0xd;
+    do {
+      local_54 = (undefined4 *)_DAT_0063df6c;
+      local_54 = (undefined4 *)FUN_005a2ec0();
+      local_58 = FUN_005a2ec0();
+      local_5c = FUN_005a2ec0();
+      iVar2 = FUN_005a2ec0();
+      SetRect((LPRECT)(pCVar7 + -8),iVar2,local_5c,local_58,(int)local_54);
+      pCVar7 = pCVar7 + 0x10;
+      param_1 = (CWnd *)((int)param_1 + -1);
+    } while (param_1 != (CWnd *)0x0);
+    param_1 = (CWnd *)_DAT_0063df6c;
+    iVar2 = FUN_005a2ec0();
+    param_1 = (CWnd *)FUN_005a2ec0();
+    local_54 = (undefined4 *)FUN_005a2ec0();
+    iVar3 = FUN_005a2ec0();
+    SetRect((LPRECT)(this + 0x2ff0),iVar3,(int)local_54,(int)param_1,iVar2);
+    *(LONG *)(this + 0x2ffc) = local_30.bottom - local_30.top;
+    uVar4 = FUN_005a2ec0();
+    *(undefined4 *)(this + 0x2d14) = uVar4;
+    if (*(int *)(this + 0x2d18) != 0) {
+      FUN_00463850(this);
+      FUN_0041a310();
+    }
+    if (*(int *)(this + 0x33b4) != 0) {
+      GetWindowRect(*(HWND *)(*(int *)(this + 0x33b4) + 0x20),&local_40);
+      CWnd::ScreenToClient(this,&local_40);
+      local_50.left = local_40.left;
+      local_50.top = local_40.top;
+      local_50.right = local_40.right;
+      local_50.bottom = local_40.bottom;
+      iVar2 = FUN_005a2ec0();
+      iVar3 = FUN_005a2ec0();
+      SetRect(&local_50,iVar3,iVar2,local_30.right,local_30.bottom);
+      CWnd::MoveWindow(*(CWnd **)(this + 0x33b4),local_50.left,local_50.top,
+                       local_50.right - local_50.left,local_50.bottom - local_50.top,1);
+      FUN_00477920(*(undefined4 *)(this + 0x33b4));
+    }
+    piVar5 = (int *)FUN_0049dfbc();
+    if (piVar5 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+      FUN_004039e0(0x80004005);
+    }
+    iVar2 = (**(code **)(*piVar5 + 0xc))();
+    param_1 = (CWnd *)(iVar2 + 0x10);
+    iStack_4 = 0;
+    FUN_00403220(&param_1,L"%sskins\\%s",&DAT_0064a048,L"Dot_Selected.png");
+    puVar6 = (undefined4 *)FUN_0049df42(0x10);
+    iStack_4._0_1_ = 1;
+    local_54 = puVar6;
+    if (puVar6 == (undefined4 *)0x0) {
+      puVar6 = (undefined4 *)0x0;
+    }
+    else {
+      if (1 < *(int *)((int)param_1 + -4)) {
+        ATL::CSimpleStringT<wchar_t,0>::Fork
+                  ((CSimpleStringT<wchar_t,0> *)&param_1,*(int *)((int)param_1 + -0xc));
+      }
+      *puVar6 = Gdiplus::Bitmap::vftable;
+      local_60 = 0;
+      uVar4 = GdipCreateBitmapFromFile(param_1,&local_60);
+      puVar6[2] = uVar4;
+      puVar6[1] = local_60;
+    }
+    iStack_4 = (uint)iStack_4._1_3_ << 8;
+    local_60 = 0;
+    iVar2 = GdipGetImageWidth(puVar6[1],&local_60);
+    if (iVar2 != 0) {
+      puVar6[2] = iVar2;
+    }
+    local_5c = 0;
+    iVar2 = GdipGetImageHeight(puVar6[1],&local_5c);
+    if (iVar2 != 0) {
+      puVar6[2] = iVar2;
+    }
+    local_40.left = (LONG)(this + 0x74);
+    local_40.right = (LONG)(this + 0x38c);
+    local_40.top = (LONG)(this + 0x200);
+    local_40.bottom = (LONG)(this + 0x518);
+    local_58 = 0;
+    do {
+      iVar2 = (&local_40.left)[local_58];
+      if ((iVar2 != 0) && (*(int *)(iVar2 + 0x20) != 0)) {
+        FUN_00463850(this);
+        GetWindowRect(*(HWND *)(iVar2 + 0x20),&tStack_20);
+        CWnd::ScreenToClient(this,&tStack_20);
+        local_50.right = tStack_20.right;
+        local_50.bottom = tStack_20.bottom;
+        local_50.left = tStack_20.left;
+        local_50.top = tStack_20.top;
+        FUN_0045aad0(((tStack_20.right - tStack_20.left) - local_60) / 2,
+                     ((tStack_20.bottom - tStack_20.top) - local_5c) + -2);
+      }
+      local_58 = local_58 + 1;
+    } while (local_58 < 4);
+    uVar4 = (**(code **)*puVar6)(0);
+    FUN_0049df7c(uVar4);
+    iStack_4 = 0xffffffff;
+    piVar5 = (int *)((int)param_1 + -4);
+    LOCK();
+    iVar2 = *piVar5;
+    *piVar5 = *piVar5 + -1;
+    UNLOCK();
+    if (iVar2 + -1 < 1) {
+      (**(code **)(**(int **)((int)param_1 + -0x10) + 4))((undefined4 *)((int)param_1 + -0x10));
+    }
+  }
+  ExceptionList = local_c;
+  return;
+}
+
+
+
+=== FUN_004244e0 @ 004244e0  size=388  completed=true ===
+
+void FUN_004244e0(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  HWND pHVar3;
+  CWnd *pCVar4;
+  int iVar5;
+  int unaff_ESI;
+  bool bVar6;
+  int local_10 [4];
+  
+  pHVar3 = GetParent(*(HWND *)(unaff_ESI + 0x20));
+  pCVar4 = CWnd::FromHandle(pHVar3);
+  iVar1 = *(int *)(pCVar4 + 0xa4);
+  if (iVar1 != 0) {
+    local_10[0] = unaff_ESI + 0x74;
+    local_10[1] = unaff_ESI + 0x200;
+    local_10[2] = unaff_ESI + 0x38c;
+    local_10[3] = unaff_ESI + 0x518;
+    iVar5 = 0;
+    do {
+      iVar2 = local_10[iVar5];
+      if (((iVar2 != 0) && (*(int *)(iVar2 + 0x20) != 0)) && (*(int *)(iVar2 + 0xa8) != 0)) {
+        *(undefined4 *)(iVar2 + 0xa8) = 0;
+        InvalidateRect(*(HWND *)(iVar2 + 0x20),(RECT *)0x0,1);
+      }
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < 4);
+    iVar5 = local_10[param_1];
+    if (((iVar5 != 0) && (*(int *)(iVar5 + 0x20) != 0)) && (*(int *)(iVar5 + 0xa8) != 1)) {
+      *(undefined4 *)(iVar5 + 0xa8) = 1;
+      InvalidateRect(*(HWND *)(iVar5 + 0x20),(RECT *)0x0,1);
+    }
+    *(undefined4 *)(*(int *)(unaff_ESI + 0x2d18) + 0x1708) = 0xffffffff;
+    *(int *)(iVar1 + 0x34) = param_1;
+    FUN_00422650(unaff_ESI,iVar1);
+    bVar6 = *(int *)(iVar1 + 0x34) == 3;
+    *(uint *)(*(int *)(unaff_ESI + 0x33b4) + 0xcfc) = (uint)!bVar6;
+    *(undefined4 *)(*(int *)(unaff_ESI + 0x33b4) + 0xcf0) = 0xffffffff;
+    InvalidateRect(*(HWND *)(*(int *)(unaff_ESI + 0x33b4) + 0x20),(RECT *)0x0,1);
+    if ((bVar6) && (*(int *)(unaff_ESI + 0x1cf4) != 0)) {
+      *(undefined4 *)(unaff_ESI + 0x1cf4) = 0;
+      InvalidateRect(*(HWND *)(unaff_ESI + 0x1c6c),(RECT *)0x0,1);
+      if (*(int *)(unaff_ESI + 0x200c) != 1) {
+        *(undefined4 *)(unaff_ESI + 0x200c) = 1;
+        InvalidateRect(*(HWND *)(unaff_ESI + 0x1f84),(RECT *)0x0,1);
+      }
+    }
+    if (*(int *)(unaff_ESI + 0x33b8) == 3) {
+      CWnd::ShowWindow((CWnd *)(unaff_ESI + 0x1c4c),
+                       (-(uint)(*(int *)(unaff_ESI + 0x5c0) != 0) & 0xfffffffb) + 5);
+      InvalidateRect(*(HWND *)(unaff_ESI + 0x20),(RECT *)(unaff_ESI + 0x2ff0),1);
+    }
+  }
+  return;
+}
+
+
+
+=== FUN_00424670 @ 00424670  size=373  completed=true ===
+
+void FUN_00424670(void)
+
+{
+  int in_EAX;
+  uint uVar1;
+  int iVar2;
+  CWnd *this;
+  uint *puVar3;
+  int unaff_EDI;
+  int local_4;
+  
+  if ((unaff_EDI < 6) && (*(int *)(in_EAX + 0x33b8) != unaff_EDI)) {
+    *(undefined4 *)(in_EAX + 0x338c) = 0xffffffff;
+    *(undefined4 *)(in_EAX + 0x3388) = 0xffffffff;
+    *(undefined4 *)(*(int *)(in_EAX + 0x33b4) + 0xcf0) = 0xffffffff;
+    iVar2 = 0;
+    *(undefined4 *)(*(int *)(in_EAX + 0x33b4) + 0x8c) = 0;
+    *(int *)(in_EAX + 0x33b8) = unaff_EDI;
+    puVar3 = (uint *)(in_EAX + 0x1094);
+    do {
+      if ((uint)(iVar2 == unaff_EDI) != *puVar3) {
+        *puVar3 = (uint)(iVar2 == unaff_EDI);
+        InvalidateRect((HWND)puVar3[-0x22],(RECT *)0x0,1);
+      }
+      iVar2 = iVar2 + 1;
+      puVar3 = puVar3 + 99;
+    } while (iVar2 < 6);
+    CWnd::ShowWindow(*(CWnd **)(in_EAX + 0x33b4),(-(uint)(unaff_EDI != 0) & 0xfffffffb) + 5);
+    uVar1 = (unaff_EDI != 5) - 1 & 5;
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x2484),uVar1);
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x2550),uVar1);
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x26dc),uVar1);
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x2868),uVar1);
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x29f4),uVar1);
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x1ac0),0);
+    uVar1 = (unaff_EDI != 3) - 1 & 5;
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x21bc),uVar1);
+    this = (CWnd *)(in_EAX + 0x1c4c);
+    local_4 = 3;
+    do {
+      CWnd::ShowWindow(this,uVar1);
+      this = this + 0x18c;
+      local_4 = local_4 + -1;
+    } while (local_4 != 0);
+    CWnd::ShowWindow((CWnd *)(in_EAX + 0x20f0),uVar1);
+    if (unaff_EDI == 3) {
+      CWnd::ShowWindow((CWnd *)(in_EAX + 0x1c4c),
+                       (-(uint)(*(int *)(in_EAX + 0x5c0) != 0) & 0xfffffffb) + 5);
+    }
+    if (uVar1 == 5) {
+      FUN_004248e0();
+    }
+    InvalidateRect(*(HWND *)(in_EAX + 0x20),(RECT *)(in_EAX + 0x2ff0),1);
+  }
+  return;
+}
+
+
+
+=== FUN_004262c0 @ 004262c0  size=399  completed=true ===
+
+void __thiscall FUN_004262c0(CWnd *param_1,undefined4 param_2,LONG param_3,LONG param_4)
+
+{
+  int iVar1;
+  POINT pt;
+  POINT pt_00;
+  POINT pt_01;
+  BOOL BVar2;
+  HWND pHVar3;
+  CWnd *pCVar4;
+  int iVar5;
+  RECT *pRVar6;
+  
+  iVar5 = 0;
+  if ((DAT_00652f88 != (int *)0x0) && (DAT_00652f80 == 0)) {
+    (**(code **)(*DAT_00652f88 + 0x60))();
+    if (DAT_00652f88 != (int *)0x0) {
+      (**(code **)(*DAT_00652f88 + 4))(1);
+    }
+    DAT_00652f88 = (int *)0x0;
+  }
+  pCVar4 = DAT_006586fc;
+  if (DAT_006586fc != (CWnd *)0x0) {
+    *(undefined4 *)(DAT_006586fc + 0x80) = 0xffffffff;
+    CWnd::ShowWindow(pCVar4,0);
+  }
+  iVar1 = *(int *)(param_1 + 0x33b8);
+  if (iVar1 == 1) {
+    pRVar6 = (RECT *)(param_1 + 0x3324);
+    do {
+      pt.y = param_4;
+      pt.x = param_3;
+      BVar2 = PtInRect(pRVar6,pt);
+      if (BVar2 != 0) goto LAB_004263e6;
+      iVar5 = iVar5 + 1;
+      pRVar6 = pRVar6 + 1;
+    } while (iVar5 < 5);
+  }
+  else if (iVar1 == 2) {
+    pRVar6 = (RECT *)(param_1 + 0x31e4);
+    do {
+      pt_00.y = param_4;
+      pt_00.x = param_3;
+      BVar2 = PtInRect(pRVar6,pt_00);
+      if (BVar2 != 0) goto LAB_004263e6;
+      iVar5 = iVar5 + 1;
+      pRVar6 = pRVar6 + 1;
+    } while (iVar5 < 0xe);
+  }
+  else if (iVar1 == 4) {
+    pCVar4 = param_1 + 0x3008;
+    pRVar6 = (RECT *)(param_1 + 0x3070);
+    do {
+      pt_01.y = param_4;
+      pt_01.x = param_3;
+      BVar2 = PtInRect(pRVar6,pt_01);
+      if ((BVar2 != 0) && (*(int *)pCVar4 != 0)) goto LAB_004263e6;
+      iVar5 = iVar5 + 1;
+      pRVar6 = pRVar6 + 1;
+      pCVar4 = pCVar4 + 4;
+    } while (iVar5 < 0xd);
+  }
+LAB_00426350:
+  pHVar3 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar4 = CWnd::FromHandle(pHVar3);
+  pHVar3 = GetParent(*(HWND *)(pCVar4 + 0x20));
+  pCVar4 = CWnd::FromHandle(pHVar3);
+  if (pCVar4 == (CWnd *)0x0) {
+    pHVar3 = (HWND)0x0;
+  }
+  else {
+    pHVar3 = *(HWND *)(pCVar4 + 0x20);
+  }
+  PostMessageW(pHVar3,0xa1,2,CONCAT22((undefined2)param_4,(undefined2)param_3));
+  CWnd::Default(param_1);
+  return;
+LAB_004263e6:
+  if (iVar5 != -1) {
+    *(int *)(param_1 + 0x3388) = iVar5;
+    InvalidateRect(*(HWND *)(param_1 + 0x20),(RECT *)(param_1 + 0x2ff0),1);
+    FUN_004249f0(param_1,0);
+    CWnd::Default(param_1);
+    return;
+  }
+  goto LAB_00426350;
+}
+
+
+
+=== FUN_00426450 @ 00426450  size=215  completed=true ===
+
+void __thiscall FUN_00426450(CWnd *param_1,undefined4 param_2,LONG param_3,LONG param_4)
+
+{
+  POINT pt;
+  POINT pt_00;
+  POINT pt_01;
+  BOOL BVar1;
+  int iVar2;
+  RECT *pRVar3;
+  int local_c;
+  
+  iVar2 = *(int *)(param_1 + 0x33b8);
+  local_c = -1;
+  if (iVar2 == 1) {
+    iVar2 = 0;
+    pRVar3 = (RECT *)(param_1 + 0x3324);
+    do {
+      pt.y = param_4;
+      pt.x = param_3;
+      BVar1 = PtInRect(pRVar3,pt);
+      if (BVar1 != 0) goto LAB_004264ee;
+      iVar2 = iVar2 + 1;
+      pRVar3 = pRVar3 + 1;
+    } while (iVar2 < 5);
+  }
+  else if (iVar2 == 2) {
+    iVar2 = 0;
+    pRVar3 = (RECT *)(param_1 + 0x31e4);
+    do {
+      pt_00.y = param_4;
+      pt_00.x = param_3;
+      BVar1 = PtInRect(pRVar3,pt_00);
+      if (BVar1 != 0) goto LAB_004264ee;
+      iVar2 = iVar2 + 1;
+      pRVar3 = pRVar3 + 1;
+    } while (iVar2 < 0xe);
+  }
+  else if (iVar2 == 4) {
+    iVar2 = 0;
+    pRVar3 = (RECT *)(param_1 + 0x3070);
+    do {
+      pt_01.y = param_4;
+      pt_01.x = param_3;
+      BVar1 = PtInRect(pRVar3,pt_01);
+      if (BVar1 != 0) goto LAB_004264ee;
+      iVar2 = iVar2 + 1;
+      pRVar3 = pRVar3 + 1;
+    } while (iVar2 < 0xd);
+  }
+LAB_004264f2:
+  if (local_c != *(int *)(param_1 + 0x338c)) {
+    *(int *)(param_1 + 0x338c) = local_c;
+    InvalidateRect(*(HWND *)(param_1 + 0x20),(RECT *)(param_1 + 0x2ff0),1);
+  }
+  CWnd::Default(param_1);
+  return;
+LAB_004264ee:
+  local_c = iVar2;
+  goto LAB_004264f2;
+}
+
+
+

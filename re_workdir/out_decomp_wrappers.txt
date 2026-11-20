@@ -1,0 +1,429 @@
+=== FUN_00487880 @ 00487880  size=58  completed=true ===
+
+bool FUN_00487880(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  
+  (*DAT_0064a278)(L"CDev3632::SetMatrix layer=%d",param_1);
+  iVar1 = FUN_00487260(1,param_1,param_2,param_3,1,0xf);
+  return iVar1 != 0;
+}
+
+
+
+=== FUN_004878c0 @ 004878c0  size=48  completed=true ===
+
+void FUN_004878c0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  (*DAT_0064a278)(L"CDev3632::GetMatrix layer=%d",param_1);
+  FUN_004875c0(0x41,param_1,param_2,param_3);
+  return;
+}
+
+
+
+=== FUN_004878f0 @ 004878f0  size=148  completed=true ===
+
+int __thiscall FUN_004878f0(uint param_1,undefined4 param_2,int param_3)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar3 = (int)(param_1 + ((int)param_1 >> 0x1f & 0x1ffU)) >> 9;
+  param_1 = param_1 & 0x800001ff;
+  if ((int)param_1 < 0) {
+    param_1 = (param_1 - 1 | 0xfffffe00) + 1;
+  }
+  if (param_1 != 0) {
+    iVar3 = iVar3 + 1;
+  }
+  iVar4 = 0;
+  if (0 < iVar3) {
+    do {
+      if ((param_1 == 0) || (uVar1 = param_1, iVar4 != iVar3 + -1)) {
+        uVar1 = 0x200;
+      }
+      iVar2 = FUN_00487260(3,iVar4,param_3,uVar1,6,0xf);
+      if (iVar2 != 1) {
+        return iVar2;
+      }
+      Sleep(100);
+      (*DAT_0064a278)(L"WriteMacroData %d",iVar4);
+      iVar4 = iVar4 + 1;
+      param_3 = param_3 + 0x200;
+    } while (iVar4 < iVar3);
+  }
+  return 1;
+}
+
+
+
+=== FUN_004878f0 @ 004878f0  size=148  completed=true ===
+
+int __thiscall FUN_004878f0(uint param_1,undefined4 param_2,int param_3)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar3 = (int)(param_1 + ((int)param_1 >> 0x1f & 0x1ffU)) >> 9;
+  param_1 = param_1 & 0x800001ff;
+  if ((int)param_1 < 0) {
+    param_1 = (param_1 - 1 | 0xfffffe00) + 1;
+  }
+  if (param_1 != 0) {
+    iVar3 = iVar3 + 1;
+  }
+  iVar4 = 0;
+  if (0 < iVar3) {
+    do {
+      if ((param_1 == 0) || (uVar1 = param_1, iVar4 != iVar3 + -1)) {
+        uVar1 = 0x200;
+      }
+      iVar2 = FUN_00487260(3,iVar4,param_3,uVar1,6,0xf);
+      if (iVar2 != 1) {
+        return iVar2;
+      }
+      Sleep(100);
+      (*DAT_0064a278)(L"WriteMacroData %d",iVar4);
+      iVar4 = iVar4 + 1;
+      param_3 = param_3 + 0x200;
+    } while (iVar4 < iVar3);
+  }
+  return 1;
+}
+
+
+
+=== FUN_004878f0 @ 004878f0  size=148  completed=true ===
+
+int __thiscall FUN_004878f0(uint param_1,undefined4 param_2,int param_3)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar3 = (int)(param_1 + ((int)param_1 >> 0x1f & 0x1ffU)) >> 9;
+  param_1 = param_1 & 0x800001ff;
+  if ((int)param_1 < 0) {
+    param_1 = (param_1 - 1 | 0xfffffe00) + 1;
+  }
+  if (param_1 != 0) {
+    iVar3 = iVar3 + 1;
+  }
+  iVar4 = 0;
+  if (0 < iVar3) {
+    do {
+      if ((param_1 == 0) || (uVar1 = param_1, iVar4 != iVar3 + -1)) {
+        uVar1 = 0x200;
+      }
+      iVar2 = FUN_00487260(3,iVar4,param_3,uVar1,6,0xf);
+      if (iVar2 != 1) {
+        return iVar2;
+      }
+      Sleep(100);
+      (*DAT_0064a278)(L"WriteMacroData %d",iVar4);
+      iVar4 = iVar4 + 1;
+      param_3 = param_3 + 0x200;
+    } while (iVar4 < iVar3);
+  }
+  return 1;
+}
+
+
+
+=== FUN_004878f0 @ 004878f0  size=148  completed=true ===
+
+int __thiscall FUN_004878f0(uint param_1,undefined4 param_2,int param_3)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar3 = (int)(param_1 + ((int)param_1 >> 0x1f & 0x1ffU)) >> 9;
+  param_1 = param_1 & 0x800001ff;
+  if ((int)param_1 < 0) {
+    param_1 = (param_1 - 1 | 0xfffffe00) + 1;
+  }
+  if (param_1 != 0) {
+    iVar3 = iVar3 + 1;
+  }
+  iVar4 = 0;
+  if (0 < iVar3) {
+    do {
+      if ((param_1 == 0) || (uVar1 = param_1, iVar4 != iVar3 + -1)) {
+        uVar1 = 0x200;
+      }
+      iVar2 = FUN_00487260(3,iVar4,param_3,uVar1,6,0xf);
+      if (iVar2 != 1) {
+        return iVar2;
+      }
+      Sleep(100);
+      (*DAT_0064a278)(L"WriteMacroData %d",iVar4);
+      iVar4 = iVar4 + 1;
+      param_3 = param_3 + 0x200;
+    } while (iVar4 < iVar3);
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487990 @ 00487990  size=64  completed=true ===
+
+undefined4 __thiscall FUN_00487990(undefined4 param_1,undefined4 param_2)
+
+{
+  int iVar1;
+  
+  (*DAT_0064a278)(L"CDev3632::SetMacro");
+  iVar1 = FUN_004878f0(param_1,param_2);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"SetMacro failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_004879d0 @ 004879d0  size=22  completed=true ===
+
+void FUN_004879d0(undefined4 param_1,undefined4 param_2)
+
+{
+  FUN_004875c0(0x43,0,param_1,param_2);
+  return;
+}
+
+
+
+=== FUN_004879f0 @ 004879f0  size=74  completed=true ===
+
+undefined4 FUN_004879f0(undefined4 param_1,undefined4 param_2)
+
+{
+  int iVar1;
+  
+  (*DAT_0064a278)(L"CDev3632::SetLED");
+  iVar1 = FUN_00487260(4,0,param_1,param_2,1,0xf);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"SetLED failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487a40 @ 00487a40  size=42  completed=true ===
+
+void FUN_00487a40(undefined4 param_1,undefined4 param_2)
+
+{
+  (*DAT_0064a278)(L"CDev3632::GetLED");
+  FUN_004875c0(0x44,0,param_1,param_2);
+  return;
+}
+
+
+
+=== FUN_00487a70 @ 00487a70  size=71  completed=true ===
+
+undefined4 FUN_00487a70(undefined1 param_1)
+
+{
+  int iVar1;
+  
+  (*DAT_0064a278)(L"CDev3632::SetOnBoard");
+  iVar1 = FUN_00487260(10,0,&param_1,1,1,0xf);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"SetOnBoard failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487a70 @ 00487a70  size=71  completed=true ===
+
+undefined4 FUN_00487a70(undefined1 param_1)
+
+{
+  int iVar1;
+  
+  (*DAT_0064a278)(L"CDev3632::SetOnBoard");
+  iVar1 = FUN_00487260(10,0,&param_1,1,1,0xf);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"SetOnBoard failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487ac0 @ 00487ac0  size=85  completed=true ===
+
+undefined4 FUN_00487ac0(undefined1 *param_1)
+
+{
+  int iVar1;
+  undefined4 uStack_4;
+  
+  (*DAT_0064a278)(L"CDev3632::GetOnBoard");
+  uStack_4 = uStack_4 & 0xffffff;
+  iVar1 = FUN_004875c0(0x4a,0,(int)&uStack_4 + 3,1);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"GetOnBoard failed");
+    return 0;
+  }
+  *param_1 = uStack_4._3_1_;
+  return 1;
+}
+
+
+
+=== FUN_00487ac0 @ 00487ac0  size=85  completed=true ===
+
+undefined4 FUN_00487ac0(undefined1 *param_1)
+
+{
+  int iVar1;
+  undefined4 uStack_4;
+  
+  (*DAT_0064a278)(L"CDev3632::GetOnBoard");
+  uStack_4 = uStack_4 & 0xffffff;
+  iVar1 = FUN_004875c0(0x4a,0,(int)&uStack_4 + 3,1);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"GetOnBoard failed");
+    return 0;
+  }
+  *param_1 = uStack_4._3_1_;
+  return 1;
+}
+
+
+
+=== FUN_00487b20 @ 00487b20  size=57  completed=true ===
+
+undefined4 FUN_00487b20(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00487260(2,param_1,param_2,param_3,1,0xf);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"SetGame failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487b60 @ 00487b60  size=25  completed=true ===
+
+void FUN_00487b60(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  FUN_004875c0(0x42,param_1,param_2,param_3);
+  return;
+}
+
+
+
+=== FUN_00487b80 @ 00487b80  size=54  completed=true ===
+
+undefined4 FUN_00487b80(undefined4 param_1,undefined4 param_2)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00487260(9,0,param_1,param_2,1,0xf);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"SetLedRgbTab failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487bc0 @ 00487bc0  size=22  completed=true ===
+
+void FUN_00487bc0(undefined4 param_1,undefined4 param_2)
+
+{
+  FUN_004875c0(0x49,0,param_1,param_2);
+  return;
+}
+
+
+
+=== FUN_00487be0 @ 00487be0  size=54  completed=true ===
+
+undefined4 FUN_00487be0(undefined4 param_1,undefined4 param_2)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00487260(0xb,0,param_1,param_2,1,0xf);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"CDev3632::SetScreenParam failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487c20 @ 00487c20  size=51  completed=true ===
+
+undefined4 FUN_00487c20(undefined1 param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00487260(6,0,&param_1,1,1,0xf);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"ResetDevice failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_00487c60 @ 00487c60  size=66  completed=true ===
+
+void __fastcall FUN_00487c60(uint param_1)
+
+{
+  int iVar1;
+  undefined4 uStack_4;
+  
+  uStack_4 = param_1 & 0xffffff;
+  iVar1 = FUN_00487fa0(0x13,7,(int)&uStack_4 + 3,1,1,5);
+  if (iVar1 == 1) {
+    *(uint *)(param_1 + 0x238) = uStack_4 >> 0x18;
+    return;
+  }
+  *(undefined4 *)(param_1 + 0x238) = 0xffffffff;
+  return;
+}
+
+
+

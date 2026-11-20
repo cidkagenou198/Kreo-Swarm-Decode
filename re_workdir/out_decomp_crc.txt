@@ -1,0 +1,52 @@
+=== FUN_00487cb0 @ 00487cb0  size=68  completed=true ===
+
+char __fastcall FUN_00487cb0(int param_1)
+
+{
+  char cVar1;
+  char *pcVar2;
+  char cVar3;
+  char cVar4;
+  char cVar5;
+  int iVar6;
+  
+  cVar4 = '\0';
+  cVar1 = '\0';
+  cVar3 = '\0';
+  cVar5 = '\0';
+  pcVar2 = (char *)(param_1 + 1);
+  iVar6 = 5;
+  do {
+    cVar4 = cVar4 + *pcVar2;
+    cVar1 = cVar1 + pcVar2[-1];
+    cVar3 = cVar3 + pcVar2[2];
+    cVar5 = cVar5 + pcVar2[1];
+    pcVar2 = pcVar2 + 4;
+    iVar6 = iVar6 + -1;
+  } while (iVar6 != 0);
+  return cVar1 + cVar3 + cVar5 + cVar4;
+}
+
+
+
+=== FUN_00487ac0 @ 00487ac0  size=85  completed=true ===
+
+undefined4 FUN_00487ac0(undefined1 *param_1)
+
+{
+  int iVar1;
+  undefined4 uStack_4;
+  
+  (*DAT_0064a278)(L"CDev3632::GetOnBoard");
+  uStack_4 = uStack_4 & 0xffffff;
+  iVar1 = FUN_004875c0(0x4a,0,(int)&uStack_4 + 3,1);
+  if (iVar1 == 0) {
+    (*DAT_0064a278)(L"GetOnBoard failed");
+    return 0;
+  }
+  *param_1 = uStack_4._3_1_;
+  return 1;
+}
+
+
+

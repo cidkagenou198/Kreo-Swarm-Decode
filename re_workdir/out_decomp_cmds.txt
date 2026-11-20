@@ -1,0 +1,454 @@
+=== FUN_0048cf30 @ 0048cf30  size=83  completed=true ===
+
+undefined4 __thiscall
+FUN_0048cf30(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  if (*(int *)(param_1 + 0x23c) != 0) {
+                    /* WARNING: Could not recover jumptable at 0x0048cf44. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (**(code **)(**(int **)(param_1 + 0x23c) + 0x68))();
+    return uVar1;
+  }
+  iVar2 = FUN_0048c600(param_1,*(undefined4 *)(param_1 + 0xc),1,6,param_2,param_4,0x14);
+  if (iVar2 == 0) {
+    (*DAT_0064a278)(L"SetGame failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_0048d380 @ 0048d380  size=80  completed=true ===
+
+undefined4 __thiscall FUN_0048d380(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  if (*(int *)(param_1 + 0x23c) != 0) {
+                    /* WARNING: Could not recover jumptable at 0x0048d394. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (**(code **)(**(int **)(param_1 + 0x23c) + 0x70))();
+    return uVar1;
+  }
+  iVar2 = FUN_0048c600(param_1,*(undefined4 *)(param_1 + 0xc),1,10,0,param_3,0x14);
+  if (iVar2 == 0) {
+    (*DAT_0064a278)(L"SetLedRgbTab failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_0048cce0 @ 0048cce0  size=80  completed=true ===
+
+undefined4 __thiscall FUN_0048cce0(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  if (*(int *)(param_1 + 0x23c) != 0) {
+                    /* WARNING: Could not recover jumptable at 0x0048ccf4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (**(code **)(**(int **)(param_1 + 0x23c) + 0x60))();
+    return uVar1;
+  }
+  iVar2 = FUN_0048c600(param_1,*(undefined4 *)(param_1 + 0xc),1,4,0,param_3,0x14);
+  if (iVar2 == 0) {
+    (*DAT_0064a278)(L"SetLED failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_004124d0 @ 004124d0  size=709  completed=true ===
+
+void __fastcall FUN_004124d0(int param_1,uint *param_2,undefined4 param_3)
+
+{
+  wchar_t *pwVar1;
+  ulong uVar2;
+  uint uVar3;
+  uint uVar4;
+  ulong *puVar5;
+  LPCWSTR lpAppName;
+  LPCWSTR lpDefault;
+  LPWSTR lpReturnedString;
+  undefined *nSize;
+  wchar_t *pwVar6;
+  undefined4 uVar7;
+  undefined1 *puVar8;
+  undefined4 uVar9;
+  int local_260;
+  int local_25c;
+  int local_258;
+  wchar_t *local_254;
+  ulong local_250 [5];
+  uint local_23c;
+  uint local_238;
+  undefined4 local_234;
+  undefined4 local_230;
+  undefined4 local_22c;
+  uint *local_228;
+  wchar_t local_224 [6];
+  int iStack_218;
+  wchar_t local_210 [10];
+  undefined1 auStack_1fc [504];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_260;
+  local_22c = param_3;
+  local_228 = param_2;
+  if ((param_1 != 0) && (param_2 != (uint *)0x0)) {
+    uVar3 = 0;
+    local_250[0] = 0;
+    local_250[1] = 0;
+    local_250[2] = 0;
+    local_250[3] = 0;
+    local_250[4] = 0;
+    local_23c = 0;
+    local_238 = 0;
+    local_234 = 0;
+    local_230 = 0;
+    local_25c = 0;
+    local_260 = 0;
+    local_258 = 1;
+    puVar5 = (ulong *)(param_1 + 0x2400);
+    do {
+      nSize = &DAT_005fe56c;
+      lpReturnedString = (LPWSTR)0x9;
+      pwVar1 = local_224;
+      lpDefault = (LPCWSTR)0xa;
+      lpAppName = (LPCWSTR)0x41255f;
+      __snwprintf_s(pwVar1,10,9,L"K%d",local_258);
+      local_260 = iStack_218;
+      uVar9 = 0x104;
+      puVar8 = auStack_1fc;
+      uVar7 = 0;
+      pwVar6 = local_210;
+      GetPrivateProfileStringW(lpAppName,pwVar1,lpDefault,lpReturnedString,(DWORD)nSize,L"KEY");
+      if (local_210[0] == L'\0') break;
+      uVar4 = 0;
+      local_254 = (wchar_t *)0x0;
+      pwVar1 = _wcstok(local_210,L",");
+      if (pwVar1 != (wchar_t *)0x0) {
+        do {
+          if (8 < uVar4) break;
+          uVar2 = _wcstoul(pwVar1,&local_254,(-(uint)(2 < uVar4 - 4) & 0xfffffffa) + 0x10);
+          if (*local_254 != L'\0') {
+            MessageBoxW((HWND)0x0,L"Data parse error!",L"Error",0);
+            break;
+          }
+          local_250[uVar4] = uVar2;
+          uVar4 = uVar4 + 1;
+          pwVar1 = _wcstok((wchar_t *)0x0,L",");
+        } while (pwVar1 != (wchar_t *)0x0);
+        uVar3 = local_23c;
+      }
+      *puVar5 = local_250[0];
+      puVar5[1] = local_250[1];
+      puVar5[2] = local_250[2];
+      puVar5[3] = local_250[3];
+      if (local_250[4] == 2) {
+        *param_2 = 0x2000000;
+        *(char *)((int)param_2 + 5) = (char)uVar3;
+        if (uVar3 - 1 < 5) {
+          *(undefined1 *)(param_2 + 1) = 0;
+LAB_004126fc:
+          param_2[2] = local_238;
+        }
+        else {
+          *(undefined1 *)(param_2 + 1) = (undefined1)local_238;
+          switch(uVar3 & 0xff) {
+          case 0x10:
+          case 0xa0:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 2;
+            *(undefined1 *)((int)param_2 + 7) = 0x10;
+            break;
+          case 0x11:
+          case 0xa2:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 1;
+            *(undefined1 *)((int)param_2 + 7) = 0x11;
+            break;
+          case 0x12:
+          case 0xa4:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 4;
+            *(undefined1 *)((int)param_2 + 7) = 0x12;
+            break;
+          case 0x5b:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 8;
+            *(undefined1 *)((int)param_2 + 7) = 0x5b;
+            break;
+          case 0x5c:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 0x80;
+            *(undefined1 *)((int)param_2 + 7) = 0x5c;
+            break;
+          case 0xa1:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 0x20;
+            *(undefined1 *)((int)param_2 + 7) = 0xa1;
+            break;
+          case 0xa3:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 0x10;
+            *(undefined1 *)((int)param_2 + 7) = 0xa3;
+            break;
+          case 0xa5:
+            *(undefined1 *)((int)param_2 + 5) = 0;
+            *(undefined1 *)(param_2 + 1) = 0x40;
+            *(undefined1 *)((int)param_2 + 7) = 0xa5;
+          }
+        }
+      }
+      else {
+        *param_2 = local_250[4] << 0x18 | uVar3 & 0xffffff;
+        if (local_250[4] == 9) goto LAB_004126fc;
+      }
+      *(byte *)(param_2 + 3) = (byte)local_234;
+      *(undefined1 *)((int)param_2 + 0xd) = (undefined1)local_230;
+      if (uVar4 == 8) {
+        *(byte *)((int)param_2 + 0xd) = (byte)local_234;
+      }
+      if (((byte)local_234 < 0x90) && (*(byte *)((int)param_2 + 0xd) < 0x90)) {
+        local_25c = local_25c + 1;
+      }
+      else {
+        MessageBoxW((HWND)0x0,L"Wrong matrix index value!",L"Warning",0);
+        local_260 = local_260 + -1;
+        param_2 = param_2 + -4;
+        puVar5 = puVar5 + -4;
+      }
+      local_258 = local_258 + 1;
+      local_260 = local_260 + 1;
+      param_2 = param_2 + 4;
+      puVar5 = puVar5 + 4;
+    } while (local_260 < 0x90);
+    FUN_0040e200(local_228,pwVar6,uVar7,puVar8,uVar9);
+  }
+  __security_check_cookie(local_4 ^ (uint)&local_260);
+  return;
+}
+
+
+
+=== FUN_00412860 @ 00412860  size=712  completed=true ===
+
+void __fastcall FUN_00412860(LPCWSTR param_1,int param_2,int param_3)
+
+{
+  wchar_t wVar1;
+  int param4;
+  wchar_t *_Str;
+  ulong uVar2;
+  undefined1 *puVar3;
+  uint uVar4;
+  uint in_stack_00000024;
+  undefined1 auStack_646 [2];
+  LPCWSTR local_644;
+  int local_638;
+  wchar_t *local_634;
+  undefined4 local_630;
+  int iStack_62c;
+  uint uStack_628;
+  undefined4 uStack_624;
+  undefined4 uStack_620;
+  wchar_t local_61c [10];
+  WCHAR aWStack_608 [10];
+  WCHAR aWStack_5f4 [240];
+  wchar_t local_414 [20];
+  WCHAR aWStack_3ec [260];
+  wchar_t awStack_1e4 [240];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)(auStack_646 + -0x1a);
+  if ((((param_3 == 0) || (param_2 == 0)) || (param_1 == (LPCWSTR)0x0)) || (*param_1 == L'\0')) {
+    __security_check_cookie(local_4 ^ (uint)(auStack_646 + -0x1a));
+    return;
+  }
+  __snwprintf_s(local_414,0x104,0x103,L"%s\\KB.ini",(char *)(param_3 + 0x9c));
+  param4 = 0;
+  local_638 = 0;
+  local_634 = (wchar_t *)0x0;
+  local_630 = 0;
+  iStack_62c = 0;
+  uStack_628 = 0;
+  uStack_624 = 0;
+  uStack_620 = 0;
+  puVar3 = (undefined1 *)(param_2 + 4);
+  do {
+    param4 = param4 + 1;
+    __snwprintf_s(local_61c,10,9,L"K%d",param4);
+    GetPrivateProfileStringW(param_1,aWStack_608,(LPCWSTR)0x0,aWStack_5f4,0x104,aWStack_3ec);
+    if (aWStack_5f4[0] != L'\0') {
+      _wcsncpy_s(awStack_1e4,0x104,aWStack_5f4,0xffffffff);
+      uVar4 = 0;
+      local_634 = (wchar_t *)0x0;
+      _Str = _wcstok(aWStack_5f4,L",");
+      while( true ) {
+        if ((_Str == (wchar_t *)0x0) || (2 < uVar4)) goto LAB_004129fd;
+        wVar1 = *_Str;
+        while (wVar1 == L' ') {
+          _Str = _Str + 1;
+          wVar1 = *_Str;
+        }
+        if ((*_Str != L'0') || (_Str[1] != L'x')) {
+          FUN_00447ed0();
+          goto LAB_00412ad5;
+        }
+        uVar2 = _wcstoul(_Str,&local_634,0x10);
+        if (*local_634 != L'\0') break;
+        *(ulong *)(local_61c + uVar4 * 2 + -8) = uVar2;
+        uVar4 = uVar4 + 1;
+        _Str = _wcstok((wchar_t *)0x0,L",");
+      }
+      MessageBoxW((HWND)0x0,L"Data parse error!",L"Error",0);
+LAB_004129fd:
+      if (iStack_62c == 2) {
+        puVar3[1] = (undefined1)uStack_628;
+        *(undefined4 *)(puVar3 + -4) = 0x2000000;
+        *puVar3 = (undefined1)uStack_624;
+        switch(uStack_628 & 0xff) {
+        case 0x10:
+        case 0xa0:
+          *puVar3 = 2;
+          puVar3[3] = 0x10;
+          puVar3[1] = 0;
+          break;
+        case 0x11:
+        case 0xa2:
+          *puVar3 = 1;
+          puVar3[3] = 0x11;
+          puVar3[1] = 0;
+          break;
+        case 0x12:
+        case 0xa4:
+          *puVar3 = 4;
+          puVar3[3] = 0x12;
+          puVar3[1] = 0;
+          break;
+        case 0x5b:
+          *puVar3 = 8;
+          puVar3[3] = 0x5b;
+          puVar3[1] = 0;
+          break;
+        case 0x5c:
+          *puVar3 = 0x80;
+          puVar3[3] = 0x5c;
+          puVar3[1] = 0;
+          break;
+        case 0xa1:
+          *puVar3 = 0x20;
+          puVar3[3] = 0xa1;
+          puVar3[1] = 0;
+          break;
+        case 0xa3:
+          *puVar3 = 0x10;
+          puVar3[3] = 0xa3;
+          puVar3[1] = 0;
+          break;
+        case 0xa5:
+          *puVar3 = 0x40;
+          puVar3[3] = 0xa5;
+          puVar3[1] = 0;
+        }
+      }
+      else {
+        *(uint *)(puVar3 + -4) = iStack_62c << 0x18 | uStack_628 & 0xffffff;
+        if (iStack_62c == 9) {
+          *(undefined4 *)(puVar3 + 4) = uStack_624;
+        }
+      }
+      local_638 = local_638 + 1;
+    }
+    puVar3 = puVar3 + 0x10;
+    if (0x8f < param4) {
+LAB_00412ad5:
+      __security_check_cookie(in_stack_00000024 ^ (uint)&local_638);
+      return;
+    }
+    param_1 = local_644;
+  } while( true );
+}
+
+
+
+=== FUN_00407a60 @ 00407a60  size=367  completed=true ===
+
+void __thiscall
+FUN_00407a60(char *param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,
+            uint param_6,uint param_7,int param_8)
+
+{
+  wchar_t *param0;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  uint uVar4;
+  wchar_t awStackY_7ffffffe [1073741289];
+  undefined4 local_40c;
+  char *local_408;
+  wchar_t local_404 [2];
+  uint uStack_400;
+  wchar_t awStack_3f8 [506];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_40c;
+  local_408 = param_1;
+  if (((DAT_0064a274 != 0) && (param_2 != 0)) && (param_3 != 0)) {
+    iVar2 = 0;
+    _memset(local_404,0,0x400);
+    iVar3 = 0;
+    if (param_1 != (char *)0x0) {
+      iVar3 = __swprintf(local_404,L"%s ",param_1);
+    }
+    uVar4 = 0;
+    uStack_400 = 0;
+    if (param_6 != 0) {
+      do {
+        param0 = awStack_3f8 + iVar3;
+        if ((wchar_t *)((int)register0x00000010 + 2) <= param0) break;
+        iVar2 = iVar2 + 1;
+        if (iVar2 < param_8) {
+          iVar1 = __swprintf(param0,L"%02x ",(uint)*(byte *)(uVar4 + param_2));
+        }
+        else {
+          iVar2 = 0;
+          iVar1 = __swprintf(param0,L"%02x%s",(uint)*(byte *)(uVar4 + param_2)," ");
+        }
+        iVar3 = iVar3 + iVar1;
+        uStack_400 = uStack_400 + 1;
+        if (param_7 <= uStack_400) {
+          (*DAT_0064a278)(awStack_3f8);
+          iVar3 = 0;
+          _memset(local_404,0,0x400);
+          local_40c = 0;
+          if ((local_408 != (char *)0x0) && (uVar4 < param_3 - 1U)) {
+            iVar3 = __swprintf(local_404,L"%s ",local_408);
+          }
+        }
+        uVar4 = uVar4 + 1;
+      } while (uVar4 < param_6);
+    }
+    (*DAT_0064a278)(awStack_3f8);
+  }
+  __security_check_cookie(local_4 ^ (uint)&local_40c);
+  return;
+}
+
+
+

@@ -1,0 +1,1186 @@
+=== FUN_0042f0e0 @ 0042f0e0  size=318  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __fastcall FUN_0042f0e0(int param_1)
+
+{
+  int *piVar1;
+  int iVar2;
+  LRESULT LVar3;
+  HWND pHVar4;
+  CWnd *pCVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  
+  if ((DAT_00652f88 != (int *)0x0) && (DAT_00652f80 == 0)) {
+    (**(code **)(*DAT_00652f88 + 0x60))();
+    if (DAT_00652f88 != (int *)0x0) {
+      (**(code **)(*DAT_00652f88 + 4))(1);
+    }
+    DAT_00652f88 = (int *)0x0;
+  }
+  LVar3 = SendMessageW(*(HWND *)(param_1 + 0x3038),0x110a,9,0);
+  piVar1 = *(int **)(param_1 + 0x312c);
+  do {
+    if (piVar1 == (int *)0x0) {
+      uVar7 = 0xffffffff;
+LAB_0042f155:
+      pHVar4 = GetParent(*(HWND *)(param_1 + 0x20));
+      pCVar5 = CWnd::FromHandle(pHVar4);
+      iVar2 = *(int *)(pCVar5 + 0xa4);
+      if (iVar2 != 0) {
+        *(uint *)(iVar2 + 0x243c) = uVar7;
+        FUN_0042f890(param_1,uVar7);
+        uVar6 = 2;
+        pHVar4 = GetParent(*(HWND *)(param_1 + 0x20));
+        pCVar5 = CWnd::FromHandle(pHVar4);
+        if (*(byte *)(*(int *)(*(int *)(pCVar5 + 0xc0) + 0x20) + 0x2f1c) == uVar7) {
+          uVar6 = 0x12;
+          *(int *)(iVar2 + 0x2444) = 1 << ((byte)*(undefined4 *)(iVar2 + 0x2440) & 0x1f);
+        }
+        if (DAT_00645a5c != 0) {
+          _DAT_0064a26c = 0;
+          _DAT_0064a264 = uVar6;
+          ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+        }
+        if (DAT_00645a71 != '\0') {
+          pHVar4 = GetParent(*(HWND *)(param_1 + 0x20));
+          pCVar5 = CWnd::FromHandle(pHVar4);
+          CWnd::SetFocus(pCVar5);
+        }
+      }
+      return 1;
+    }
+    if (*(int *)*piVar1 == LVar3) {
+      uVar7 = ((int *)*piVar1)[4];
+      goto LAB_0042f155;
+    }
+    piVar1 = (int *)piVar1[1];
+  } while( true );
+}
+
+
+
+=== FUN_0042f220 @ 0042f220  size=354  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __thiscall FUN_0042f220(int param_1,uint param_2)
+
+{
+  int *piVar1;
+  int iVar2;
+  int iVar3;
+  LRESULT LVar4;
+  HWND pHVar5;
+  CWnd *pCVar6;
+  uint uVar7;
+  undefined4 uVar8;
+  
+  LVar4 = SendMessageW(*(HWND *)(param_1 + 0x3038),0x110a,9,0);
+  piVar1 = *(int **)(param_1 + 0x312c);
+  do {
+    if (piVar1 == (int *)0x0) {
+      uVar7 = 0xffffffff;
+LAB_0042f25a:
+      pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+      pCVar6 = CWnd::FromHandle(pHVar5);
+      if (*(byte *)(*(int *)(*(int *)(pCVar6 + 0xc0) + 0x20) + 0x2f1c) == uVar7) {
+        pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+        pCVar6 = CWnd::FromHandle(pHVar5);
+        uVar7 = 0;
+        do {
+          if (*(byte *)(*(int *)(*(int *)(pCVar6 + 0xc0) + 0x20) + 0x2eb4 + uVar7) == param_2) {
+            return 1;
+          }
+          uVar7 = uVar7 + 1;
+        } while (uVar7 < 4);
+        pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+        pCVar6 = CWnd::FromHandle(pHVar5);
+        iVar2 = *(int *)(pCVar6 + 0xa4);
+        if (((iVar2 != 0) && (-1 < (int)param_2)) && ((int)param_2 < 0x90)) {
+          iVar3 = *(int *)(param_1 + 0x3014);
+          uVar8 = *(undefined4 *)(param_1 + 0x5af4);
+          if (*(int *)(param_2 * 0x28 + 0x88 + iVar3) != 0) {
+            uVar8 = 0;
+          }
+          *(undefined4 *)(param_2 * 0x28 + 0x88 + iVar3) = uVar8;
+          InvalidateRect(*(HWND *)(iVar3 + 0x20),(RECT *)0x0,1);
+          *(undefined4 *)(iVar2 + 0x2448 + (*(int *)(iVar2 + 0x2440) * 0x90 + param_2) * 4) = uVar8;
+          *(int *)(iVar2 + 0x2444) = 1 << ((byte)*(undefined4 *)(iVar2 + 0x2440) & 0x1f);
+          if (DAT_00645a5c != 0) {
+            _DAT_0064a264 = 0x10;
+            _DAT_0064a26c = 0;
+            ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+          }
+        }
+      }
+      return 1;
+    }
+    if (*(int *)*piVar1 == LVar4) {
+      uVar7 = ((int *)*piVar1)[4];
+      goto LAB_0042f25a;
+    }
+    piVar1 = (int *)piVar1[1];
+  } while( true );
+}
+
+
+
+=== FUN_0042f390 @ 0042f390  size=375  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __fastcall FUN_0042f390(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  undefined4 uVar3;
+  int iVar4;
+  uint uVar5;
+  HWND pHVar6;
+  CWnd *pCVar7;
+  uint uVar8;
+  int local_14;
+  int local_10;
+  int local_4;
+  
+  pHVar6 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar7 = CWnd::FromHandle(pHVar6);
+  iVar1 = *(int *)(pCVar7 + 0xa4);
+  if (iVar1 != 0) {
+    pHVar6 = GetParent(*(HWND *)(param_1 + 0x20));
+    pCVar7 = CWnd::FromHandle(pHVar6);
+    iVar2 = *(int *)(*(int *)(pCVar7 + 0xc0) + 0x20);
+    uVar3 = *(undefined4 *)(param_1 + 0x5af4);
+    local_10 = 0;
+    local_4 = 0;
+    if (0 < *(int *)(iVar2 + 0x2d28)) {
+      local_14 = 0x17d4;
+      do {
+        iVar4 = *(int *)(param_1 + 0x3014);
+        uVar8 = (uint)*(short *)(local_14 + iVar4);
+        if (-1 < (int)uVar8) {
+          if (((*(byte *)(iVar2 + 0x2eb7) != uVar8) &&
+              (*(byte *)(iVar2 + 0x2eb6) != uVar8 &&
+               (*(byte *)(iVar2 + 0x2eb5) != uVar8 && *(byte *)(iVar2 + 0x2eb4) != uVar8))) &&
+             (uVar5 = *(uint *)(iVar1 + 0x2440), uVar5 < 5)) {
+            if ((int)uVar8 < 0x90) {
+              *(undefined4 *)(iVar4 + 0x88 + uVar8 * 0x28) = uVar3;
+              InvalidateRect(*(HWND *)(iVar4 + 0x20),(RECT *)0x0,1);
+            }
+            *(undefined4 *)(iVar1 + 0x2448 + (uVar5 * 0x90 + uVar8) * 4) = uVar3;
+            local_10 = local_10 + 1;
+            *(int *)(iVar1 + 0x2444) = 1 << ((byte)uVar5 & 0x1f);
+          }
+        }
+        local_14 = local_14 + 2;
+        local_4 = local_4 + 1;
+      } while (local_4 < *(int *)(iVar2 + 0x2d28));
+      if ((0 < local_10) && (DAT_00645a5c != 0)) {
+        _DAT_0064a264 = 0x10;
+        _DAT_0064a26c = 0;
+        ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+      }
+    }
+  }
+  return 1;
+}
+
+
+
+=== FUN_0042f890 @ 0042f890  size=1227  completed=true ===
+
+void FUN_0042f890(int param_1,uint param_2)
+
+{
+  CStringData *pCVar1;
+  int iVar2;
+  char cVar3;
+  char cVar4;
+  HWND pHVar5;
+  CWnd *pCVar6;
+  int *piVar7;
+  CStringData *pCVar8;
+  uint uVar9;
+  undefined4 *puVar10;
+  int iVar11;
+  undefined4 *puVar12;
+  int iVar13;
+  char cVar14;
+  char cVar15;
+  bool bVar16;
+  undefined4 uStack_24c;
+  undefined1 auStack_248 [572];
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 uStack_4;
+  
+  uStack_4 = 0xffffffff;
+  puStack_8 = &LAB_005ce2bb;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar6 = CWnd::FromHandle(pHVar5);
+  iVar13 = *(int *)(pCVar6 + 0xa4);
+  if ((iVar13 != 0) && ((int)param_2 < 0x1a)) {
+    pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+    pCVar6 = CWnd::FromHandle(pHVar5);
+    iVar11 = *(int *)(*(int *)(pCVar6 + 0xc0) + 0x20);
+    piVar7 = (int *)FUN_0049dfbc();
+    if (piVar7 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+      FUN_004039e0();
+    }
+    pCVar8 = (CStringData *)(**(code **)(*piVar7 + 0xc))();
+    uStack_4 = 0;
+    cVar3 = *(char *)(iVar11 + 0x3033 + param_2 * 0x28);
+    cVar14 = *(char *)(iVar11 + 0x3037 + param_2 * 0x28);
+    iVar2 = iVar11 + 0x3030 + param_2 * 0x28;
+    cVar4 = *(char *)(iVar2 + 4);
+    cVar15 = *(char *)(iVar2 + 6);
+    pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+    pCVar6 = CWnd::FromHandle(pHVar5);
+    bVar16 = *(byte *)(*(int *)(*(int *)(pCVar6 + 0xc0) + 0x20) + 0x2f1c) == param_2;
+    if (bVar16) {
+      cVar4 = '\0';
+      cVar14 = '\x01';
+      cVar15 = '\0';
+      cVar3 = '\0';
+    }
+    if (*(char *)(iVar11 + 0x2d87) == '\0') {
+      cVar15 = '\0';
+      cVar14 = '\0';
+    }
+    uVar9 = -(uint)(cVar4 != '\0') & 5;
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x32e0),uVar9);
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x50b0),uVar9);
+    uVar9 = -(uint)(cVar3 != '\0') & 5;
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x41c8),uVar9);
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x523c),uVar9);
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x55d8),-(uint)(cVar15 != '\0') & 5);
+    uVar9 = -(uint)(cVar14 != '\0') & 5;
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x5a80),uVar9);
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x230),uVar9);
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x5764),uVar9);
+    uVar9 = -(uint)bVar16 & 5;
+    if (*(byte *)(iVar11 + 0x2fec) < 2) {
+      uVar9 = 0;
+    }
+    CWnd::ShowWindow((CWnd *)(param_1 + 0x53c8),uVar9);
+    iVar2 = iVar13 + 0x243c + param_2 * 0x24;
+    FUN_00448a80();
+    FUN_00448a80();
+    uVar9 = (uint)*(byte *)(iVar2 + 0xb4e);
+    if (uVar9 != *(uint *)(param_1 + 0x5680)) {
+      *(uint *)(param_1 + 0x5680) = uVar9;
+      InvalidateRect(*(HWND *)(param_1 + 0x55f8),(RECT *)0x0,1);
+    }
+    *(undefined4 *)(param_1 + 0x5af4) = *(undefined4 *)(iVar2 + 0xb50);
+    InvalidateRect(*(HWND *)(param_1 + 0x5aa0),(RECT *)0x0,1);
+    FUN_00405a70();
+    FUN_00403220();
+    ATL::CSimpleStringT<wchar_t,0>::CloneData(pCVar8);
+    FUN_0045ad30();
+    FUN_00403220();
+    ATL::CSimpleStringT<wchar_t,0>::CloneData(pCVar8);
+    FUN_0045ad30();
+    pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+    pCVar6 = CWnd::FromHandle(pHVar5);
+    if (*(byte *)(*(int *)(*(int *)(pCVar6 + 0xc0) + 0x20) + 0x2f1c) == param_2) {
+      *(undefined4 *)(param_1 + 0x5af4) = *(undefined4 *)(iVar11 + 0x2fe8);
+      InvalidateRect(*(HWND *)(param_1 + 0x5aa0),(RECT *)0x0,1);
+      FUN_00405a70();
+      FUN_0041a9e0();
+      iVar11 = *(int *)(iVar13 + 0x2440);
+      FUN_004071c0();
+      iVar2 = *(int *)(param_1 + 0x3014);
+      puVar12 = (undefined4 *)(iVar2 + 0x88);
+      puVar10 = (undefined4 *)(iVar11 * 0x240 + 0x2448 + iVar13);
+      iVar13 = 0x90;
+      do {
+        *puVar12 = *puVar10;
+        puVar10 = puVar10 + 1;
+        puVar12 = puVar12 + 10;
+        iVar13 = iVar13 + -1;
+      } while (iVar13 != 0);
+      InvalidateRect(*(HWND *)(iVar2 + 0x20),(RECT *)0x0,1);
+      *(undefined4 *)(*(int *)(param_1 + 0x3014) + 0x17ac) = 1;
+    }
+    else {
+      uStack_24c = 0;
+      _memset(auStack_248,0,0x23c);
+      iVar13 = *(int *)(param_1 + 0x3014);
+      iVar11 = 0;
+      puVar10 = (undefined4 *)(iVar13 + 0x88);
+      do {
+        *puVar10 = *(undefined4 *)(auStack_248 + iVar11 * 4 + -4);
+        iVar11 = iVar11 + 1;
+        puVar10 = puVar10 + 10;
+      } while (iVar11 < 0x90);
+      InvalidateRect(*(HWND *)(iVar13 + 0x20),(RECT *)0x0,1);
+      *(undefined4 *)(*(int *)(param_1 + 0x3014) + 0x17ac) = 0;
+      FUN_004305a0();
+    }
+    InvalidateRect(*(HWND *)(param_1 + 0x20),(RECT *)(param_1 + 0x20c),1);
+    uStack_4 = 0xffffffff;
+    pCVar1 = pCVar8 + 0xc;
+    LOCK();
+    iVar13 = *(int *)pCVar1;
+    *(int *)pCVar1 = *(int *)pCVar1 + -1;
+    UNLOCK();
+    if (iVar13 + -1 < 1) {
+      (**(code **)(**(int **)pCVar8 + 4))();
+    }
+  }
+  ExceptionList = local_c;
+  return;
+}
+
+
+
+=== FUN_0042fd60 @ 0042fd60  size=1197  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int __thiscall FUN_0042fd60(CWnd *param_1,uint param_2,int param_3)
+
+{
+  CStringData *pCVar1;
+  undefined4 uVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  HWND pHVar6;
+  CWnd *pCVar7;
+  int *piVar8;
+  undefined4 *puVar9;
+  int iVar10;
+  undefined4 *puVar11;
+  uint uVar12;
+  int iStack_2a0;
+  CStringData *pCStack_29c;
+  int iStack_298;
+  CStringData *pCStack_294;
+  undefined4 uStack_290;
+  undefined4 uStack_28c;
+  undefined4 uStack_288;
+  undefined4 uStack_284;
+  undefined4 uStack_70;
+  undefined4 uStack_6c;
+  undefined4 uStack_50;
+  undefined4 uStack_4c;
+  undefined4 uStack_48;
+  undefined4 uStack_44;
+  undefined4 uStack_20;
+  void *local_14;
+  undefined1 *puStack_10;
+  int iStack_c;
+  
+  iStack_c = 0xffffffff;
+  puStack_10 = &LAB_005ce28c;
+  local_14 = ExceptionList;
+  ExceptionList = &local_14;
+  iVar10 = 0;
+  if (param_1 != (CWnd *)0xffffa710) {
+    iVar10 = *(int *)(param_1 + 0x5910);
+  }
+  if (param_3 != iVar10) {
+    if (param_1 == (CWnd *)0xffffaa28) {
+      iVar10 = 0;
+    }
+    else {
+      iVar10 = *(int *)(param_1 + 0x55f8);
+    }
+    if (param_3 == iVar10) {
+      if ((uint)(*(int *)(param_1 + 0x5680) == 0) != *(uint *)(param_1 + 0x5680)) {
+        *(uint *)(param_1 + 0x5680) = (uint)(*(int *)(param_1 + 0x5680) == 0);
+        InvalidateRect(*(HWND *)(param_1 + 0x55f8),(RECT *)0x0,1);
+      }
+      FUN_00443dc0();
+      FUN_004302b0();
+      FUN_0042f510();
+    }
+    else {
+      iVar10 = 0;
+      if (param_1 != (CWnd *)0xffffa89c) {
+        iVar10 = *(int *)(param_1 + 0x5784);
+      }
+      if (param_3 == iVar10) {
+        if (*(int *)(param_1 + 0x22c) != -1) {
+          *(undefined4 *)(param_1 + *(int *)(param_1 + 0x22c) * 4 + 0x19c) =
+               *(undefined4 *)(param_1 + 0x5af4);
+          InvalidateRect(*(HWND *)(param_1 + 0x20),(RECT *)(param_1 + 0x21c),1);
+          (&DAT_0065872c)[*(int *)(param_1 + 0x22c)] =
+               *(undefined4 *)(param_1 + *(int *)(param_1 + 0x22c) * 4 + 0x19c);
+        }
+      }
+      else {
+        iVar10 = 0;
+        if (param_1 != (CWnd *)0xffffac38) {
+          iVar10 = *(int *)(param_1 + 0x53e8);
+        }
+        if (param_3 == iVar10) {
+          pHVar6 = GetParent(*(HWND *)(param_1 + 0x20));
+          pCVar7 = CWnd::FromHandle(pHVar6);
+          iVar10 = *(int *)(pCVar7 + 0xa4);
+          if (iVar10 != 0) {
+            iVar4 = *(int *)(param_1 + 0x5458);
+            *(int *)(iVar10 + 0x2440) = iVar4;
+            *(int *)(iVar10 + 0x2444) = 1 << ((byte)iVar4 & 0x1f);
+            iVar5 = *(int *)(param_1 + 0x3014);
+            puVar9 = (undefined4 *)(iVar4 * 0x240 + 0x2448 + iVar10);
+            puVar11 = (undefined4 *)(iVar5 + 0x88);
+            iVar10 = 0x90;
+            do {
+              *puVar11 = *puVar9;
+              puVar9 = puVar9 + 1;
+              puVar11 = puVar11 + 10;
+              iVar10 = iVar10 + -1;
+            } while (iVar10 != 0);
+            InvalidateRect(*(HWND *)(iVar5 + 0x20),(RECT *)0x0,1);
+            if (DAT_00645a5c != 0) {
+              FUN_00404ed0();
+            }
+          }
+        }
+      }
+    }
+    iVar10 = CWnd::OnCommand(param_1,param_2,param_3);
+    ExceptionList = local_14;
+    return iVar10;
+  }
+  pHVar6 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar7 = CWnd::FromHandle(pHVar6);
+  if (*(int *)(pCVar7 + 0x1570) != 0) {
+    FUN_0044b760();
+    Sleep(100);
+  }
+  piVar8 = (int *)FUN_0049dfbc();
+  if (piVar8 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_004039e0();
+  }
+  iStack_2a0 = (**(code **)(*piVar8 + 0xc))();
+  iStack_2a0 = iStack_2a0 + 0x10;
+  iStack_c = 0;
+  piVar8 = (int *)FUN_0049dfbc();
+  if (piVar8 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_004039e0();
+  }
+  iStack_298 = (**(code **)(*piVar8 + 0xc))();
+  iStack_298 = iStack_298 + 0x10;
+  iStack_c._0_1_ = 1;
+  FUN_00403220(&iStack_2a0,L"%sskins\\%s");
+  FUN_00403220(&iStack_298,L"%sskins\\%s",&DAT_0064a048,L"progress_ov.png");
+  pHVar6 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar7 = CWnd::FromHandle(pHVar6);
+  uVar2 = *(undefined4 *)(*(int *)(pCVar7 + 0xc0) + 0x18);
+  FUN_00460490();
+  iStack_c._0_1_ = 2;
+  pCStack_294 = (CStringData *)(iStack_298 + -0x10);
+  ATL::CSimpleStringT<wchar_t,0>::CloneData(pCStack_294);
+  iStack_c._0_1_ = 3;
+  pCStack_29c = (CStringData *)(iStack_2a0 + -0x10);
+  ATL::CSimpleStringT<wchar_t,0>::CloneData(pCStack_29c);
+  iStack_c = CONCAT31(iStack_c._1_3_,2);
+  FUN_00460f50(uVar2);
+  uStack_50 = 0x28;
+  uStack_44 = 0x56;
+  uStack_4c = 0x4b;
+  uStack_48 = 0x1da;
+  uStack_290 = 0xf;
+  uStack_28c = 0xc;
+  uStack_288 = 0x1c7;
+  uStack_284 = 0x20;
+  ATL::CSimpleStringT<wchar_t,0>::CloneData((CStringData *)(DAT_006589f4 + -0x10));
+  FUN_00460eb0();
+  uStack_70 = 0;
+  uStack_20 = 0;
+  uVar12 = 0x42;
+  uStack_6c = 100;
+  pHVar6 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar7 = CWnd::FromHandle(pHVar6);
+  if (*(int *)(pCVar7 + 0xa4) != 0) {
+    uVar3 = *(uint *)(*(int *)(pCVar7 + 0xa4) + 0x243c);
+    pHVar6 = GetParent(*(HWND *)(param_1 + 0x20));
+    pCVar7 = CWnd::FromHandle(pHVar6);
+    if (*(byte *)(*(int *)(*(int *)(pCVar7 + 0xc0) + 0x20) + 0x2f1c) == uVar3) {
+      uVar12 = 0x52;
+    }
+  }
+  if (DAT_0064a270 == 0) {
+    _DAT_0064a264 = uVar12 | 0x8000;
+    _DAT_0064a26c = 0;
+    ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+  }
+  FUN_004a87d4();
+  iStack_c._0_1_ = 1;
+  FUN_004605f0();
+  iStack_c = (uint)iStack_c._1_3_ << 8;
+  pCVar1 = pCStack_294 + 0xc;
+  LOCK();
+  iVar10 = *(int *)pCVar1;
+  *(int *)pCVar1 = *(int *)pCVar1 + -1;
+  UNLOCK();
+  if (iVar10 + -1 < 1) {
+    (**(code **)(**(int **)pCStack_294 + 4))();
+  }
+  iStack_c = 0xffffffff;
+  pCVar1 = pCStack_29c + 0xc;
+  LOCK();
+  iVar10 = *(int *)pCVar1;
+  *(int *)pCVar1 = *(int *)pCVar1 + -1;
+  UNLOCK();
+  if (iVar10 + -1 < 1) {
+    (**(code **)(**(int **)pCStack_29c + 4))();
+  }
+  ExceptionList = local_14;
+  return 1;
+}
+
+
+
+=== FUN_004302b0 @ 004302b0  size=97  completed=true ===
+
+void FUN_004302b0(void)
+
+{
+  undefined1 *puVar1;
+  int iVar2;
+  HWND pHVar3;
+  CWnd *pCVar4;
+  int unaff_ESI;
+  
+  pHVar3 = GetParent(*(HWND *)(unaff_ESI + 0x20));
+  pCVar4 = CWnd::FromHandle(pHVar3);
+  iVar2 = *(int *)(pCVar4 + 0xa4);
+  if (iVar2 != 0) {
+    puVar1 = (undefined1 *)(iVar2 + 0x2f88 + *(int *)(iVar2 + 0x243c) * 0x24);
+    puVar1[1] = *(undefined1 *)(unaff_ESI + 0x37f8 + *(int *)(unaff_ESI + 0x3338) * 4);
+    *puVar1 = *(undefined1 *)(unaff_ESI + 0x46e0 + *(int *)(unaff_ESI + 0x4220) * 4);
+    *(undefined4 *)(puVar1 + 4) = *(undefined4 *)(unaff_ESI + 0x5af4);
+    puVar1[2] = *(undefined1 *)(unaff_ESI + 0x5680);
+  }
+  return;
+}
+
+
+
+=== FUN_004332e0 @ 004332e0  size=208  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __fastcall FUN_004332e0(int param_1)
+
+{
+  int *piVar1;
+  LRESULT LVar2;
+  HWND pHVar3;
+  CWnd *pCVar4;
+  int iVar5;
+  
+  if ((DAT_00652f88 != (int *)0x0) && (DAT_00652f80 == 0)) {
+    (**(code **)(*DAT_00652f88 + 0x60))();
+    if (DAT_00652f88 != (int *)0x0) {
+      (**(code **)(*DAT_00652f88 + 4))(1);
+    }
+    DAT_00652f88 = (int *)0x0;
+  }
+  LVar2 = SendMessageW(*(HWND *)(param_1 + 0x2ecc),0x110a,9,0);
+  piVar1 = *(int **)(param_1 + 0x2fc0);
+  do {
+    if (piVar1 == (int *)0x0) {
+      iVar5 = -1;
+LAB_00433355:
+      pHVar3 = GetParent(*(HWND *)(param_1 + 0x20));
+      pCVar4 = CWnd::FromHandle(pHVar3);
+      if (*(int *)(pCVar4 + 0xa4) != 0) {
+        *(int *)(*(int *)(pCVar4 + 0xa4) + 0x3344) = iVar5;
+        FUN_004334e0(iVar5);
+        if (DAT_00645a5c != 0) {
+          _DAT_0064a264 = 2;
+          _DAT_0064a26c = 0;
+          ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+        }
+      }
+      return 1;
+    }
+    if (*(int *)*piVar1 == LVar2) {
+      iVar5 = ((int *)*piVar1)[4];
+      goto LAB_00433355;
+    }
+    piVar1 = (int *)piVar1[1];
+  } while( true );
+}
+
+
+
+=== FUN_00433b00 @ 00433b00  size=100  completed=true ===
+
+void FUN_00433b00(void)
+
+{
+  undefined1 *puVar1;
+  int iVar2;
+  HWND pHVar3;
+  CWnd *pCVar4;
+  int unaff_ESI;
+  
+  pHVar3 = GetParent(*(HWND *)(unaff_ESI + 0x20));
+  pCVar4 = CWnd::FromHandle(pHVar3);
+  iVar2 = *(int *)(pCVar4 + 0xa4);
+  if (iVar2 != 0) {
+    puVar1 = (undefined1 *)(iVar2 + 0x243c + (*(int *)(iVar2 + 0x3344) + 0x6b) * 0x24);
+    puVar1[1] = *(undefined1 *)(unaff_ESI + 0x368c + *(int *)(unaff_ESI + 0x31cc) * 4);
+    *puVar1 = *(undefined1 *)(unaff_ESI + 0x4574 + *(int *)(unaff_ESI + 0x40b4) * 4);
+    *(undefined4 *)(puVar1 + 4) = *(undefined4 *)(unaff_ESI + 0x55ec);
+    puVar1[2] = *(undefined1 *)(unaff_ESI + 0x5490);
+  }
+  return;
+}
+
+
+
+=== FUN_004354b0 @ 004354b0  size=1202  completed=true ===
+
+void FUN_004354b0(int param_1)
+
+{
+  int iVar1;
+  byte bVar2;
+  char cVar3;
+  char cVar4;
+  HWND pHVar5;
+  CWnd *pCVar6;
+  int *piVar7;
+  uint uVar8;
+  undefined4 *puVar9;
+  uint *puVar10;
+  int unaff_EBX;
+  int iVar11;
+  int iVar12;
+  int *piVar13;
+  code *pcVar14;
+  undefined4 *puVar15;
+  int iStack_1c;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 uStack_4;
+  
+  uStack_4 = 0xffffffff;
+  puStack_8 = &LAB_005ca058;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  pHVar5 = GetParent(*(HWND *)(unaff_EBX + 0x20));
+  pCVar6 = CWnd::FromHandle(pHVar5);
+  pHVar5 = GetParent(*(HWND *)(pCVar6 + 0x20));
+  pCVar6 = CWnd::FromHandle(pHVar5);
+  iVar11 = *(int *)(pCVar6 + 0xa4);
+  if ((iVar11 != 0) && (param_1 < 0x1a)) {
+    pHVar5 = GetParent(*(HWND *)(unaff_EBX + 0x20));
+    pCVar6 = CWnd::FromHandle(pHVar5);
+    pHVar5 = GetParent(*(HWND *)(pCVar6 + 0x20));
+    pCVar6 = CWnd::FromHandle(pHVar5);
+    iVar12 = *(int *)(*(int *)(pCVar6 + 0xc0) + 0x20);
+    piVar7 = (int *)FUN_0049dfbc();
+    if (piVar7 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+      FUN_004039e0();
+    }
+    piVar7 = (int *)(**(code **)(*piVar7 + 0xc))();
+    uStack_4 = 0;
+    iVar1 = param_1 * 5 + 0x3f2;
+    bVar2 = *(byte *)(iVar12 + 0x1f + iVar1 * 8);
+    cVar3 = *(char *)(iVar12 + 0x1b + iVar1 * 8);
+    cVar4 = *(char *)(iVar12 + 0x1d + iVar1 * 8);
+    uVar8 = -(uint)(*(char *)(iVar12 + 0x1c + iVar1 * 8) != '\0') & 5;
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x2e60),uVar8);
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x4c30),uVar8);
+    uVar8 = -(uint)(cVar3 != '\0') & 5;
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x3d48),uVar8);
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x4dbc),uVar8);
+    uVar8 = -(uint)(cVar4 != '\0') & 5;
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x599c),uVar8);
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x5b28),uVar8);
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x7c),-(uint)(bVar2 != 0) & 5);
+    uVar8 = (bVar2 < 2) - 1 & 5;
+    if (*(char *)(iVar12 + 0x1f26) == '\0') {
+      uVar8 = 0;
+    }
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x5684),uVar8);
+    CWnd::ShowWindow((CWnd *)(unaff_EBX + 0x5810),uVar8);
+    iVar11 = iVar11 + 0x243c + param_1 * 0x24;
+    bVar2 = *(byte *)(iVar11 + 0x24);
+    iStack_1c = -1;
+    iVar12 = 0;
+    piVar13 = (int *)(unaff_EBX + 0x51e4);
+    do {
+      uVar8 = ((int)(uint)bVar2 <= iVar12) - 1 & 5;
+      CWnd::ShowWindow((CWnd *)(piVar13 + -0x20),uVar8);
+      if ((uVar8 == 5) && (*piVar13 != 0)) {
+        iStack_1c = iVar12;
+      }
+      iVar12 = iVar12 + 1;
+      piVar13 = piVar13 + 0x29;
+    } while (iVar12 < 8);
+    if (iStack_1c == -1) {
+      puVar9 = (undefined4 *)(unaff_EBX + 0x5184);
+      iVar12 = 8;
+      do {
+        puVar9[0x18] = 0;
+        InvalidateRect((HWND)*puVar9,(RECT *)0x0,1);
+        pcVar14 = InvalidateRect_exref;
+        puVar9 = puVar9 + 0x29;
+        iVar12 = iVar12 + -1;
+      } while (iVar12 != 0);
+      *(undefined4 *)(unaff_EBX + 0x51e4) = 1;
+      InvalidateRect(*(HWND *)(unaff_EBX + 0x5184),(RECT *)0x0,1);
+    }
+    else {
+      pcVar14 = InvalidateRect_exref;
+    }
+    iVar12 = 0;
+    if (0 < *(int *)(unaff_EBX + 0x4bc0)) {
+      puVar10 = (uint *)(unaff_EBX + 0x4260);
+      do {
+        if (*puVar10 == (uint)*(byte *)(iVar11 + 4)) {
+          if (iVar12 != -1) {
+            *(int *)(unaff_EBX + 0x3da0) = iVar12;
+            *(int *)(unaff_EBX + 0x4bd0) = (int)*(short *)(unaff_EBX + 0x3db0 + iVar12 * 2);
+            (*pcVar14)();
+          }
+          break;
+        }
+        iVar12 = iVar12 + 1;
+        puVar10 = puVar10 + 1;
+      } while (iVar12 < *(int *)(unaff_EBX + 0x4bc0));
+    }
+    iVar12 = 0;
+    if (0 < *(int *)(unaff_EBX + 0x3cd8)) {
+      puVar10 = (uint *)(unaff_EBX + 0x3378);
+      do {
+        if (*puVar10 == (uint)*(byte *)(iVar11 + 5)) {
+          if (iVar12 != -1) {
+            *(int *)(unaff_EBX + 0x2eb8) = iVar12;
+            *(int *)(unaff_EBX + 0x3ce8) = (int)*(short *)(unaff_EBX + 0x2ec8 + iVar12 * 2);
+            (*pcVar14)();
+          }
+          break;
+        }
+        iVar12 = iVar12 + 1;
+        puVar10 = puVar10 + 1;
+      } while (iVar12 < *(int *)(unaff_EBX + 0x3cd8));
+    }
+    puVar15 = (undefined4 *)(iVar11 + 8);
+    puVar9 = (undefined4 *)(unaff_EBX + 0x5184);
+    iVar11 = 8;
+    do {
+      puVar9[0x15] = *puVar15;
+      InvalidateRect((HWND)*puVar9,(RECT *)0x0,1);
+      puVar15 = puVar15 + 1;
+      puVar9 = puVar9 + 0x29;
+      iVar11 = iVar11 + -1;
+    } while (iVar11 != 0);
+    FUN_00405a70();
+    FUN_00403220();
+    puVar9 = (undefined4 *)(**(code **)(*(int *)*piVar7 + 0x10))();
+    if ((piVar7[3] < 0) || (puVar9 != (undefined4 *)*piVar7)) {
+      iVar11 = (**(code **)*puVar9)(piVar7[1],2);
+      if (iVar11 == 0) {
+                    /* WARNING: Subroutine does not return */
+        FUN_00403790();
+      }
+      *(int *)(iVar11 + 4) = piVar7[1];
+      _memcpy_s((void *)(iVar11 + 0x10),piVar7[1] * 2 + 2,piVar7 + 4,piVar7[1] * 2 + 2);
+    }
+    else {
+      LOCK();
+      piVar7[3] = piVar7[3] + 1;
+      UNLOCK();
+    }
+    FUN_0045ad30();
+    FUN_00403220();
+    puVar9 = (undefined4 *)(**(code **)(*(int *)*piVar7 + 0x10))();
+    if ((piVar7[3] < 0) || (puVar9 != (undefined4 *)*piVar7)) {
+      iVar11 = (**(code **)*puVar9)(piVar7[1],2);
+      if (iVar11 == 0) {
+                    /* WARNING: Subroutine does not return */
+        FUN_00403790();
+      }
+      *(int *)(iVar11 + 4) = piVar7[1];
+      _memcpy_s((void *)(iVar11 + 0x10),piVar7[1] * 2 + 2,piVar7 + 4,piVar7[1] * 2 + 2);
+    }
+    else {
+      LOCK();
+      piVar7[3] = piVar7[3] + 1;
+      UNLOCK();
+    }
+    FUN_0045ad30();
+    InvalidateRect(*(HWND *)(unaff_EBX + 0x20),(RECT *)0x0,1);
+    uStack_4 = 0xffffffff;
+    piVar13 = piVar7 + 3;
+    LOCK();
+    iVar11 = *piVar13;
+    *piVar13 = *piVar13 + -1;
+    UNLOCK();
+    if (iVar11 + -1 < 1) {
+      (**(code **)(*(int *)*piVar7 + 4))();
+    }
+  }
+  ExceptionList = local_c;
+  return;
+}
+
+
+
+=== FUN_004581f0 @ 004581f0  size=89  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_004581f0(void)
+
+{
+  int in_EAX;
+  int iVar1;
+  
+  if (*(int *)(in_EAX + 0x43c) != 0) {
+    iVar1 = (**(code **)(**(int **)(in_EAX + 0x43c) + 0x17c))();
+    if (iVar1 != 0) {
+      *(undefined4 *)(iVar1 + 0x30) = 0xf;
+      *(undefined4 *)(iVar1 + 0x2444) = 0xff;
+      if (DAT_00645a5c != 0) {
+        _DAT_0064a264 = 0xff;
+        _DAT_0064a26c = 0;
+        ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+      }
+    }
+  }
+  return;
+}
+
+
+
+=== FUN_00469030 @ 00469030  size=165  completed=true ===
+
+void __thiscall FUN_00469030(int param_1,int param_2)
+
+{
+  undefined4 uVar1;
+  
+  if (param_2 == 0) {
+    param_2 = *(int *)(param_1 + 0xa4);
+  }
+  if (param_2 != 0) {
+    if (*(int *)(param_1 + 0x1564) != 0) {
+      FUN_00425d00(param_2);
+    }
+    if ((*(int *)(param_1 + 0x1568) != 0) && (*(int *)(*(int *)(param_1 + 0x1568) + 0x1884) != 0)) {
+      FUN_0045ea70();
+    }
+    if (*(int *)(param_1 + 0x156c) != 0) {
+      FUN_00430210();
+    }
+    if (*(int *)(param_1 + 0x1570) != 0) {
+      FUN_0044b970();
+    }
+    if (*(int *)(param_1 + 0x1578) != 0) {
+      uVar1 = *(undefined4 *)(param_2 + 0x3344);
+      FUN_00473bc0();
+      FUN_004334e0(uVar1);
+    }
+  }
+  return;
+}
+
+
+
+=== FUN_0047c060 @ 0047c060  size=1945  completed=true ===
+
+void __thiscall
+FUN_0047c060(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4,uint *param_5,
+            int *param_6,uint *param_7)
+
+{
+  uint uVar1;
+  int iVar2;
+  uint *puVar3;
+  int *piVar4;
+  int *piVar5;
+  undefined1 *puVar6;
+  int *piVar7;
+  int iVar8;
+  int *piVar9;
+  uint *local_f0;
+  int local_ec;
+  uint local_e8 [12];
+  undefined1 local_b8;
+  undefined1 local_b7 [179];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_f0;
+  local_f0 = param_5;
+  if (param_1 != (undefined4 *)0x0) {
+    _memset(param_1,0,0x4080);
+    *param_1 = 0x4080;
+    param_1[1] = 0x13;
+    param_1[2] = 0x1e;
+    param_1[0x101f] = 0x2d;
+    param_1[0x101e] = 0xdc;
+    param_1[0x101b] = param_2;
+    param_1[0x101d] = param_3;
+    param_1[0xfe0] = 0xffffffff;
+    param_1[0xfe1] = 0xffffffff;
+    param_1[0xfe3] = 0xffffffff;
+    param_1[0xfe4] = 0xffffffff;
+    param_1[0xfe6] = 0xffffffff;
+    param_1[0xfe7] = 0xffffffff;
+    param_1[0xfe9] = 0xffffffff;
+    param_1[0xfea] = 0xffffffff;
+    param_1[0xfec] = 0xffffffff;
+    param_1[0xfed] = 0xffffffff;
+    param_1[0xfef] = 0xffffffff;
+    param_1[0xff0] = 0xffffffff;
+    param_1[0xff2] = 0xffffffff;
+    param_1[0xff3] = 0xffffffff;
+    param_1[0xff5] = 0xffffffff;
+    param_1[0xff6] = 0xffffffff;
+    param_1[0xff8] = 0xffffffff;
+    param_1[0xff9] = 0xffffffff;
+    param_1[0xffb] = 0xffffffff;
+    param_1[0xffc] = 0xffffffff;
+    param_1[0xffe] = 0xffffffff;
+    param_1[0xfff] = 0xffffffff;
+    param_1[0x1001] = 0xffffffff;
+    param_1[0x1002] = 0xffffffff;
+    param_1[0x1004] = 0xffffffff;
+    param_1[0x1005] = 0xffffffff;
+    param_1[0x1007] = 0xffffffff;
+    param_1[0x1008] = 0xffffffff;
+    param_1[0x100a] = 0xffffffff;
+    param_1[0x100b] = 0xffffffff;
+    param_1[0x100d] = 0xffffffff;
+    param_1[0x100e] = 0xffffffff;
+    param_1[0x1010] = 0xffffffff;
+    param_1[0x1011] = 0xffffffff;
+    param_1[0x1013] = 0xffffffff;
+    param_1[0x1014] = 0xffffffff;
+    param_1[0x1016] = 0xffffffff;
+    param_1[0x1017] = 0xffffffff;
+    param_1[0x1019] = 0xffffffff;
+    param_1[0x101a] = 0xffffffff;
+    local_e8[1] = 0;
+    local_e8[2] = 0;
+    local_e8[3] = 0;
+    local_e8[4] = 0;
+    local_e8[5] = 0;
+    local_ec = 0;
+    local_e8[0] = 0;
+    local_b8 = 0;
+    _memset(local_b7,0,0xb3);
+    local_e8[6] = 0x70;
+    local_e8[7] = 0x31;
+    local_e8[8] = 0x51;
+    local_e8[9] = 0x41;
+    local_e8[10] = 0x58;
+    local_e8[0xb] = 0x20;
+    iVar8 = 0;
+    puVar6 = &local_b8;
+    do {
+      uVar1 = FUN_0041d440(puVar6);
+      if (0 < (int)uVar1) {
+        local_e8[local_ec] = uVar1;
+        local_ec = local_ec + 1;
+        puVar6 = puVar6 + 0x1e;
+      }
+      iVar8 = iVar8 + 1;
+    } while (iVar8 < 6);
+    iVar8 = 0;
+    if (0 < local_ec) {
+      local_f0 = param_1 + 3;
+      puVar6 = &local_b8;
+      do {
+        uVar1 = local_e8[iVar8];
+        iVar2 = 0;
+        local_f0[0x90] = uVar1;
+        if (0 < (int)uVar1) {
+          puVar3 = local_f0;
+          do {
+            *puVar3 = (uint)(byte)puVar6[iVar2];
+            iVar2 = iVar2 + 1;
+            puVar3 = puVar3 + 1;
+          } while (iVar2 < (int)uVar1);
+        }
+        iVar8 = iVar8 + 1;
+        local_f0 = local_f0 + 0x91;
+        puVar6 = puVar6 + 0x1e;
+      } while (iVar8 < local_ec);
+    }
+    if (param_4 != 0) {
+      if (param_6 == (int *)0x0) {
+        param_1[0x369] = 0x1b;
+        param_1[0x36a] = 0xc0;
+        param_1[0x36b] = 9;
+        param_1[0x36c] = 0x14;
+        param_1[0x36d] = 0xa0;
+        param_1[0x36e] = 0xa2;
+        param_1[0x3f9] = 6;
+        param_1[0x3fa] = 0x31;
+        param_1[0x3fb] = 0x51;
+        param_1[0x3fc] = 0x41;
+        param_1[0x3fd] = 0x5a;
+        param_1[0x3fe] = 0xa4;
+        param_1[0x48a] = 5;
+        param_1[0x48b] = 0x70;
+        param_1[0x48c] = 0x32;
+        param_1[0x48d] = 0x57;
+        param_1[0x48e] = 0x53;
+        param_1[0x48f] = 0x58;
+        param_1[0x51b] = 5;
+        param_1[0x51c] = 0x71;
+        param_1[0x51d] = 0x33;
+        param_1[0x51e] = 0x45;
+        param_1[0x51f] = 0x44;
+        param_1[0x520] = 0x43;
+        param_1[0x5ac] = 5;
+        param_1[0x5ad] = 0x72;
+        param_1[0x5ae] = 0x34;
+        param_1[0x5af] = 0x52;
+        param_1[0x5b0] = 0x46;
+        param_1[0x5b1] = 0x56;
+        param_1[0x63d] = 5;
+        param_1[0x63e] = 0x73;
+        param_1[0x63f] = 0x35;
+        param_1[0x640] = 0x54;
+        param_1[0x641] = 0x47;
+        param_1[0x642] = 0x42;
+        param_1[0x643] = 0x20;
+        param_1[0x6ce] = 6;
+        param_1[0x6cf] = 0x36;
+        param_1[0x6d0] = 0x59;
+        param_1[0x6d1] = 0x48;
+        param_1[0x6d2] = 0x4e;
+        param_1[0x75f] = 4;
+        param_1[0x760] = 0x74;
+        param_1[0x761] = 0x37;
+        param_1[0x762] = 0x55;
+        param_1[0x763] = 0x4a;
+        param_1[0x764] = 0x4d;
+        param_1[0x7f0] = 5;
+        param_1[0x7f1] = 0x75;
+        param_1[0x7f2] = 0x38;
+        param_1[0x7f3] = 0x49;
+        param_1[0x7f4] = 0x4b;
+        param_1[0x7f5] = 0xbc;
+        param_1[0x7f6] = 0xa5;
+        param_1[0x881] = 6;
+        param_1[0x882] = 0x76;
+        param_1[0x883] = 0x39;
+        param_1[0x884] = 0x4f;
+        param_1[0x885] = 0x4c;
+        param_1[0x886] = 0xbe;
+        param_1[0x887] = 0xa5;
+        param_1[0x912] = 6;
+        param_1[0x913] = 0x77;
+        param_1[0x914] = 0x30;
+        param_1[0x915] = 0x50;
+        param_1[0x916] = 0xba;
+        param_1[0x917] = 0xbf;
+        param_1[0x918] = 0xfa;
+        param_1[0x9a3] = 6;
+        param_1[0x9a4] = 0x78;
+        param_1[0x9a5] = 0xdb;
+        param_1[0x9a6] = 0xbd;
+        param_1[0x9a7] = 0xde;
+        param_1[0x9a8] = 0xa1;
+        param_1[0x9a9] = 0x5d;
+        param_1[0xa34] = 6;
+        param_1[0xa35] = 0x79;
+        param_1[0xa36] = 0xdd;
+        param_1[0xa37] = 0xbb;
+        param_1[0xa38] = 0x5d;
+        param_1[0xac5] = 4;
+        param_1[0xac6] = 0x7a;
+        param_1[0xb56] = 1;
+        param_1[0xb57] = 0x7b;
+        param_1[0xb58] = 8;
+        param_1[0xb59] = 0xdc;
+        param_1[0xb5a] = 0xd;
+        param_1[0xb5b] = 0xa1;
+        param_1[0xb5c] = 0xa3;
+        param_1[0xbe7] = 6;
+        param_1[0xbe8] = 0x2c;
+        param_1[0xbe9] = 0x2d;
+        param_1[0xbea] = 0x2e;
+        param_1[0xbeb] = 0x25;
+        param_1[0xc78] = 4;
+        param_1[0xc79] = 0x91;
+        param_1[0xc7a] = 0x24;
+        param_1[0xc7b] = 0x23;
+        param_1[0xc7c] = 0x26;
+        param_1[0xc7d] = 0x28;
+        param_1[0xd09] = 5;
+        param_1[0xd0a] = 0x13;
+        param_1[0xd0b] = 0x21;
+        param_1[0xd0c] = 0x22;
+        param_1[0xd0d] = 0x27;
+        param_1[0xd9a] = 4;
+        param_1[0xd9b] = 0x90;
+        param_1[0xd9c] = 0x67;
+        param_1[0xd9d] = 100;
+        param_1[0xd9e] = 0x61;
+        param_1[0xd9f] = 0x60;
+        param_1[0xe2b] = 5;
+        param_1[0xe2c] = 0x6f;
+        param_1[0xe2d] = 0x68;
+        param_1[0xe2e] = 0x65;
+        param_1[0xe2f] = 0x62;
+        param_1[0xebc] = 4;
+        param_1[0xebd] = 0x6a;
+        param_1[0xebe] = 0x69;
+        param_1[0xebf] = 0x66;
+        param_1[0xec0] = 99;
+        param_1[0xec1] = 0x6e;
+        param_1[0xf4d] = 5;
+        param_1[0xf4e] = 0x6d;
+        param_1[0xf4f] = 0x6b;
+        param_1[0xf50] = 0xfd;
+        param_1[0xfde] = 3;
+      }
+      else if (0 < (int)param_7) {
+        piVar9 = param_1 + 0x3f9;
+        local_f0 = param_7;
+        piVar7 = param_6;
+        do {
+          iVar8 = *piVar7;
+          iVar2 = 0;
+          if (iVar8 != 0) {
+            piVar4 = piVar9 + -0x90;
+            piVar5 = param_6;
+            do {
+              piVar5 = piVar5 + 1;
+              *piVar4 = iVar8;
+              iVar8 = *piVar5;
+              iVar2 = iVar2 + 1;
+              piVar4 = piVar4 + 1;
+            } while (iVar8 != 0);
+          }
+          *piVar9 = iVar2;
+          piVar7 = piVar7 + 0x24;
+          param_6 = param_6 + 0x24;
+          piVar9 = piVar9 + 0x91;
+          local_f0 = (uint *)((int)local_f0 + -1);
+        } while (local_f0 != (uint *)0x0);
+        local_f0 = (uint *)0x0;
+      }
+    }
+  }
+  __security_check_cookie(local_4 ^ (uint)&local_f0);
+  return;
+}
+
+
+

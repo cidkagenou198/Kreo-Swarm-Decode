@@ -1,0 +1,211 @@
+# Live device evidence - 2026-11-18
+
+Read-only probes only. No Set*/write command was sent.
+
+Host: Windows, dongle `3554:FA09` "2.4G Wireless Receiver" (CX), attached.
+
+## 1. Enumeration (`hid.enumerate`)
+
+```
+0x3554 0xfa09  2.4G Wireless Receiver  MI_00  usage 0x0001/0x0006  if 0  \KBD
+0x3554 0xfa09  2.4G Wireless Receiver  MI_01  usage 0x0001/0x0006  if 1  \KBD
+0x3554 0xfa09  2.4G Wireless Receiver  MI_01  usage 0x000c/0x0001  if 1  Col02
+0x3554 0xfa09  2.4G Wireless Receiver  MI_01  usage 0x0001/0x0080  if 1  Col03
+0x3554 0xfa09  2.4G Wireless Receiver  MI_01  usage 0x0001/0x0002  if 1  Col05
+0x3554 0xfa09  2.4G Wireless Receiver  MI_01  usage 0xff02/0x0002  if 1  Col01
+0x3554 0xfa09  2.4G Wireless Receiver  MI_01  usage 0xff04/0x0002  if 1  Col06
+```
+
+## 2. Report caps (`HidP_GetCaps`, read-only)
+
+| Collection | Input | Output | Feature | Verdict |
+|---|---:|---:|---:|---|
+| `0xFF02 / 0x02` | 20 | 20 | **0** | keyboard control: interrupt `0x13`, exactly as `CDevG5KB::FindHIDDevice` requires (`in=0x14, out=0x14, report id=0x13`) |
+| `0x000C / 0x01` | 3 | 0 | 0 | consumer/media |
+| `0x0001 / 0x80` | 2 | 0 | 0 | system control |
+| `0xFF04 / 0x02` | 0 | 0 | 8 | dongle-side 8-byte feature (pairing/status; not keyboard protocol) |
+
+`CDevG5KB::FindHIDDevice` (`FUN_0048c250`) match logic, re-read:
+- `nFw==0x18`: wired = `usagePage 0xFF00 / usage 1` with report buffer `0x208`;
+  wireless = `0xFF02 / 2` with `[-3]==0x14` (in), `[-2]==0x14` (out), `[-4]==0x13` (report ID).
+- Therefore: **`3554:FA09` -> 0x13 interrupt transport**; **`258A:010C` -> 0x208 feature transport**
+  (static match only; no wired device attached to verify).
+
+## 3. `GetLED` (cmd `0x44`) raw frames
+
+```
+13 44 0a 00 0e 00 03 03 02 00 00 04 04 07 00 0b 20 00 00 b1
+13 44 0a 01 0e 01 00 00 00 01 00 04 02 00 ff 06 00 00 00 7d
+13 44 0a 02 0e 01 00 04 02 00 00 00 00 00 00 00 00 00 00 78
+13 44 0a 03 0e 00 00 00 00 00 00 00 00 00 00 00 00 00 00 72
+13 44 0a 04 0e ff ff 04 37 04 37 04 37 04 37 04 37 02 37 d1
+13 44 0a 05 0e 04 37 04 37 04 37 04 37 01 17 04 37 04 17 ce
+13 44 0a 06 0e 04 37 04 37 04 37 04 37 04 37 04 37 04 37 12
+13 44 0a 07 0e 07 47 07 47 07 44 07 44 07 44 07 44 07 44 89
+13 44 0a 08 0e 07 44 07 44 07 44 04 04 04 04 04 04 04 04 35
+13 44 0a 09 02 5a a5 00 00 00 00 00 00 00 00 00 00 00 00 6b
+```
+
+`total=10` chunks, last chunk length `2` -> **128-byte profile**, tail `5A A5`.
+
+Profile payload (128 bytes):
+
+```
+00 03 03 02 00 00 04 04 07 00 0b 20 00 00
+01 00 00 00 01 00 04 02 00 ff 06 00 00 00
+01 00 04 02 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ff ff 04 37 04 37 04 37 04 37 04 37 02 37
+04 37 04 37 04 37 04 37 01 17 04 37 04 17
+04 37 04 37 04 37 04 37 04 37 04 37 04 37
+07 47 07 47 07 44 07 44 07 44 07 44 07 44
+07 44 07 44 07 44 04 04 04 04 04 04 04 04
+04 04 5a a5
+```
+
+Confirms: 128 bytes, `FF FF` marker at 56/57, 2-byte group table from 58
+(`04 37` = brightness 4, upper nibble 3), `5A A5` at 126/127.
+
+## 4. `GetMatrix` (cmd `0x41`) - keymap record CORRECTION
+
+`total=36` chunks, all length 14 -> **504 bytes = 126 positions x 4 bytes**.
+Layers 2 and 3 are all zero.
+
+Record = 32-bit action code, **big-endian** (page byte first):
+
+```
+layer 0 (base):
+  00 00 00 29    pos 0   Esc        HID usage 0x29
+  00 00 00 35    pos 1   `          HID usage 0x35
+  00 00 00 2b    pos 2   Tab        0x2B
+  00 00 00 39    pos 3   CapsLock   0x39
+  00 02 00 00    pos 4   LShift     modifier mask 0x02
+  00 01 00 00    pos 5   LCtrl      modifier mask 0x01
+  00 00 00 1e    pos 7   "1"        0x1E
+  00 00 00 14    pos 8   Q          0x14
+  00 08 00 00    pos 11  LWin       modifier mask 0x08
+  00 00 00 3a    pos 12  F1         0x3A
+  02 00 00 e2    pos 90  Mute       page 0x02, consumer usage 0x00E2
+  ...
+  nonzero records: 85/126
+
+layer 1 (FN1):
+  07 00 00 04    pos 0   Esc        0x07000004  (byte-identical to KB.ini FN1 value)
+  08 07 00 00    pos 1   `          0x08070000
+  07 00 00 05    pos 7   "1"        0x07000005
+  02 00 01 94    pos 12  F1 browser 0x02000194
+  02 00 02 23    pos 18  F2         0x02000223
+  02 00 01 92    pos 24  F3 calc    0x02000192
+  ...
+  nonzero records: 34/126
+```
+
+So the keymap record is the **32-bit INI action value in big-endian byte order**,
+NOT `24-bit hwcode LE | macro byte`. Base keys use page `0x00` with
+`value = (modifier_mask << 16) | hid_usage`. FN1 uses pages `0x02`, `0x07`,
+`0x08`. The `byte3 = macro id - 1` reading from the static pass is disproved.
+
+## 5. `GetGame` (cmd `0x42`)
+
+`total=27` chunks, all 14 -> **378 bytes = 3 x 126** planar frame.
+All bytes zero (no per-key custom colours stored right now).
+
+## 6. `GetLedRgbTab` (cmd `0x49`)
+
+`total=35` chunks -> 490 declared bytes:
+
+```
+483-byte table (23 entries x 21 bytes)  +  7-byte trailer
+trailer = 03 00 00 00 01 be 01   (first 6 bytes equal KB.ini Psd=3,0,0,0,1,BE)
+no 5A A5 anywhere in the reply
+```
+
+Example entries are 7-colour palettes:
+`ff0000 00ff00 0000ff ffff00 ff00ff 00ffff ffffff`.
+
+So on the wireless read path the table is **23 x 21 = 483** bytes with a
+7-byte Psd trailer and **no CRC pad**; the `0x200` + `5A A5` packing is
+specific to the wired feature write path. The driver's `LIGHT_TABLE_SIZE=480`
+does not match 483 and needs reconciliation before any table write.
+
+---
+
+# Wired device (258A:010C "Kreo Swarm", BY Tech) - 2026-11-18
+
+Read-only probes (`Get*` commands) only.
+
+## 7. Collections and caps
+
+| Collection | In | Out | Feature | Meaning |
+|---|---:|---:|---:|---|
+| `0xFF00/1` Col03 | 4 | 0 | 0 | keyboard input |
+| `0xFF00/1` Col05 | 0 | 0 | **6** | 6-byte feature (password) |
+| `0xFF00/1` Col06 | 8 | 0 | **520** | main control/feature collection |
+
+`Col06` reports `FeatureReportByteLength = 520 = 0x208`, confirming the
+feature transport frame size is the descriptor's real maximum, not just the
+app's buffer.
+
+## 8. Report ID
+
+- `0x06`: `HidD_SetFeature` accepted a 520-byte frame and `HidD_GetFeature`
+  returned data.
+- `0x09`: `SetFeature` returned `-1`, `GetFeature` raised `read error`.
+
+So `Fw=24` (`0x18`) -> report ID **`0x06`**, exactly as predicted.
+
+## 9. Read requests must advertise the byte count
+
+Initial attempt used `len=0` in bytes 6..7 and got only an 8-byte header
+(`06 84 00 00 01 00 00 00`). `FUN_0048c600` computes `_Size` from the caller's
+length even for reads, so bytes 6..7 must hold the requested count:
+
+```
+06 84 00 00 01 00 80 00 ...   -> reply 06 84 00 00 01 00 80 00 + 128 bytes
+```
+
+## 10. Wired `GetLED` (0x84) - 128-byte profile
+
+Payload compared with the wireless profile from section 3: **identical except
+byte 14**, which is `00` on wired and `01` on wireless (likely a link/transport
+flag). `FF FF` at 56/57 and `5A A5` at 126/127 in both.
+
+Wired payload prefix:
+```
+00 03 03 02 00 00 04 04 07 00 0b 20 00 00 00 00
+00 00 01 00 04 02 00 ff 06 00 00 00 01 00 04 02
+```
+
+## 11. Wired keymap (0x83) - identical to wireless
+
+`GetMatrix` returns `declared=504` (`raw=512`, header len `f8 01`). Layer 0 has
+85 nonzero records, layer 1 has 34, and the leading records are byte-identical
+to the wireless read:
+
+```
+layer 0 pos 0..5: 00 00 00 29 | 00 00 00 35 | 00 00 00 2b | 00 00 00 39 | 00 02 00 00 | 00 01 00 00
+layer 1 pos 0..1: 07 00 00 04 | 08 07 00 00
+```
+
+This confirms the big-endian 32-bit action-code format on both transports.
+
+## 12. Wired `GetGame` (0x86) and `GetLedRgbTab` (0x8A)
+
+- `0x86`: `declared=378` (`raw=386`) -> 3 x 126 planar frame confirmed.
+- `0x8A`: requested 512, `declared=512`:
+  ```
+  0..482    23 entries x 21 bytes
+  483..489  03 00 00 00 01 be 01   (same 6-byte Psd + 0x01 trailer)
+  490..505  16 zero bytes
+  506..507  5A A5
+  508..511  00 10 00 00
+  ```
+  The vendor's own read constant `LIGHT_TABLE_READ_CMD` requests `0x01E3 =
+  483` bytes, which matches the 23 x 21 table exactly. `LIGHT_TABLE_SIZE = 480`
+  in the driver is therefore wrong by 3 bytes.
+
+## 13. Wired `GetPassword` (0x82)
+
+Requested 6 bytes on the same 520-byte collection; returns
+`00 10 00 00 00 00`. This is a read-only query.
+

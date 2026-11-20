@@ -1,0 +1,633 @@
+=== FUN_00404f90 @ 00404f90  size=476  completed=true ===
+
+void FUN_00404f90(undefined4 *param_1)
+
+{
+  int iVar1;
+  int *piVar2;
+  int *piVar3;
+  DWORD DVar4;
+  undefined4 uVar5;
+  wchar_t *lpText;
+  int unaff_EBX;
+  int iVar6;
+  HWND hWnd;
+  HANDLE pvStack_8;
+  undefined4 uStack_4;
+  
+  (*DAT_0064a278)(L"Start apply thread");
+  pvStack_8 = (HANDLE)param_1[3];
+  uStack_4 = param_1[4];
+  iVar1 = param_1[1];
+  do {
+    do {
+      while (DVar4 = WaitForMultipleObjects(2,&pvStack_8,0,0xffffffff), DVar4 != 0) {
+        if (DVar4 == 1) {
+          (*DAT_0064a278)(L"thread exit");
+          __endthread();
+          return;
+        }
+      }
+      piVar2 = *(int **)(iVar1 + 0x43c);
+    } while (((piVar2 == (int *)0x0) || (piVar2[0x30] == 0)) ||
+            (piVar3 = *(int **)(piVar2[0x30] + 0x18), piVar3 == (int *)0x0));
+    uVar5 = (**(code **)(*piVar3 + 0x14))(param_1[5],param_1[7]);
+    (*DAT_0064a278)(L"Start Apply: hDevice=0x%x, nFlag=0x%x, nData=0x%x",uVar5);
+    hWnd = (HWND)0x0;
+    if ((param_1[5] & 0x8000) != 0) {
+      iVar6 = 0;
+      do {
+        Sleep(100);
+        hWnd = FindWindowW((LPCWSTR)0x0,(LPCWSTR)*param_1);
+        if (hWnd != (HWND)0x0) break;
+        iVar6 = iVar6 + 1;
+      } while (iVar6 < 0x14);
+    }
+    iVar6 = (**(code **)(*piVar3 + 0x14))();
+    if ((iVar6 == 0) && (DAT_00645a58 == 0)) {
+      if (hWnd != (HWND)0x0) {
+        PostMessageW(hWnd,0x10,0,0);
+      }
+      if ((param_1[5] & 0x10000) != 0) {
+        SetEvent(*(HANDLE *)(iVar1 + 0x918));
+      }
+    }
+    else {
+      iVar6 = *piVar3;
+      uVar5 = (**(code **)(*piVar2 + 0x17c))(hWnd,param_1[6],param_1[5],param_1[7]);
+      iVar6 = (**(code **)(iVar6 + 0x34))(uVar5);
+      if (iVar6 == 0) {
+        if ((piVar3[1] == 0x3632) && (*(int *)(DAT_006589f8 + -0xc) != 0)) {
+          lpText = (wchar_t *)FUN_00405200();
+        }
+        else {
+          lpText = L"     Settings failed!      ";
+        }
+        MessageBoxW((HWND)param_1[2],lpText,L"Error",0x30);
+      }
+      if (hWnd != (HWND)0x0) {
+        PostMessageW(hWnd,0x10,0,0);
+        Sleep(0x14);
+        PostMessageW(hWnd,0x10,0,0);
+      }
+      if ((param_1[5] & 0x10000) != 0) {
+        SetEvent(*(HANDLE *)(unaff_EBX + 0x918));
+      }
+      (*DAT_0064a278)(L"Apply Over");
+    }
+  } while( true );
+}
+
+
+
+=== FUN_0040b060 @ 0040b060  size=1316  completed=true ===
+
+void FUN_0040b060(void)
+
+{
+  undefined4 uVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  int iVar4;
+  int unaff_EDI;
+  uint in_stack_00000040;
+  uint in_stack_00000044;
+  undefined1 auStackY_2d4 [128];
+  undefined4 uVar5;
+  int iVar6;
+  undefined4 uStack_204;
+  undefined4 uStack_200;
+  undefined4 uStack_1fc;
+  undefined1 *puStack_1f8;
+  int *piStack_1f4;
+  wchar_t awStack_1f0 [2];
+  undefined4 uStack_1ec;
+  undefined4 uStack_1e8;
+  int aiStack_1e4 [2];
+  wchar_t awStack_1dc [4];
+  undefined4 uStack_1d4;
+  undefined4 uStack_1d0;
+  undefined1 auStack_1c8 [444];
+  uint local_c;
+  
+  local_c = DAT_0063c674 ^ (uint)(auStackY_2d4 + 0x9c);
+  if (*(undefined4 **)(unaff_EDI + 0x74) != (undefined4 *)0x0) {
+    uVar1 = (**(code **)**(undefined4 **)(unaff_EDI + 0x74))(0);
+    FUN_0049df7c(uVar1);
+    *(undefined4 *)(unaff_EDI + 0x74) = 0;
+  }
+  if (*(undefined4 **)(unaff_EDI + 0x7c) != (undefined4 *)0x0) {
+    uVar1 = (**(code **)**(undefined4 **)(unaff_EDI + 0x7c))(0);
+    FUN_0049df7c(uVar1);
+    *(undefined4 *)(unaff_EDI + 0x7c) = 0;
+  }
+  __snwprintf_s(awStack_1f0 + -0x14,0x104,0x103,L"%sskins\\mouse\\dpigrid_nr.png",&DAT_0064a048);
+  puVar2 = (undefined4 *)FUN_0049df42();
+  if (puVar2 == (undefined4 *)0x0) {
+    puVar2 = (undefined4 *)0x0;
+  }
+  else {
+    *puVar2 = Gdiplus::Bitmap::vftable;
+    uVar5 = 0;
+    uVar1 = GdipCreateBitmapFromFile();
+    puVar2[2] = uVar1;
+    puVar2[1] = uVar5;
+  }
+  iVar4 = *(int *)(unaff_EDI + 0x80);
+  if (iVar4 == 0) {
+LAB_0040b1d3:
+    *(undefined4 **)(unaff_EDI + 0x74) = puVar2;
+  }
+  else {
+    iVar6 = 0;
+    iVar3 = GdipGetImageWidth();
+    if (iVar3 != 0) {
+      *(int *)(iVar4 + 8) = iVar3;
+    }
+    if (iVar6 == 0) goto LAB_0040b1d3;
+    uVar1 = 0;
+    iVar4 = GdipGetImageHeight();
+    if (iVar4 != 0) {
+      puVar2[2] = iVar4;
+    }
+    uVar5 = 0;
+    iVar4 = GdipGetImageWidth();
+    if (iVar4 != 0) {
+      puVar2[2] = iVar4;
+    }
+    uVar1 = FUN_00462ad0(puVar2,0,0,uVar5,uVar1,0);
+    *(undefined4 *)(unaff_EDI + 0x74) = uVar1;
+    (**(code **)*puVar2)();
+    FUN_0049df7c();
+  }
+  __snwprintf_s((wchar_t *)&uStack_204,0x104,0x103,L"%sskins\\mouse\\dpigrid_dn.png",&DAT_0064a048);
+  puVar2 = (undefined4 *)FUN_0049df42();
+  if (puVar2 == (undefined4 *)0x0) {
+    puVar2 = (undefined4 *)0x0;
+  }
+  else {
+    *puVar2 = Gdiplus::Bitmap::vftable;
+    uVar5 = 0;
+    uVar1 = GdipCreateBitmapFromFile();
+    puVar2[2] = uVar1;
+    puVar2[1] = uVar5;
+  }
+  iVar4 = *(int *)(unaff_EDI + 0x80);
+  if (iVar4 == 0) {
+LAB_0040b2fb:
+    *(undefined4 **)(unaff_EDI + 0x78) = puVar2;
+  }
+  else {
+    iVar6 = 0;
+    iVar3 = GdipGetImageWidth();
+    if (iVar3 != 0) {
+      *(int *)(iVar4 + 8) = iVar3;
+    }
+    if (iVar6 == 0) goto LAB_0040b2fb;
+    uVar1 = 0;
+    iVar4 = GdipGetImageHeight();
+    if (iVar4 != 0) {
+      puVar2[2] = iVar4;
+    }
+    uStack_204 = uVar1;
+    iVar4 = GdipGetImageWidth();
+    if (iVar4 != 0) {
+      puVar2[2] = iVar4;
+    }
+    uVar1 = FUN_00462ad0(puVar2);
+    *(undefined4 *)(unaff_EDI + 0x78) = uVar1;
+    (**(code **)*puVar2)();
+    FUN_0049df7c();
+  }
+  __snwprintf_s(awStack_1f0,0x104,0x103,L"%sskins\\mouse\\DpiGridXY_nr.png",&DAT_0064a048);
+  puVar2 = (undefined4 *)FUN_0049df42();
+  if (puVar2 == (undefined4 *)0x0) {
+    puVar2 = (undefined4 *)0x0;
+  }
+  else {
+    *puVar2 = Gdiplus::Bitmap::vftable;
+    puStack_1f8 = (undefined1 *)0x0;
+    uVar1 = GdipCreateBitmapFromFile();
+    puVar2[2] = uVar1;
+    puVar2[1] = puStack_1f8;
+  }
+  puStack_1f8 = (undefined1 *)0x0;
+  iVar4 = GdipGetImageWidth();
+  if (iVar4 != 0) {
+    puVar2[2] = iVar4;
+  }
+  if (puStack_1f8 == (undefined1 *)0x0) {
+LAB_0040b417:
+    (**(code **)*puVar2)();
+    FUN_0049df7c();
+  }
+  else {
+    iVar4 = *(int *)(unaff_EDI + 0x80);
+    if (iVar4 != 0) {
+      puStack_1f8 = (undefined1 *)0x0;
+      iVar3 = GdipGetImageWidth();
+      if (iVar3 != 0) {
+        *(int *)(iVar4 + 8) = iVar3;
+      }
+      if (puStack_1f8 != (undefined1 *)0x0) {
+        FUN_00404c50();
+        uStack_1e8 = 0;
+        aiStack_1e4[0] = FUN_00404c20();
+        uVar1 = FUN_00462ad0();
+        *(undefined4 *)(unaff_EDI + 0x84) = uVar1;
+        goto LAB_0040b417;
+      }
+    }
+    *(undefined4 **)(unaff_EDI + 0x84) = puVar2;
+  }
+  __snwprintf_s(awStack_1dc,0x104,0x103,L"%sskins\\mouse\\DpiGridXY_dn.png",&DAT_0064a048);
+  piStack_1f4 = (int *)0x10;
+  puStack_1f8 = (undefined1 *)0x40b452;
+  puVar2 = (undefined4 *)FUN_0049df42();
+  if (puVar2 == (undefined4 *)0x0) {
+    puVar2 = (undefined4 *)0x0;
+  }
+  else {
+    piStack_1f4 = aiStack_1e4;
+    puStack_1f8 = auStack_1c8;
+    *puVar2 = Gdiplus::Bitmap::vftable;
+    aiStack_1e4[0] = 0;
+    uStack_1fc = 0x40b476;
+    uVar1 = GdipCreateBitmapFromFile();
+    puVar2[2] = uVar1;
+    puVar2[1] = aiStack_1e4[0];
+  }
+  puStack_1f8 = (undefined1 *)puVar2[1];
+  piStack_1f4 = aiStack_1e4;
+  aiStack_1e4[0] = 0;
+  uStack_1fc = 0x40b49e;
+  iVar4 = GdipGetImageWidth();
+  if (iVar4 != 0) {
+    puVar2[2] = iVar4;
+  }
+  if (aiStack_1e4[0] == 0) {
+LAB_0040b55f:
+    piStack_1f4 = (int *)0x0;
+    puStack_1f8 = (undefined1 *)0x40b567;
+    puStack_1f8 = (undefined1 *)(**(code **)*puVar2)();
+    uStack_1fc = 0x40b56d;
+    FUN_0049df7c();
+    awStack_1f0[0] = L'떀';
+    awStack_1f0[1] = L'@';
+    __security_check_cookie(in_stack_00000040 ^ (uint)&uStack_1ec);
+    return;
+  }
+  iVar4 = *(int *)(unaff_EDI + 0x80);
+  if (iVar4 != 0) {
+    puStack_1f8 = *(undefined1 **)(iVar4 + 4);
+    piStack_1f4 = aiStack_1e4;
+    aiStack_1e4[0] = 0;
+    uStack_1fc = 0x40b4d3;
+    iVar3 = GdipGetImageWidth();
+    if (iVar3 != 0) {
+      *(int *)(iVar4 + 8) = iVar3;
+    }
+    if (aiStack_1e4[0] != 0) {
+      piStack_1f4 = (int *)0x40b4e8;
+      uVar1 = FUN_00404c50();
+      uStack_1d4 = 0;
+      piStack_1f4 = (int *)0x40b4f9;
+      puStack_1f8 = (undefined1 *)FUN_00404c20();
+      uStack_200 = 0;
+      uStack_1fc = uStack_1d4;
+      uStack_204 = uVar1;
+      piStack_1f4 = (int *)uVar1;
+      uStack_1d0 = puStack_1f8;
+      uVar1 = FUN_00462ad0();
+      *(undefined4 *)(unaff_EDI + 0x88) = uVar1;
+      goto LAB_0040b55f;
+    }
+  }
+  *(undefined4 **)(unaff_EDI + 0x88) = puVar2;
+  uStack_1ec = 0x40b55a;
+  __security_check_cookie(in_stack_00000044 ^ (uint)&uStack_1e8);
+  return;
+}
+
+
+
+=== FUN_0040b680 @ 0040b680  size=1218  completed=true ===
+
+void FUN_0040b680(int param_1,int param_2)
+
+{
+  ushort *puVar1;
+  code *pcVar2;
+  int iVar3;
+  uint uVar4;
+  HANDLE hObject;
+  int *piVar5;
+  undefined4 uVar6;
+  undefined4 *puVar7;
+  int iVar8;
+  undefined1 auStack_238 [2];
+  undefined1 auStack_236 [2];
+  int local_234;
+  int local_230;
+  int *local_22c;
+  int *piStack_228;
+  int local_224;
+  ushort *local_220;
+  int *local_21c;
+  WCHAR aWStack_218 [260];
+  uint local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 uStack_4;
+  
+  uStack_4 = 0xffffffff;
+  puStack_8 = &LAB_005c87f8;
+  local_c = ExceptionList;
+  local_10 = DAT_0063c674 ^ (uint)auStack_238;
+  uVar4 = DAT_0063c674 ^ (uint)(auStack_238 + -0x10);
+  ExceptionList = &local_c;
+  local_234 = param_1;
+  _memset(&DAT_0064b700,0,0x6c98);
+  FUN_00415f50(uVar4);
+  if (param_2 != 0) {
+    iVar8 = 0;
+    puVar7 = &DAT_0064b910;
+    do {
+      if (puVar7[4] != 0) {
+        (*DAT_0064a278)(L"Dev[%02d]: Vid=%04x, Pid=%04x, UsagePage=0x%x, Usage=0x%x, Feature=%d, In=%d, Out=%d, nRID=%d"
+                        ,iVar8,puVar7[4],puVar7[5],puVar7[2],puVar7[3],puVar7[1],puVar7[-1],*puVar7,
+                        puVar7[-2]);
+      }
+      puVar7 = puVar7 + 0x8b;
+      iVar8 = iVar8 + 1;
+    } while ((int)puVar7 < 0x6525a8);
+  }
+  local_220 = (ushort *)0x0;
+  local_230 = 0;
+  local_224 = 0;
+  local_22c = DAT_0063e520;
+  if ((DAT_0063e520 != (int *)0x0) && (*DAT_0063e520 != 0)) {
+    do {
+      puVar1 = (ushort *)*local_22c;
+      if ((*puVar1 != 0) || ((puVar1[1] != 0 || (DAT_00645a50 != 0)))) {
+        if ((*(int **)(puVar1 + 0xc) != (int *)0x0) &&
+           ((iVar8 = (**(code **)(**(int **)(puVar1 + 0xc) + 0x14))(), iVar8 != 0 &&
+            (*(LPCWSTR)(*(int *)(puVar1 + 0xc) + 0x2c) != L'\0')))) {
+          hObject = CreateFileW((LPCWSTR)(*(int *)(puVar1 + 0xc) + 0x2c),0x120089,3,
+                                (LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
+          if (hObject == (HANDLE)0xffffffff) {
+            (*DAT_0064a278)(L"Device OUT: %s",puVar1 + 0x21);
+            if (puVar1 == DAT_0063e50c) {
+              DAT_0063e50c = (ushort *)0x0;
+            }
+            if (*(undefined4 **)(puVar1 + 0xc) != (undefined4 *)0x0) {
+              (**(code **)**(undefined4 **)(puVar1 + 0xc))(1);
+            }
+            puVar1[0xc] = 0;
+            puVar1[0xd] = 0;
+            FUN_00408c50();
+          }
+          else {
+            CloseHandle(hObject);
+          }
+        }
+        if ((*(int *)(puVar1 + 0xc) == 0) || (*(int *)(*(int *)(puVar1 + 0xc) + 0x234) != 1)) {
+          iVar8 = *(int *)(puVar1 + 10);
+          if ((iVar8 == 0x18) || (iVar8 == 0x1a)) {
+            piVar5 = (int *)FUN_0049df42(0x2a0);
+            uStack_4 = 0;
+            piStack_228 = piVar5;
+            if (piVar5 == (int *)0x0) {
+              piVar5 = (int *)0x0;
+            }
+            else {
+              FUN_00486a50();
+              *piVar5 = (int)CDevG5KB::vftable;
+              piVar5[1] = 0x916;
+              piVar5[0xa7] = 0;
+              piVar5[3] = 0;
+              piVar5[4] = 0;
+              *(undefined2 *)(piVar5 + 0xb) = 0;
+              piVar5[0x8f] = 0;
+              piVar5[0xa4] = 0;
+              piVar5[0xa3] = 0;
+            }
+          }
+          else if (iVar8 == 0x19) {
+            piStack_228 = (int *)FUN_0049df42(0x2ac);
+            uStack_4 = 1;
+            if (piStack_228 == (int *)0x0) {
+LAB_0040b855:
+              piVar5 = (int *)0x0;
+            }
+            else {
+              piVar5 = (int *)FUN_0048ff20(0);
+            }
+          }
+          else {
+            if (iVar8 != 0x16) goto LAB_0040ba3a;
+            piStack_228 = (int *)FUN_0049df42(0x2b0);
+            uStack_4 = 2;
+            if (piStack_228 == (int *)0x0) goto LAB_0040b855;
+            piVar5 = (int *)FUN_00488530();
+          }
+          uStack_4 = 0xffffffff;
+          if (piVar5 != (int *)0x0) {
+            pcVar2 = *(code **)(*piVar5 + 4);
+            piVar5[2] = local_234;
+            piVar5[4] = (int)puVar1;
+            iVar8 = (*pcVar2)();
+            if (iVar8 == -2) {
+              (**(code **)*piVar5)(1);
+              local_224 = 1;
+            }
+            else {
+              if (1 < iVar8) {
+                (**(code **)*piVar5)(1);
+                goto LAB_0040bae9;
+              }
+              if ((iVar8 == 1) || (DAT_00645a50 != 0)) {
+                if ((iVar8 < 1) &&
+                   ((((uint)puVar1[1] + (uint)*puVar1 == 0 && (puVar1[2] != 0)) &&
+                    (*(int *)(puVar1 + 10) == 0x18)))) {
+                  (**(code **)*piVar5)(1);
+                  if (*(undefined4 **)(puVar1 + 0xc) != (undefined4 *)0x0) {
+                    (**(code **)**(undefined4 **)(puVar1 + 0xc))(1);
+                  }
+                  piStack_228 = (int *)FUN_0049df42(0x2a4);
+                  uStack_4 = 3;
+                  if (piStack_228 == (int *)0x0) {
+                    piVar5 = (int *)0x0;
+                  }
+                  else {
+                    piVar5 = (int *)FUN_00486f20();
+                  }
+                  uStack_4 = 0xffffffff;
+                  piVar5[4] = (int)puVar1;
+                  *(int **)(puVar1 + 0xc) = piVar5;
+                }
+                local_230 = local_230 + 1;
+                local_220 = puVar1;
+                if ((iVar8 == 1) && (*(int *)(puVar1 + 0xc) != 0)) {
+                  (*DAT_0064a278)(L"Free wireless object: %s",puVar1 + 0x21);
+                  if (*(undefined4 **)(puVar1 + 0xc) != (undefined4 *)0x0) {
+                    (**(code **)**(undefined4 **)(puVar1 + 0xc))(1);
+                  }
+                  puVar1[0xc] = 0;
+                  puVar1[0xd] = 0;
+                }
+                (*DAT_0064a278)(L"Find wired: vid=%04x, pid=%04x, name=%s",*puVar1,puVar1[1],
+                                puVar1 + 0x21);
+                *(int **)(puVar1 + 0xc) = piVar5;
+                iVar8 = *piVar5;
+                uVar6 = FUN_00402f20();
+                (**(code **)(iVar8 + 0xc))(uVar6);
+                puVar1[0x168] = 0;
+                puVar1[0x169] = 0;
+                if (DAT_0063e50c == (ushort *)0x0) {
+                  DAT_0063e50c = puVar1;
+                }
+              }
+              else {
+                (**(code **)*piVar5)(1);
+              }
+            }
+          }
+        }
+      }
+LAB_0040ba3a:
+      iVar3 = local_224;
+      iVar8 = local_230;
+      local_22c = (int *)local_22c[1];
+    } while ((local_22c != (int *)0x0) && (*local_22c != 0));
+    (*DAT_0064a278)(L"bRunAsAdmin=%x, nDevNum=%d",local_224,local_230);
+    if ((iVar3 != 0) && (iVar8 < 1)) {
+      iVar8 = FUN_00463ad0();
+      (*DAT_0064a278)(L"Exit and run as admin, bAsAdmin=%x",iVar8);
+      if ((iVar8 == 0) && (iVar8 = FUN_00463160(), 4 < iVar8)) {
+        if (DAT_00658e94 != (HANDLE)0x0) {
+          CloseHandle(DAT_00658e94);
+          DAT_00658e94 = (HANDLE)0x0;
+        }
+        GetModuleFileNameW((HMODULE)0x0,aWStack_218,0x104);
+        FUN_00463a60(aWStack_218);
+        PostMessageW(*(HWND *)(local_234 + 0x20),0x10,0,0);
+        goto LAB_0040bae9;
+      }
+    }
+    FUN_0040c2f0(local_234);
+    FUN_0040c970();
+    if (local_21c != (int *)0x0) {
+      *local_21c = local_230;
+    }
+  }
+LAB_0040bae9:
+  ExceptionList = local_c;
+  __security_check_cookie(local_10 ^ (uint)auStack_238);
+  return;
+}
+
+
+
+=== FUN_0040c530 @ 0040c530  size=511  completed=true ===
+
+int __fastcall
+FUN_0040c530(undefined1 *param_1,undefined4 param_2,int param_3,undefined4 param_4,int param_5,
+            int param_6,int param_7)
+
+{
+  undefined4 *puVar1;
+  int iVar2;
+  int iVar3;
+  int *piVar4;
+  undefined4 uVar5;
+  undefined4 local_c;
+  undefined1 *puStack_8;
+  undefined4 uStack_4;
+  
+  uStack_4 = 0xffffffff;
+  puStack_8 = &LAB_005c8576;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  (*DAT_0064a278)(L"OnNewDongle: Find new wireless, vid_pid=%04x_%04x, bBT=%x, nPsd=%02x,%02x,%02x,%02x,%02x,%02x"
+                  ,param_4,param_2,param_6,*param_1,param_1[1],param_1[2],param_1[3],param_1[4],
+                  param_1[5],DAT_0063c674 ^ (int)register0x00000010 - 0x1cU);
+  if (param_6 != 0) {
+    param_2 = 0;
+    param_4 = 0;
+  }
+  iVar2 = FUN_0046d770(param_4,param_2);
+  if (iVar2 == 0) {
+    (*DAT_0064a278)(L"OnNewDongle: it\'s unsupported device");
+    iVar2 = 0;
+  }
+  else {
+    (*DAT_0064a278)(L"OnNewDongle: pDEV=%s",iVar2 + 0x42);
+    if (*(int *)(iVar2 + 0x18) != 0) {
+      (*DAT_0064a278)(L"OnNewDongle: pDEV->pHidDev->m_bWireless=%d, pDEV->bBT=%d",
+                      *(undefined4 *)(*(int *)(iVar2 + 0x18) + 0x234),*(undefined4 *)(iVar2 + 0x2d0)
+                     );
+      puVar1 = *(undefined4 **)(iVar2 + 0x18);
+      if ((puVar1[0x8d] == 1) || ((*(int *)(iVar2 + 0x2d0) == 1 && (param_6 != 0)))) {
+        (*DAT_0064a278)(L"OnNewDongle: CHidDev object has init, ignore this dongle");
+        ExceptionList = local_c;
+        return 0;
+      }
+      if (puVar1 != (undefined4 *)0x0) {
+        (**(code **)*puVar1)(1);
+      }
+      *(undefined4 *)(iVar2 + 0x18) = 0;
+    }
+    if (param_7 == 0x3632) {
+      iVar3 = FUN_0049df42(0x2a4);
+      uStack_4 = 0;
+      if (iVar3 == 0) {
+        piVar4 = (int *)0x0;
+      }
+      else {
+        piVar4 = (int *)FUN_00486f20();
+      }
+      piVar4[3] = param_5;
+    }
+    else {
+      if (param_7 != 0x8805) {
+        (*DAT_0064a278)(L"OnNewDongle: new error");
+        ExceptionList = local_c;
+        return 0;
+      }
+      iVar3 = FUN_0049df42(0x2ac);
+      uStack_4 = 1;
+      if (iVar3 == 0) {
+        piVar4 = (int *)0x0;
+      }
+      else {
+        piVar4 = (int *)FUN_0048ff20(0);
+      }
+      piVar4[3] = param_5;
+    }
+    uStack_4 = 0xffffffff;
+    piVar4[4] = iVar2;
+    *(int **)(iVar2 + 0x18) = piVar4;
+    piVar4[0x8d] = 2;
+    *(uint *)(iVar2 + 0x2d0) = (uint)(param_6 != 0);
+    if (DAT_0063e50c == 0) {
+      DAT_0063e50c = iVar2;
+    }
+    piVar4[2] = param_3;
+    if (param_3 == 0) {
+      uVar5 = 0;
+    }
+    else {
+      uVar5 = *(undefined4 *)(param_3 + 0x20);
+    }
+    (**(code **)(*piVar4 + 0xc))(uVar5);
+    (**(code **)(*piVar4 + 0x24))();
+  }
+  ExceptionList = local_c;
+  return iVar2;
+}
+
+
+
+=== 00457bfa NOT IN A FUNCTION ===
+=== 00457d30 NOT IN A FUNCTION ===

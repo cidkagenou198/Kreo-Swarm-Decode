@@ -1,0 +1,389 @@
+=== FUN_004920c0 @ 004920c0  size=287  completed=true ===
+
+void __thiscall FUN_004920c0(int param_1,undefined4 param_2)
+
+{
+  undefined4 local_2c4;
+  undefined **local_2c0;
+  undefined4 local_2bc;
+  HANDLE local_2b4;
+  undefined4 local_2b0;
+  undefined2 local_294;
+  undefined4 local_84;
+  undefined4 local_34;
+  undefined4 local_30;
+  undefined4 local_24;
+  uint local_1c;
+  void *local_14;
+  undefined1 *puStack_10;
+  undefined4 local_c;
+  
+  local_c = 0xffffffff;
+  puStack_10 = &LAB_005c887b;
+  local_14 = ExceptionList;
+  local_1c = DAT_0063c674 ^ (uint)&local_2c4;
+  ExceptionList = &local_14;
+  local_2c4 = *(undefined4 *)(param_1 + 0x10);
+  FUN_00486a50(DAT_0063c674 ^ (int)register0x00000010 - 0x2d0U);
+  local_2c0 = CDevG5KB::vftable;
+  local_2bc = 0x916;
+  local_24 = 0;
+  local_2b4 = (HANDLE)0x0;
+  local_2b0 = local_2c4;
+  local_294 = 0;
+  local_84 = 0;
+  local_30 = 0;
+  local_34 = 0;
+  local_c = 0;
+  FUN_0048d890(param_2,*(undefined4 *)(param_1 + 0x10));
+  local_c = 0xffffffff;
+  local_2c0 = CDevG5KB::vftable;
+  FUN_0048c1f0();
+  if (local_2b4 != (HANDLE)0x0) {
+    CloseHandle(local_2b4);
+    local_2b4 = (HANDLE)0x0;
+  }
+  local_294 = 0;
+  local_2c0 = CHidDev::vftable;
+  FUN_00482df0();
+  ExceptionList = local_14;
+  __security_check_cookie(local_1c ^ (uint)&local_2c4);
+  return;
+}
+
+
+
+=== FUN_004921e0 @ 004921e0  size=287  completed=true ===
+
+void __thiscall FUN_004921e0(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 local_2c4;
+  undefined **local_2c0;
+  undefined4 local_2bc;
+  HANDLE local_2b4;
+  undefined4 local_2b0;
+  undefined2 local_294;
+  undefined4 local_84;
+  undefined4 local_34;
+  undefined4 local_30;
+  undefined4 local_24;
+  uint local_1c;
+  void *local_14;
+  undefined1 *puStack_10;
+  undefined4 local_c;
+  
+  local_c = 0xffffffff;
+  puStack_10 = &LAB_005c887b;
+  local_14 = ExceptionList;
+  local_1c = DAT_0063c674 ^ (uint)&local_2c4;
+  ExceptionList = &local_14;
+  local_2c4 = *(undefined4 *)(param_1 + 0x10);
+  FUN_00486a50(DAT_0063c674 ^ (int)register0x00000010 - 0x2d0U);
+  local_2c0 = CDevG5KB::vftable;
+  local_2bc = 0x916;
+  local_24 = 0;
+  local_2b4 = (HANDLE)0x0;
+  local_2b0 = local_2c4;
+  local_294 = 0;
+  local_84 = 0;
+  local_30 = 0;
+  local_34 = 0;
+  local_c = 0;
+  FUN_0048df70(&local_2c0,param_3);
+  local_c = 0xffffffff;
+  local_2c0 = CDevG5KB::vftable;
+  FUN_0048c1f0();
+  if (local_2b4 != (HANDLE)0x0) {
+    CloseHandle(local_2b4);
+    local_2b4 = (HANDLE)0x0;
+  }
+  local_294 = 0;
+  local_2c0 = CHidDev::vftable;
+  FUN_00482df0();
+  ExceptionList = local_14;
+  __security_check_cookie(local_1c ^ (uint)&local_2c4);
+  return;
+}
+
+
+
+=== FUN_0048bb40 @ 0048bb40  size=276  completed=true ===
+
+void __fastcall FUN_0048bb40(int param_1)
+
+{
+  undefined4 uVar1;
+  undefined1 auStack_2c4 [2];
+  undefined1 auStack_2c2 [2];
+  undefined **local_2c0;
+  undefined4 local_2bc;
+  HANDLE local_2b4;
+  undefined4 local_2b0;
+  undefined2 local_294;
+  undefined4 local_84;
+  undefined4 local_34;
+  undefined4 local_30;
+  undefined4 local_24;
+  uint local_1c;
+  void *local_14;
+  undefined1 *puStack_10;
+  undefined4 local_c;
+  
+  local_c = 0xffffffff;
+  puStack_10 = &LAB_005c887b;
+  local_14 = ExceptionList;
+  local_1c = DAT_0063c674 ^ (uint)auStack_2c4;
+  ExceptionList = &local_14;
+  uVar1 = *(undefined4 *)(param_1 + 0x10);
+  FUN_00486a50(DAT_0063c674 ^ (uint)(auStack_2c4 + -0xc));
+  local_2c0 = CDevG5KB::vftable;
+  local_2bc = 0x916;
+  local_24 = 0;
+  local_2b4 = (HANDLE)0x0;
+  local_294 = 0;
+  local_84 = 0;
+  local_30 = 0;
+  local_34 = 0;
+  local_c = 0;
+  local_2b0 = uVar1;
+  FUN_0048df70(&local_2c0,0);
+  local_c = 0xffffffff;
+  local_2c0 = CDevG5KB::vftable;
+  FUN_0048c1f0();
+  if (local_2b4 != (HANDLE)0x0) {
+    CloseHandle(local_2b4);
+    local_2b4 = (HANDLE)0x0;
+  }
+  local_294 = 0;
+  local_2c0 = CHidDev::vftable;
+  FUN_00482df0();
+  ExceptionList = local_14;
+  __security_check_cookie(local_1c ^ (uint)auStack_2c4);
+  return;
+}
+
+
+
+=== FUN_00492320 @ 00492320  size=1116  completed=true ===
+
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+
+void __fastcall
+FUN_00492320(int *param_1,int *param_2,byte *param_3,byte *param_4,void *param_5,int *param_6)
+
+{
+  size_t _Size;
+  ushort uVar1;
+  void *pvVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int extraout_ECX;
+  int *extraout_EDX;
+  int iVar6;
+  int *extraout_EDX_00;
+  int iVar7;
+  uint uVar8;
+  short sVar9;
+  byte *pbVar10;
+  byte *pbVar11;
+  uint _Size_00;
+  byte *local_21d8;
+  byte *local_21d4;
+  undefined1 *local_21d0;
+  int local_21cc;
+  int local_21c8;
+  int local_21c4;
+  byte *local_21c0;
+  byte *local_21bc;
+  int iStack_21b8;
+  int local_21b4;
+  byte *pbStack_21b0;
+  int *local_21ac;
+  int local_21a8;
+  int *local_21a4;
+  int *local_21a0;
+  void *local_219c;
+  int *local_2198;
+  ushort auStack_2194 [200];
+  undefined1 local_2004;
+  undefined1 local_2003 [8191];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_21d8;
+  local_219c = param_5;
+  local_21bc = param_3;
+  local_21c0 = param_4;
+  local_21a0 = param_6;
+  local_21ac = param_1;
+  local_21a4 = param_2;
+  if (((param_3 == (byte *)0x0) || (param_4 == (byte *)0x0)) || (param_1[4] == 0))
+  goto LAB_00492529;
+  iVar7 = *(int *)(param_1[4] + 0x20);
+  local_21cc = param_1[0xa9];
+  local_21b4 = *param_2;
+  local_21a8 = iVar7 + 0x18;
+  local_21c8 = *(int *)(iVar7 + 0x1f4c);
+  local_2198 = (int *)0x0;
+  if ((local_21c8 < 1) || (3 < local_21c8)) {
+    local_21c8 = 1;
+  }
+  local_21d0 = (undefined1 *)0x0;
+  if (0 < local_21c8) {
+    local_21c4 = local_21cc * 4;
+    local_21d8 = param_3 + 0x38;
+    local_21d4 = param_4;
+    do {
+      iVar7 = 0;
+      if (0 < local_21cc) {
+        pbVar11 = (byte *)(local_21a8 + 0xc);
+        pbVar10 = local_21d8;
+        do {
+          if (*(int *)pbVar10 != 0) {
+            iVar3 = (**(code **)(*local_21ac + 0x90))(pbVar10);
+            iVar5 = *pbVar11 - 1;
+            if ((iVar3 == -1) || (local_21cc <= iVar5)) {
+              FUN_00447ed0(L"Get Invaild keycode, nModes=%d, keyindex=%d, MatrixInx=%d, dwFunID=0x%08x"
+                           ,local_21d0,iVar7,iVar5,*(undefined4 *)(local_21d8 + iVar7 * 0x10));
+              param_2 = extraout_EDX;
+              goto LAB_00492529;
+            }
+            *(int *)(local_21d4 + iVar5 * 4) = iVar3;
+          }
+          iVar7 = iVar7 + 1;
+          pbVar10 = pbVar10 + 0x10;
+          pbVar11 = pbVar11 + 0x10;
+        } while (iVar7 < local_21cc);
+        param_3 = local_21bc;
+        param_4 = local_21c0;
+      }
+      local_21d8 = local_21d8 + 0x900;
+      local_21d4 = local_21d4 + local_21c4;
+      local_21d0 = local_21d0 + 1;
+    } while ((int)local_21d0 < local_21c8);
+  }
+  iVar7 = local_21c8;
+  local_2004 = 0;
+  _memset(local_2003,0,0x1fff);
+  auStack_2194[0] = 0;
+  _memset(auStack_2194 + 1,0,0x18e);
+  local_21d0 = &local_2004;
+  iVar3 = 0;
+  local_21c4 = 1;
+  local_21d8 = (byte *)0x0;
+  iStack_21b8 = 0;
+  if (iVar7 < 1) {
+LAB_00492768:
+    param_2 = (int *)0x1;
+  }
+  else {
+    local_21c0 = param_3 + 0x38;
+    pbStack_21b0 = param_4;
+    do {
+      iVar7 = 0;
+      if (0 < local_21cc) {
+        local_21d4 = (byte *)(local_21a8 + 0xc);
+        local_21bc = local_21c0;
+        do {
+          if (local_21bc[3] == 5) {
+            if (*(int *)(local_21bc + 4) == -0xff00) {
+              iVar5 = DAT_006586f8;
+              iVar6 = iStack_21b8;
+            }
+            else {
+              iVar5 = FUN_0046dc80(*(undefined4 *)(DAT_006586f8 + 0x10),*(int *)(local_21bc + 4));
+              iVar6 = extraout_ECX;
+            }
+            if ((iVar5 == 0) || (iVar5 = *(int *)(iVar5 + 0x14), iVar5 == 0)) {
+              (*DAT_0064a278)(L"Key[%d][%d] Set To Macro NULL",iVar6,iVar7);
+            }
+            else {
+              (*DAT_0064a278)(L"Key[%d][%d] Set To Macro %s(0x%08x), Macro_Buffer_ID=%d",iVar6,iVar7
+                              ,iVar5 + 0x14,*(undefined4 *)(iVar5 + 4),*(undefined4 *)(iVar5 + 0x50)
+                             );
+              iVar6 = *local_21d4 - 1;
+              if ((iVar6 < 0) || (local_21cc <= iVar6)) {
+                MessageBoxW((HWND)0x0,L"Matrix inx warning",L"Warning",0);
+              }
+              else {
+                if (*(int *)(iVar5 + 0x50) < 1) {
+                  if (local_21b4 <= (int)((uint)local_21d8 & 0xffff)) {
+                    (*DAT_0064a278)(L"!!!!Macro buffer too small");
+                    break;
+                  }
+                  *(int *)(iVar5 + 0x50) = local_21c4;
+                  local_21c4 = local_21c4 + 1;
+                  (*DAT_0064a278)(L"New Assign Buffer_ID= %d",*(undefined4 *)(iVar5 + 0x50));
+                  iVar4 = (**(code **)(*local_21ac + 0x94))(iVar5,local_21d0);
+                  auStack_2194[iVar3 * 2] = (ushort)local_21d8;
+                  local_21d8 = local_21d8 + iVar4;
+                  auStack_2194[iVar3 * 2 + 1] = (ushort)iVar4;
+                  iVar3 = iVar3 + 1;
+                  local_21d0 = local_21d0 + iVar4;
+                }
+                pbStack_21b0[iVar6 * 4 + 3] = 0;
+                *(uint *)(pbStack_21b0 + iVar6 * 4) =
+                     *(uint *)(pbStack_21b0 + iVar6 * 4) |
+                     *(int *)(iVar5 + 0x50) * 0x1000000 - 0x1000000U;
+              }
+            }
+          }
+          local_21d4 = local_21d4 + 0x10;
+          iVar7 = iVar7 + 1;
+          local_21bc = local_21bc + 0x10;
+        } while (iVar7 < local_21cc);
+      }
+      pvVar2 = local_219c;
+      pbStack_21b0 = pbStack_21b0 + local_21cc * 4;
+      iStack_21b8 = iStack_21b8 + 1;
+      local_21c0 = local_21c0 + 0x900;
+    } while (iStack_21b8 < local_21c8);
+    if (iVar3 < 1) goto LAB_00492768;
+    iVar5 = 0;
+    iVar6 = 0;
+    iVar7 = 0;
+    _Size = iVar3 * 4;
+    sVar9 = (short)_Size;
+    if (1 < iVar3) {
+      iVar5 = 0;
+      do {
+        uVar1 = auStack_2194[iVar7 * 2 + 1];
+        auStack_2194[iVar7 * 2] = auStack_2194[iVar7 * 2] + sVar9;
+        auStack_2194[iVar7 * 2 + 2] = auStack_2194[iVar7 * 2 + 2] + sVar9;
+        iVar5 = iVar5 + (uint)uVar1;
+        iVar4 = iVar7 * 2;
+        iVar7 = iVar7 + 2;
+        iVar6 = iVar6 + (uint)auStack_2194[iVar4 + 3];
+      } while (iVar7 < iVar3 + -1);
+    }
+    local_21b4 = 0;
+    uVar8 = 0;
+    if (iVar7 < iVar3) {
+      auStack_2194[iVar7 * 2] = auStack_2194[iVar7 * 2] + sVar9;
+      uVar8 = (uint)auStack_2194[iVar7 * 2 + 1];
+    }
+    _Size_00 = (uint)local_21d8 & 0xffff;
+    if (iVar6 + iVar5 + uVar8 == _Size_00) {
+      _memcpy(local_219c,auStack_2194,_Size);
+      _memcpy((void *)((int)pvVar2 + _Size),&local_2004,_Size_00);
+      *local_21a4 = _Size_00 + _Size;
+      if (local_21a0 != (int *)0x0) {
+        *local_21a0 = iVar3;
+      }
+      goto LAB_00492768;
+    }
+    (*DAT_0064a278)(L"!!!!nTotalSize!=nAddr");
+    param_2 = local_2198;
+  }
+  if (DAT_006586f8 != 0) {
+    FUN_0046df60(*(undefined4 *)(DAT_006586f8 + 0x10));
+    param_2 = extraout_EDX_00;
+  }
+LAB_00492529:
+  __security_check_cookie(local_4 ^ (uint)&local_21d8,param_2);
+  return;
+}
+
+
+

@@ -1,0 +1,551 @@
+=== FUN_0048c600 @ 0048c600  size=560  completed=true ===
+
+void __thiscall
+FUN_0048c600(int param_1,int param_2,DWORD param_3,int param_4,undefined1 param_5,undefined1 param_6
+            ,uint param_7,undefined4 param_8)
+
+{
+  char cVar1;
+  DWORD DVar2;
+  uint uVar3;
+  size_t _Size;
+  int iVar4;
+  int iVar5;
+  bool bVar6;
+  wchar_t *pwVar7;
+  DWORD local_220;
+  int local_21c;
+  int local_218;
+  int local_214;
+  int local_210;
+  char local_20c;
+  undefined1 local_20b;
+  undefined1 local_20a;
+  undefined1 local_209;
+  undefined1 local_208;
+  undefined1 local_207;
+  undefined1 local_206;
+  undefined1 local_205;
+  undefined1 local_204 [512];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_220;
+  local_210 = param_2;
+  iVar5 = 0;
+  local_220 = param_3;
+  local_21c = param_1;
+  if ((param_3 == 0) || ((int)param_7 < 1)) {
+    pwVar7 = L"CDevG5KB::AccessData Param err, hDev=%x";
+LAB_0048c80c:
+    (*DAT_0064a278)(pwVar7,param_3);
+  }
+  else if ((param_4 == 1) || (param_4 == 2)) {
+    local_214 = (int)(param_7 + ((int)param_7 >> 0x1f & 0x1ffU)) >> 9;
+    uVar3 = param_7 & 0x800001ff;
+    bVar6 = uVar3 == 0;
+    local_218 = 0;
+    if ((int)uVar3 < 0) {
+      bVar6 = (uVar3 - 1 | 0xfffffe00) == 0xffffffff;
+    }
+    if (!bVar6) {
+      local_214 = local_214 + 1;
+    }
+    if (0 < (int)param_7) {
+      do {
+        iVar4 = local_21c;
+        _Size = param_7 - iVar5;
+        if (0x1ff < (int)_Size) {
+          _Size = 0x200;
+        }
+        FUN_00405170(param_8);
+        _memset(&local_20c,0,0x208);
+        local_20c = ((*(int *)(*(int *)(local_210 + 0x10) + 0x14) != 0x18) - 1U & 0xfd) + 9;
+        local_208 = (undefined1)local_214;
+        local_20b = param_5;
+        local_207 = (undefined1)local_218;
+        local_218 = local_218 + 1;
+        local_20a = param_6;
+        local_209 = 0;
+        local_206 = (undefined1)_Size;
+        local_205 = (undefined1)(_Size >> 8);
+        if ((param_4 == 1) && (iVar4 != 0)) {
+          _memcpy(local_204,(void *)(iVar4 + iVar5),_Size);
+        }
+        iVar4 = 3;
+        do {
+          cVar1 = HidD_SetFeature(local_220,&local_20c,0x208);
+          if (cVar1 != '\0') break;
+          iVar4 = iVar4 + -1;
+          FUN_00405170(0x46);
+        } while (0 < iVar4);
+        if (iVar4 < 0) {
+          param_3 = GetLastError();
+          pwVar7 = L"CDevG5KB::AccessData err=%d";
+          goto LAB_0048c80c;
+        }
+        if (param_4 == 2) {
+          FUN_00405170(param_8);
+          cVar1 = HidD_GetFeature(local_220,&local_20c,0x208);
+          if (cVar1 == '\0') {
+            DVar2 = GetLastError();
+            (*DAT_0064a278)(L"CDevG5KB::AccessData read err=%d",DVar2);
+          }
+          _memcpy((void *)(local_21c + iVar5),local_204,_Size);
+        }
+        iVar5 = iVar5 + _Size;
+      } while (iVar5 < (int)param_7);
+    }
+  }
+  else {
+    (*DAT_0064a278)(L"CDevG5KB::AccessData nOper err");
+  }
+  __security_check_cookie(local_4 ^ (uint)&local_220);
+  return;
+}
+
+
+
+=== FUN_0048d620 @ 0048d620  size=80  completed=true ===
+
+undefined4 __thiscall FUN_0048d620(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  
+  if (*(int *)(param_1 + 0x23c) != 0) {
+                    /* WARNING: Could not recover jumptable at 0x0048d634. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (**(code **)(**(int **)(param_1 + 0x23c) + 0x4c))();
+    return uVar1;
+  }
+  iVar2 = FUN_0048c600(param_1,*(undefined4 *)(param_1 + 0xc),1,0xb,0,param_3,0x14);
+  if (iVar2 == 0) {
+    (*DAT_0064a278)(L"SetScreenParam failed");
+    return 0;
+  }
+  return 1;
+}
+
+
+
+=== FUN_0048d890 @ 0048d890  size=1204  completed=true ===
+
+uint FUN_0048d890(uint *param_1,int param_2)
+
+{
+  byte bVar1;
+  char cVar2;
+  byte bVar3;
+  uint uVar4;
+  undefined1 uVar5;
+  uint uVar6;
+  int iVar7;
+  undefined1 uVar8;
+  uint uVar9;
+  byte bVar10;
+  undefined8 uVar11;
+  
+  uVar4 = (int)*param_1 >> 0x18 & 0xff;
+  uVar9 = 0;
+  uVar6 = *param_1 & 0xffffff;
+  if (uVar4 == 1) {
+    switch(uVar6) {
+    case 0x11:
+      uVar4 = 0x10101;
+      break;
+    case 0x12:
+      uVar4 = 0x10301;
+      break;
+    case 0x13:
+      uVar4 = 0x10201;
+      break;
+    case 0x14:
+      uVar4 = 0x10401;
+      break;
+    case 0x15:
+      uVar4 = 0x10501;
+      break;
+    case 0x16:
+      uVar4 = 0x32020101;
+      break;
+    case 0x17:
+      uVar4 = 0x32030101;
+      break;
+    default:
+      goto switchD_0048d8bf_caseD_18;
+    case 0x19:
+      uVar4 = 0x801;
+      break;
+    case 0x1a:
+      uVar4 = 0x901;
+      break;
+    case 0x1b:
+      uVar4 = 0x32ff0701;
+      break;
+    case 0x1c:
+      uVar4 = 0x32ff0601;
+    }
+    if ((param_2 != 0) && (*(int *)(param_2 + 0x10) == 1)) {
+      if (uVar6 == 0x14) {
+        return 0x10501;
+      }
+      if (uVar6 == 0x15) {
+        return 0x10401;
+      }
+    }
+  }
+  else {
+    if ((uVar4 == 4) || (uVar4 == 3)) {
+      switch(uVar6) {
+      case 0x21:
+switchD_0048d9b8_caseD_88:
+        return 0x83010002;
+      case 0x22:
+switchD_0048d9b8_caseD_89:
+        return 0xcd000002;
+      case 0x23:
+switchD_0048d9b8_caseD_8a:
+        return 0xb7000002;
+      case 0x24:
+switchD_0048d9b8_caseD_8b:
+        return 0xb6000002;
+      case 0x25:
+switchD_0048d9b8_caseD_8c:
+        return 0xb5000002;
+      case 0x26:
+switchD_0048d9b8_caseD_8d:
+        return 0xe9000002;
+      case 0x27:
+switchD_0048d9b8_caseD_8e:
+        return 0xea000002;
+      case 0x28:
+switchD_0048d9b8_caseD_8f:
+        return 0xe2000002;
+      case 0x29:
+        return 0x6f000002;
+      case 0x2a:
+        return 0x70000002;
+      case 0x30:
+        return 0x8a010002;
+      case 0x31:
+switchD_0048d9b8_caseD_99:
+        return 0x92010002;
+      case 0x32:
+switchD_0048d9b8_caseD_9a:
+        return 0x94010002;
+      case 0x33:
+        return 0x21020002;
+      case 0x34:
+switchD_0048d9b8_caseD_9b:
+        return 0x23020002;
+      case 0x35:
+        return 0x24020002;
+      case 0x36:
+        return 0x25020002;
+      case 0x37:
+        return 0x26020002;
+      case 0x38:
+        return 0x27020002;
+      case 0x39:
+        return 0x2a020002;
+      }
+    }
+    else {
+      if (uVar4 == 2) {
+        bVar1 = (byte)param_1[1];
+        if (bVar1 == 0) {
+          if (*(char *)((int)param_1 + 5) == -6) {
+            return 0xd;
+          }
+          if (*(char *)((int)param_1 + 5) == -5) {
+            return 0x10d;
+          }
+        }
+        bVar10 = *(byte *)((int)param_1 + 5);
+        if ((bVar10 == 0) || (5 < bVar10)) {
+          switch(bVar10) {
+          case 0x40:
+            return 0x2c000000;
+          default:
+            bVar3 = FUN_00475f60();
+            uVar4 = FUN_00475f60();
+            bVar10 = (bVar1 & 1) != 0;
+            if ((bVar1 & 2) != 0) {
+              bVar10 = bVar10 | 2;
+            }
+            if ((bVar1 & 4) != 0) {
+              bVar10 = bVar10 | 4;
+            }
+            if ((bVar1 & 8) != 0) {
+              bVar10 = bVar10 | 8;
+            }
+            if ((bVar1 & 0x10) != 0) {
+              bVar10 = bVar10 | 0x10;
+            }
+            if ((bVar1 & 0x20) != 0) {
+              bVar10 = bVar10 | 0x20;
+            }
+            if ((bVar1 & 0x40) != 0) {
+              bVar10 = bVar10 | 0x40;
+            }
+            if ((char)bVar1 < '\0') {
+              bVar10 = bVar10 | 0x80;
+            }
+            return (((uVar4 & 0xff) << 8 | (uint)bVar3) << 8 | (uint)bVar10) << 8;
+          case 0x88:
+            goto switchD_0048d9b8_caseD_88;
+          case 0x89:
+            goto switchD_0048d9b8_caseD_89;
+          case 0x8a:
+            goto switchD_0048d9b8_caseD_8a;
+          case 0x8b:
+            goto switchD_0048d9b8_caseD_8b;
+          case 0x8c:
+            goto switchD_0048d9b8_caseD_8c;
+          case 0x8d:
+            goto switchD_0048d9b8_caseD_8d;
+          case 0x8e:
+            goto switchD_0048d9b8_caseD_8e;
+          case 0x8f:
+            goto switchD_0048d9b8_caseD_8f;
+          case 0x99:
+            goto switchD_0048d9b8_caseD_99;
+          case 0x9a:
+            goto switchD_0048d9b8_caseD_9a;
+          case 0x9b:
+            goto switchD_0048d9b8_caseD_9b;
+          }
+        }
+        goto switchD_0048dc1b_caseD_ad;
+      }
+      if (uVar4 == 5) {
+        uVar4 = param_1[1];
+        uVar11 = FUN_0046df30();
+        iVar7 = (int)((ulonglong)uVar11 >> 0x20);
+        if ((int)uVar11 != 0) {
+          cVar2 = *(char *)(iVar7 + 0xf);
+          uVar5 = 0;
+          uVar8 = 1;
+          if (cVar2 == '\0') {
+            uVar5 = 1;
+            uVar8 = *(undefined1 *)(iVar7 + 0xe);
+          }
+          else if (cVar2 == '\x02') {
+            uVar5 = 4;
+          }
+          else if (cVar2 == '\x01') {
+            uVar5 = 2;
+          }
+          return (uint)CONCAT11(uVar8,uVar5) << 8 | 3;
+        }
+        (*DAT_0064a278)(L"keyinfo_to_hardware_code can\'t find macro id 0x%x",uVar4);
+      }
+      else if (uVar4 == 6) {
+        switch(uVar6) {
+        case 0x43:
+          return 0x1d0100;
+        case 0x48:
+          return 0x160100;
+        case 0x51:
+          return 0x3d0400;
+        case 0x52:
+          return 0xf0800;
+        case 0x54:
+          return 0x150800;
+        case 0x55:
+          return 0x70800;
+        case 0x56:
+          return 0x2e0100;
+        case 0x57:
+          return 0x2d0100;
+        case 0x5a:
+          return 0x4c0500;
+        case 0x60:
+          return 7;
+        case 0x61:
+          return 0x1000007;
+        case 0x62:
+          return 0x2000007;
+        case 99:
+          return 0x4000007;
+        case 100:
+          return 0x2000010;
+        case 0x65:
+          return 0x4000010;
+        case 0x66:
+          return 0x7000005;
+        case 0x67:
+          return 0x7000006;
+        case 0x68:
+          return 0x7000007;
+        case 0x69:
+          return 0x7000008;
+        case 0x6a:
+          return 0x7000009;
+        case 0xa2:
+switchD_0048db1a_caseD_a2:
+          return 0;
+        }
+      }
+      else {
+        if (uVar4 == 9) {
+          if (uVar6 != 0) {
+            uVar4 = FUN_00463a30();
+            return uVar4;
+          }
+switchD_0048dc1b_caseD_ad:
+          return param_1[2];
+        }
+        if (uVar4 == 8) {
+          switch(uVar6) {
+          case 0xa2:
+          case 0xa7:
+            goto switchD_0048db1a_caseD_a2;
+          case 0xa4:
+            switch(*(ushort *)((int)param_1 + 10) & 0xff) {
+            case 0xf0:
+              uVar4 = 1;
+              uVar9 = 1;
+              break;
+            case 0xf1:
+              uVar4 = 1;
+              uVar9 = 2;
+              break;
+            case 0xf2:
+              uVar4 = 1;
+              uVar9 = 3;
+              break;
+            case 0xf3:
+              uVar4 = 1;
+              uVar9 = 4;
+              break;
+            case 0xf4:
+              uVar4 = 1;
+              uVar9 = 5;
+              break;
+            default:
+              uVar4 = 0;
+            }
+            return ((((int)param_1[2] >> 8 & 0xffU) << 8 | (uint)(byte)param_1[2]) << 8 | uVar9) <<
+                   8 | uVar4;
+          case 0xa6:
+            return (param_1[2] - 1) * 0x1000000 | 0x505;
+          case 0xa8:
+            return 0x105;
+          case 0xa9:
+            return 0x205;
+          case 0xaa:
+            return 0x405;
+          case 0xab:
+            return 0xe;
+          case 0xad:
+            goto switchD_0048dc1b_caseD_ad;
+          case 0xae:
+            return 8;
+          }
+        }
+      }
+    }
+switchD_0048d8bf_caseD_18:
+    uVar4 = 0xffffffff;
+  }
+  return uVar4;
+}
+
+
+
+=== FUN_0048d860 @ 0048d860  size=33  completed=true ===
+
+undefined4 __thiscall FUN_0048d860(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (*(int *)(param_1 + 0x1c) == 0) {
+    uVar1 = FUN_0048d1a0(param_2,param_3);
+    return uVar1;
+  }
+  return 0;
+}
+
+
+
+=== FUN_0048d670 @ 0048d670  size=384  completed=true ===
+
+void __thiscall FUN_0048d670(int param_1,int param_2)
+
+{
+  char cVar1;
+  DWORD DVar2;
+  size_t _Size;
+  int iVar3;
+  int iVar4;
+  int unaff_EDI;
+  wchar_t *pwVar5;
+  int local_218;
+  int local_214;
+  int local_210;
+  char local_20c [6];
+  undefined1 local_206;
+  undefined1 local_205;
+  undefined1 local_204 [512];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_218;
+  iVar3 = 0;
+  local_218 = param_2;
+  local_210 = param_1;
+  if (param_2 == 0) {
+    DVar2 = 0;
+    pwVar5 = L"CDevG5KB::AccessData Param err, hDev=%x";
+LAB_0048d7e5:
+    (*DAT_0064a278)(pwVar5,DVar2);
+    (*DAT_0064a278)(L"GetPassword failed");
+  }
+  else {
+    local_214 = 0;
+    do {
+      _Size = 6 - iVar3;
+      if (0x1ff < (int)_Size) {
+        _Size = 0x200;
+      }
+      FUN_00405170(0x14);
+      _memset(local_20c,0,0x208);
+      local_20c[0] = ((*(int *)(*(int *)(unaff_EDI + 0x10) + 0x14) != 0x18) - 1U & 0xfd) + 9;
+      local_20c[5] = (char)local_214;
+      local_214 = local_214 + 1;
+      local_20c[1] = 0x82;
+      local_20c[2] = 1;
+      local_20c[3] = 0;
+      local_20c[4] = 1;
+      local_206 = (undefined1)_Size;
+      local_205 = (undefined1)(_Size >> 8);
+      iVar4 = 3;
+      do {
+        cVar1 = HidD_SetFeature(local_218,local_20c,0x208);
+        if (cVar1 != '\0') break;
+        iVar4 = iVar4 + -1;
+        FUN_00405170(0x46);
+      } while (0 < iVar4);
+      if (iVar4 < 0) {
+        DVar2 = GetLastError();
+        pwVar5 = L"CDevG5KB::AccessData err=%d";
+        goto LAB_0048d7e5;
+      }
+      FUN_00405170(0x14);
+      cVar1 = HidD_GetFeature(local_218,local_20c,0x208);
+      if (cVar1 == '\0') {
+        DVar2 = GetLastError();
+        (*DAT_0064a278)(L"CDevG5KB::AccessData read err=%d",DVar2);
+      }
+      _memcpy((void *)(local_210 + iVar3),local_204,_Size);
+      iVar3 = iVar3 + _Size;
+    } while (iVar3 < 6);
+  }
+  __security_check_cookie(local_4 ^ (uint)&local_218);
+  return;
+}
+
+
+

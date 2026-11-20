@@ -1,0 +1,852 @@
+=== FUN_0048c250 @ 0048c250  size=837  completed=true ===
+
+void __fastcall FUN_0048c250(int *param_1)
+
+{
+  ushort *puVar1;
+  int iVar2;
+  int iVar3;
+  HANDLE hObject;
+  int iVar4;
+  int *piVar5;
+  ushort *puVar6;
+  bool bVar7;
+  int local_34;
+  ushort *local_30;
+  int local_2c;
+  uint local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
+  uint local_18;
+  int local_14;
+  int *local_10;
+  char cStack_c;
+  uint uStack_b;
+  undefined1 uStack_7;
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_34;
+  local_30 = (ushort *)param_1[4];
+  local_10 = param_1;
+  if (local_30 == (ushort *)0x0) {
+    __security_check_cookie(local_4 ^ (uint)&local_34);
+    return;
+  }
+  local_18 = (uint)*local_30;
+  local_28 = (uint)local_30[1];
+  local_20 = *(int *)(local_30 + 10);
+  local_1c = 0;
+  local_24 = 0;
+  local_14 = 0;
+  local_2c = -1;
+  local_34 = 0;
+  piVar5 = &DAT_0064b918;
+  do {
+    if ((local_18 == piVar5[2]) && (local_28 == piVar5[3])) {
+      if (local_20 == 0x18) {
+        bVar7 = *piVar5 == 0xff00;
+LAB_0048c319:
+        if (((!bVar7) || (piVar5[1] != 1)) || (piVar5[-1] != 0x208)) {
+LAB_0048c4e4:
+          if (((*piVar5 == 0xc) && (piVar5[1] == 1)) && (piVar5[-3] == 3)) {
+            local_1c = 1;
+          }
+          else if (((*piVar5 == 0xff02) && (piVar5[1] == 2)) &&
+                  ((piVar5[-3] == 0x14 && ((piVar5[-2] == 0x14 && (piVar5[-4] == 0x13)))))) {
+            local_24 = 1;
+          }
+          goto LAB_0048c528;
+        }
+      }
+      else {
+        if ((local_20 != 0x1a) || (*piVar5 != 0xff02)) goto LAB_0048c4e4;
+        if ((piVar5[1] != 2) || ((piVar5[-1] != 0x208 || (piVar5[-3] != 8)))) {
+          bVar7 = true;
+          goto LAB_0048c319;
+        }
+      }
+      hObject = CreateFileW((LPCWSTR)(piVar5 + -0x86),0x12019f,3,(LPSECURITY_ATTRIBUTES)0x0,3,
+                            0x40000000,(HANDLE)0x0);
+      (*DAT_0064a278)(L"CDevG5KB::FindHIDDevice CreateFile %s",piVar5 + -0x86);
+      puVar1 = local_30;
+      if (hObject != (HANDLE)0xffffffff) {
+        puVar6 = local_30 + 4;
+        if ((((char)*puVar6 != '\0') || ((char)local_30[6] != '\0')) ||
+           (*(char *)((int)local_30 + 0xd) != '\0')) {
+          cStack_c = '\0';
+          uStack_b = 0;
+          uStack_7 = 0;
+          iVar4 = FUN_0048d670(hObject);
+          if (iVar4 != 0) {
+            iVar4 = 0;
+            while ((&cStack_c + iVar4)[(int)puVar6 - (int)&cStack_c] == (&cStack_c)[iVar4]) {
+              iVar4 = iVar4 + 1;
+              if (5 < iVar4) goto LAB_0048c3c6;
+            }
+            (*DAT_0064a278)(L"Psd unmatch: gVar.nPsd=%x,%x,%x,%x,%x,%x, nDevPsd=%x,%x,%x,%x,%x,%x",
+                            (char)*puVar6,*(undefined1 *)((int)puVar1 + 9),(char)puVar1[5],
+                            *(undefined1 *)((int)puVar1 + 0xb),(char)puVar1[6],
+                            *(undefined1 *)((int)puVar1 + 0xd),cStack_c,uStack_b & 0xff,
+                            uStack_b >> 8 & 0xff,uStack_b >> 0x10 & 0xff,uStack_b >> 0x18,uStack_7);
+            CloseHandle(hObject);
+            local_14 = 1;
+            param_1 = local_10;
+            goto LAB_0048c528;
+          }
+LAB_0048c3c6:
+          param_1 = local_10;
+        }
+        local_2c = local_34;
+        goto LAB_0048c3d2;
+      }
+    }
+LAB_0048c528:
+    hObject = (HANDLE)0x0;
+    local_34 = local_34 + 1;
+    piVar5 = piVar5 + 0x8b;
+    if (0x6525af < (int)piVar5) {
+LAB_0048c3d2:
+      (*DAT_0064a278)(L"CDevG5KB::FindHIDDevice for %s, hDev=%x, nFw=%d, id=%04x_%04x",
+                      local_30 + 0x12,hObject,local_20,local_18,local_28);
+      iVar3 = local_1c;
+      iVar2 = local_24;
+      iVar4 = local_2c;
+      if ((hObject != (HANDLE)0x0) && (local_2c != -1)) {
+        *(undefined4 *)(&DAT_0064b928 + local_2c * 0x22c) = 1;
+        (**(code **)(*param_1 + 0x18))();
+        param_1[3] = (int)hObject;
+        param_1[0x8d] = 1;
+        param_1[10] = 0;
+        param_1[9] = 0;
+        param_1[6] = 0;
+        param_1[5] = 0;
+        _wcsncpy_s((wchar_t *)(param_1 + 0xb),0x104,&DAT_0064b700 + iVar4 * 0x116,0xffffffff);
+        Sleep(0x1e);
+        (**(code **)(*param_1 + 0x24))();
+        __security_check_cookie(local_4 ^ (uint)&local_34);
+        return;
+      }
+      (*DAT_0064a278)(L"CDevG5KB::FindHIDDevice bFindMedida=%x, bFindWireless=%x",local_1c,local_24)
+      ;
+      if (((iVar3 == 0) || (iVar2 != 0)) || (local_14 != 0)) {
+        __security_check_cookie(local_4 ^ (uint)&local_34);
+        return;
+      }
+      __security_check_cookie(local_4 ^ (uint)&local_34);
+      return;
+    }
+  } while( true );
+}
+
+
+
+=== FUN_0048ec30 @ 0048ec30  size=3014  completed=true ===
+
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+
+void __thiscall
+FUN_0048ec30(int *param_1,int param_2,HWND param_3,UINT param_4,uint param_5,undefined4 param_6)
+
+{
+  byte bVar1;
+  byte bVar2;
+  byte bVar3;
+  int iVar4;
+  undefined4 uVar5;
+  undefined2 *puVar6;
+  BOOL BVar7;
+  int iVar8;
+  int iVar9;
+  int iVar10;
+  undefined1 *puVar11;
+  undefined4 *puVar12;
+  code *pcVar13;
+  size_t _Size;
+  int *piVar14;
+  uint uVar15;
+  int *piVar16;
+  uint uVar17;
+  HWND hWnd;
+  DWORD DVar18;
+  int local_3fb4;
+  undefined1 *puStack_3fb0;
+  int iStack_3fac;
+  undefined1 *puStack_3fa8;
+  HWND local_3fa4;
+  uint uStack_3fa0;
+  undefined2 *puStack_3f9c;
+  int *local_3f98;
+  undefined1 *puStack_3f94;
+  int iStack_3f90;
+  DWORD local_3f8c;
+  undefined4 uStack_3f88;
+  undefined1 uStack_3f84;
+  undefined1 auStack_3f83 [125];
+  char cStack_3f06;
+  char cStack_3f05;
+  undefined1 uStack_3f04;
+  undefined1 auStack_3f03 [20];
+  undefined1 auStack_3eef [1003];
+  undefined1 uStack_3b04;
+  undefined1 auStack_3b03 [505];
+  undefined1 uStack_390a;
+  undefined1 uStack_3909;
+  undefined2 uStack_3904;
+  undefined1 uStack_3104;
+  undefined1 auStack_3103 [2303];
+  undefined2 uStack_2804;
+  ushort auStack_2802 [5119];
+  uint local_4;
+  
+  local_4 = DAT_0063c674 ^ (uint)&local_3fb4;
+  local_3fb4 = param_2;
+  local_3fa4 = param_3;
+  local_3f98 = param_1;
+  if (((param_2 == 0) || (*(int *)(param_2 + 4) == 0)) || (param_1[4] == 0)) goto LAB_0048f7e8;
+  BVar7 = IsWindow(param_3);
+  if (BVar7 == 0) {
+    param_3 = (HWND)0x0;
+    local_3fa4 = (HWND)0x0;
+  }
+  iVar4 = *(int *)(param_1[4] + 0x20);
+  bVar1 = *(byte *)(iVar4 + 0x2ff4);
+  param_1[0xa6] = (uint)bVar1;
+  param_1[0xa5] = (uint)bVar1;
+  DVar18 = DAT_00645a4c;
+  pcVar13 = *(code **)(*param_1 + 0x88);
+  local_3f8c = DAT_00645a4c;
+  param_1[0xa0] = (int)param_3;
+  (*pcVar13)();
+  if (param_1[0x8f] == 0) {
+    (*DAT_0064a278)(L"CDevG5KB::ApplySetting: hWnd=%x, nFlag=%x, nData=%x, nFw=%d, nMatrixLen=%d",
+                    param_3,param_5,param_6,*(undefined4 *)(param_1[4] + 0x14),param_1[0xa5]);
+  }
+  uStack_3f88 = 0;
+  iStack_3f90 = DAT_00645a58;
+  if (param_3 != (HWND)0x0) {
+    PostMessageW(param_3,param_4,0x14,0);
+  }
+  uVar17 = 1;
+  param_1[7] = 1;
+  Sleep(DVar18);
+  if ((param_5 & 0x20) != 0) {
+    param_1[8] = 1;
+  }
+  if ((param_5 & 1) == 0) {
+LAB_0048f0d5:
+    puStack_3f94 = (undefined1 *)
+                   (uint)((uint)*(byte *)(iVar4 + 0x2f1c) == *(uint *)(local_3fb4 + 0x243c));
+    if ((param_5 & 2) == 0) {
+LAB_0048f568:
+      if (((param_5 & 0x10) != 0) && (puStack_3f94 != (undefined1 *)0x0)) {
+        bVar1 = *(byte *)(iVar4 + 0x2ffb);
+        bVar2 = *(byte *)(iVar4 + 0x2ffc);
+        bVar3 = *(byte *)(iVar4 + 0x2ffd);
+        uStack_3904 = uStack_3904 & 0xff00;
+        _memset((void *)((int)&uStack_3904 + 1),0,0x761);
+        (*DAT_0064a278)(L"bDirtyFlag = 0x%x",*(undefined4 *)(local_3fb4 + 0x2444));
+        iStack_3fac = 0;
+        if (*(char *)(iVar4 + 0x2fec) != '\0') {
+          puStack_3f9c = &uStack_3904;
+          puStack_3fa8 = auStack_3b03 + (uint)bVar3 * 0x7e + 0x1ff;
+          puStack_3f94 = auStack_3b03 + (uint)bVar2 * 0x7e + 0x1ff;
+          puStack_3fb0 = auStack_3b03 + (uint)bVar1 * 0x7e + 0x1ff;
+          uStack_3fa0 = 0x912;
+          do {
+            piVar14 = local_3f98;
+            if ((*(uint *)(local_3fb4 + 0x2444) & 1 << ((byte)iStack_3fac & 0x1f)) != 0) {
+              iVar8 = 0;
+              if (0 < *(int *)(iVar4 + 0x2d28)) {
+                piVar16 = (int *)(iVar4 + 0x18);
+                do {
+                  if (*piVar16 != 0) {
+                    uVar5 = *(undefined4 *)(local_3fb4 + (uStack_3fa0 + iVar8) * 4);
+                    uVar17 = (uint)*(byte *)((int)piVar16 + 0xd);
+                    if ((int)uVar17 < local_3f98[0xa6]) {
+                      puStack_3fb0[uVar17] = (char)uVar5;
+                      puStack_3f94[uVar17] = (char)((uint)uVar5 >> 8);
+                      puStack_3fa8[uVar17] = (char)((uint)uVar5 >> 0x10);
+                    }
+                  }
+                  iVar8 = iVar8 + 1;
+                  piVar16 = piVar16 + 4;
+                } while (iVar8 < *(int *)(iVar4 + 0x2d28));
+              }
+              if (DAT_0064a274 != 0) {
+                (*DAT_0064a278)(L"ColorGroup[%d]: ",iStack_3fac);
+                puVar6 = puStack_3f9c;
+                FUN_004078c0(puStack_3f9c,0x40,0,0);
+                FUN_004078c0(puVar6 + 0x3f,0x40,0,0);
+                FUN_004078c0(puVar6 + 0x7e,0x40,0,0);
+              }
+              DVar18 = 100;
+              if ((param_5 & 0x40) == 0) {
+                DVar18 = local_3f8c;
+              }
+              Sleep(DVar18);
+              iVar8 = (**(code **)(*piVar14 + 0x68))(iStack_3fac,puStack_3f9c,piVar14[0xa6] * 3);
+              if (iVar8 == 0) {
+                if (iStack_3f90 == 0) goto LAB_0048f787;
+                piVar14 = local_3f98;
+              }
+              iVar8 = (**(code **)(*piVar14 + 0x8c))();
+              if (iVar8 != 0) goto LAB_0048f7b6;
+            }
+            uStack_3fa0 = uStack_3fa0 + 0x90;
+            puStack_3fb0 = puStack_3fb0 + 0x17a;
+            puStack_3fa8 = puStack_3fa8 + 0x17a;
+            puStack_3f9c = puStack_3f9c + 0xbd;
+            puStack_3f94 = puStack_3f94 + 0x17a;
+            iStack_3fac = iStack_3fac + 1;
+          } while (iStack_3fac < (int)(uint)*(byte *)(iVar4 + 0x2fec));
+        }
+        *(undefined4 *)(local_3fb4 + 0x2444) = 0;
+      }
+      goto LAB_0048f77f;
+    }
+    Sleep(local_3f8c);
+    uStack_3f84 = 0;
+    _memset(auStack_3f83,0,0x7f);
+    iVar8 = 0;
+    if (iStack_3f90 == 0) {
+      while( true ) {
+        _memset(&uStack_3f84,0,0x80);
+        iVar9 = (**(code **)(*param_1 + 100))(&uStack_3f84,0x80);
+        if (iVar9 == 0) break;
+        iVar9 = (**(code **)(*param_1 + 0x8c))();
+        if (iVar9 != 0) goto LAB_0048f7b6;
+        FUN_004078c0(&uStack_3f84,0x80,10,L"Cfg(Load): ");
+        if ((cStack_3f06 == 'Z') && (cStack_3f05 == -0x5b)) goto LAB_0048f1d2;
+        iVar8 = iVar8 + 1;
+        if (4 < iVar8) {
+          (*DAT_0064a278)(L"!!!Failed, Get wrong led profile data.");
+          break;
+        }
+        (*DAT_0064a278)(L"!!!Get wrong led profile data, retry now.");
+        Sleep(100);
+      }
+    }
+    else {
+LAB_0048f1d2:
+      FUN_0048e880(param_1,local_3fb4);
+      Sleep(0x3c);
+      if (DAT_0064a274 != 0) {
+        FUN_004078c0(&uStack_3f84,0x80,10,L"Cfg(Save): ");
+      }
+      iVar8 = (**(code **)(*param_1 + 0x60))(&uStack_3f84,0x80);
+      if ((iVar8 != 0) || (iStack_3f90 != 0)) {
+        iVar8 = (**(code **)(*param_1 + 0x8c))();
+        hWnd = local_3fa4;
+        if (iVar8 != 0) goto LAB_0048f23c;
+        if (local_3fa4 != (HWND)0x0) {
+          PostMessageW(local_3fa4,param_4,0x28,0);
+        }
+        if ((puStack_3f94 == (undefined1 *)0x0) && ((param_5 & 0x40) != 0)) {
+          uStack_3f04 = 0;
+          _memset(auStack_3f03,0,0x3ff);
+          uVar17 = (uint)*(byte *)(iVar4 + 0x2ff1);
+          iVar8 = 0;
+          if (uVar17 != 0) {
+            puVar12 = (undefined4 *)(local_3fb4 + 0x2f90);
+            puStack_3fa8 = (undefined1 *)uVar17;
+            do {
+              uVar5 = puVar12[-1];
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff8) + iVar8] = (char)uVar5;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff9) + iVar8] = (char)((uint)uVar5 >> 8);
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ffa) + iVar8] = (char)((uint)uVar5 >> 0x10);
+              uVar5 = *puVar12;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff8) + iVar8 + 3] = (char)uVar5;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff9) + iVar8 + 3] = (char)((uint)uVar5 >> 8);
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ffa) + iVar8 + 3] =
+                   (char)((uint)uVar5 >> 0x10);
+              uVar5 = puVar12[1];
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff8) + iVar8 + 6] = (char)uVar5;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff9) + iVar8 + 6] = (char)((uint)uVar5 >> 8);
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ffa) + iVar8 + 6] =
+                   (char)((uint)uVar5 >> 0x10);
+              uVar5 = puVar12[2];
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff8) + iVar8 + 9] = (char)uVar5;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff9) + iVar8 + 9] = (char)((uint)uVar5 >> 8);
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ffa) + iVar8 + 9] =
+                   (char)((uint)uVar5 >> 0x10);
+              uVar5 = puVar12[3];
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff8) + iVar8 + 0xc] = (char)uVar5;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff9) + iVar8 + 0xc] = (char)((uint)uVar5 >> 8)
+              ;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ffa) + iVar8 + 0xc] =
+                   (char)((uint)uVar5 >> 0x10);
+              uVar5 = puVar12[4];
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff8) + iVar8 + 0xf] = (char)uVar5;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff9) + iVar8 + 0xf] = (char)((uint)uVar5 >> 8)
+              ;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ffa) + iVar8 + 0xf] =
+                   (char)((uint)uVar5 >> 0x10);
+              uVar5 = puVar12[5];
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff8) + iVar8 + 0x12] = (char)uVar5;
+              auStack_3eef[(uint)*(byte *)(iVar4 + 0x2ff9) + iVar8 + 0x12] =
+                   (char)((uint)uVar5 >> 8);
+              iVar9 = (uint)*(byte *)(iVar4 + 0x2ffa) + iVar8;
+              iVar8 = iVar8 + 0x15;
+              puVar12 = puVar12 + 9;
+              puStack_3fa8 = (undefined1 *)((int)puStack_3fa8 - 1);
+              auStack_3eef[iVar9 + 0x12] = (char)((uint)uVar5 >> 0x10);
+            } while (puStack_3fa8 != (undefined1 *)0x0);
+            puStack_3fa8 = (undefined1 *)0x0;
+            hWnd = local_3fa4;
+          }
+          uStack_3fa0 = uVar17;
+          Sleep(0x82);
+          _Size = (uVar17 + 1) * 0x15;
+          FUN_00407a60(&uStack_3f04,_Size,0x15,3);
+          if (*(char *)(iVar4 + 0x2ff5) == '\0') {
+            pcVar13 = *(code **)(*param_1 + 0x70);
+            puVar11 = &uStack_3f04;
+          }
+          else {
+            uStack_3b04 = 0;
+            _memset(auStack_3b03,0,0x1ff);
+            _memcpy(&uStack_3b04,&uStack_3f04,_Size);
+            pcVar13 = *(code **)(*param_1 + 0x70);
+            _Size = 0x200;
+            puVar11 = &uStack_3b04;
+            uStack_390a = 0x5a;
+            uStack_3909 = 0xa5;
+          }
+          iVar8 = (*pcVar13)(puVar11,_Size);
+          iVar9 = (**(code **)(*param_1 + 0x8c))();
+          if (iVar9 != 0) {
+            PostMessageW(hWnd,0x42d,0,0);
+            goto LAB_0048f77f;
+          }
+          if ((iVar8 == 0) && ((*DAT_0064a278)(L"SetLedRgbTab error"), iStack_3f90 == 0))
+          goto LAB_0048f787;
+        }
+        goto LAB_0048f568;
+      }
+    }
+  }
+  else {
+    uStack_3104 = 0;
+    _memset(auStack_3103,0,0x8ff);
+    uStack_2804._0_1_ = 0;
+    _memset((void *)((int)&uStack_2804 + 1),0,0x27ff);
+    uStack_3fa0 = *(uint *)(*(int *)(param_1[4] + 0x20) + 4);
+    iStack_3fac = 0;
+    if (0x2800 < uStack_3fa0) {
+      MessageBoxW(local_3fa4,L"nMacroBufferSize > sizeof(bMacro)",L"",0);
+    }
+    iVar8 = FUN_0048e340(param_1,local_3fb4,&uStack_2804,&iStack_3fac);
+    if ((iVar8 != 0) || ((*DAT_0064a278)(L"FillMatrix Err"), iStack_3f90 != 0)) {
+      (*DAT_0064a278)(L"Matrix (Save)-------------------------");
+      puStack_3f9c = (undefined2 *)0x0;
+      puStack_3fa8 = (undefined1 *)0x4;
+      do {
+        if (((*(uint *)(iVar4 + 0x2d50) & uVar17) == 0) &&
+           ((*(uint *)(local_3fb4 + 0x30) & uVar17) != 0)) {
+          iVar8 = FUN_0048ebf0();
+          puStack_3f9c = (undefined2 *)((int)puStack_3f9c + iVar8);
+        }
+        puVar6 = puStack_3f9c;
+        uVar17 = uVar17 << 1 | (uint)((int)uVar17 < 0);
+        puStack_3fa8 = puStack_3fa8 + -1;
+      } while (puStack_3fa8 != (undefined1 *)0x0);
+      (*DAT_0064a278)(L"nKeyDirty=0x%x, nMacroNum=%d, nNeedWriteMacro=%d",
+                      *(undefined4 *)(local_3fb4 + 0x30),iStack_3fac,puStack_3f9c);
+      if (0 < (int)puVar6) {
+        iVar8 = 0;
+        puStack_3fb0 = (undefined1 *)(local_3fb4 + 0x38);
+        uVar17 = 1;
+        do {
+          if ((((*(uint *)(iVar4 + 0x2d50) & uVar17) == 0) && (iVar8 != *(int *)(local_3fb4 + 0x34))
+              ) && (iVar9 = FUN_0048ebf0(), 0 < iVar9)) {
+            *(uint *)(local_3fb4 + 0x30) = *(uint *)(local_3fb4 + 0x30) | uVar17;
+          }
+          puStack_3fb0 = puStack_3fb0 + 0x900;
+          iVar8 = iVar8 + 1;
+          uVar17 = uVar17 << 1 | (uint)((int)uVar17 < 0);
+        } while (iVar8 < 4);
+      }
+      FUN_0048e7d0(&uStack_3104,*(undefined4 *)(iVar4 + 0x2d50),*(undefined4 *)(local_3fb4 + 0x30));
+      iVar8 = param_1[0xa5];
+      puStack_3fb0 = &uStack_3104;
+      iVar9 = 0;
+      do {
+        uVar17 = 1 << ((byte)iVar9 & 0x1f);
+        if (((*(uint *)(iVar4 + 0x2d50) & uVar17) == 0) &&
+           ((*(uint *)(local_3fb4 + 0x30) & uVar17) != 0)) {
+          iVar10 = (**(code **)(*param_1 + 0x50))(iVar9,puStack_3fb0,iVar8 * 4);
+          if ((iVar10 == 0) && ((*DAT_0064a278)(L"SetMatrix Err, layer=%d",iVar9), iStack_3f90 == 0)
+             ) goto LAB_0048f787;
+          iVar10 = (**(code **)(*param_1 + 0x8c))();
+          if (iVar10 != 0) goto LAB_0048f23c;
+          Sleep(0x32);
+        }
+        uVar17 = uStack_3fa0;
+        puStack_3fb0 = puStack_3fb0 + iVar8 * 4;
+        iVar9 = iVar9 + 1;
+      } while (iVar9 < 4);
+      *(undefined4 *)(local_3fb4 + 0x30) = 0;
+      if ((iStack_3fac < 1) || ((int)puStack_3f9c < 1)) goto LAB_0048f0d5;
+      if (DAT_0064a274 != 0) {
+        (*DAT_0064a278)(L"Macro data: (total size=%d)",uStack_3fa0);
+        FUN_004078c0(&uStack_2804,uVar17,0x20,0);
+        puStack_3fb0 = (undefined1 *)0x0;
+        if (0 < iStack_3fac) {
+          do {
+            uStack_3904 = 0;
+            uVar15 = (uint)auStack_2802[(int)puStack_3fb0 * 2];
+            uVar17 = (uint)(ushort)(&uStack_2804)[(int)puStack_3fb0 * 2];
+            FUN_00407be0(L"Macro[%d]: addr=0x%x(%d), size=0x%x(%d include name size), name=",
+                         puStack_3fb0,uVar17,uVar17,uVar15,uVar15);
+            puVar11 = (undefined1 *)(uint)*(byte *)((int)&uStack_2804 + uVar17);
+            puStack_3f94 = (undefined1 *)((int)&uStack_2804 + uVar17 + 1);
+            puStack_3fa8 = puVar11;
+            FUN_00407c30(puStack_3f94);
+            FUN_00407be0(L", data=\n");
+            FUN_00407c70(puVar11 + (int)puStack_3f94,(uVar15 - (int)puVar11) + -1);
+            (*DAT_0064a278)(&uStack_3904);
+            puStack_3fb0 = puStack_3fb0 + 1;
+          } while ((int)puStack_3fb0 < iStack_3fac);
+        }
+      }
+      Sleep(local_3f8c);
+      piVar14 = local_3f98;
+      iVar8 = (**(code **)(*local_3f98 + 0x58))(&uStack_2804,uStack_3fa0);
+      if ((iVar8 == 0) && (iStack_3f90 == 0)) goto LAB_0048f787;
+      iVar8 = (**(code **)(*piVar14 + 0x8c))();
+      if (iVar8 == 0) {
+        Sleep(0x32);
+        param_1 = local_3f98;
+        goto LAB_0048f0d5;
+      }
+LAB_0048f23c:
+      PostMessageW(local_3fa4,0x42d,0,0);
+      goto LAB_0048f77f;
+    }
+  }
+LAB_0048f787:
+  piVar14 = local_3f98;
+  local_3f98[7] = 0;
+  local_3f98[8] = 0;
+  if (local_3fa4 == (HWND)0x0) {
+    DVar18 = 0x1e;
+  }
+  else {
+    PostMessageW(local_3fa4,param_4,100,0);
+    DVar18 = 500;
+  }
+  Sleep(DVar18);
+  (**(code **)(*piVar14 + 0x88))();
+LAB_0048f7e8:
+  __security_check_cookie(local_4 ^ (uint)&local_3fb4);
+  return;
+LAB_0048f7b6:
+  PostMessageW(local_3fa4,0x42d,0,0);
+LAB_0048f77f:
+  uStack_3f88 = 1;
+  goto LAB_0048f787;
+}
+
+
+
+=== FUN_0048a060 @ 0048a060  size=2267  completed=true ===
+
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+
+void __thiscall
+FUN_0048a060(int *param_1,int param_2,HWND param_3,UINT param_4,uint param_5,undefined4 param_6)
+
+{
+  byte bVar1;
+  byte bVar2;
+  undefined4 uVar3;
+  int *piVar4;
+  BOOL BVar5;
+  int iVar6;
+  DWORD DVar7;
+  int iVar8;
+  uint uVar9;
+  int iVar10;
+  undefined4 *puVar11;
+  undefined4 *puVar12;
+  bool bVar13;
+  int *local_1cbc;
+  int *piStack_1cb8;
+  undefined1 *puStack_1cb4;
+  int *piStack_1cb0;
+  int iStack_1cac;
+  int iStack_1ca8;
+  HWND local_1ca4;
+  int iStack_1ca0;
+  undefined1 *puStack_1c9c;
+  undefined1 *puStack_1c98;
+  int local_1c94;
+  undefined4 uStack_1c90;
+  uint uStack_1c8c;
+  undefined4 auStack_1c88 [4];
+  undefined1 uStack_1c78;
+  undefined1 auStack_1c77 [7];
+  undefined1 auStack_1c70 [248];
+  undefined1 uStack_1b78;
+  undefined1 auStack_1b77 [20];
+  undefined1 auStack_1b63 [1003];
+  undefined4 uStack_1778;
+  undefined1 auStack_16fa [1770];
+  undefined4 uStack_1010;
+  uint local_c;
+  
+  local_c = DAT_0063c674 ^ (uint)&local_1cbc;
+  local_1c94 = param_2;
+  local_1ca4 = param_3;
+  local_1cbc = param_1;
+  if (((param_2 == 0) || (*(int *)(param_2 + 4) == 0)) || (param_1[4] == 0)) {
+    __security_check_cookie(local_c ^ (uint)&local_1cbc);
+    return;
+  }
+  BVar5 = IsWindow(param_3);
+  if (BVar5 == 0) {
+    param_3 = (HWND)0x0;
+    local_1ca4 = (HWND)0x0;
+  }
+  (*DAT_0064a278)(L"CDev916KB::ApplySetting: hWnd=%x, nFlag=%x, nData=%x, nFw=%d",param_3,param_5,
+                  param_6,*(undefined4 *)(param_1[4] + 0x14));
+  iVar8 = *(int *)(param_1[4] + 0x20);
+  uStack_1c90 = 0;
+  iStack_1cac = DAT_00645a58;
+  if (local_1ca4 != (HWND)0x0) {
+    PostMessageW(local_1ca4,param_4,0x14,0);
+  }
+  param_1[7] = 1;
+  Sleep(0x1e);
+  if ((param_5 & 1) != 0) {
+    uStack_1b78 = 0;
+    _memset(auStack_1b77,0,0x3ff);
+    uStack_1010._0_1_ = 0;
+    _memset((void *)((int)&uStack_1010 + 1),0,0xfff);
+    puVar11 = &uStack_1010;
+    auStack_1c88[0] = 0xdc;
+    auStack_1c88[1] = 0xe0;
+    auStack_1c88[2] = 0xe4;
+    auStack_1c88[3] = 0xe8;
+    piStack_1cb0 = (int *)0x0;
+    puStack_1cb4 = (undefined1 *)FUN_00489c30(param_1,&uStack_1b78);
+    if (puStack_1cb4 == (undefined1 *)0x0) {
+      (*DAT_0064a278)(L"FillMatrix Err");
+      if (iStack_1cac == 0) goto LAB_0048a8bb;
+    }
+    else if (0 < (int)piStack_1cb0) {
+      piStack_1cb8 = (int *)((int)((int)piStack_1cb0 + ((int)piStack_1cb0 >> 0x1f & 7U)) >> 3);
+      uVar9 = (uint)piStack_1cb0 & 0x80000007;
+      bVar13 = uVar9 == 0;
+      if ((int)uVar9 < 0) {
+        bVar13 = (uVar9 - 1 | 0xfffffff8) == 0xffffffff;
+      }
+      if (!bVar13) {
+        piStack_1cb8 = (int *)((int)piStack_1cb8 + 1);
+      }
+      iStack_1ca8 = 0;
+      if (0 < (int)piStack_1cb8) {
+        do {
+          uVar3 = auStack_1c88[iStack_1ca8];
+          (*DAT_0064a278)(L"Macro(0x%X):",uVar3);
+          FUN_004078c0(puVar11,0x400,0x80,0);
+          iVar6 = FUN_004891d0(uVar3);
+          if (iVar6 == 0) {
+            DVar7 = GetLastError();
+            (*DAT_0064a278)(L"SetMacroData(%x) error, err=0x%x",uVar3,DVar7);
+            if (iStack_1cac == 0) goto LAB_0048a8b7;
+          }
+          puVar11 = puVar11 + 0x100;
+          Sleep(0x32);
+          iStack_1ca8 = iStack_1ca8 + 1;
+        } while (iStack_1ca8 < (int)piStack_1cb8);
+      }
+    }
+    (*DAT_0064a278)(L"Matrix (Save)-------------------------");
+    param_1 = local_1cbc;
+    FUN_00489f00();
+    if ((puStack_1cb4 != (undefined1 *)0x0) && (iVar6 = FUN_00488e40(), iVar6 == 0)) {
+      DVar7 = GetLastError();
+      (*DAT_0064a278)(L"SetKeyMatrix error, err=0x%x",DVar7);
+      if (iStack_1cac == 0) {
+LAB_0048a8b7:
+        param_1 = local_1cbc;
+        goto LAB_0048a8bb;
+      }
+    }
+    Sleep(0x32);
+    param_2 = local_1c94;
+  }
+  uStack_1c78 = 0;
+  _memset(auStack_1c77,0,0xfd);
+  puStack_1cb4 = (undefined1 *)
+                 (uint)((uint)*(byte *)(iVar8 + 0x2f1c) == *(uint *)(param_2 + 0x243c));
+  uStack_1c8c = param_5 & 2;
+  if (uStack_1c8c != 0) {
+    Sleep(0x1e);
+    iVar6 = FUN_00488c90(param_1);
+    if (iVar6 == 0) {
+      if (iStack_1cac == 0) goto LAB_0048a8bb;
+    }
+    else if (DAT_0064a274 != 0) {
+      FUN_004078c0(&uStack_1c78,8,0x20,L"Cfg(Load-Global): ");
+      FUN_004078c0(auStack_1c70,0x7b,8,L"Cfg(Load-Pro1): ");
+    }
+    FUN_00489f80();
+    if ((puStack_1cb4 == (undefined1 *)0x0) && ((param_5 & 0x40) != 0)) {
+      uStack_1b78 = 0;
+      _memset(auStack_1b77,0,0x3ff);
+      piStack_1cb0 = (int *)(uint)*(byte *)(iVar8 + 0x2ff1);
+      iVar6 = 0;
+      if (piStack_1cb0 != (int *)0x0) {
+        puVar11 = (undefined4 *)(param_2 + 0x2f90);
+        piStack_1cb8 = piStack_1cb0;
+        do {
+          uVar3 = puVar11[-1];
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff8) + iVar6] = (char)uVar3;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff9) + iVar6] = (char)((uint)uVar3 >> 8);
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ffa) + iVar6] = (char)((uint)uVar3 >> 0x10);
+          uVar3 = *puVar11;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff8) + iVar6 + 3] = (char)uVar3;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff9) + iVar6 + 3] = (char)((uint)uVar3 >> 8);
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ffa) + iVar6 + 3] = (char)((uint)uVar3 >> 0x10);
+          uVar3 = puVar11[1];
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff8) + iVar6 + 6] = (char)uVar3;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff9) + iVar6 + 6] = (char)((uint)uVar3 >> 8);
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ffa) + iVar6 + 6] = (char)((uint)uVar3 >> 0x10);
+          uVar3 = puVar11[2];
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff8) + iVar6 + 9] = (char)uVar3;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff9) + iVar6 + 9] = (char)((uint)uVar3 >> 8);
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ffa) + iVar6 + 9] = (char)((uint)uVar3 >> 0x10);
+          uVar3 = puVar11[3];
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff8) + iVar6 + 0xc] = (char)uVar3;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff9) + iVar6 + 0xc] = (char)((uint)uVar3 >> 8);
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ffa) + iVar6 + 0xc] = (char)((uint)uVar3 >> 0x10);
+          uVar3 = puVar11[4];
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff8) + iVar6 + 0xf] = (char)uVar3;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff9) + iVar6 + 0xf] = (char)((uint)uVar3 >> 8);
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ffa) + iVar6 + 0xf] = (char)((uint)uVar3 >> 0x10);
+          uVar3 = puVar11[5];
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff8) + iVar6 + 0x12] = (char)uVar3;
+          auStack_1b63[(uint)*(byte *)(iVar8 + 0x2ff9) + iVar6 + 0x12] = (char)((uint)uVar3 >> 8);
+          iVar10 = (uint)*(byte *)(iVar8 + 0x2ffa) + iVar6;
+          iVar6 = iVar6 + 0x15;
+          puVar11 = puVar11 + 9;
+          piStack_1cb8 = (int *)((int)piStack_1cb8 + -1);
+          auStack_1b63[iVar10 + 0x12] = (char)((uint)uVar3 >> 0x10);
+        } while (piStack_1cb8 != (int *)0x0);
+        piStack_1cb8 = (int *)0x0;
+        param_1 = local_1cbc;
+      }
+      iVar6 = ((int)piStack_1cb0 + 1) * 0x15;
+      FUN_00407a60(&uStack_1b78,iVar6,0x15,3);
+      Sleep(0x14);
+      iVar6 = (**(code **)(*param_1 + 0x70))(&uStack_1b78,iVar6);
+      if ((iVar6 == 0) && ((*DAT_0064a278)(L"SetLedRgbTab error"), iStack_1cac == 0))
+      goto LAB_0048a8bb;
+      Sleep(100);
+    }
+  }
+  if (((param_5 & 0x10) != 0) && (puStack_1cb4 != (undefined1 *)0x0)) {
+    piStack_1cb0 = (int *)(uint)*(byte *)(iVar8 + 0x2ffd);
+    bVar1 = *(byte *)(iVar8 + 0x2ffb);
+    bVar2 = *(byte *)(iVar8 + 0x2ffc);
+    uStack_1778._0_1_ = 0;
+    _memset((void *)((int)&uStack_1778 + 1),0,0x761);
+    iStack_1ca8 = 0;
+    if (*(char *)(iVar8 + 0x2fec) != '\0') {
+      piStack_1cb8 = (int *)auStack_16fa;
+      puStack_1cb4 = auStack_1b63 + (int)piStack_1cb0 * 0x7e + 0x3eb;
+      puStack_1c9c = auStack_1b63 + (uint)bVar2 * 0x7e + 0x3eb;
+      puStack_1c98 = auStack_1b63 + (uint)bVar1 * 0x7e + 0x3eb;
+      iStack_1ca0 = 0x912;
+      do {
+        iVar6 = 0;
+        if (0 < *(int *)(iVar8 + 0x2d28)) {
+          piStack_1cb0 = (int *)(iVar8 + 0x18);
+          do {
+            if (*piStack_1cb0 != 0) {
+              uVar9 = (uint)*(byte *)((int)piStack_1cb0 + 0xd);
+              uVar3 = *(undefined4 *)(local_1c94 + (iStack_1ca0 + iVar6) * 4);
+              if ((int)uVar9 < local_1cbc[0xaa]) {
+                puStack_1c98[uVar9] = (char)uVar3;
+                puStack_1c9c[uVar9] = (char)((uint)uVar3 >> 8);
+                puStack_1cb4[uVar9] = (char)((uint)uVar3 >> 0x10);
+              }
+            }
+            iVar6 = iVar6 + 1;
+            piStack_1cb0 = piStack_1cb0 + 4;
+          } while (iVar6 < *(int *)(iVar8 + 0x2d28));
+        }
+        if (DAT_0064a274 != 0) {
+          (*DAT_0064a278)(L"ColorGroup[%d]: ",iStack_1ca8);
+          piVar4 = piStack_1cb8;
+          FUN_004078c0((undefined1 *)((int)piStack_1cb8 + -0x7e),0x40,0,0);
+          FUN_004078c0(piVar4,0x40,0,0);
+          FUN_004078c0((undefined1 *)((int)piVar4 + 0x7e),0x40,0,0);
+        }
+        Sleep(0x1e);
+        _memset((void *)((int)&uStack_1010 + 1),0,0x7ff);
+        puVar11 = &uStack_1778;
+        puVar12 = &uStack_1010;
+        for (iVar6 = 0x1d8; iVar6 != 0; iVar6 = iVar6 + -1) {
+          *puVar12 = *puVar11;
+          puVar11 = puVar11 + 1;
+          puVar12 = puVar12 + 1;
+        }
+        *(undefined2 *)puVar12 = *(undefined2 *)puVar11;
+        iVar6 = FUN_00488d80(0xbc);
+        if (iVar6 == 0) {
+          DVar7 = GetLastError();
+          (*DAT_0064a278)(L"SetLedMatrix(0x%X), err=0x%x",0xbc,DVar7);
+          if (iStack_1cac == 0) goto LAB_0048a8b7;
+        }
+        Sleep(0x32);
+        iVar6 = FUN_00488d80(0xc0);
+        if (iVar6 == 0) {
+          DVar7 = GetLastError();
+          (*DAT_0064a278)(L"SetLedMatrix(0x%X), err=0x%x",0xc0,DVar7);
+          if (iStack_1cac == 0) goto LAB_0048a8b7;
+        }
+        Sleep(0x32);
+        iStack_1ca0 = iStack_1ca0 + 0x90;
+        puStack_1c98 = puStack_1c98 + 0x17a;
+        puStack_1c9c = puStack_1c9c + 0x17a;
+        puStack_1cb4 = puStack_1cb4 + 0x17a;
+        piStack_1cb8 = (int *)((int)piStack_1cb8 + 0x17a);
+        iStack_1ca8 = iStack_1ca8 + 1;
+      } while (iStack_1ca8 < (int)(uint)*(byte *)(iVar8 + 0x2fec));
+    }
+    param_1 = local_1cbc;
+  }
+  if (uStack_1c8c != 0) {
+    if (DAT_0064a274 != 0) {
+      FUN_004078c0(&uStack_1c78,8,0,L"Cfg(Save-Global): ");
+      FUN_004078c0(auStack_1c70,0x7b,8,L"Cfg(Save-Pro1): ");
+    }
+    Sleep(0x1e);
+    iVar8 = FUN_00488bf0();
+    if (iVar8 == 0) {
+      DVar7 = GetLastError();
+      (*DAT_0064a278)(L"SetProfile error, err=0x%x",DVar7);
+      if (iStack_1cac == 0) goto LAB_0048a8bb;
+    }
+  }
+  uStack_1c90 = 1;
+LAB_0048a8bb:
+  param_1[7] = 0;
+  param_1[8] = 0;
+  if (local_1ca4 == (HWND)0x0) {
+    Sleep(0x1e);
+    __security_check_cookie(local_c ^ (uint)&local_1cbc);
+    return;
+  }
+  PostMessageW(local_1ca4,param_4,100,0);
+  Sleep(500);
+  __security_check_cookie(local_c ^ (uint)&local_1cbc);
+  return;
+}
+
+
+

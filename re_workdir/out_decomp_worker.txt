@@ -1,0 +1,312 @@
+=== FUN_00409190 @ 00409190  size=145  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __thiscall FUN_00409190(int param_1,undefined4 param_2)
+
+{
+  int iVar1;
+  HWND pHVar2;
+  CWnd *pCVar3;
+  int iVar4;
+  
+  pHVar2 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar3 = CWnd::FromHandle(pHVar2);
+  pHVar2 = GetParent(*(HWND *)(pCVar3 + 0x20));
+  pCVar3 = CWnd::FromHandle(pHVar2);
+  iVar1 = *(int *)(pCVar3 + 0xa4);
+  iVar4 = FUN_00409150();
+  if ((iVar1 != 0) && (iVar4 != -1)) {
+    *(undefined4 *)(iVar4 * 0x10 + 0x27f8 + iVar1) = param_2;
+    InvalidateRect(*(HWND *)(param_1 + 0x20),(RECT *)(param_1 + 0x557c),1);
+    if (DAT_00645a5c != 0) {
+      _DAT_0064a264 = 4;
+      _DAT_0064a26c = 0;
+      ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+    }
+  }
+  return 1;
+}
+
+
+
+=== FUN_00404f00 @ 00404f00  size=136  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00404f00(undefined4 param_1,undefined4 param_2)
+
+{
+  _DAT_0064a250 = (wchar_t *)0x0;
+  _DAT_0064a254 = 0;
+  _DAT_0064a258 = 0;
+  DAT_0064a25c = (HANDLE)0x0;
+  _DAT_0064a260 = (HANDLE)0x0;
+  _DAT_0064a264 = 0;
+  _DAT_0064a268 = 0;
+  _DAT_0064a26c = 0;
+  _DAT_0064a260 = CreateEventW((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCWSTR)0x0);
+  DAT_0064a25c = CreateSemaphoreW((LPSECURITY_ATTRIBUTES)0x0,0,100,(LPCWSTR)0x0);
+  _DAT_0064a254 = param_2;
+  _DAT_0064a250 = L"MyProgressDlg..";
+  _DAT_0064a268 = 0x42b;
+  _DAT_0064a258 = param_1;
+  __beginthread(FUN_00404f90,0,&DAT_0064a250);
+  return;
+}
+
+
+
+=== FUN_00404ed0 @ 00404ed0  size=37  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00404ed0(void)
+
+{
+  uint in_EAX;
+  
+  _DAT_0064a264 = in_EAX & 0xffff7fff;
+  _DAT_0064a26c = 0;
+  ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+  return;
+}
+
+
+
+=== FUN_0040a290 @ 0040a290  size=180  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __thiscall FUN_0040a290(CWnd *param_1,uint param_2,int param_3)
+
+{
+  int iVar1;
+  CWnd *this;
+  int iVar2;
+  
+  iVar1 = 0;
+  if (param_1 != (CWnd *)0xffffd1a8) {
+    iVar1 = *(int *)(param_1 + 0x2e78);
+  }
+  if (param_3 == iVar1) {
+    iVar1 = *(int *)(param_1 + 0x2ee8);
+    iVar2 = 0;
+    this = param_1 + 0x3068;
+    do {
+      CWnd::ShowWindow(this,(iVar1 <= iVar2) - 1 & 5);
+      iVar2 = iVar2 + 1;
+      this = this + 0xe8;
+    } while (iVar2 < 8);
+    InvalidateRect(*(HWND *)(param_1 + 0x20),(RECT *)(param_1 + 0x557c),1);
+    FUN_0040a380(0);
+    FUN_0040a610();
+    if (DAT_00645a5c != 0) {
+      _DAT_0064a264 = 2;
+      _DAT_0064a26c = 0;
+      ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+    }
+  }
+  CWnd::OnCommand(param_1,param_2,param_3);
+  return;
+}
+
+
+
+=== FUN_004713f0 @ 004713f0  size=262  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __thiscall FUN_004713f0(CWnd *param_1,uint param_2,int param_3)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  HWND hWnd;
+  
+  iVar1 = 0;
+  if (param_1 != (CWnd *)0xffffff8c) {
+    iVar1 = *(int *)(param_1 + 0x94);
+  }
+  if (param_3 == iVar1) {
+    uVar2 = 2;
+  }
+  else {
+    if ((param_1 != (CWnd *)0xffffdfac) && (*(int *)(param_1 + 0x2074) != 0)) {
+      iVar1 = 0;
+      if (param_1 != (CWnd *)0xffffdfac) {
+        iVar1 = *(int *)(param_1 + 0x2074);
+      }
+      if (param_3 == iVar1) {
+        uVar2 = 2;
+        goto LAB_004714ac;
+      }
+    }
+    if (param_1 == (CWnd *)0xffffb0dc) {
+      iVar1 = 0;
+    }
+    else {
+      iVar1 = *(int *)(param_1 + 0x4f44);
+    }
+    if (param_3 == iVar1) {
+      if ((uint)(*(int *)(param_1 + 0x4fcc) == 0) != *(uint *)(param_1 + 0x4fcc)) {
+        *(uint *)(param_1 + 0x4fcc) = (uint)(*(int *)(param_1 + 0x4fcc) == 0);
+        hWnd = *(HWND *)(param_1 + 0x4f44);
+LAB_004714a1:
+        InvalidateRect(hWnd,(RECT *)0x0,1);
+      }
+    }
+    else {
+      if (param_1 == (CWnd *)0xffffaf50) {
+        iVar1 = 0;
+      }
+      else {
+        iVar1 = *(int *)(param_1 + 0x50d0);
+      }
+      if (param_3 != iVar1) goto LAB_004714e3;
+      if ((uint)(*(int *)(param_1 + 0x5158) == 0) != *(uint *)(param_1 + 0x5158)) {
+        *(uint *)(param_1 + 0x5158) = (uint)(*(int *)(param_1 + 0x5158) == 0);
+        hWnd = *(HWND *)(param_1 + 0x50d0);
+        goto LAB_004714a1;
+      }
+    }
+    uVar2 = 8;
+  }
+LAB_004714ac:
+  FUN_004717f0();
+  if (DAT_00645a5c != 0) {
+    _DAT_0064a26c = 0;
+    _DAT_0064a264 = uVar2;
+    ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+  }
+LAB_004714e3:
+  CWnd::OnCommand(param_1,param_2,param_3);
+  return;
+}
+
+
+
+=== FUN_00424cd0 @ 00424cd0  size=699  completed=true ===
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00424cd0(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  undefined4 uVar3;
+  int *piVar4;
+  HWND pHVar5;
+  CWnd *pCVar6;
+  CStringData *pCVar7;
+  uint uVar8;
+  CStringData *pCVar9;
+  undefined1 auStack_2ae [2];
+  int iStack_298;
+  int iStack_294;
+  undefined1 *puStack_290;
+  undefined4 uStack_28c;
+  undefined4 uStack_288;
+  undefined4 uStack_284;
+  undefined4 uStack_280;
+  undefined4 uStack_6c;
+  undefined4 uStack_68;
+  undefined4 uStack_4c;
+  undefined4 uStack_48;
+  undefined4 uStack_44;
+  undefined4 uStack_40;
+  undefined4 uStack_1c;
+  void *local_c;
+  undefined1 *puStack_8;
+  int iStack_4;
+  
+  iStack_4 = 0xffffffff;
+  puStack_8 = &LAB_005ccfdc;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  piVar4 = (int *)FUN_0049dfbc();
+  if (piVar4 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_004039e0();
+  }
+  iStack_298 = (**(code **)(*piVar4 + 0xc))();
+  iStack_298 = iStack_298 + 0x10;
+  iStack_4 = 0;
+  piVar4 = (int *)FUN_0049dfbc();
+  if (piVar4 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_004039e0();
+  }
+  iStack_294 = (**(code **)(*piVar4 + 0xc))();
+  iStack_294 = iStack_294 + 0x10;
+  iStack_4._0_1_ = 1;
+  FUN_00403220(&iStack_298,L"%sskins\\%s");
+  FUN_00403220(&iStack_294,L"%sskins\\%s",&DAT_0064a048,L"progress_ov.png");
+  pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar6 = CWnd::FromHandle(pHVar5);
+  uVar3 = *(undefined4 *)(*(int *)(pCVar6 + 0xc0) + 0x18);
+  FUN_00460490();
+  iVar1 = iStack_294;
+  iStack_4._0_1_ = 2;
+  puStack_290 = auStack_2ae + -6;
+  pCVar9 = (CStringData *)(iStack_294 + -0x10);
+  ATL::CSimpleStringT<wchar_t,0>::CloneData(pCVar9);
+  iVar2 = iStack_298;
+  iStack_4._0_1_ = 3;
+  pCVar7 = (CStringData *)(iStack_298 + -0x10);
+  ATL::CSimpleStringT<wchar_t,0>::CloneData(pCVar7);
+  iStack_4 = CONCAT31(iStack_4._1_3_,2);
+  FUN_00460f50(uVar3);
+  uStack_4c = 0x28;
+  puStack_290 = auStack_2ae + -6;
+  uStack_40 = 0x56;
+  uStack_48 = 0x4b;
+  uStack_44 = 0x1da;
+  uStack_28c = 0xf;
+  uStack_288 = 0xc;
+  uStack_284 = 0x1c7;
+  uStack_280 = 0x20;
+  ATL::CSimpleStringT<wchar_t,0>::CloneData((CStringData *)(DAT_006589f4 + -0x10));
+  FUN_00460eb0();
+  uStack_6c = 0;
+  uStack_68 = 100;
+  uStack_1c = 0;
+  pHVar5 = GetParent(*(HWND *)(param_1 + 0x20));
+  pCVar6 = CWnd::FromHandle(pHVar5);
+  uVar8 = 1;
+  if (*(int *)(*(int *)(*(int *)(pCVar6 + 0xc0) + 0x20) + 0x2d8c) != 0) {
+    uVar8 = 3;
+  }
+  if (DAT_0064a270 == 0) {
+    _DAT_0064a264 = uVar8 | 0x8000;
+    _DAT_0064a26c = 0;
+    ReleaseSemaphore(DAT_0064a25c,1,(LPLONG)0x0);
+  }
+  FUN_004a87d4();
+  iStack_4._0_1_ = 1;
+  FUN_004605f0();
+  iStack_4 = (uint)iStack_4._1_3_ << 8;
+  piVar4 = (int *)(iVar1 + -4);
+  LOCK();
+  iVar1 = *piVar4;
+  *piVar4 = *piVar4 + -1;
+  UNLOCK();
+  if (iVar1 + -1 < 1) {
+    (**(code **)(**(int **)pCVar9 + 4))();
+  }
+  iStack_4 = 0xffffffff;
+  piVar4 = (int *)(iVar2 + -4);
+  LOCK();
+  iVar2 = *piVar4;
+  *piVar4 = *piVar4 + -1;
+  UNLOCK();
+  if (iVar2 + -1 < 1) {
+    (**(code **)(**(int **)pCVar7 + 4))();
+  }
+  ExceptionList = local_c;
+  return;
+}
+
+
+

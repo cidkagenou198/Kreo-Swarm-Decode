@@ -1,0 +1,4148 @@
+005d1f24	<no-function>	COleException
+005d1f6c	<no-function>	CInvalidArgException
+005d1f84	<no-function>	CNotSupportedException
+005d1f9c	<no-function>	CMemoryException
+005d1fb0	<no-function>	CSimpleException
+005d1fc4	<no-function>	CException
+005d20d4	<no-function>	CPalette
+005d20e0	<no-function>	CBitmap
+005d20e8	<no-function>	CFont
+005d20f0	<no-function>	CBrush
+005d2100	<no-function>	CGdiObject
+005d210c	<no-function>	CPaintDC
+005d2118	<no-function>	CWindowDC
+005d2124	<no-function>	CClientDC
+005d2134	<no-function>	CUserException
+005d2144	<no-function>	CResourceException
+005d22c4	<no-function>	GetLayout
+005d22d0	<no-function>	GDI32.DLL
+005d22dc	<no-function>	SetLayout
+005d257c	<no-function>	AfxWnd90su
+005d2594	<no-function>	AfxControlBar90su
+005d25b8	<no-function>	AfxMDIFrame90su
+005d25d8	<no-function>	AfxFrameOrView90su
+005d2600	<no-function>	AfxOleControl90su
+005d2624	<no-function>	AfxOldWndProc423
+005d266c	<no-function>	GetMonitorInfoA
+005d267c	<no-function>	GetMonitorInfoW
+005d268c	<no-function>	EnumDisplayDevicesW
+005d26a0	<no-function>	EnumDisplayMonitors
+005d26b4	<no-function>	MonitorFromPoint
+005d26c8	<no-function>	MonitorFromRect
+005d26d8	<no-function>	MonitorFromWindow
+005d26ec	<no-function>	GetSystemMetrics
+005d2700	<no-function>	USER32
+005d2710	<no-function>	DISPLAY
+005d2718	<no-function>	accParent
+005d272c	<no-function>	accChildCount
+005d2748	<no-function>	accChild
+005d275c	<no-function>	accName
+005d276c	<no-function>	accValue
+005d2780	<no-function>	accDescription
+005d27a0	<no-function>	accRole
+005d27b0	<no-function>	accState
+005d27c4	<no-function>	accHelp
+005d27d4	<no-function>	accHelpTopic
+005d27f0	<no-function>	accKeyboardShortcut
+005d2818	<no-function>	accFocus
+005d282c	<no-function>	accSelection
+005d2848	<no-function>	accDefaultAction
+005d286c	<no-function>	accSelect
+005d2880	<no-function>	accLocation
+005d2898	<no-function>	accNavigate
+005d28b0	<no-function>	accHitTest
+005d28c8	<no-function>	accDoDefaultAction
+005d2afc	<no-function>	InitCommonControls
+005d2b10	<no-function>	InitCommonControlsEx
+005d2b28	<no-function>	InitNetworkAddressControl
+005d2c44	<no-function>	HtmlHelpW
+005d2c50	<no-function>	hhctrl.ocx
+005d2c5c	<no-function>	#32768
+005d2c70	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\include\afxwin2.inl
+005d2fb8	<no-function>	Afx:%p:%x:%p:%p:%p
+005d2fe0	<no-function>	Afx:%p:%x
+005d2ff4	<no-function>	commctrl_DragListMsg
+005d3020	<no-function>	CCmdTarget
+005d310c	<no-function>	CDialog
+005d3298	<no-function>	Edit
+005d3370	<no-function>	CColorDialog
+005d3510	<no-function>	ChooseColorW
+005d368c	<no-function>	CCommonDialog
+005d3708	<no-function>	commdlg_SetRGBColor
+005d3730	<no-function>	commdlg_help
+005d374c	<no-function>	commdlg_ColorOK
+005d376c	<no-function>	commdlg_FileNameOK
+005d3794	<no-function>	commdlg_ShareViolation
+005d37c4	<no-function>	commdlg_LBSelChangedNotify
+005d37fc	<no-function>	CScrollBar
+005d3808	<no-function>	CEdit
+005d3810	<no-function>	CComboBox
+005d381c	<no-function>	CListBox
+005d3828	<no-function>	CButton
+005d3830	<no-function>	CStatic
+005d38e0	<no-function>	STATIC
+005d3a38	<no-function>	BUTTON
+005d3b90	<no-function>	LISTBOX
+005d3cfc	<no-function>	COMBOBOX
+005d3e64	<no-function>	EDIT
+005d3fb0	<no-function>	SCROLLBAR
+005d4124	<no-function>	CFile
+005d41c8	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\filecore.cpp
+005d4238	<no-function>	CFileDialog
+005d429e	<no-function>	p4GetOpenFileNameW
+005d42b4	<no-function>	GetSaveFileNameW
+005d44bc	<no-function>	SHCreateItemFromParsingName
+005d44d8	<no-function>	Shell32.dll
+005d44f0	<no-function>	CRichEditCtrl
+005d4500	<no-function>	CImageList
+005d450c	<no-function>	CListCtrl
+005d4518	<no-function>	CTreeCtrl
+005d4524	<no-function>	CSpinButtonCtrl
+005d45c8	<no-function>	ToolbarWindow32
+005d45e8	<no-function>	SysListView32
+005d474c	<no-function>	SysTreeView32
+005d48a8	<no-function>	msctls_updown32
+005d4b60	<no-function>	ImageList_Create
+005d4b74	<no-function>	ImageList_Destroy
+005d4bf8	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\winctrl2.cpp
+005d4c78	<no-function>	CWinApp
+005d4c80	<no-function>	Settings
+005d4c94	<no-function>	PreviewPages
+005d4d38	<no-function>	DeactivateActCtx
+005d4d4c	<no-function>	ActivateActCtx
+005d4d5c	<no-function>	ReleaseActCtx
+005d4d6c	<no-function>	CreateActCtxW
+005d4d7c	<no-function>	KERNEL32
+005d4d90	<no-function>	Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
+005d4e08	<no-function>	NoRun
+005d4e14	<no-function>	NoDrives
+005d4e28	<no-function>	RestrictRun
+005d4e40	<no-function>	NoNetConnectDisconnect
+005d4e70	<no-function>	NoRecentDocsHistory
+005d4e98	<no-function>	NoClose
+005d4ea8	<no-function>	Software\Microsoft\Windows\CurrentVersion\Policies\Network
+005d4f20	<no-function>	NoEntireNetwork
+005d4f40	<no-function>	Software\Microsoft\Windows\CurrentVersion\Policies\Comdlg32
+005d4fb8	<no-function>	NoPlacesBar
+005d4fd0	<no-function>	NoBackButton
+005d4fec	<no-function>	NoFileMru
+005d5008	<no-function>	Automation
+005d5014	<no-function>	Embedding
+005d5024	<no-function>	UnregserverPerUser
+005d5038	<no-function>	UnregisterPerUser
+005d504c	<no-function>	Unregserver
+005d5058	<no-function>	Unregister
+005d5064	<no-function>	RegserverPerUser
+005d5078	<no-function>	RegisterPerUser
+005d5088	<no-function>	Regserver
+005d5094	<no-function>	Register
+005d50a8	<no-function>	ntdll.dll
+005d50bc	<no-function>	GetSystemDefaultUILanguage
+005d50d8	<no-function>	GetUserDefaultUILanguage
+005d50f4	<no-function>	kernel32.dll
+005d5110	<no-function>	%s%s.dll
+005d5200	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\appcore.cpp
+005d526c	<no-function>	CWinAppEx
+005d5390	<no-function>	Workspace
+005d53a4	<no-function>	\ControlBars
+005d53c0	<no-function>	WindowPlacement
+005d53e0	<no-function>	MainWindowRect
+005d5400	<no-function>	Flags
+005d540c	<no-function>	ShowCmd
+005d541c	<no-function>	\SizingBars
+005d5434	<no-function>	ControlBarVersion
+005d5458	<no-function>	Major
+005d5464	<no-function>	Minor
+005d54d0	<no-function>	CMutex
+005d5510	<no-function>	CWinThread
+005d55b8	<no-function>	Software\Classes\
+005d55dc	<no-function>	Software\
+005d5618	<no-function>	comctl32.dll
+005d563c	<no-function>	comdlg32.dll
+005d5660	<no-function>	shell32.dll
+005d5680	<no-function>	CMenu
+005d56cc	<no-function>	CToolTipCtrl
+005d5844	<no-function>	tooltips_class32
+005d58f4	<no-function>	CStdioFile
+005d5988	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\filetxt.cpp
+005d5a10	<no-function>	CSyncObject
+005d5a1c	<no-function>	CCriticalSection
+005d5a68	<no-function>	CObject
+005d5aec	<no-function>	CArchiveException
+005d5b38	<no-function>	AfxmReleaseManagedReferences
+005d5b5c	<no-function>	cm90u.dll
+005d5b70	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\auxdata.cpp
+005d5be4	<no-function>	CMapPtrToPtr
+005d5c28	<no-function>	combobox
+005d5c3c	<no-function>	CPtrList
+005d5c74	<no-function>	System
+005d5c84	<no-function>	CFileException
+005d5cb0	<no-function>	.INI
+005d5cbc	<no-function>	.HLP
+005d5cc8	<no-function>	.CHM
+005d5cd4	<no-function>	NotifyWinEvent
+005d5ce4	<no-function>	user32.dll
+005d5d40	<no-function>	DwmIsCompositionEnabled
+005d5d58	<no-function>	DwmDefWindowProc
+005d5d6c	<no-function>	DwmExtendFrameIntoClientArea
+005d5d8c	<no-function>	dwmapi.dll
+005d5da4	<no-function>	SetLayeredWindowAttributes
+005d5dc0	<no-function>	USER32.DLL
+005d5dd8	<no-function>	EndBufferedPaint
+005d5dec	<no-function>	BeginBufferedPaint
+005d5e00	<no-function>	DrawThemeTextEx
+005d5e10	<no-function>	DrawThemeParentBackground
+005d5e2c	<no-function>	UxTheme.dll
+005d5e44	<no-function>	%s:%x:%x:%x:%x
+005d5ec0	<no-function>	GDIPlus.dll
+005d5ed8	<no-function>	Tahoma
+005d5ee8	<no-function>	Segoe UI
+005d5efc	<no-function>	MS Sans Serif
+005d5f18	<no-function>	Arial
+005d5f24	<no-function>	Marlett
+005d5f34	<no-function>	AFX_WM_ON_AFTER_SHELL_COMMAND
+005d5f80	<no-function>	AFX_WM_UPDATETOOLTIPS
+005d5fac	<no-function>	CMouseManager
+005d5fec	<no-function>	MouseManager
+005d6008	<no-function>	ContextMenuManager
+005d6030	<no-function>	Accelerators
+005d604c	<no-function>	%sKeyboard-%d
+005d6068	<no-function>	KeyboardManager
+005d6088	<no-function>	UserToolsManager
+005d60ac	<no-function>	Tools
+005d60c8	<no-function>	%c%d%c%s
+005d60dc	<no-function>	CFrameWndEx
+005d6648	<no-function>	CMDIFrameWndEx
+005d6c18	<no-function>	SOFTWARE\
+005d6c2c	<no-function>	CDockState
+005d6c38	<no-function>	Visible
+005d6c48	<no-function>	%s-Bar%d
+005d6c5c	<no-function>	%s-Summary
+005d6c74	<no-function>	XPos
+005d6c80	<no-function>	YPos
+005d6c8c	<no-function>	MRUWidth
+005d6ca0	<no-function>	Docking
+005d6cb0	<no-function>	MRUDockID
+005d6cc4	<no-function>	MRUDockLeftPos
+005d6ce4	<no-function>	MRUDockRightPos
+005d6d04	<no-function>	MRUDockTopPos
+005d6d20	<no-function>	MRUDockBottomPos
+005d6d44	<no-function>	MRUFloatStyle
+005d6d60	<no-function>	MRUFloatXPos
+005d6d7c	<no-function>	MRUFloatYPos
+005d6d98	<no-function>	BarID
+005d6da4	<no-function>	Horz
+005d6db0	<no-function>	Floating
+005d6dc4	<no-function>	Bars
+005d6dd0	<no-function>	ScreenCX
+005d6de4	<no-function>	ScreenCY
+005d6df8	<no-function>	Bar#%d
+005d6e30	<no-function>	State
+005d6e44	<no-function>	%s-%d
+005d6e50	<no-function>	ControlBars-TearOff
+005d6e78	<no-function>	AFX_WM_POSTSETPREVIEWFRAME
+005d6eb0	<no-function>	CMFCToolBar
+005d6ed8	<no-function>	OriginalItems
+005d6ef4	<no-function>	OrigResetItems
+005d6f44	<no-function>	Afx:ToolBar
+005d6f5c	<no-function>	Buttons
+005d6f6c	<no-function>	%sMFCToolBar-%d%x
+005d6f90	<no-function>	%sMFCToolBar-%d
+005d6fb0	<no-function>	CommandsUsage
+005d6fcc	<no-function>	ShowAllMenusAfterDelay
+005d6ffc	<no-function>	MenuShadows
+005d7014	<no-function>	RecentlyUsedMenus
+005d7038	<no-function>	MenuAnimation
+005d7054	<no-function>	LargeIcons
+005d706c	<no-function>	ShortcutKeys
+005d7088	<no-function>	Tooltips
+005d709c	<no-function>	%sMFCToolBarParameters
+005d78e0	<no-function>	MFCToolBars
+005d78f8	<no-function>	TOOLBAR_POPUPMENU
+005d791c	<no-function>	TOOLBAR_CUSTOMIZE
+005d7940	<no-function>	TOOLBAR_CREATE
+005d7960	<no-function>	TOOLBAR_DELETE
+005d7980	<no-function>	TOOLBAR_CUSTOMIZEHELP
+005d79ac	<no-function>	TOOLBAR_RESETTOOLBAR
+005d79d8	<no-function>	TOOLBAR_RESETMENU
+005d79fc	<no-function>	TOOLBAR_SHOWREGULARMENU
+005d7a2c	<no-function>	TOOLBAR_RESETCONTEXTMENU
+005d7a60	<no-function>	TOOLBAR_RESETKEYBAORD
+005d7a8c	<no-function>	TOOLBAR_RESETRPROMPT
+005d7b8c	<no-function>	DockingPaneAndPaneDividers
+005d7bc4	<no-function>	%sDockingManager-%d
+005d7bec	<no-function>	DockingManagers
+005d7c0c	<no-function>	Rebar-%ld
+005d7c30	<no-function>	CMFCToolBarButton
+005d7d14	<no-function>	ToolbarButton%p
+005d7d3c	<no-function>	Press
+005d7d58	<no-function>	MenuUserImages
+005d7d78	<no-function>	CommandsWithoutImages
+005d7da4	<no-function>	%sCommandManager
+005d7dc8	<no-function>	ToolBars
+005d7ddc	<no-function>	CSettingsStore
+005d7e08	<no-function>	RegDeleteKeyExW
+005d7e18	<no-function>	Advapi32.dll
+005d7f14	<no-function>	ImageList_GetImageCount
+005d7f2c	<no-function>	ImageList_AddMasked
+005d7f40	<no-function>	ImageList_GetIcon
+005d7f54	<no-function>	ImageList_GetImageInfo
+005d854c	<no-function>	CMemFile
+005d85e4	<no-function>	CToolBar
+005d860c	<no-function>	DllGetVersion
+005d861c	<no-function>	CMapStringToPtr
+005d8658	<no-function>	CByteArray
+005d868c	<no-function>	%2\CLSID
+005d86a4	<no-function>	%2\Insertable
+005d86c8	<no-function>	%2\protocol\StdFileEditing\verb\0
+005d8718	<no-function>	%2\protocol\StdFileEditing\server
+005d8764	<no-function>	CLSID\%1
+005d877c	<no-function>	CLSID\%1\ProgID
+005d87a8	<no-function>	CLSID\%1\InprocHandler32
+005d87da	<no-function>	ole32.dll
+005d87f0	<no-function>	CLSID\%1\LocalServer32
+005d8824	<no-function>	CLSID\%1\Verb\0
+005d8858	<no-function>	CLSID\%1\Verb\1
+005d888c	<no-function>	CLSID\%1\Insertable
+005d88b8	<no-function>	CLSID\%1\AuxUserType\2
+005d88ec	<no-function>	CLSID\%1\AuxUserType\3
+005d8920	<no-function>	CLSID\%1\DefaultIcon
+005d8958	<no-function>	CLSID\%1\MiscStatus
+005d8988	<no-function>	CLSID\%1\InProcServer32
+005d89c0	<no-function>	CLSID\%1\DocObject
+005d89ec	<no-function>	%2\DocObject
+005d8a0c	<no-function>	CLSID\%1\Printable
+005d8a38	<no-function>	CLSID\%1\DefaultExtension
+005d8c00	<no-function>	CControlBar
+005d8c0c	<no-function>	CView
+005d8c14	<no-function>	CFrameWnd
+005d8c94	<no-function>	ImageList_Draw
+005d8e40	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\winfrm.cpp
+005d8eac	<no-function>	ReBarWindow32
+005d9360	<no-function>	CMFCVisualManager
+005d93d0	<no-function>	TRACKBAR
+005d93ec	<no-function>	SPIN
+005d93f8	<no-function>	TASKBAR
+005d9408	<no-function>	TASKBAND
+005d941c	<no-function>	STARTPANEL
+005d9434	<no-function>	TREEVIEW
+005d9448	<no-function>	EXPLORERBAR
+005d9460	<no-function>	HEADER
+005d9470	<no-function>	PROGRESS
+005d9484	<no-function>	REBAR
+005d9490	<no-function>	STATUS
+005d94a0	<no-function>	TOOLBAR
+005d94b0	<no-function>	WINDOW
+005d97a8	<no-function>	GetWindowTheme
+005d97b8	<no-function>	GetCurrentThemeName
+005d97cc	<no-function>	GetThemeSysColor
+005d97e0	<no-function>	GetThemeColor
+005d97f0	<no-function>	DrawThemeBackground
+005d9804	<no-function>	CloseThemeData
+005d9814	<no-function>	OpenThemeData
+005d9828	<no-function>	royale
+005d9838	<no-function>	metallic
+005d984c	<no-function>	homestead
+005d9860	<no-function>	normalcolor
+005d9878	<no-function>	Aero
+005d9884	<no-function>	Luna
+005d9890	<no-function>	AFX_WM_CHANGEVISUALMANAGER
+005d98c8	<no-function>	CPane
+005d9d00	<no-function>	PinState
+005d9d14	<no-function>	MRUWidth
+005d9d28	<no-function>	IsFloating
+005d9d40	<no-function>	RecentRowIndex
+005d9d60	<no-function>	RecentFrameAlignment
+005d9d8c	<no-function>	RectRecentDocked
+005d9db0	<no-function>	RectRecentFloat
+005d9dd0	<no-function>	%sPane-%d%x
+005d9de8	<no-function>	%sPane-%d
+005d9dfc	<no-function>	Afx:ControlBar
+005d9e1c	<no-function>	Panes
+005d9e28	<no-function>	CMDIChildWndEx
+005da238	<no-function>	COleDocIPFrameWndEx
+005da5c8	<no-function>	COleIPFrameWndEx
+005da958	<no-function>	CMFCVisualManagerOffice2007
+005dace4	<no-function>	BLUE_
+005dacf0	<no-function>	BLACK_
+005dad00	<no-function>	AQUA_
+005dad0c	<no-function>	SILVER_
+005dad1c	<no-function>	IDX_OFFICE2007_STYLE
+005dad48	<no-function>	STYLE_XML
+005dad5c	<no-function>	GradientFillDark
+005dad80	<no-function>	GradientFillLight
+005dada4	<no-function>	POPUP
+005dadb0	<no-function>	IDB_OFFICE2007_OUTLOOK_BAR_BACK
+005dadf8	<no-function>	TextPressed
+005dae10	<no-function>	IDB_OFFICE2007_OUTLOOK_BTN_PAGE
+005dae50	<no-function>	PAGEBUTTON
+005dae68	<no-function>	OUTLOOK
+005dae78	<no-function>	StatusbarActive
+005dae98	<no-function>	StatusbarInactive
+005daebc	<no-function>	Active
+005daecc	<no-function>	Inactive
+005daee0	<no-function>	HYPERLINK
+005daef8	<no-function>	IDB_OFFICE2007_RIBBON_KEYTIP_BACK
+005daf3c	<no-function>	KEYTIP
+005daf50	<no-function>	IDB_OFFICE2007_RIBBON_BORDER_FLOATY
+005daf98	<no-function>	FLOATY
+005dafa8	<no-function>	IDB_OFFICE2007_RIBBON_BORDER_QAT
+005dafec	<no-function>	BORDERS
+005db000	<no-function>	IDB_OFFICE2007_RIBBON_PROGRESS_INFINITY
+005db050	<no-function>	INFINITY
+005db068	<no-function>	IDB_OFFICE2007_RIBBON_PROGRESS_NORMAL_EXT
+005db0bc	<no-function>	NORMAL_EXT
+005db0d8	<no-function>	IDB_OFFICE2007_RIBBON_PROGRESS_NORMAL
+005db128	<no-function>	IDB_OFFICE2007_RIBBON_PROGRESS_BACK
+005db170	<no-function>	IDB_OFFICE2007_RIBBON_SLIDER_BTN_MINUS
+005db1c0	<no-function>	MINUS
+005db1d0	<no-function>	IDB_OFFICE2007_RIBBON_SLIDER_BTN_PLUS
+005db21c	<no-function>	PLUS
+005db228	<no-function>	IDB_OFFICE2007_RIBBON_SLIDER_THUMB
+005db270	<no-function>	THUMB
+005db27c	<no-function>	SLIDER
+005db290	<no-function>	IDB_OFFICE2007_RIBBON_BTN_STATUS_PANE
+005db2dc	<no-function>	PANE_BUTTON
+005db2f8	<no-function>	IDB_OFFICE2007_RIBBON_CAPTION_QA_GLASS
+005db348	<no-function>	QA_GLASS
+005db360	<no-function>	IDB_OFFICE2007_RIBBON_CAPTION_QA
+005db3b0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_PANEL_MAIN
+005db400	<no-function>	IDB_OFFICE2007_RIBBON_PANEL_MAIN_BORDER
+005db450	<no-function>	IDB_OFFICE2007_RIBBON_PANEL_MAIN
+005db494	<no-function>	MAIN
+005db4a0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_MAIN
+005db4e0	<no-function>	MAIN_BUTTON
+005db4f8	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_SEPARATOR
+005db548	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_PANEL_BACK_B
+005db5a0	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_PANEL_BACK_T
+005db5f8	<no-function>	CATEGORY_BACK
+005db614	<no-function>	CATEGORY_CAPTION
+005db638	<no-function>	CATEGORY_TAB
+005db654	<no-function>	BTN_DEFAULT
+005db670	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_V_
+005db6b8	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_I_
+005db700	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_B_
+005db748	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_G_
+005db790	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_Y_
+005db7d8	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_O_
+005db820	<no-function>	IDB_OFFICE2007_RIBBON_CONTEXT_R_
+005db864	<no-function>	CONTEXT
+005db874	<no-function>	Pressed
+005db884	<no-function>	Disabled
+005db898	<no-function>	Normal
+005db8a8	<no-function>	IDB_OFFICE2007_RIBBON_BTN_PALETTE_B
+005db8f0	<no-function>	BUTTON_PNL_B
+005db910	<no-function>	IDB_OFFICE2007_RIBBON_BTN_PALETTE_M
+005db958	<no-function>	BUTTON_PNL_M
+005db978	<no-function>	IDB_OFFICE2007_RIBBON_BTN_PALETTE_T
+005db9c0	<no-function>	BUTTON_PNL_T
+005db9e0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_CHECK
+005dba20	<no-function>	BUTTON_CHECK
+005dba40	<no-function>	IDB_OFFICE2007_RIBBON_BTN_MENU_V_M
+005dba88	<no-function>	BUTTON_MENU_V_M
+005dbaa8	<no-function>	IDB_OFFICE2007_RIBBON_BTN_MENU_V_C
+005dbaf0	<no-function>	BUTTON_MENU_V_C
+005dbb10	<no-function>	IDB_OFFICE2007_RIBBON_BTN_MENU_H_M
+005dbb58	<no-function>	BUTTON_MENU_H_M
+005dbb78	<no-function>	IDB_OFFICE2007_RIBBON_BTN_MENU_H_C
+005dbbc0	<no-function>	BUTTON_MENU_H_C
+005dbbe0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_DEFAULT_QAT_ICON
+005dbc38	<no-function>	BUTTON_DEFAULT_QAT_ICON
+005dbc68	<no-function>	IDB_OFFICE2007_RIBBON_BTN_DEFAULT_QAT
+005dbcb4	<no-function>	BUTTON_DEFAULT_QAT
+005dbce0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_DEFAULT_IMAGE
+005dbd30	<no-function>	BUTTON_DEFAULT_IMAGE
+005dbd60	<no-function>	IDB_OFFICE2007_RIBBON_BTN_DEFAULT_ICON
+005dbdb0	<no-function>	BUTTON_DEFAULT_ICON
+005dbdd8	<no-function>	IDB_OFFICE2007_RIBBON_BTN_DEFAULT
+005dbe20	<no-function>	IDB_OFFICE2007_RIBBON_BTN_NORMAL_B
+005dbe68	<no-function>	BUTTON_NORMAL_B
+005dbe88	<no-function>	IDB_OFFICE2007_RIBBON_BTN_NORMAL_S
+005dbed0	<no-function>	BUTTON_NORMAL_S
+005dbef0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUPMENU_L_M
+005dbf40	<no-function>	BUTTON_GROUPMENU_L_M
+005dbf70	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUPMENU_L_C
+005dbfc0	<no-function>	BUTTON_GROUPMENU_L_C
+005dbff0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUPMENU_M_M
+005dc040	<no-function>	BUTTON_GROUPMENU_M_M
+005dc070	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUPMENU_M_C
+005dc0c0	<no-function>	BUTTON_GROUPMENU_M_C
+005dc0f0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUPMENU_F_M
+005dc140	<no-function>	BUTTON_GROUPMENU_F_M
+005dc170	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUPMENU_F_C
+005dc1c0	<no-function>	BUTTON_GROUPMENU_F_C
+005dc1f0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUP_S
+005dc234	<no-function>	BUTTON_GROUP_S
+005dc258	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUP_L
+005dc29c	<no-function>	BUTTON_GROUP_L
+005dc2c0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUP_M
+005dc304	<no-function>	BUTTON_GROUP_M
+005dc328	<no-function>	IDB_OFFICE2007_RIBBON_BTN_GROUP_F
+005dc36c	<no-function>	BUTTON_GROUP_F
+005dc390	<no-function>	IDB_OFFICE2007_RIBBON_PANEL_QAT
+005dc3d8	<no-function>	IDB_OFFICE2007_RIBBON_PANEL_SEPARATOR
+005dc424	<no-function>	SEPARATOR
+005dc438	<no-function>	IDB_OFFICE2007_RIBBON_BTN_LAUNCH_ICON
+005dc484	<no-function>	LAUNCH_ICON
+005dc4a0	<no-function>	IDB_OFFICE2007_RIBBON_BTN_LAUNCH
+005dc4e4	<no-function>	LAUNCH_BTN
+005dc500	<no-function>	IDB_OFFICE2007_RIBBON_PANEL_BACK_B
+005dc548	<no-function>	BOTTOM
+005dc558	<no-function>	IDB_OFFICE2007_RIBBON_PANEL_BACK_T
+005dc5a8	<no-function>	BUTTON_DEFAULT
+005dc5c8	<no-function>	PANEL
+005dc5d8	<no-function>	IDB_OFFICE2007_RIBBON_BTN_PAGE_R
+005dc61c	<no-function>	BUTTON_PAGE_R
+005dc638	<no-function>	IDB_OFFICE2007_RIBBON_BTN_PAGE_L
+005dc67c	<no-function>	BUTTON_PAGE_L
+005dc698	<no-function>	IDB_OFFICE2007_RIBBON_CATEGORY_TAB_SEP
+005dc6e8	<no-function>	TAB_SEPARATOR
+005dc708	<no-function>	IDB_OFFICE2007_RIBBON_CATEGORY_TAB
+005dc750	<no-function>	IDB_OFFICE2007_RIBBON_CATEGORY_BACK
+005dc798	<no-function>	CATEGORY
+005dc7ac	<no-function>	RIBBON
+005dc7bc	<no-function>	PressedBorder
+005dc7d8	<no-function>	PressedFinish
+005dc7f4	<no-function>	PressedStart
+005dc810	<no-function>	HighlightedBorder
+005dc834	<no-function>	HighlightedFinish
+005dc858	<no-function>	HighlightedStart
+005dc87c	<no-function>	NormalBorder
+005dc898	<no-function>	NormalFinish
+005dc8b4	<no-function>	NormalStart
+005dc8cc	<no-function>	BorderOuterActive
+005dc8f0	<no-function>	BorderOuterNormal
+005dc914	<no-function>	BorderInnerActive
+005dc938	<no-function>	BorderInnerNormal
+005dc95c	<no-function>	IDB_OFFICE2007_TAB_FLAT
+005dc98c	<no-function>	FLAT
+005dc998	<no-function>	IDB_OFFICE2007_TAB_3D
+005dc9cc	<no-function>	TextColorInactive
+005dc9f0	<no-function>	TextColorActive
+005dca10	<no-function>	TABS
+005dca20	<no-function>	IDB_OFFICE2007_TASKPANE_SCROLL_BTN
+005dca68	<no-function>	SCROLL_BUTTON
+005dca84	<no-function>	SPECIAL
+005dca94	<no-function>	AREA
+005dcaa0	<no-function>	LightHighlighted
+005dcac4	<no-function>	DarkHighlighted
+005dcae4	<no-function>	LightNormal
+005dcafc	<no-function>	DarkNormal
+005dcb14	<no-function>	GROUP
+005dcb20	<no-function>	TASK
+005dcb2c	<no-function>	BtnBorderPressed
+005dcb50	<no-function>	BtnBorderDisabled
+005dcb74	<no-function>	BtnBorderHighlighted
+005dcba0	<no-function>	GradientFinishPressed
+005dcbcc	<no-function>	GradientStartPressed
+005dcbf8	<no-function>	GradientFinishDisabled
+005dcc28	<no-function>	GradientStartDisabled
+005dcc54	<no-function>	GradientFinishHighlighted
+005dcc88	<no-function>	GradientStartHighlighted
+005dccbc	<no-function>	IDB_OFFICE2007_COMBOBOX_BTN
+005dccf4	<no-function>	IMAGE
+005dcd00	<no-function>	BtnBorderNormal
+005dcd20	<no-function>	GradientFinishNormal
+005dcd4c	<no-function>	GradientStartNormal
+005dcd74	<no-function>	BorderPressed
+005dcd90	<no-function>	COMBO
+005dcd9c	<no-function>	Selection
+005dcdb0	<no-function>	BorderDisabled
+005dcdd0	<no-function>	BorderHighlighted
+005dcdf4	<no-function>	BorderNormal
+005dce10	<no-function>	CAPTIONBAR
+005dce28	<no-function>	TextExtendedDisabled
+005dce58	<no-function>	IDB_OFFICE2007_STATUSBAR_SIZEBOX
+005dce9c	<no-function>	SIZEBOX
+005dceb0	<no-function>	IDB_OFFICE2007_STATUSBAR_PANEBORDER
+005dcef8	<no-function>	PANEBORDER
+005dcf10	<no-function>	IDB_OFFICE2007_STATUSBAR_BACK_EXT
+005dcf54	<no-function>	BACK_EXT
+005dcf68	<no-function>	IDB_OFFICE2007_STATUSBAR_BACK
+005dcfa4	<no-function>	STATUSBAR
+005dcfb8	<no-function>	IDB_OFFICE2007_POPUPMENU_RESIZEBAR_ICON_V
+005dd00c	<no-function>	ICON_V
+005dd020	<no-function>	IDB_OFFICE2007_POPUPMENU_RESIZEBAR_ICON_HVT
+005dd078	<no-function>	ICON_HVT
+005dd090	<no-function>	IDB_OFFICE2007_POPUPMENU_RESIZEBAR_ICON_HV
+005dd0e8	<no-function>	ICON_HV
+005dd0f8	<no-function>	IDB_OFFICE2007_POPUPMENU_RESIZEBAR
+005dd140	<no-function>	BACK
+005dd14c	<no-function>	RESIZEBAR
+005dd160	<no-function>	IDB_OFFICE2007_POPUPMENU_BORDER
+005dd1a0	<no-function>	POPUPBAR
+005dd1b4	<no-function>	IDB_OFFICE2007_MENUBAR_BTN
+005dd1ec	<no-function>	MENUBAR
+005dd1fc	<no-function>	BottomLineColor
+005dd21c	<no-function>	IDB_OFFICE2007_TOOLBAR_BORDER
+005dd258	<no-function>	IDB_OFFICE2007_TOOLBAR_BTN
+005dd290	<no-function>	IDB_OFFICE2007_TEAR
+005dd2b8	<no-function>	TEAR
+005dd2c4	<no-function>	IDB_OFFICE2007_GRIPPER
+005dd2f4	<no-function>	GRIPPER
+005dd304	<no-function>	CustomizeButtonGradientDark
+005dd33c	<no-function>	CustomizeButtonGradientLight
+005dd378	<no-function>	GradientVertDark
+005dd39c	<no-function>	GradientVertLight
+005dd3c0	<no-function>	GradientDark
+005dd3dc	<no-function>	GradientLight
+005dd3f8	<no-function>	Bkgnd
+005dd404	<no-function>	DEFAULT
+005dd414	<no-function>	BARS
+005dd420	<no-function>	ImagesColor
+005dd438	<no-function>	DkGray
+005dd448	<no-function>	White
+005dd454	<no-function>	LtGray
+005dd464	<no-function>	Gray
+005dd470	<no-function>	Black2
+005dd480	<no-function>	Black
+005dd48c	<no-function>	COLORS
+005dd49c	<no-function>	TextDisabled
+005dd4b8	<no-function>	TextHighlighted
+005dd4d8	<no-function>	TextNormal
+005dd4f0	<no-function>	IDB_OFFICE2007_MENU_BTN_SCROLL_B
+005dd534	<no-function>	ScrollBtn_B
+005dd550	<no-function>	IDB_OFFICE2007_MENU_BTN_SCROLL_T
+005dd594	<no-function>	ScrollBtn_T
+005dd5b0	<no-function>	IDB_OFFICE2007_MENU_BTN_VERT_SEPARATOR
+005dd600	<no-function>	ButtonBorder
+005dd620	<no-function>	IDB_OFFICE2007_MENU_BTN_DISABLED
+005dd664	<no-function>	HighlightedDisabled
+005dd68c	<no-function>	IDB_OFFICE2007_MENU_BTN
+005dd6bc	<no-function>	Highlighted
+005dd6d8	<no-function>	IDB_OFFICE2007_MENU_ITEM_SHOWALL
+005dd71c	<no-function>	ItemShowAll
+005dd738	<no-function>	IDB_OFFICE2007_MENU_ITEM_MARKER_R
+005dd77c	<no-function>	ItemRadio
+005dd790	<no-function>	IDB_OFFICE2007_MENU_ITEM_MARKER_C
+005dd7d4	<no-function>	ItemCheck
+005dd7e8	<no-function>	IDB_OFFICE2007_MENU_ITEM_BACK
+005dd824	<no-function>	ItemBack
+005dd838	<no-function>	BorderSize
+005dd850	<no-function>	ItemBorder
+005dd868	<no-function>	GroupText
+005dd87c	<no-function>	GroupBackground
+005dd89c	<no-function>	Separator2
+005dd8b4	<no-function>	Separator1
+005dd8cc	<no-function>	Border
+005dd8dc	<no-function>	Rarely
+005dd8ec	<no-function>	MENU
+005dd8f8	<no-function>	MainClientArea
+005dd918	<no-function>	IDB_OFFICE2007_MDICHILDBORDER
+005dd954	<no-function>	BORDER_MDICHILD
+005dd974	<no-function>	IDB_OFFICE2007_MAINBORDER
+005dd9a8	<no-function>	IDB_OFFICE2007_SYS_BTN_BACK
+005dd9e0	<no-function>	IDB_OFFICE2007_SYS_BTN_MINIMIZE
+005dda20	<no-function>	IDB_OFFICE2007_SYS_BTN_MAXIMIZE
+005dda60	<no-function>	IDB_OFFICE2007_SYS_BTN_RESTORE
+005ddaa0	<no-function>	IDB_OFFICE2007_SYS_BTN_CLOSE
+005ddadc	<no-function>	IconSize
+005ddaf0	<no-function>	ConstSize
+005ddb04	<no-function>	SMALL
+005ddb10	<no-function>	NORMAL
+005ddb28	<no-function>	BUTTONS
+005ddb38	<no-function>	IDB_OFFICE2007_MAINBORDER_CAPTION
+005ddb7c	<no-function>	BORDER
+005ddb8c	<no-function>	TextCenter
+005ddba4	<no-function>	InactiveTitleText
+005ddbc8	<no-function>	ActiveTitleText
+005ddbe8	<no-function>	InactiveText
+005ddc04	<no-function>	ActiveText
+005ddc1c	<no-function>	InactiveFinish
+005ddc3c	<no-function>	InactiveStart
+005ddc58	<no-function>	ActiveFinish
+005ddc74	<no-function>	ActiveStart
+005ddc8c	<no-function>	FONT
+005ddc98	<no-function>	CAPTION
+005ddca8	<no-function>	MAINWND
+005ddcb8	<no-function>	TOOLTIP
+005ddcc8	<no-function>	MenuShadowColor
+005ddce8	<no-function>	HighlightText
+005ddd04	<no-function>	Highlight
+005ddd18	<no-function>	PressedButtonBorder
+005ddd40	<no-function>	HighlightCheckedGradientLight
+005ddd7c	<no-function>	HighlightCheckedGradientDark
+005dddb8	<no-function>	HighlightDnGradientLight
+005dddec	<no-function>	HighlightDnGradientDark
+005dde1c	<no-function>	HighlightGradientLight
+005dde4c	<no-function>	HighlightGradientDark
+005dde78	<no-function>	FloatToolBarBorder
+005ddea0	<no-function>	BarLight
+005ddeb4	<no-function>	BarDkShadow
+005ddecc	<no-function>	BarShadow
+005ddee0	<no-function>	InactiveCaptionText
+005ddf08	<no-function>	InactiveCaption
+005ddf28	<no-function>	CaptionText
+005ddf40	<no-function>	ActiveCaption
+005ddf5c	<no-function>	BarFace
+005ddf6c	<no-function>	BarText
+005ddf7c	<no-function>	GLOBALS
+005ddf8c	<no-function>	ID_PREFIX
+005ddfa0	<no-function>	TYPE
+005ddfac	<no-function>	NUMBER
+005ddfbc	<no-function>	VERSION
+005ddfcc	<no-function>	STYLE
+005ddff8	<no-function>	CPaneFrameWnd
+005de244	<no-function>	Afx:MiniFrame
+005de260	<no-function>	DUMMY
+005de5f0	<no-function>	MSG_CHECKEMPTYMINIFRAME
+005de620	<no-function>	CMFCToolTipCtrl
+005de7c4	<no-function>	    
+005de878	<no-function>	CStringList
+005de894	<no-function>	CMFCPopupMenu
+005dec38	<no-function>	&%d %s
+005dec48	<no-function>	Recent File
+005deea0	<no-function>	CMFCPropertyPage
+005df0c8	<no-function>	CDialogEx
+005df258	<no-function>	Button
+005df268	<no-function>	Static
+005df340	<no-function>	CObList
+005df358	<no-function>	CMFCPopupMenuBar
+005df7ac	<no-function>	MenuShowDelay
+005df908	<no-function>	CMultiDocTemplate
+005df948	<no-function>	CUserTool
+005df974	<no-function>	CMFCRibbonBar
+005df984	<no-function>	CMFCRibbonCaptionButton
+005dfbcc	<no-function>	AFX_WM_POSTRECALCLAYOUT
+005dfc00	<no-function>	AFX_WM_ON_CHANGE_RIBBON_CATEGORY
+005dfc44	<no-function>	AFX_WM_ON_RIBBON_CUSTOMIZE
+005dfc80	<no-function>	AFX_WM_ON_HIGHLIGHT_RIBBON_LIST_ITEM
+005dfcd0	<no-function>	AFX_WM_ON_BEFORE_SHOW_RIBBON_ITEM_MENU
+005dfd20	<no-function>	MFCRibbons
+005dfd38	<no-function>	CMFCRibbonStatusBar
+005dfd68	<no-function>	CSplitterWnd
+005dfec0	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\viewcore.cpp
+005dff30	<no-function>	CPaneDivider
+005e0318	<no-function>	Afx:Slider
+005e0348	<no-function>	COleDocument
+005e0358	<no-function>	CDocItem
+005e03d8	<no-function>	CMFCPrintPreviewToolBar
+005e03f0	<no-function>	CPreviewViewEx
+005e0ab8	<no-function>	CMDIChildWnd
+005e0ac8	<no-function>	CMDIFrameWnd
+005e0e50	<no-function>	mdiclient
+005e1100	<no-function>	CMDIClientAreaWnd
+005e1170	<no-function>	ImageList_ReplaceIcon
+005e1188	<no-function>	ImageList_Remove
+005e12e4	<no-function>	MDITabsState
+005e1300	<no-function>	%sMDIClientArea-%d
+005e1468	<no-function>	MDIClientArea
+005e1484	<no-function>	AFX_WM_ON_MOVETOTABGROUP
+005e14b8	<no-function>	CMFCMenuBar
+005e14c4	<no-function>	CHelpComboBoxButton
+005e1ab0	<no-function>	MenuBar
+005e1ac0	<no-function>	CMFCTabCtrl
+005e1f40	<no-function>	Afx:TabWnd
+005e2128	<no-function>	AFX_WM_ON_HSCROLL
+005e214c	<no-function>	AFX_WM_GETDRAGBOUNDS
+005e2178	<no-function>	AFX_WM_ON_DRAGCOMPLETE
+005e21a8	<no-function>	AFX_WM_ON_TABGROUPMOUSEMOVE
+005e21e0	<no-function>	AFX_WM_ON_CANCELTABMOVE
+005e2210	<no-function>	AFX_WM_ON_MOVETABCOMPLETE
+005e2244	<no-function>	CDockablePane
+005e2820	<no-function>	AFX_WM_ON_PRESS_CLOSE_BUTTON
+005e285c	<no-function>	CMFCToolBarMenuButton
+005e2974	<no-function>	Open
+005e2980	<no-function>	Execute
+005e2990	<no-function>	CMFCToolBarMenuButton
+005e29c4	<no-function>	WINDOW_HELP
+005e29dc	<no-function>	CUIntArray
+005e2a14	<no-function>	CPtrArray
+005e2c08	<no-function>	CMiniDockFrameWnd
+005e2c1c	<no-function>	CDockBar
+005e30e0	<no-function>	CMFCCustomizeMenuButton
+005e3218	<no-function>	CMFCDropDownListBox
+005e3280	<no-function>	CMFCToolBarsCustomizeDialog
+005e34b0	<no-function>	CMFCDropDownToolbarButton
+005e34cc	<no-function>	CMFCDropDownFrame
+005e34e0	<no-function>	CMFCDropDownToolBar
+005e3c94	<no-function>	CMFCCustomizeButton
+005e3da8	<no-function>	CBasePane
+005e4110	<no-function>	ControlPane
+005e4128	<no-function>	IsVisible
+005e413c	<no-function>	%sBasePane-%d%x
+005e415c	<no-function>	%sBasePane-%d
+005e4178	<no-function>	BasePanes
+005e418c	<no-function>	CMFCBaseToolBar
+005e4748	<no-function>	CDockingPanesRow
+005e47e4	<no-function>	CDockSite
+005e4b58	<no-function>	Afx:DockPane
+005e4b74	<no-function>	CMFCReBar
+005e4b9c	<no-function>	CMFCToolBarSystemMenuButton
+005e4cb4	<no-function>	CMFCBaseTabCtrl
+005e5148	<no-function>	AFX_WM_ON_RENAME_TAB
+005e5174	<no-function>	AFX_WM_ONCHANGE_ACTIVE_TAB
+005e51ac	<no-function>	AFX_WM_ON_MOVE_TAB
+005e51d4	<no-function>	AFX_WM_ON_CHANGING_ACTIVE_TAB
+005e5210	<no-function>	AFX_WM_ON_GET_TAB_TOOLTIP
+005e53a4	<no-function>	DragDelay
+005e53b8	<no-function>	DragMinDist
+005e5430	<no-function>	CMFCToolBarMenuButtonsButton
+005e553c	<no-function>	MenuCommand
+005e5554	<no-function>	MenuPopup
+005e55d8	<no-function>	CMiniFrameWnd
+005e58d8	<no-function>	CMFCAutoHideBar
+005e5ca8	<no-function>	CBaseTabbedPane
+005e6148	<no-function>	CTabbedPane
+005e6580	<no-function>	CPaneContainerManager
+005e664c	<no-function>	CMultiPaneFrameWnd
+005e6978	<no-function>	CAutoHideDockSite
+005e6c7c	<no-function>	CPaneContainer
+005e6d08	<no-function>	CMFCAutoHideButton
+005e6d68	<no-function>	CMFCOutlookBar
+005e71ac	<no-function>	%sMFCOutlookBar-%d%x
+005e71d8	<no-function>	%sMFCOutlookBar-%d
+005e7200	<no-function>	MFCOutlookBars
+005e7220	<no-function>	MFCOutlookCustomPages
+005e724c	<no-function>	CSharedFile
+005e735f	<no-function>	@COleDispatchException
+005e754c	<no-function>	RichEdit Text and Objects
+005e7580	<no-function>	Rich Text Format
+005e75a4	<no-function>	FileNameW
+005e75b8	<no-function>	FileName
+005e75cc	<no-function>	Link Source Descriptor
+005e75fc	<no-function>	Object Descriptor
+005e7620	<no-function>	Link Source
+005e7638	<no-function>	Embed Source
+005e7654	<no-function>	Embedded Object
+005e7674	<no-function>	ObjectLink
+005e768c	<no-function>	OwnerLink
+005e76a0	<no-function>	Native
+005e76b0	<no-function>	CObArray
+005e76cc	<no-function>	CReBar
+005e76f0	<no-function>	CMFCOutlookBarPaneButton
+005e77e4	<no-function>	CMFCShowAllButton
+005e7914	<no-function>	CMFCRibbonButton
+005e7b20	<no-function>	Close
+005e7b48	<no-function>	CMFCRibbonBaseElement
+005e7b60	<no-function>	CMFCRibbonSeparator
+005e7ec8	<no-function>	Alt, 
+005e7edc	<no-function>	CMFCRibbonEdit
+005e8490	<no-function>	CMFCCaptionBar
+005e84bc	<no-function>	Caption Bar
+005e89a8	<no-function>	CMFCOutlookBarPane
+005e8f00	<no-function>	CMFCRibbonCategory
+005e92f8	<no-function>	Switch
+005e96fc	<no-function>	COleCntrFrameWndEx
+005e9940	<no-function>	CDockablePaneAdapter
+005e9d1c	<no-function>	BarName
+005e9d2c	<no-function>	%sDockablePaneAdapter-%d%x
+005e9d64	<no-function>	%sDockablePaneAdapter-%d
+005e9d98	<no-function>	COleDocIPFrameWnd
+005e9f88	<no-function>	COleIPFrameWnd
+005ea448	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\oleipfrm.cpp
+005ea4b8	<no-function>	CMFCVisualManagerOffice2003
+005ea86f	<no-function>	?CMFCVisualManagerOfficeXP
+005eabc8	<no-function>	CMFCRibbonPanelMenu
+005eabdc	<no-function>	CMFCRibbonPanelMenuBar
+005eb418	<no-function>	CMFCOutlookBarTabCtrl
+005eb430	<no-function>	CMFCOutlookBarToolBar
+005eb448	<no-function>	COutlookCustomizeButton
+005ec1b0	<no-function>	CMFCColorBar
+005ec1c0	<no-function>	CMFCToolBarColorButton
+005ec854	<no-function>	Hex={%02X,%02X,%02X}
+005ec880	<no-function>	CMFCTasksPaneFrameWnd
+005ecabc	<no-function>	Forward
+005ecacc	<no-function>	Other Tasks Pane
+005ecb40	<no-function>	CMFCRibbonQuickAccessToolBar
+005ecb60	<no-function>	CMFCRibbonQuickAccessCustomizeButton
+005ecf44	<no-function>	%c%c
+005ecf58	<no-function>	CMFCRibbonGallery
+005ecf6c	<no-function>	CMFCRibbonGalleryIcon
+005ed380	<no-function>	DoubleClick
+005ed398	<no-function>	CMFCShadowRenderer
+005ed3ac	<no-function>	CMFCControlRenderer
+005ed45c	<no-function>	CMFCStatusBar
+005ed488	<no-function>	CMFCRibbonPanel
+005ed498	<no-function>	CMFCRibbonDefaultPanelButton
+005ed4b8	<no-function>	CMFCRibbonLaunchButton
+005ed948	<no-function>	group
+005ed954	<no-function>	CMFCRibbonMainPanel
+005ed968	<no-function>	CMFCRibbonRecentFilesList
+005edbe8	<no-function>	1&0 %s
+005edbf8	<no-function>	GRADIENT_ANGLE
+005edc18	<no-function>	COLOR_BORDER
+005edc34	<no-function>	COLOR_TEXT
+005edc4c	<no-function>	COLOR_FILLGRADIENT
+005edc74	<no-function>	COLOR_FILL
+005edc8c	<no-function>	BOLD_LABEL
+005edca4	<no-function>	ROUNDED_CORNERS
+005edcc4	<no-function>	MAX_DESC_WIDTH
+005edce4	<no-function>	DRAW_SEPARATOR
+005edd04	<no-function>	DRAW_DESCRIPTION
+005edd28	<no-function>	DRAW_ICON
+005edd3c	<no-function>	BALLON
+005edd4c	<no-function>	PREMLTCHECK
+005edd64	<no-function>	TRANSPARENT
+005edd7c	<no-function>	INTERIOR
+005edd90	<no-function>	SIDES
+005edd9c	<no-function>	CORNERS
+005eddac	<no-function>	WEIGHT
+005eddbc	<no-function>	QUALITY
+005eddcc	<no-function>	CHARSET
+005edddc	<no-function>	FACENAME
+005eddf0	<no-function>	FALSE
+005eddfc	<no-function>	TRUE
+005ede08	<no-function>	RIGHTBOTTOM
+005ede20	<no-function>	RIGHTTOP
+005ede34	<no-function>	LEFTBOTTOM
+005ede4c	<no-function>	LEFTTOP
+005ede5c	<no-function>	RIGHT
+005ede68	<no-function>	LEFT
+005ede74	<no-function>	HEIGHT
+005ede84	<no-function>	WIDTH
+005ede90	<no-function>	OFFSET
+005edea0	<no-function>	RECT
+005edeac	<no-function>	SIZE
+005edeb8	<no-function>	POINT
+005edef8	<no-function>	CLEARTYPE
+005edf0c	<no-function>	ANTIALIASED
+005edf24	<no-function>	NONANTIALIASED
+005edf44	<no-function>	PROOF
+005edf50	<no-function>	DRAFT
+005edf5c	<no-function>	BLACK
+005edf68	<no-function>	ULTRABOLD
+005edf7c	<no-function>	DEMIBOLD
+005edf90	<no-function>	REGULAR
+005edfa0	<no-function>	ULTRALIGHT
+005edfb8	<no-function>	HEAVY
+005edfc4	<no-function>	EXTRABOLD
+005edfd8	<no-function>	BOLD
+005edfe4	<no-function>	SEMIBOLD
+005edff8	<no-function>	MEDIUM
+005ee008	<no-function>	LIGHT
+005ee014	<no-function>	EXTRALIGHT
+005ee02c	<no-function>	THIN
+005ee038	<no-function>	DONTCARE
+005ee068	<no-function>	CMFCRibbonMiniToolBar
+005ee2e0	<no-function>	CMFCToolBarsMenuPropertyPage
+005ee31c	<no-function>	Can't create context menu!
+005ee580	<no-function>	CPropertySheet
+005ee590	<no-function>	CPropertyPage
+005ee5a0	<no-function>	AfxClosePending
+005ee640	<no-function>	CreatePropertySheetPageW
+005ee65c	<no-function>	DestroyPropertySheetPage
+005ee678	<no-function>	PropertySheetW
+005eea50	<no-function>	CMFCPropertySheet
+005eea80	<no-function>	CDocTemplate
+005eeaac	<no-function>	CMFCRibbonButtonsGroup
+005eee48	<no-function>	RICHED20.DLL
+005eee58	<no-function>	RichEdit20W
+005eee70	<no-function>	COleLinkingDoc
+005eeea4	<no-function>	CStringArray
+005eeec8	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\array_s.cpp
+005eef44	<no-function>	CMFCRibbonLabel
+005ef13c	<no-function>	CDocument
+005ef310	<no-function>	CSmartDockingGroupGuidesManager
+005ef330	<no-function>	CSmartDockingStandaloneGuide
+005ef778	<no-function>	COleStreamFile
+005ef7a8	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\olestrm.cpp
+005ef874	<no-function>	CPreviewView
+005efc28	<no-function>	CScrollView
+005f0018	<no-function>	CMFCToolBarComboBoxButton
+005f0330	<no-function>	CMFCButton
+005f06b8	<no-function>	CMFCPropertyGridToolTipCtrl
+005f06f0	<no-function>	IsAppThemed
+005f06fc	<no-function>	GetThemePartSize
+005f0710	<no-function>	IsThemeBackgroundPartiallyTransparent
+005f0738	<no-function>	CMFCToolBarsListPropertyPage
+005f0758	<no-function>	CMFCToolBarsCommandsPropertyPage
+005f1210	<no-function>	Other
+005f1570	<no-function>	CMFCToolBarsKeyboardPropertyPage
+005f173c	<no-function>	????
+005f1828	<no-function>	CMFCToolBarsOptionsPropertyPage
+005f1e98	<no-function>	CMFCMousePropertyPage
+005f2358	<no-function>	DragScrollInterval
+005f2380	<no-function>	DragScrollDelay
+005f23a0	<no-function>	windows
+005f23b0	<no-function>	DragScrollInset
+005f2440	<no-function>	f:\dd\vctools\vc7libs\ship\atlmfc\src\mfc\oledrop2.cpp
+005f24b0	<no-function>	CMFCOutlookBarPaneAdapter
+005f2b88	<no-function>	COleServerDoc
+005f2bb4	<no-function>	CMFCToolBarEditBoxButton
+005f3220	<no-function>	CCheckListBox
+005f3650	<no-function>	RGB(%d, %d, %d)
+005f37d8	<no-function>	CMFCColorMenuButton
+005f3b2c	<no-function>	CMFCRibbonColorButton
+005f3b44	<no-function>	CMFCRibbonColorMenuButton
+005f3f68	<no-function>	CMFCTasksPane
+005f3f78	<no-function>	CMFCTasksPaneToolBar
+005f3f90	<no-function>	CTasksPaneMenuButton
+005f3fa8	<no-function>	CTasksPaneHistoryButton
+005f3fc0	<no-function>	CTasksPaneNavigateButton
+005f4718	<no-function>	Settings
+005f472c	<no-function>	%sMFCTasksPane-%d%x
+005f4754	<no-function>	%sMFCTasksPane-%d
+005f4e30	<no-function>	MFCTasksPanes
+005f4e4c	<no-function>	CMFCRibbonUndoButton
+005f4e64	<no-function>	CRibbonUndoLabel
+005f5278	<no-function>	MS UI Gothic
+005f5294	<no-function>	KERNEL32.DLL
+005f52b4	<no-function>	commdlg_FindReplace
+005f5ef8	<no-function>	CMFCMenuButton
+005f6150	<no-function>	COleBusyDialog
+005f6160	<no-function>	COleDialog
+005f6888	<no-function>	CMFCCustomColorsPropertyPage
+005f6b50	<no-function>	CMFCStandardColorsPropertyPage
+005f6db8	<no-function>	CMFCColorPropertySheet
+005f6f78	<no-function>	CMFCColorPopupMenu
+005f6ff4	<no-function>	Unknown exception
+005f7028	<no-function>	CorExitProcess
+005f7038	<no-function>	mscoree.dll
+005f705c	<no-function>	HeapQueryInformation
+005f7074	<no-function>	SetThreadStackGuarantee
+005f7128	<no-function>	runtime error 
+005f7138	<no-function>	TLOSS error 
+005f7148	<no-function>	SING error 
+005f7158	<no-function>	DOMAIN error 
+005f7168	<no-function>	R6034 An application has made an attempt to load the C runtime library incorrectly. Please contact the application's support team for more information. 
+005f7208	<no-function>	R6033 - Attempt to use MSIL code from this assembly during native code initialization This indicates a bug in your application. It is most likely the result of calling an MSIL-compiled (/clr) function from a native constructor or from DllMain. 
+005f7300	<no-function>	R6032 - not enough space for locale information 
+005f7338	<no-function>	R6031 - Attempt to initialize the CRT more than once. This indicates a bug in your application. 
+005f739c	<no-function>	R6030 - CRT not initialized 
+005f73bc	<no-function>	R6028 - unable to initialize heap 
+005f73e4	<no-function>	R6027 - not enough space for lowio initialization 
+005f741c	<no-function>	R6026 - not enough space for stdio initialization 
+005f7454	<no-function>	R6025 - pure virtual function call 
+005f747c	<no-function>	R6024 - not enough space for _onexit/atexit table 
+005f74b4	<no-function>	R6019 - unable to open console device 
+005f74e0	<no-function>	R6018 - unexpected heap error 
+005f7504	<no-function>	R6017 - unexpected multithread lock error 
+005f7534	<no-function>	R6016 - not enough space for thread data 
+005f7560	<no-function>	 This application has requested the Runtime to terminate it in an unusual way. Please contact the application's support team for more information. 
+005f75f8	<no-function>	R6009 - not enough space for environment 
+005f7624	<no-function>	R6008 - not enough space for arguments 
+005f7650	<no-function>	R6002 - floating point support not loaded 
+005f7680	<no-function>	Microsoft Visual C++ Runtime Library
+005f76b0	<no-function>	<program name unknown>
+005f76c8	<no-function>	Runtime Error!  Program: 
+005f7760	<no-function>	EncodePointer
+005f7770	<no-function>	KERNEL32.DLL
+005f778c	<no-function>	DecodePointer
+005f779c	<no-function>	FlsFree
+005f77a4	<no-function>	FlsSetValue
+005f77b0	<no-function>	FlsGetValue
+005f77bc	<no-function>	FlsAlloc
+005f785c	<no-function>	UTF-8
+005f7868	<no-function>	UTF-16LE
+005f787c	<no-function>	UNICODE
+005f788c	<no-function>	(null)
+005f7968	<no-function>	UTF-8
+005f7970	<no-function>	UTF-16LE
+005f797c	<no-function>	UNICODE
+005f7994	<no-function>	bad exception
+005f79a4	<no-function>	SunMonTueWedThuFriSat
+005f79bc	<no-function>	JanFebMarAprMayJunJulAugSepOctNovDec
+005f79e8	<no-function>	e+000
+005f79fe	<no-function>	GAIsProcessorFeaturePresent
+005f7a1c	<no-function>	KERNEL32
+005f7aac	<no-function>	floor
+005f7ac4	<no-function>	exp10
+005f7ae0	<no-function>	log10
+005f91c0	<no-function>	_nextafter
+005f9238	<no-function>	GetProcessWindowStation
+005f9250	<no-function>	GetUserObjectInformationA
+005f926c	<no-function>	GetLastActivePopup
+005f9280	<no-function>	GetActiveWindow
+005f9290	<no-function>	MessageBoxA
+005f929c	<no-function>	USER32.DLL
+005f92a8	<no-function>	 Complete Object Locator'
+005f92c4	<no-function>	 Class Hierarchy Descriptor'
+005f92e4	<no-function>	 Base Class Array'
+005f92f8	<no-function>	 Base Class Descriptor at (
+005f9314	<no-function>	 Type Descriptor'
+005f9328	<no-function>	`local static thread guard'
+005f9344	<no-function>	`managed vector copy constructor iterator'
+005f9370	<no-function>	`vector vbase copy constructor iterator'
+005f939c	<no-function>	`vector copy constructor iterator'
+005f93c0	<no-function>	`dynamic atexit destructor for '
+005f93e4	<no-function>	`dynamic initializer for '
+005f9400	<no-function>	`eh vector vbase copy constructor iterator'
+005f942c	<no-function>	`eh vector copy constructor iterator'
+005f9454	<no-function>	`managed vector destructor iterator'
+005f947c	<no-function>	`managed vector constructor iterator'
+005f94a4	<no-function>	`placement delete[] closure'
+005f94c4	<no-function>	`placement delete closure'
+005f94e0	<no-function>	`omni callsig'
+005f94f0	<no-function>	 delete[]
+005f94fc	<no-function>	 new[]
+005f9504	<no-function>	`local vftable constructor closure'
+005f9528	<no-function>	`local vftable'
+005f9538	<no-function>	`RTTI
+005f9544	<no-function>	`udt returning'
+005f9554	<no-function>	`copy constructor closure'
+005f9570	<no-function>	`eh vector vbase constructor iterator'
+005f9598	<no-function>	`eh vector destructor iterator'
+005f95b8	<no-function>	`eh vector constructor iterator'
+005f95dc	<no-function>	`virtual displacement map'
+005f95f8	<no-function>	`vector vbase constructor iterator'
+005f961c	<no-function>	`vector destructor iterator'
+005f963c	<no-function>	`vector constructor iterator'
+005f965c	<no-function>	`scalar deleting destructor'
+005f967c	<no-function>	`default constructor closure'
+005f969c	<no-function>	`vector deleting destructor'
+005f96bc	<no-function>	`vbase destructor'
+005f96d0	<no-function>	`string'
+005f96dc	<no-function>	`local static guard'
+005f96f4	<no-function>	`typeof'
+005f9700	<no-function>	`vcall'
+005f9708	<no-function>	`vbtable'
+005f9714	<no-function>	`vftable'
+005f9798	<no-function>	operator
+005f97bc	<no-function>	 delete
+005f97cc	<no-function>	__unaligned
+005f97d8	<no-function>	__restrict
+005f97e4	<no-function>	__ptr64
+005f97ec	<no-function>	__clrcall
+005f97f8	<no-function>	__fastcall
+005f9804	<no-function>	__thiscall
+005f9810	<no-function>	__stdcall
+005f981c	<no-function>	__pascal
+005f9828	<no-function>	__cdecl
+005f9830	<no-function>	__based(
+005fa1c8	<no-function>	HH:mm:ss
+005fa1d4	<no-function>	dddd, MMMM dd, yyyy
+005fa1e8	<no-function>	MM/dd/yy
+005fa1fc	<no-function>	December
+005fa208	<no-function>	November
+005fa214	<no-function>	October
+005fa21c	<no-function>	September
+005fa228	<no-function>	August
+005fa240	<no-function>	April
+005fa248	<no-function>	March
+005fa250	<no-function>	February
+005fa25c	<no-function>	January
+005fa294	<no-function>	Saturday
+005fa2a0	<no-function>	Friday
+005fa2a8	<no-function>	Thursday
+005fa2b4	<no-function>	Wednesday
+005fa2c0	<no-function>	Tuesday
+005fa2c8	<no-function>	Monday
+005fa2d0	<no-function>	Sunday
+005fa2f4	<no-function>	CONOUT$
+005fa2fc	<no-function>	1#QNAN
+005fa304	<no-function>	1#INF
+005fa30c	<no-function>	1#IND
+005fa314	<no-function>	1#SNAN
+005faba0	<no-function>	string too long
+005fabb0	<no-function>	invalid string position
+005fabd0	<no-function>	OLEACC.dll
+005fabdc	<no-function>	bad allocation
+005fac86	<no-function>	_The time range has reached its maximum
+005facd8	<no-function>	InitByMacro: key(vk=0x%x) has no release action
+005fad38	<no-function>	InitByMacro Err: Key %s(vk=0x%x) has no release action
+005fada8	<no-function>	InitByMacro Err: nActionNum=%d, pMacro->nItemNum=%d
+005faf68	<no-function>	C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\atlmfc\include\afxwin1.inl
+005fb00c	<no-function>	Exception thrown in destructor
+005fb04c	<no-function>	%s (%s:%d) %s
+005fb068	<no-function>	%s (%s:%d)
+005fb09c	<no-function>	CAdvDlg
+005fb13e	<no-function>	_%sskins\btn_tip.png
+005fb2d0	<no-function>	Start apply thread
+005fb2f8	<no-function>	Start Apply: hDevice=0x%x, nFlag=0x%x, nData=0x%x
+005fb35c	<no-function>	     Settings failed!      
+005fb394	<no-function>	Error
+005fb3a0	<no-function>	Apply Over
+005fb3b8	<no-function>	thread exit
+005fb3d0	<no-function>	%sskins\%s
+005fb3e8	<no-function>	OemDrvMsgTopWindow
+005fb410	<no-function>	CColorBtnDlg
+005fb706	<no-function>	_%sskins\slider2.png
+005fb730	<no-function>	%sskins\colorwheel.png
+005fb768	<no-function>	# %06X
+005fba80	<no-function>	BY  
+005fba90	<no-function>	Open Log failed
+005fbab4	<no-function>	%02u:%02u.%03u   
+005fbae8	<no-function>	Open Log failed
+005fbafc	<no-function>	%02u:%02u.%03u   
+005fbb10	<no-function>	%s\Log.txt
+005fbb28	<no-function>	%s\Log.txt
+005fbb38	<no-function>	%02x 
+005fbb54	<no-function>	%02x%s
+005fbbde	<no-function>	_bracket_left.png
+005fbc04	<no-function>	%sskins\icon18x18\%s
+005fbc30	<no-function>	bracket_right.png
+005fbc54	<no-function>	icon_kb_nr.png
+005fbc74	<no-function>	%sskins\other\%s
+005fbc98	<no-function>	icon_kb_dn.png
+005fbcb8	<no-function>	icon_ms_nr.png
+005fbcd8	<no-function>	icon_ms_dn.png
+005fbe38	<no-function>	CDpiDlg
+005fbf30	<no-function>	CKeyMSDlg::LoadSkins pSensorCfg=0
+005fbf74	<no-function>	slider.png
+005fbf8c	<no-function>	combo4_nr.png
+005fc110	<no-function>	CDpiGridDlg
+005fc138	<no-function>	MS Shell Dlg
+005fc1be	<no-function>	_%sskins\mouse\dpigrid_nr.png
+005fc1fc	<no-function>	%sskins\mouse\dpigrid_dn.png
+005fc238	<no-function>	%sskins\mouse\DpiGridXY_nr.png
+005fc278	<no-function>	%sskins\mouse\DpiGridXY_dn.png
+005fc420	<no-function>	Dev[%02d]: Vid=%04x, Pid=%04x, UsagePage=0x%x, Usage=0x%x, Feature=%d, In=%d, Out=%d, nRID=%d
+005fc4dc	<no-function>	Device OUT: %s
+005fc4fc	<no-function>	Free wireless object: %s
+005fc530	<no-function>	Find wired: vid=%04x, pid=%04x, name=%s
+005fc580	<no-function>	bRunAsAdmin=%x, nDevNum=%d
+005fc5b8	<no-function>	Exit and run as admin, bAsAdmin=%x
+005fc600	<no-function>	-admin
+005fc610	<no-function>	OnComboPlugOut: %s
+005fc638	<no-function>	OnComboPlugOut: path match failed
+005fc67c	<no-function>	pid&fa07
+005fc690	<no-function>	Watcher_Thread_3632 start, hDev=%x, bBT=%x
+005fc6e8	<no-function>	Watcher_Thread_3632: failed, hDev=%x
+005fc734	<no-function>	Watcher_Thread_3632 recv: 
+005fc770	<no-function>	Watcher_Thread_3632: device connected, hDev=%x
+005fc7d0	<no-function>	Watcher_Thread_3632: GetPSD_3632 Err, hDev=%x
+005fc830	<no-function>	Watcher_Thread_3632 eixt, hDev=%x
+005fc878	<no-function>	Watcher_Thread_Mouse start, hDev=%x
+005fc8c0	<no-function>	Watcher_Thread_Mouse, Open device failed
+005fc914	<no-function>	Watcher_Thread_Mouse: failed
+005fc950	<no-function>	Watcher_Thread_Mouse recv: 
+005fc988	<no-function>	Watcher_Thread_Mouse: device connected, hDev=%x
+005fc9e8	<no-function>	Watcher_Thread_Mouse: GetPSD Err
+005fca30	<no-function>	Watcher_Thread_Mouse eixt, hDev=%x
+005fca78	<no-function>	Combo: bOnline[2]=%x, %x
+005fcab0	<no-function>	OnNewDongle: Find new wireless, vid_pid=%04x_%04x, bBT=%x, nPsd=%02x,%02x,%02x,%02x,%02x,%02x
+005fcb70	<no-function>	OnNewDongle: it's unsupported device
+005fcbbc	<no-function>	OnNewDongle: pDEV=%s
+005fcbe8	<no-function>	OnNewDongle: pDEV->pHidDev->m_bWireless=%d, pDEV->bBT=%d
+005fcc60	<no-function>	OnNewDongle: CHidDev object has init, ignore this dongle
+005fccd4	<no-function>	OnNewDongle: new error
+005fcd04	<no-function>	OnNewCombo: nDevTy=%x
+005fcd30	<no-function>	OnNewCombo: open err=%x
+005fcd60	<no-function>	OnNewCombo: GetPSD failed
+005fcd98	<no-function>	OnNewCombo: can't find dev, devPsd=%x %x %x %x %x %x
+005fce38	<no-function>	OnNewCombo: init ok, pDEV=%x(%s)
+005fce7c	<no-function>	CFirekeyDlg
+005fcf3e	<no-function>	_pickfundlg.png
+005fcf60	<no-function>	pickfundlg.png missed
+005fcf8c	<no-function>	exit_nr.png
+005fcfa4	<no-function>	exit_ov.png
+005fcfbc	<no-function>	button_nr.png
+005fcfd8	<no-function>	combo2_nr.png
+005fcff4	<no-function>	The value of key is invalid
+005fd198	<no-function>	%sDev\ms\
+005fd1ac	<no-function>	%sDev\kb\
+005fd1c4	<no-function>	%s%s
+005fd1d0	<no-function>	%s%s\
+005fd210	<no-function>	Warning
+005fd254	<no-function>	%sCfg.ini
+005fd268	<no-function>	Debug
+005fd27c	<no-function>	UIDebug
+005fd28c	<no-function>	Title
+005fd298	<no-function>	UpdateDir
+005fd2ac	<no-function>	UpdateByLocal
+005fd2d0	<no-function>	Suwnd
+005fd2dc	<no-function>	BtnTips
+005fd2ec	<no-function>	ApplyNow
+005fd300	<no-function>	FontName
+005fd314	<no-function>	appdir
+005fd324	<no-function>	APPDATA=NULL
+005fd340	<no-function>	szOnlyShow
+005fd358	<no-function>	TrayIcon
+005fd36c	<no-function>	GoWithNoDev
+005fd384	<no-function>	ExitOnPlugOut
+005fd3a0	<no-function>	DrawLine
+005fd3b4	<no-function>	EnableYun
+005fd3c8	<no-function>	MacLayout
+005fd3dc	<no-function>	ReactionEffect
+005fd3fc	<no-function>	MacroInsertMask
+005fd41c	<no-function>	WaitTm
+005fd42c	<no-function>	ImgKey
+005fd43c	<no-function>	PageDeflate
+005fd454	<no-function>	ShowDevNameInPage
+005fd478	<no-function>	ShowDevList
+005fd490	<no-function>	ShowMacro
+005fd4a4	<no-function>	ShowColorHEX
+005fd4c0	<no-function>	clrTxtColor
+005fd4d8	<no-function>	clrBtnTxtNr
+005fd4f0	<no-function>	clrBtnTxtOv
+005fd508	<no-function>	clrBtnTxtDn
+005fd520	<no-function>	clrMenuTxtNr
+005fd53c	<no-function>	clrMenuTxtOv
+005fd558	<no-function>	clrMenuNr
+005fd56c	<no-function>	clrMenuOv
+005fd580	<no-function>	clrMenuFrame
+005fd59c	<no-function>	clrListBoxBkg
+005fd5b8	<no-function>	clrListBoxBkgItem
+005fd5dc	<no-function>	clrListBoxTextDn
+005fd600	<no-function>	clrBkg
+005fd610	<no-function>	clrMask
+005fd620	<no-function>	clrMaskFill
+005fd638	<no-function>	clrEdit
+005fd648	<no-function>	clrEdit2
+005fd65c	<no-function>	clrThumb
+005fd670	<no-function>	clrLine
+005fd680	<no-function>	clrBarNr
+005fd694	<no-function>	clrBarOv
+005fd6a8	<no-function>	clrTime
+005fd6b8	<no-function>	clrFunTextCheck
+005fd6d8	<no-function>	clrActionViewItemNr
+005fd700	<no-function>	clrActionViewItemDn
+005fd728	<no-function>	clrActionViewTitle
+005fd750	<no-function>	FontSize
+005fd764	<no-function>	clrMasking
+005fd77c	<no-function>	ptNavi
+005fd78c	<no-function>	rcHomePageBtn
+005fd7a8	<no-function>	Lang%d
+005fd7b8	<no-function>	Lang%d is invalidate
+005fd7ec	<no-function>	FwVerNeedToUpdate
+005fd810	<no-function>	ForceUpdate
+005fd828	<no-function>	MacroBufferSize
+005fd848	<no-function>	Sensor
+005fd858	<no-function>	ShowLED
+005fd868	<no-function>	ShowDpiColor
+005fd884	<no-function>	ShowEffect
+005fd89c	<no-function>	ShowPower
+005fd8b8	<no-function>	RATE
+005fd8c4	<no-function>	RGBIndex
+005fd8d8	<no-function>	DPIRGBIndex
+005fd8f0	<no-function>	Debounce
+005fd904	<no-function>	DebounceUI
+005fd91c	<no-function>	DebounceHW
+005fd934	<no-function>	ptKeyMarkDlg
+005fd950	<no-function>	ptKey
+005fd95c	<no-function>	LedMask
+005fd96c	<no-function>	ShowModeSW
+005fd984	<no-function>	ShowRGBSw
+005fd998	<no-function>	Enhance
+005fd9a8	<no-function>	ShowSys
+005fd9b8	<no-function>	OnBoardNum
+005fd9d0	<no-function>	ShowColorAddDec
+005fd9f0	<no-function>	SteadyLEDPos
+005fda0c	<no-function>	ShowMusic
+005fda20	<no-function>	LightBarNum
+005fda38	<no-function>	LightBarLedNum
+005fda58	<no-function>	LightBarLedPos%d
+005fda7c	<no-function>	EffectNum
+005fda90	<no-function>	LedOpt%d
+005fdaa4	<no-function>	MDNUM
+005fdab8	<no-function>	KEYH
+005fdacc	<no-function>	Mark%d
+005fdadc	<no-function>	K%d_%d
+005fdaec	<no-function>	SENSOR_%d
+005fdb08	<no-function>	DpiUILevels
+005fdb20	<no-function>	DEFLEVEL
+005fdb34	<no-function>	DPIH
+005fdb40	<no-function>	ShowLOD
+005fdb50	<no-function>	LodUI
+005fdb5c	<no-function>	LodHW
+005fdb68	<no-function>	DPIRANGEALIAS
+005fdb84	<no-function>	DPIRANGE
+005fdb98	<no-function>	Wrong DPIRANGE
+005fdbb8	<no-function>	DPISET
+005fdbc8	<no-function>	Unassigned %x value for dev: %s
+005fdc08	<no-function>	DPIHW
+005fdc14	<no-function>	DPISET Num != DPIHW Num
+005fdc48	<no-function>	Wrong default dpi value %d for sensor %04x
+005fdca8	<no-function>	Name
+005fdcc4	<no-function>	VID_Wireless
+005fdce0	<no-function>	PID_Wireless
+005fdd0c	<no-function>	ShortName
+005fdd20	<no-function>	Unassigned VID or PID for ini: %s
+005fdd64	<no-function>	ShowScreen
+005fdd7c	<no-function>	MaxLoopCnt
+005fdd94	<no-function>	MaxDelay
+005fdda8	<no-function>	MaxAction
+005fddbc	<no-function>	clrKeyOv
+005fddd0	<no-function>	clrKeyDn
+005fdde4	<no-function>	clrKeyHasFunc
+005fde00	<no-function>	SleepUI
+005fde10	<no-function>	SleepHW
+005fde20	<no-function>	SleepUI!=SleepHW
+005fde44	<no-function>	Speed
+005fde50	<no-function>	SpeedHW
+005fde60	<no-function>	SpeedUI!=SpeedHW
+005fde84	<no-function>	Light
+005fde90	<no-function>	LightHW
+005fdea0	<no-function>	LightUI!=LightHW
+005fdec4	<no-function>	SideLightNum
+005fdee0	<no-function>	ptKB
+005fdeec	<no-function>	LedParam
+005fdf00	<no-function>	LedParam: wrong light >= pVar->nLightNum
+005fdf58	<no-function>	LedParam: wrong speed >= pVar->nSpeedNum
+005fdfac	<no-function>	UnRectKey
+005fdfc0	<no-function>	EnterPt[0]!=EnterPt[Last] 
+005fdff8	<no-function>	ShowAutoDetect
+005fe018	<no-function>	CfgVal
+005fe028	<no-function>	KbLayout
+005fe03c	<no-function>	KbDrawType
+005fe054	<no-function>	FillKeyWhenHasFunc
+005fe07c	<no-function>	RespireType
+005fe094	<no-function>	KbLanguage
+005fe0ac	<no-function>	SyncKB
+005fe0bc	<no-function>	LightBarMusicCmd
+005fe0e0	<no-function>	ShowDebounce
+005fe0fc	<no-function>	ShowSleep
+005fe110	<no-function>	RandomVal
+005fe124	<no-function>	MusicUI
+005fe134	<no-function>	MaxFnNum
+005fe148	<no-function>	MatrixLen
+005fe164	<no-function>	LayerMask
+005fe178	<no-function>	SleepTime
+005fe18c	<no-function>	ChannelMask
+005fe1a4	<no-function>	MusicMask
+005fe1b8	<no-function>	MaxEftKeyIndex
+005fe1d8	<no-function>	DefLedIndex
+005fe1f0	<no-function>	WheelMode
+005fe204	<no-function>	FnAlign
+005fe214	<no-function>	ShowTapTip
+005fe22c	<no-function>	ShowSideLED
+005fe244	<no-function>	ShowDevTy
+005fe260	<no-function>	FnNotToSet
+005fe278	<no-function>	IC2481
+005fe288	<no-function>	XYDirect
+005fe29c	<no-function>	DefSideLedIndex
+005fe2bc	<no-function>	KeyLineStart
+005fe2d8	<no-function>	KnobIndex
+005fe2ec	<no-function>	NaviInx
+005fe2fc	<no-function>	LightBarLedPos
+005fe31c	<no-function>	KeyNotToSet
+005fe334	<no-function>	KeyNotToSetColor
+005fe358	<no-function>	SendSysParam
+005fe374	<no-function>	SyncMask
+005fe388	<no-function>	SendTimeOnOpenKB
+005fe3ac	<no-function>	RGBScreen
+005fe3c0	<no-function>	MaxScreenFrame
+005fe3e0	<no-function>	LatticeW
+005fe3f4	<no-function>	DrawLatticeLine
+005fe414	<no-function>	DrawFrameTime
+005fe430	<no-function>	siScreen
+005fe444	<no-function>	R G B Index Error
+005fe468	<no-function>	GameRGBIndex
+005fe484	<no-function>	clrGmKey RGB Index Error
+005fe4b8	<no-function>	GaoshouIndex
+005fe4d4	<no-function>	GaoshouGroupNum
+005fe4f4	<no-function>	StartGp
+005fe504	<no-function>	clrGaoshou
+005fe51c	<no-function>	GaoshouKey%d
+005fe550	<no-function>	SideLedOpt%d
+005fe578	<no-function>	Data parse error!
+005fe59c	<no-function>	Wrong matrix index value!
+005fe5d0	<no-function>	%s\KB.ini
+005fe618	<no-function>	GetSenosr: nSensor=0x%x, nValue=%d
+005fe660	<no-function>	Error: OpenDeviceInterface: malloc failed
+005fe6b8	<no-function>	Error: SetupDiGetInterfaceDeviceDetail failed
+005fe714	<no-function>	CHomeDlg
+005fe7be	<no-function>	_check_dn.png
+005fe7dc	<no-function>	check_nr.png
+005fe7f8	<no-function>	120.79.152.79
+005fe808	<no-function>	http://%s/modifypsd.php
+005fe824	<no-function>	username
+005fe830	<no-function>	oldpsd
+005fe838	<no-function>	realpsd
+005fe842	<no-function>	dStart modify psd ------
+005fe874	<no-function>	server respond null
+005fe888	<no-function>	error
+005fe890	<no-function>	server respond= %s
+005fe8a4	<no-function>	modify success
+005fe8b4	<no-function>	modify psd success
+005fe8dc	<no-function>	DownLoadProfile
+005fe8fc	<no-function>	http://%s/queryprofile.php?username=%s&download=%s
+005fe930	<no-function>	download profile error
+005fe960	<no-function>	download profile success
+005fe99c	<no-function>	find %d profile record
+005fe9b8	<no-function>	size check err, nSize=%d, sizeof(ST_PROFILE)=%d
+005fea18	<no-function>	md5 check err: szMD5=%s, pRecord->szMD5=%s
+005fea70	<no-function>	sign check err: CFG_NUMBER=%x
+005feaac	<no-function>	DeleteProfile
+005feac8	<no-function>	http://%s/queryprofile.php?username=%s&delete=%s
+005feafc	<no-function>	delete profile error
+005feb28	<no-function>	http://%s/feedback.php
+005feb40	<no-function>	suggest
+005feb48	<no-function>	contact
+005feb50	<no-function>	feedback error
+005feb70	<no-function>	success
+005feb78	<no-function>	name
+005feb84	<no-function>	device
+005feb9c	<no-function>	time
+005feba8	<no-function>	http://%s/queryprofile.php?username=%s
+005febd0	<no-function>	server respond is null
+005fec00	<no-function>	||||
+005fed7c	<no-function>	CKBColorDlg
+005fee6e	<no-function>	_CKBColorDlg::GetKeyOnSameLine nNum>nKey
+005ff028	<no-function>	CKeyDlg
+005ff12e	<no-function>	_%sskins\icon18x18\fileicon.png
+005ff180	<no-function>	ms_right
+005ff1a4	<no-function>	ms_forward
+005ff1bc	<no-function>	ms_backward
+005ff1d4	<no-function>	%sskins\fun55x55\%s.png
+005ff204	<no-function>	media_play
+005ff21c	<no-function>	media_mute
+005ff234	<no-function>	media_stop
+005ff24c	<no-function>	media_prev
+005ff264	<no-function>	media_next
+005ff27c	<no-function>	media_volinc
+005ff298	<no-function>	media_voldec
+005ff2b4	<no-function>	media_home
+005ff2cc	<no-function>	media_cal
+005ff2e0	<no-function>	media_email
+005ff2f8	<no-function>	media_computer
+005ff318	<no-function>	media_favor
+005ff330	<no-function>	media_briup
+005ff348	<no-function>	media_bridn
+005ff360	<no-function>	adv_closewindow
+005ff380	<no-function>	adv_lock
+005ff3a4	<no-function>	adv_zoomin
+005ff3bc	<no-function>	adv_zoomout
+005ff3d4	<no-function>	adv_desktop
+005ff3ec	<no-function>	adv_task
+005ff400	<no-function>	adv_undo
+005ff414	<no-function>	adv_save
+005ff428	<no-function>	adv_disable
+005ff440	<no-function>	adv_lockwin
+005ff458	<no-function>	adv_lockall
+005ff470	<no-function>	adv_reset
+005ff484	<no-function>	upload.png
+005ff49c	<no-function>	new_nr.png
+005ff4b4	<no-function>	new_ov.png
+005ff4cc	<no-function>	del_nr.png
+005ff4e4	<no-function>	del_ov.png
+005ff4fc	<no-function>	rename_nr.png
+005ff518	<no-function>	rename_ov.png
+005ff534	<no-function>	import_nr.png
+005ff550	<no-function>	import_ov.png
+005ff56c	<no-function>	export_nr.png
+005ff588	<no-function>	export_ov.png
+005ff5a4	<no-function>	button01_dn.png
+005ff5c4	<no-function>	button01_nr.png
+005ff5e4	<no-function>	save_ov.png
+005ff5fc	<no-function>	save_nr.png
+005ff614	<no-function>	reset_ov.png
+005ff630	<no-function>	reset_nr.png
+005ff64c	<no-function>	Dot_Selected.png
+005ff670	<no-function>	dir_open.png
+005ff68c	<no-function>	dir_close.png
+005ff6a8	<no-function>	radio_dn.png
+005ff6c4	<no-function>	radio_nr.png
+005ff6e4	<no-function>	Ctrl
+005ff700	<no-function>	Shift
+005ff70c	<no-function>	bcf(*.bcf)|*.bcf|
+005ff730	<no-function>	*.bcf
+005ff73c	<no-function>	.bcf
+005ff748	<no-function>	Open profile file failed. error=0x%x
+005ff798	<no-function>	Read profile file failed. error=0x%x
+005ff7e4	<no-function>	Start import: %s, size=%d
+005ff818	<no-function>	read macro: %s, id=%x, size=%d
+005ff858	<no-function>	    add macro: %s
+005ff87c	<no-function>	%s.bcf
+005ff88c	<no-function>	Create profile failed.
+005ff8bc	<no-function>	Start export: %s, size=%d
+005ff8f0	<no-function>	write macro: %s, id=%x, size=%d
+005ff930	<no-function>	progress_nr.png
+005ff950	<no-function>	progress_ov.png
+005ff970	<no-function>	http://%s/queryprofile.php?username=%s&profile=%s
+005ff9a4	<no-function>	exist
+005ff9ac	<no-function>	http://%s/submitprofile.php
+005ff9d0	<no-function>	device
+005ff9d8	<no-function>	data_to_text failed
+005ffa00	<no-function>	Error: szData too small
+005ffa38	<no-function>	CRC err: 0x01
+005ffa54	<no-function>	CRC err: 0x02
+005ffa74	<no-function>	Upload md5=%s
+005ffa84	<no-function>	Start submit profile ------
+005ffabc	<no-function>	submit success
+005ffad0	<no-function>	Error: CalMacroSize not implemented
+005ffb18	<no-function>	CKeyDlg::OnButtonSet pNew->dwFunID=%X, pNew->dwMacroID=%X
+005ffb90	<no-function>	CKeyDlg::OnButtonSet pMacro=%X(%s)
+005ffbd8	<no-function>	combo
+005ffbe4	<no-function>	key_shift
+005ffbf8	<no-function>	key_shift_r
+005ffc10	<no-function>	key_ctrl
+005ffc24	<no-function>	key_ctrl_r
+005ffc3c	<no-function>	key_alt
+005ffc4c	<no-function>	key_alt_r
+005ffc60	<no-function>	key_win
+005ffc70	<no-function>	key_fn
+005ffc80	<no-function>	key_fn2
+005ffc90	<no-function>	key_mul
+005ffca0	<no-function>	key_add
+005ffcb0	<no-function>	key_sub
+005ffcc0	<no-function>	key_decimal
+005ffcd8	<no-function>	key_div
+005ffce8	<no-function>	key_k45
+005ffcf8	<no-function>	key_oem4
+005ffd0c	<no-function>	key_oem6
+005ffd20	<no-function>	key_oem5
+005ffd34	<no-function>	key_oem1
+005ffd48	<no-function>	key_oem7
+005ffd5c	<no-function>	key_comma
+005ffd70	<no-function>	key_period
+005ffd88	<no-function>	key_oem2
+005ffd9c	<no-function>	key_oem3
+005ffdb0	<no-function>	key_plus
+005ffdc4	<no-function>	key_minus
+005ffdd8	<no-function>	key_f%d
+005ffde8	<no-function>	key_
+005ffdf4	<no-function>	media_player
+005ffe10	<no-function>	media_pause
+005ffe28	<no-function>	media_volup
+005ffe40	<no-function>	media_voldn
+005ffe58	<no-function>	media_explorer
+005ffe78	<no-function>	media_task
+005ffe90	<no-function>	disable
+005ffea0	<no-function>	ms_dbclick
+005ffeb8	<no-function>	ms_rdbclick
+005ffed0	<no-function>	ms_su
+005ffedc	<no-function>	ms_sd
+005ffee8	<no-function>	macro
+005ffef4	<no-function>	%sskins\funico\%s.png
+00600088	<no-function>	CKeyMarkDlg
+00600280	<no-function>	CKeyMSDlg
+0060036e	<no-function>	`%sskins\Mouse\number%d.png
+006003a8	<no-function>	%s\mouse_nr.png
+006003c8	<no-function>	%s\mouse_dn.png
+006003e8	<no-function>	Mouse
+006003f4	<no-function>	DPI +
+00600400	<no-function>	DPI -
+0060040c	<no-function>	Wrong Ex Key Index
+006005a0	<no-function>	CLedDlg
+006006d6	<no-function>	`%s\Text\%s\led.xml
+00600700	<no-function>	tc_kb_led%d
+00600718	<no-function>	config
+00600734	<no-function>	paoma_unit.txt
+00600754	<no-function>	stream_unit.txt
+00600774	<no-function>	fixon_unit.txt
+00600794	<no-function>	breath_unit.txt
+006007b4	<no-function>	rain_unit.txt
+006007d0	<no-function>	wheel_unit.txt
+006007f0	<no-function>	shadow_unit.txt
+00600810	<no-function>	perfect_unit.txt
+00600834	<no-function>	windmill_unit.txt
+00600858	<no-function>	flower_unit.txt
+00600878	<no-function>	rotate_unit.txt
+00600898	<no-function>	%s\Cartoon
+006008b0	<no-function>	%sCartoon\%d
+006008cc	<no-function>	%s\%s
+0060097c	<no-function>	Init_KeyUnit Error
+00600b10	<no-function>	CLedKBSideDlg
+00600d70	<no-function>	CLedMSDlg
+00600e5e	<no-function>	`add_nr.png
+00600e78	<no-function>	add_ov.png
+00600e90	<no-function>	sub_nr.png
+00600ea8	<no-function>	sub_ov.png
+00600ec0	<no-function>	lightup_dn.png
+00600ee0	<no-function>	lightup_nr.png
+00600f00	<no-function>	lightdown_dn.png
+00600f24	<no-function>	lightdown_nr.png
+006010b0	<no-function>	edit
+006010bc	<no-function>	CLogOnDlg
+0060117e	<no-function>	`user_logon: psd is not md5
+006011b8	<no-function>	http://%s/logon.php
+006011cc	<no-function>	Start logon ------
+006011f4	<no-function>	logon success
+00601204	<no-function>	Logon success
+00601388	<no-function>	%sskins\
+006013a4	<no-function>	CMacEditDlg
+006014f8	<no-function>	%d%%
+00601504	<no-function>	%sskins\other\action1.png
+00601538	<no-function>	%sskins\other\action2.png
+0060156c	<no-function>	%sskins\other\time.png
+0060159c	<no-function>	record_nr.png
+006015b8	<no-function>	stop_nr.png
+006015d0	<no-function>	icon18x18\del_nr.png
+006015fc	<no-function>	bracket_left_ov.png
+00601624	<no-function>	combo3_nr.png
+00601640	<no-function>	Tips: Key %s(0x%x) has no release action
+00601800	<no-function>	CMacroDlg
+006018ee	<no-function>	`macro_nr.png
+0060190c	<no-function>	main_nr.png
+00601924	<no-function>	macico.png
+0060193c	<no-function>	maclst.png
+00601954	<no-function>	share_nr.png
+00601970	<no-function>	edit_nr.png
+00601988	<no-function>	copy_nr.png
+006019a0	<no-function>	copy_ov.png
+006019b8	<no-function>	%sskins\other\mac_keyup.png
+006019f0	<no-function>	%sskins\other\mac_keydn.png
+00601a28	<no-function>	The maximum directory depth has been reached
+00601a84	<no-function>	%s - copy
+00601a98	<no-function>	OnSave: pMacroToEdit=%x(id=%x), pNew=%x(id=%x)
+00601af8	<no-function>	OnSave: free %x
+00601b18	<no-function>	mcr(*.mcr)|*.mcr|
+00601b3c	<no-function>	.mcr
+00601b48	<no-function>	Export failed, error=%d
+00601b78	<no-function>	*.mcr
+00601b84	<no-function>	Open macro file error=0x%x
+00601bbc	<no-function>	Read macro file error=0x%x
+00601bf4	<no-function>	This is not a macro file
+00601c38	<no-function>	MakeSureFolderExist: create dir %s, err=0x%x
+00601e18	<no-function>	UTF-16LE
+00601e38	<no-function>	0900936iso-ir-581028598iso_8859-81201255iso_8859-8-i1200932cswindows31j
+00601ec8	<no-function>	1028597iso_8859-7
+00601eec	<no-function>	1028596iso_8859-6
+00601f10	<no-function>	1028595iso_8859-5
+00601f38	<no-function>	1028594iso_8859-40851932x-euc-jp1128605iso-8859-15
+00601fa0	<no-function>	1028593iso_8859-3
+00601fc8	<no-function>	1028592iso_8859-20628605latin90701200unicode
+00602024	<no-function>	1028591iso_8859-10601252x-ansi
+00602068	<no-function>	1110006x-mac-greek1100874iso-8859-11
+006020b4	<no-function>	1828595csisolatincyrillic
+006020e8	<no-function>	0628599latin5
+00602108	<no-function>	0628594latin41420423x-ebcdic-greek1901140x-ebcdic-cp-us-euro
+00602184	<no-function>	0628593latin3
+006021a0	<no-function>	0628592latin20851936x-euc-cn1120285x-ebcdic-uk0565001utf-8
+00602218	<no-function>	0700936chinese0565000utf-70720127csascii0628591latin1
+00602284	<no-function>	0600949euc-kr
+006022a0	<no-function>	0628597greek81201258windows-1258
+006022e8	<no-function>	1201257windows-12570738598logical
+00602330	<no-function>	1201256windows-12560651932euc-jp
+00602374	<no-function>	1201255windows-1255
+006023a0	<no-function>	2701143x-ebcdic-finlandsweden-euro1201254windows-1254
+00602410	<no-function>	0801251x-cp12511201253windows-12531400949ks_c_5601_19871528599iso_8859-9:1989
+006024b0	<no-function>	0801250x-cp12501201252windows-1252
+006024f8	<no-function>	1201251windows-12511528598iso_8859-8:1988
+00602550	<no-function>	1201250windows-12502301149x-ebcdic-icelandic-euro
+006025b8	<no-function>	0600950csbig51528597iso_8859-7:19872001147x-ebcdic-france-euro
+00602638	<no-function>	1528596iso_8859-6:19871528595iso_8859-5:19882220277x-ebcdic-denmarknorway
+006026d0	<no-function>	1528594iso_8859-4:19880651936euc-cn
+00602718	<no-function>	1528593iso_8859-3:19880520105x-ia5
+00602760	<no-function>	1000936csgb2312802450930x-ebcdic-japaneseandkana
+006027c4	<no-function>	1528592iso_8859-2:1987
+006027f8	<no-function>	0601256cp12561052936hz-gb-23121528591iso_8859-1:1987
+00602868	<no-function>	0810029x-mac-ce0900949ks_c_5601
+006028a8	<no-function>	0601026cp1026
+006028c8	<no-function>	1500936csiso58gb2312800828595cyrillic
+00602918	<no-function>	0720866cskoi8r1528597csisolatingreek
+00602968	<no-function>	2101143x-ebcdic-germany-euro1210003x-mac-korean
+006029c8	<no-function>	1210005x-mac-hebrew
+006029f0	<no-function>	0600936gb2312
+00602a10	<no-function>	0900936gb2312-801028599iso-8859-91101201unicodefffe
+00602a78	<no-function>	1238598iso-8859-8-i1028598iso-8859-81520424x-ebcdic-hebrew1650222_iso-2022-jp$sio
+00602b20	<no-function>	1028597iso-8859-73250933x-ebcdic-koreanandkoreanextended
+00602b94	<no-function>	1028596iso-8859-6
+00602bb8	<no-function>	1028595iso-8859-5
+00602be0	<no-function>	1028594iso-8859-40528593csiso1565000csunicode11utf7
+00602c48	<no-function>	0828597elot_9280800932ms_kanji1028593iso-8859-30801252iso-ir-6
+00602cc8	<no-function>	1028592iso-8859-21310081x-mac-turkish
+00602d14	<no-function>	1028591iso-8859-1
+00602d38	<no-function>	0621866koi8-u
+00602d58	<no-function>	2220278x-ebcdic-finlandsweden2850933x-ebcdic-japaneseanduscanada1620905x-ebcdic-turkish1150225iso-2022-kr
+00602e30	<no-function>	0800950x-x-big51510079x-mac-icelandic
+00602e7c	<no-function>	0620866koi8-r
+00602e98	<no-function>	1150220iso-2022-jp1100874windows-874
+00602ee4	<no-function>	1820873x-ebcdic-icelandic
+00602f18	<no-function>	1501143x-ebcdic-france1200037ebcdic-cp-us1520108x-ia5-norwegian
+00602f98	<no-function>	1128595csisolatin50700874dos-874
+00602fe0	<no-function>	1128594csisolatin40700874tis-620
+00603024	<no-function>	1100437codepage4370201252us
+00603060	<no-function>	1128592csisolatin20700862dos-862
+006030a8	<no-function>	0420866koi82520290x-ebcdic-japanesekatakana1400949ks_c_5601-1989
+00603130	<no-function>	1400949ks_c_5601-19871965001x-unicode-2-0-utf-8
+00603190	<no-function>	0528597greek1965000x-unicode-2-0-utf-7
+006031e0	<no-function>	1210004x-mac-arabic0500866cp8660700949ksc5601
+0060323c	<no-function>	0700720dos-720
+0060325c	<no-function>	0528591cp819
+00603278	<no-function>	1500420x-ebcdic-arabic
+006032a8	<no-function>	0520127ascii0520127cp367
+006032dc	<no-function>	0500852cp8520500870cp870
+00603310	<no-function>	1320000x-chinese-cns0500437cp437
+00603354	<no-function>	1628598csisolatinhebrew
+00603388	<no-function>	0829001x-europa1620273x-ebcdic-germany
+006033d8	<no-function>	1951932cseucpkdfmtjapanese0501361johab0910000macintosh
+00603448	<no-function>	1057007x-iscii-or1150225csiso2022kr
+00603490	<no-function>	4551932extended_unix_code_packed_format_for_japanese0900932shift_jis
+00603520	<no-function>	1765001unicode-1-1-utf-81765001unicode-2-0-utf-8
+00603588	<no-function>	1150221csiso2022jp1765000unicode-1-1-utf-7
+006035e0	<no-function>	0500775cp5000628598visual3321025x-ebcdic-cyrillicserbianbulgarian
+00603668	<no-function>	0400950big52650935x-ebcdic-simplifiedchinese1057010x-iscii-gu
+006036e8	<no-function>	1057005x-iscii-te1300949csksc56011987
+00603734	<no-function>	0800936gb2312800721866koi8-ru
+00603770	<no-function>	1000932x-ms-cp932
+00603794	<no-function>	1057004x-iscii-ta
+006037b8	<no-function>	2320833x-ebcdic-koreanextended1057006x-iscii-as
+00603818	<no-function>	1220106x-ia5-german
+00603840	<no-function>	0928592iso8859-21057011x-iscii-pa1000949iso-ir-1490820127us-ascii
+006038c8	<no-function>	1901144x-ebcdic-italy-euro1028599iso-ir-1480928591iso8859-1
+00603940	<no-function>	1028598iso-ir-138
+00603968	<no-function>	1000936gb_2312-801057009x-iscii-ma1128605iso_8859-15
+006039d8	<no-function>	1028596iso-ir-1272420880x-ebcdic-cyrillicrussian1028593iso-ir-109
+00603a60	<no-function>	1028595iso-ir-1440520866koi8r1028597iso-ir-1261057008x-iscii-ka
+00603ae0	<no-function>	1628596csisolatinarabic1710008x-mac-chinesesimp
+00603b40	<no-function>	1057002x-iscii-de0600949korean
+00603b80	<no-function>	1901145x-ebcdic-spain-euro1620127iso_646.irv:1991
+00603be4	<no-function>	1057003x-iscii-be
+00603c08	<no-function>	0628598hebrew
+00603c28	<no-function>	0800708asmo-7081028594iso-ir-1101028592iso-ir-101
+00603c8c	<no-function>	1028591iso-ir-100
+00603cb0	<no-function>	1320838x-ebcdic-thai
+00603ce0	<no-function>	2000875x-ebcdic-greekmodern3350939x-ebcdic-japaneseandjapaneselatin0601200utf-16
+00603d88	<no-function>	0551932x-euc1250221_iso-2022-jp1000932csshiftjis
+00603dec	<no-function>	0500437cspc8
+00603e08	<no-function>	0600869ibm869
+00603e24	<no-function>	1710002x-mac-chinesetrad
+00603e58	<no-function>	0600866ibm8662750937x-ebcdic-traditionalchinese0600857ibm8571020127iso-ir-6us
+00603ef4	<no-function>	0600775ibm775
+00603f10	<no-function>	1410007x-mac-cyrillic1601146x-ebcdic-uk-euro1320107x-ia5-swedish0628591ibm819
+00603fb0	<no-function>	1420002x-chinese-eten0320866koi0600737ibm737
+0060400c	<no-function>	0620127ibm367
+00604028	<no-function>	0600852ibm8520600861ibm861
+00604060	<no-function>	0800949ksc_56010600437ibm437
+0060409c	<no-function>	0600850ibm850
+006040b8	<no-function>	0920127iso646-us
+006040dc	<no-function>	0800936csgb23120228605l9
+00604110	<no-function>	0700950cn-big50900932shift-jis
+00604150	<no-function>	0228595l5
+00604168	<no-function>	0628596arabic0228594l42701142x-ebcdic-denmarknorway-euro
+006041dc	<no-function>	1420280x-ebcdic-italy0228593l3
+0060421c	<no-function>	0228592l20300936gbk0300437437
+00604258	<no-function>	0228591l1
+0060426c	<no-function>	0600932x-sjis
+00604288	<no-function>	0500936cn-gb0828597ecma-118
+006042c0	<no-function>	1410001x-mac-japanese
+006042f0	<no-function>	0751949cseuckr1420127ansi_x3.4-19681420127ansi_x3.4-1986
+00604368	<no-function>	0828596ecma-1141420284x-ebcdic-spain
+006043b8	<no-function>	2701148x-ebcdic-international-euro1028599iso_8859-9
+00604420	<no-function>	68240permil
+00604438	<no-function>	50913alpha50202ecirc70933upsilon50945alpha50234ecirc70965upsilon
+006044c0	<no-function>	60218uacute69829hearts60250uacute
+00604504	<no-function>	60352scaron60353scaron
+00604538	<no-function>	50915gamma60190frac3450947gamma58465image58730radic
+006045a0	<no-function>	50198aelig50194acirc60210ograve50226acirc50230aelig60242ograve
+00604620	<no-function>	50184cedil60188frac14
+00604650	<no-function>	60211oacute60213otilde60189frac1260183middot60243oacute60245otilde
+006046d8	<no-function>	60209ntilde68704forall58711nabla60241ntilde69824spades
+00604748	<no-function>	60166brvbar
+00604760	<no-function>	60204igrave68230hellip60236igrave
+006047a4	<no-function>	60205iacute60237iacute
+006047d4	<no-function>	60200egrave60232egrave
+00604804	<no-function>	70917epsilon70949epsilon
+00604838	<no-function>	60201eacute60233eacute60962sigmaf
+0060487c	<no-function>	60192agrave60224agrave
+006048b0	<no-function>	70927omicron60247divide70959omicron
+006048f8	<no-function>	60193aacute60195atilde60225aacute60227atilde
+00604954	<no-function>	78501alefsym
+00604970	<no-function>	80977thetasym
+0060498c	<no-function>	68225dagger68224dagger
+006049bc	<no-function>	20925nu20957nu
+006049dc	<no-function>	20924mu20956mu
+006049fc	<no-function>	20926xi28744or20958xi
+00604a28	<no-function>	20060lt
+00604a38	<no-function>	60199ccedil60231ccedil
+00604a68	<no-function>	60923lambda20062gt60955lambda
+00604aa4	<no-function>	20928pi20960pi38205zwj
+00604ad4	<no-function>	28715ni
+00604ae4	<no-function>	38835sup
+00604af8	<no-function>	39674loz28800ne38721sum
+00604b28	<no-function>	30173shy
+00604b3c	<no-function>	28804le
+00604b4c	<no-function>	30172not
+00604b60	<no-function>	30982piv
+00604b74	<no-function>	28805ge30168uml
+00604b94	<no-function>	30936psi30968psi30165yen
+00604bc8	<no-function>	38747int38206lrm38207rlm
+00604bfc	<no-function>	30932tau38834sub30964tau
+00604c30	<no-function>	30929rho30961rho38764sim
+00604c64	<no-function>	38746cup68756there4
+00604c8c	<no-function>	40034quot48204zwnj
+00604cb4	<no-function>	40376yuml40255yuml
+00604ce0	<no-function>	30208eth30934phi40220uuml30240eth30966phi40252uuml
+00604d48	<no-function>	48733prop
+00604d5c	<no-function>	30038amp30174reg
+00604d80	<no-function>	40214ouml40246ouml48839supe
+00604db8	<no-function>	30919eta30951eta
+00604ddc	<no-function>	40169copy48364euro
+00604e04	<no-function>	48901sdot48657uarr48593uarr
+00604e3c	<no-function>	38736ang48836nsub58217rsquo
+00604e78	<no-function>	40207iuml40239iuml48706part48869perp48658rarr48594rarr
+00604ee8	<no-function>	30935chi38745cap30967chi48194ensp
+00604f2c	<no-function>	38743and48195emsp48719prod
+00604f64	<no-function>	40918zeta40950zeta
+00604f90	<no-function>	40203euml40039apos40235euml48712isin40160nbsp
+00604fec	<no-function>	30176deg58216lsquo40186ordm
+00605024	<no-function>	48656larr48592larr58853oplus
+00605060	<no-function>	40196auml40228auml48226bull40167sect48838sube
+006050c0	<no-function>	40921iota58709empty48660harr48596harr40953iota
+00605120	<no-function>	58707exist40170ordf
+00605148	<no-function>	40162cent58722minus
+00605170	<no-function>	50222thorn48659darr48595darr40402fnof58221rdquo50254thorn
+006051e8	<no-function>	58776asymp58801equiv49002rang58218sbquo
+00605238	<no-function>	48773cong50223szlig50978upsih
+00605274	<no-function>	58713notin50187raquo
+006052a0	<no-function>	40182para50163pound48476real
+006052dc	<no-function>	58220ldquo40175macr
+00605304	<no-function>	49001lang
+00605318	<no-function>	40710circ
+0060532c	<no-function>	50171laquo50215times
+00605358	<no-function>	40914beta40946beta
+00605380	<no-function>	58243prime60177plusmn58242prime
+006053c0	<no-function>	58222bdquo
+006053d8	<no-function>	58629crarr50181micro
+00605408	<no-function>	59827clubs60191iquest68250rsaquo
+0060544c	<no-function>	58260frasl68727lowast
+00605478	<no-function>	58254oline
+00605490	<no-function>	50920theta50219ucirc50952theta50251ucirc
+006054e4	<no-function>	50161iexcl
+006054fc	<no-function>	58734infin68201thinsp
+00605528	<no-function>	68249lsaquo
+00605540	<no-function>	50180acute68971rfloor50732tilde
+00605580	<no-function>	50197aring50931sigma50229aring50963sigma
+006055d8	<no-function>	50338oelig50212ocirc50244ocirc50339oelig58482trade
+00605640	<no-function>	68855otimes58969rceil
+0060566c	<no-function>	59830diams58211ndash
+00605698	<no-function>	50922kappa60164curren50954kappa58212mdash40179sup3
+00605700	<no-function>	68970lfloor40178sup2
+0060572c	<no-function>	40185sup1
+00605740	<no-function>	50916delta50206icirc50948delta50238icirc68472weierp
+006057a8	<no-function>	50937omega60221yacute58968lceil50969omega60253yacute
+00605818	<no-function>	60216oslash60217ugrave60248oslash60249ugrave
+00605874	<no-function>	 =/[]
+00605880	<no-function>	ANSI 
+0060588c	<no-function>	UTF-8
+006058a0	<no-function>	encoding
+006058b4	<no-function>	head
+006058c0	<no-function>	html
+006058cc	<no-function>	meta
+006058d8	<no-function>	http-equiv
+006058f0	<no-function>	Content-Type
+0060590c	<no-function>	content
+0060591c	<no-function>	charset
+00605930	<no-function>	Root element has sibling
+00605964	<no-function>	No root element
+00605984	<no-function>	Empty document
+006059a4	<no-function>	No start tag for end tag '
+006059dc	<no-function>	' at offset 
+006059f8	<no-function>	End tag '
+00605a0c	<no-function>	 does not match start tag '
+00605a44	<no-function>	Element '
+00605a58	<no-function>	 not ended
+00605a70	<no-function>	 	 
+00605a7c	<no-function>	 	 <>=\/?!"';
+00605aa4	<no-function>	Doctype
+00605ab4	<no-function>	Element tag
+00605acc	<no-function>	Element end tag
+00605aec	<no-function>	CDATA Section
+00605b08	<no-function>	Processing instruction
+00605b38	<no-function>	Comment
+00605b48	<no-function>	 at offset 
+00605b60	<no-function>	 unterminated
+00605b7c	<no-function>	 	 />
+00605b8c	<no-function>	 	 '"
+00605bac	<no-function>	Incorrect 
+00605bc4	<no-function>	tag name character
+00605bf4	<no-function>	! tag
+00605c08	<no-function>	comment tag
+00605c2c	<no-function>	 	 >
+00605c38	<no-function>	= 	 >/?
+00605c54	<no-function>	UTF-32
+00605c7c	<no-function>	UTF-16
+00605c8c	<no-function>	 BOM +
+00605c9c	<no-function>	length %d 
+00605cb4	<no-function>	(%d nulls removed) 
+00605cdc	<no-function>	endian swap 
+00605cf8	<no-function>	0 length 
+00605d0c	<no-function>	(used UTF-8 detection) 
+00605d3c	<no-function>	to %d wide chars 
+00605d60	<no-function>	CMenuDlg
+00605fc0	<no-function>	Control Panel\Desktop
+00605fec	<no-function>	CMsgDlg
+006060d6	<no-function>	`msg_nr.png
+006060f0	<no-function>	Check_dn.png
+0060610c	<no-function>	Check_nr.png
+00606130	<no-function>	L-Ctrl
+00606140	<no-function>	L-Alt
+0060614c	<no-function>	L-Shift
+0060615c	<no-function>	L-Win
+00606168	<no-function>	R-Ctrl
+00606178	<no-function>	R-Alt
+00606184	<no-function>	R-Shift
+00606194	<no-function>	R-Win
+006061a0	<no-function>	Info
+006063f6	<no-function>	`m_nItemNum<=0
+00606414	<no-function>	Scale num too much
+00606584	<no-function>	CMusicDlg
+00606690	<no-function>	%2.1f
+0060669c	<no-function>	tc_music_mode%d
+006066bc	<no-function>	%sskins\audio_bar.png
+006066e8	<no-function>	sw_dn.png
+006066fc	<no-function>	sw_nr.png
+00606710	<no-function>	CMusicDlg::StartMusic bStart=%d
+006068b8	<no-function>	CMyEdit
+00606e24	<no-function>	tc_config
+00606e38	<no-function>	tc_exit
+00606e48	<no-function>	tc_restore
+00606e60	<no-function>	tc_web
+00606e70	<no-function>	tc_ok
+00606e7c	<no-function>	tc_cancel
+00606e90	<no-function>	tc_apply
+00606ea4	<no-function>	tc_tm
+00606eb0	<no-function>	tc_debounce_tips
+00606ed4	<no-function>	tc_tap_tips
+00606eec	<no-function>	tc_slow
+00606efc	<no-function>	tc_fast
+00606f0c	<no-function>	tc_macro_msg1
+00606f28	<no-function>	tc_macro_msg2
+00606f44	<no-function>	tc_macro_msg3
+00606f60	<no-function>	tc_macro_msg4
+00606f7c	<no-function>	tc_macro_msg5
+00606f98	<no-function>	tc_macro_msg6
+00606fb4	<no-function>	tc_macro_msg7
+00606fd0	<no-function>	tc_macro_msg8
+00606fec	<no-function>	tc_macro_msg9
+00607008	<no-function>	tc_macro_msg10
+00607028	<no-function>	tc_macro_msg11
+00607048	<no-function>	tc_macro_msg12
+00607068	<no-function>	tc_macro_msg13
+00607088	<no-function>	tc_macro_msg14
+006070a8	<no-function>	tc_macro_msg15
+006070c8	<no-function>	tc_macro_msg16
+006070e8	<no-function>	tc_macro_msg17
+00607108	<no-function>	tc_macro_msg18
+00607128	<no-function>	tc_macro_msg19
+00607148	<no-function>	tc_macro_msg20
+00607168	<no-function>	tc_macro_msg21
+00607188	<no-function>	tc_macro_msg22
+006071a8	<no-function>	tc_macro_msg23
+006071c8	<no-function>	tc_macro_msg24
+006071e8	<no-function>	tc_macro_msg25
+00607208	<no-function>	tc_msfun
+0060721c	<no-function>	tc_click
+00607230	<no-function>	tc_menu
+00607240	<no-function>	tc_middle
+00607254	<no-function>	tc_forward
+0060726c	<no-function>	tc_back
+0060727c	<no-function>	tc_dbclick
+00607294	<no-function>	tc_rdbclick
+006072ac	<no-function>	tc_scrollup
+006072c4	<no-function>	tc_scrolldown
+006072e0	<no-function>	tc_tilt_l
+006072f4	<no-function>	tc_tilt_r
+00607308	<no-function>	tc_mac_def
+00607320	<no-function>	tc_key_off
+00607338	<no-function>	tc_PL
+00607344	<no-function>	tc_stop
+00607354	<no-function>	tc_pre_media
+00607370	<no-function>	tc_next_media
+0060738c	<no-function>	tc_vol_up
+006073a0	<no-function>	tc_vol_dw
+006073b4	<no-function>	tc_mute
+006073c4	<no-function>	tc_briup
+006073d8	<no-function>	tc_bridn
+006073ec	<no-function>	tc_kbmedia_mail
+0060740c	<no-function>	tc_kbmedia_main
+0060742c	<no-function>	tc_kbmedia_explore
+00607454	<no-function>	tc_kbmedia_cal
+00607474	<no-function>	tc_kbmedia_favor
+00607498	<no-function>	tc_kbmedia_msel
+006074b8	<no-function>	tc_msg%d
+006074cc	<no-function>	Canceling
+006074e0	<no-function>	The device responds slowly and may have wireless interference. Please keep the keyboard and receiver as close as possible.
+006075d8	<no-function>	tc_ms%d
+006075e8	<no-function>	tc_ms_led%d
+00607600	<no-function>	tc_kb%d
+00607610	<no-function>	tc_update%d
+00607628	<no-function>	tc_kb_side_led%d
+0060764c	<no-function>	tc_kb_side%d
+00607668	<no-function>	tc_game%d
+0060767c	<no-function>	tc_yun%d
+00607690	<no-function>	tc_cmd%d
+006076a4	<no-function>	tc_music%d
+006076bc	<no-function>	tc_ex%d
+006076cc	<no-function>	tc_sf%d
+006076dc	<no-function>	tc_screen%d
+006076f4	<no-function>	tc_vkb%d
+00607708	<no-function>	tc_navi_tip%d
+00607724	<no-function>	tc_layer_tip%d
+00607744	<no-function>	CNotifyDlg
+00607806	<no-function>	`notify.png
+006079be	<no-function>	`open skn file err
+006079e4	<no-function>	Error: nOffset=%d, nSize=%d
+00607a1c	<no-function>	%sskins/mak.skn
+00607a40	<no-function>	IfMatch: szText=%s, tc_title=%s
+00607a80	<no-function>	IfMatch return 0
+00607aa8	<no-function>	Send WM_SHOWDRV to(%s), hWnd=0x%x
+00607af0	<no-function>	Local AppWizard-Generated Applications
+00607b40	<no-function>	--------------------------------------------------
+00607ba8	<no-function>	Launch %04d-%d-%d %d:%d, ver=%x, AppTitle=%s
+00607c04	<no-function>	nArgs=%d
+00607c18	<no-function>	szArglist[1]=%s
+00607c38	<no-function>	CreateMutex m_hMutex=0, Err=%d
+00607c78	<no-function>	CreateMutex Err=%d
+00607ca0	<no-function>	Driver exit
+00607db0	<no-function>	DestroyWindow
+00607dcc	<no-function>	OnExit
+00608026	<no-function>	`OnShowDrv: hWnd=%x
+00608050	<no-function>	LogOnThread: logon info is null
+00608090	<no-function>	appico.ico
+006080a8	<no-function>	Load Icon err=%x
+006080cc	<no-function>	menusub_ov.png
+006080ec	<no-function>	menusub_nr.png
+0060810c	<no-function>	menu_ov.png
+00608124	<no-function>	menu_nr.png
+00608140	<no-function>	xScreen=%d, yScreen=%d, hWnd=0x%x
+00608188	<no-function>	Use font: %s, fontSize=%d,%d,%d,%d - %d,%d,%d,%d
+006081ec	<no-function>	OnInitDialog: nDevNum=%d
+00608220	<no-function>	Dev/kb folder not exist
+00608250	<no-function>	MyProgressDlg..
+00608270	<no-function>	Load skins failed.
+00608298	<no-function>	user.png
+006082ac	<no-function>	min_nr.png
+006082c4	<no-function>	min_ov.png
+006082e0	<no-function>	OnNewWirelessIN pNew=%x, name=%s
+00608340	<no-function>	OnNewDevice: pNew=%x, name=%s, mode=%s
+00608390	<no-function>	OnNewDevice: Create SettingDlg for %s
+006083dc	<no-function>	InitScreenParamThread start
+00608418	<no-function>	OnCurDevChanged: pDEV=%x, pDEV->pHidDev=%x
+00608470	<no-function>	OnCurDevChanged: %s, mode=%s
+00608650	<no-function>	OnDeviceChange(%s): %s
+00608680	<no-function>	OnDeviceChange: path_string_to_id err
+006086cc	<no-function>	OnDeviceChange: set timer
+00608700	<no-function>	FindDevTimer: m_nRetryFind=%d
+00608740	<no-function>	Device IN: vid=%04x, pid=%04x, name=%s
+00608790	<no-function>	FindDevTimer: KillTimer
+006087c0	<no-function>	OnTimer: TIMER_SYNC
+006087e8	<no-function>	OnTimer: name=%s, pDev=%x, pHidDev=%x, handle=%x, m_bSyncOK=%d, fw=%d
+00608878	<no-function>	OnTimer: name=%s, pDev=%x, pHidDev=0
+006088c4	<no-function>	OnTimer: send WM_NEW_WIRELESS
+00608900	<no-function>	open
+0060890c	<no-function>	%stext.xml
+00608924	<no-function>	%stext\%s\text.xml
+00608984	<no-function>	%slang.ini
+0060899c	<no-function>	LangIndex
+006089b0	<no-function>	OnDeviceBehavior: Buffer=%x %x, Dev=%s(%x), pCurDev=%x
+00608a20	<no-function>	nCurDpiLevel invalid, DpiLevel=%d
+00608a64	<no-function>	vector<T> too long
+00608be8	<no-function>	CPickMacroDlg
+00609028	<no-function>	CPreferencesDlg
+00609166	<no-function>	`%sskins\slider.png
+00609190	<no-function>	combo_nr.png
+006091ac	<no-function>	%s     %s
+006091c0	<no-function>	2.4G
+006091cc	<no-function>	%s     V%X.%X.%X    ( %s )
+00609204	<no-function>	%s     V%X.%X.%X
+00609228	<no-function>	%s     %d%%
+00609240	<no-function>	%d %s
+00609250	<no-function>	Update by user click: pHidDev->m_nVer=%x, pDev->nFwVerNeedToUpdate=%x
+006092dc	<no-function>	%s\%s.lnk
+006092f0	<no-function>	%sappico.ico
+00609314	<no-function>	Drv file size wrong= %d
+00609344	<no-function>	Fw file size wrong=%d
+00609370	<no-function>	UpdateThread: wrong param
+006093a8	<no-function>	UpdateThread: gVar.szUpdateDir is null
+006093f8	<no-function>	UpdateThread return
+00609420	<no-function>	UpdateThread Start, UpdateType=%d, UpdatByUserClick=%d....
+00609498	<no-function>	Start check driver
+006094c0	<no-function>	Local Drv Ver=0x%x, Net Drv Ver=0x%x
+0060950c	<no-function>	Driver need to update
+00609538	<no-function>	Download: %s
+00609554	<no-function>	Download DRV Err=0x%x 
+00609584	<no-function>	%s already exists
+006095a8	<no-function>	Err: bUpdateByLocal=1
+006095d4	<no-function>	Err: pParam->pDev->pHidDev=0
+00609610	<no-function>	Start check FW, nLocalFwVer=%x, szUID=%s
+00609664	<no-function>	no device need update
+00609690	<no-function>	device %d need update, inx=%d
+006096cc	<no-function>	Download FW Err=0x%x 
+006096f8	<no-function>	init_update_cfg
+00609718	<no-function>	update_version.xml
+00609740	<no-function>	http://120.79.152.79/update/
+0060977c	<no-function>	%s%s/%s
+0060978c	<no-function>	Download %s
+006097a4	<no-function>	url is not exist
+006097c8	<no-function>	not connect to inet
+006097f0	<no-function>	Download Err=0x%x
+00609814	<no-function>	Load XML Failed
+0060983c	<no-function>	version
+0060984c	<no-function>	file
+00609858	<no-function>	cfgUPD: nDrvVer=0x%x, szDrvUrl=%s
+006098b0	<no-function>	cfgUPD.Dev[%d]: nFwVer=0x%x, UID=%s, szUrl=%s
+0060990c	<no-function>	%s?ram=%d%d%d%d%d%d%d
+00609ad0	<no-function>	CProgressDlg
+00609bae	<no-function>	`CProgressDlg::OnCancelOK
+00609be4	<no-function>	ProgressDlg skin loss
+00609c10	<no-function>	CProgressDlg::DestroyWindow
+00609c48	<no-function>	CProgressDlg::OnSetPos = %d
+00609c80	<no-function>	CProgressDlg: cancel by user
+00609e28	<no-function>	Wrong rect num
+00609e48	<no-function>	Wrong POINT num
+00609e68	<no-function>	%s - %s
+00609e98	<no-function>	%s - %d
+00609ea8	<no-function>	Back
+00609ec4	<no-function>	Enter
+00609ed0	<no-function>	Pause
+00609edc	<no-function>	CapsLk
+00609ef4	<no-function>	Space
+00609f00	<no-function>	PgUp
+00609f0c	<no-function>	PgDn
+00609f20	<no-function>	Home
+00609f2c	<no-function>	Left
+00609f40	<no-function>	Right
+00609f4c	<no-function>	Down
+00609f58	<no-function>	Select
+00609f68	<no-function>	Print
+00609f84	<no-function>	Help
+00609f90	<no-function>	Num0
+00609f9c	<no-function>	Num1
+00609fa8	<no-function>	Num2
+00609fb4	<no-function>	Num3
+00609fc0	<no-function>	Num4
+00609fcc	<no-function>	Num5
+00609fd8	<no-function>	Num6
+00609fe4	<no-function>	Num7
+00609ff0	<no-function>	Num8
+00609ffc	<no-function>	Num9
+0060a008	<no-function>	Num *
+0060a014	<no-function>	Num +
+0060a020	<no-function>	Num -
+0060a02c	<no-function>	Num .
+0060a038	<no-function>	Num /
+0060a0ac	<no-function>	NumLk
+0060a0b8	<no-function>	ScrollLk
+0060a0cc	<no-function>	L_Shift
+0060a0dc	<no-function>	R_Shift
+0060a0ec	<no-function>	L_Ctrl
+0060a0fc	<no-function>	R_Ctrl
+0060a10c	<no-function>	L_Alt
+0060a118	<no-function>	R_Alt
+0060a124	<no-function>	L_Win
+0060a130	<no-function>	R_Win
+0060a154	<no-function>	k151
+0060a160	<no-function>	k150
+0060a1e0	<no-function>	NewSmallPngButton3. file %s not exist
+0060a22c	<no-function>	Warrning
+0060a240	<no-function>	%s\%s\
+0060a250	<no-function>	Mk AppData=%s
+0060a26c	<no-function>	CreateDirectory err=%d
+0060a29c	<no-function>	User32.dll
+0060a2b4	<no-function>	SetProcessDPIAware
+0060a2c8	<no-function>	%s\Update.exe
+0060a2e4	<no-function>	%sscreen_img%d.png
+0060a30c	<no-function>	runas
+0060a324	<no-function>	CRegisterDlg
+0060a3e8	<no-function>	http://%s/register.php
+0060a410	<no-function>	email
+0060a41c	<no-function>	woman
+0060a42c	<no-function>	Start register ------
+0060a458	<no-function>	register success
+0060a46c	<no-function>	register success
+0060a490	<no-function>	username exist
+0060a4a0	<no-function>	email exist
+0060a818	<no-function>	CSettingKBDlg
+0060a828	<no-function>	CSettingDlg
+0060a856	<no-function>	^%sprofile.dct
+0060a90e	<no-function>	`SysParam_Thread start:  nSendSysParam=%d
+0060a964	<no-function>	SysParam_Thread exit
+0060a990	<no-function>	File is not exist: %s
+0060a9c0	<no-function>	CSettingKBDlg: pHidDev->m_nVer=%x, pDev->nFwVerNeedToUpdate=%x, bWired=%d
+0060aa54	<no-function>	%s\keyimg.png
+0060aa70	<no-function>	load keyimg.png failed
+0060aaa0	<no-function>	%s\ledimg.png
+0060aabc	<no-function>	%sskins\other\kbico.png
+0060aaec	<no-function>	%sskins\icon18x18\ico1.png
+0060ab24	<no-function>	navi1_dn.png
+0060ab40	<no-function>	navi1_nr.png
+0060ab5c	<no-function>	navi2_dn.png
+0060ab78	<no-function>	navi2_nr.png
+0060ab94	<no-function>	navi3_dn.png
+0060abb0	<no-function>	navi3_nr.png
+0060abcc	<no-function>	navi6_dn.png
+0060abe8	<no-function>	navi6_nr.png
+0060ac04	<no-function>	navi5_dn.png
+0060ac20	<no-function>	navi5_nr.png
+0060ac3c	<no-function>	navi4_dn.png
+0060ac58	<no-function>	navi4_nr.png
+0060ac74	<no-function>	navi7_dn.png
+0060ac90	<no-function>	navi7_nr.png
+0060acac	<no-function>	navi9_dn.png
+0060acc8	<no-function>	navi9_nr.png
+0060ace4	<no-function>	navi8_dn.png
+0060ad00	<no-function>	navi8_nr.png
+0060b03c	<no-function>	CSettingMSDlg
+0060b0e6	<no-function>	`CSettingMSDlg: pHidDev->m_nVer=%x, pDev->nFwVerNeedToUpdate=%x, bWired=%d
+0060b17c	<no-function>	load mouse_nr.png failed
+0060b1b0	<no-function>	%sskins\other\msico.png
+0060b1e0	<no-function>	%sskins\navi50x50\navi9_nr.png
+0060b3a4	<no-function>	CShareDlg
+0060b44e	<no-function>	`%d / %d
+0060b460	<no-function>	querysharemacro.php?start=%d&range=%d
+0060b488	<no-function>	&order=%s
+0060b494	<no-function>	querysharemacro.php?uuid=%s
+0060b4b0	<no-function>	MyStrStrIA nCnt=%d
+0060b4d8	<no-function>	parsing err: 112
+0060b4fc	<no-function>	Reverse parsing failed
+0060b52c	<no-function>	Wrong MagicNumber: %x
+0060b558	<no-function>	data_to_text failed, md5
+0060b58c	<no-function>	MD5 unmatched
+0060b5a8	<no-function>	macro download err
+0060b5d0	<no-function>	convert record count err
+0060b604	<no-function>	can't find record count
+0060b634	<no-function>	username
+0060b648	<no-function>	text
+0060b654	<no-function>	software
+0060b668	<no-function>	uuid
+0060b674	<no-function>	download
+0060b7f8	<no-function>	CShareInfoDlg
+0060b8c0	<no-function>	%02x
+0060b8d4	<no-function>	text_to_data err, szNumber=%s
+0060b910	<no-function>	http://%s/submitmacro.php
+0060b934	<no-function>	software
+0060b940	<no-function>	Error: 0x0904
+0060b95c	<no-function>	uuid err
+0060b978	<no-function>	submit success
+0060bb10	<no-function>	Free node: id=%x, name=%s
+0060bb44	<no-function>	Free data: id=%x, name=%s
+0060bb78	<no-function>	mac.dct
+0060bb88	<no-function>	save_macro_to_file err=%d
+0060bbbc	<no-function>	save_node_list failed
+0060bbf0	<no-function>	Error Value: GaoshouKey[%d][%d]=0x%x
+0060bc3c	<no-function>	Open pro file err=%d
+0060bc68	<no-function>	Load pro: ReadFile err=%d
+0060bc9c	<no-function>	Save pro: CreateFile err=%d
+0060bcd4	<no-function>	Save pro: WriteFile err=%d
+0060bd0c	<no-function>	%sgSetting.dct
+0060bd2c	<no-function>	open gsetting file err=%d
+0060bd60	<no-function>	load gsetting: ReadFile err=%d
+0060bda0	<no-function>	save gsetting: CreateFile err=%d
+0060bde8	<no-function>	save gsetting: WriteFile err=%d
+0060be28	<no-function>	%sRegister.dct
+0060be48	<no-function>	open register file err=%d
+0060be7c	<no-function>	load register: ReadFile err=%d
+0060bec0	<no-function>	save register: WriteFile err=%d
+0060bf00	<no-function>	Delete
+0060bf10	<no-function>	NoRemove
+0060bf24	<no-function>	ForceRemove
+0060bf4c	<no-function>	CSysDlg
+0060c008	<no-function>	%d mm
+0060c01c	<no-function>	%x Hz
+0060c190	<no-function>	\Processor Information(_Total)\% Processor Utility
+0060c1f8	<no-function>	\Processor Information(_Total)\% Processor Time
+0060c258	<no-function>	CoCreateInstance Err, hr=%x
+0060c290	<no-function>	get_system_volume Err, hr=%x, pDevice=%x
+0060c2e8	<no-function>	get_system_volume Err, hr=%x, pEndpointVolume=%x
+0060c35c	<no-function>	CTipsDlg
+0060c436	<no-function>	`%s:  %s
+0060c5b0	<no-function>	CTreeCtrlEx
+0060ca10	<no-function>	CTreeCtrlExRk
+0060ca44	<no-function>	%s   %d
+0060cba8	<no-function>	CVkbDlg
+0060cc58	<no-function>	Comm
+0060cc64	<no-function>	Modify
+0060cc7c	<no-function>	Keypad
+0060cc8c	<no-function>	LShift
+0060cc9c	<no-function>	RShift
+0060ccac	<no-function>	LCtrl
+0060ccb8	<no-function>	RCtrl
+0060ccc4	<no-function>	LAlt
+0060ccd0	<no-function>	RAlt
+0060ccdc	<no-function>	LWin
+0060cce8	<no-function>	RWin
+0060ce60	<no-function>	CWelcomDlg
+0060cf06	<no-function>	`..........
+0060cf20	<no-function>	welcome.png
+0060d0de	<no-function>	Wrong text!
+0060d0f8	<no-function>	Wrong color value!
+0060d120	<no-function>	InitEffect_Rain: nUintNum>MAX_KEY_UNIT
+0060d170	<no-function>	ix=%d
+0060d180	<no-function>	Set light bar music data failed
+0060d1f0	<no-function>	caps
+0060d1fc	<no-function>	back
+0060d208	<no-function>	enter
+0060d214	<no-function>	space
+0060d220	<no-function>	space2
+0060d248	<no-function>	shift
+0060d254	<no-function>	ctrl
+0060d270	<no-function>	rshift
+0060d280	<no-function>	rctrl
+0060d28c	<no-function>	rwin
+0060d298	<no-function>	ralt
+0060d2a4	<no-function>	left
+0060d2b0	<no-function>	right
+0060d2c4	<no-function>	down
+0060d2e8	<no-function>	home
+0060d2fc	<no-function>	pgup
+0060d308	<no-function>	pgdn
+0060d314	<no-function>	print
+0060d320	<no-function>	scroll
+0060d330	<no-function>	pause
+0060d33c	<no-function>	numlock
+0060d34c	<no-function>	numenter
+0060d360	<no-function>	num1
+0060d36c	<no-function>	num2
+0060d378	<no-function>	num3
+0060d384	<no-function>	num4
+0060d390	<no-function>	num5
+0060d39c	<no-function>	num6
+0060d3a8	<no-function>	num7
+0060d3b4	<no-function>	num8
+0060d3c0	<no-function>	num9
+0060d3cc	<no-function>	num0
+0060d3d8	<no-function>	num-
+0060d3e4	<no-function>	num+
+0060d3f0	<no-function>	num*
+0060d3fc	<no-function>	num/
+0060d408	<no-function>	num.
+0060d424	<no-function>	player
+0060d434	<no-function>	playpause
+0060d448	<no-function>	stop
+0060d454	<no-function>	prev
+0060d460	<no-function>	next
+0060d46c	<no-function>	vol+
+0060d478	<no-function>	vol-
+0060d484	<no-function>	mute
+0060d498	<no-function>	mycomputer
+0060d4b0	<no-function>	screen+
+0060d4c0	<no-function>	screen-
+0060d500	<no-function>	k107
+0060d510	<no-function>	text_to_vk: wrong string=%ws, file=%s
+0060d55c	<no-function>	%s\ET
+0060d568	<no-function>	%sET\%d
+0060d578	<no-function>	%s\flower.txt
+0060d594	<no-function>	init_flower failed
+0060d5bc	<no-function>	%s\stream_h.txt
+0060d5dc	<no-function>	init_stream failed
+0060d604	<no-function>	%s\audiobar.txt
+0060d624	<no-function>	init_audiobar failed
+0060d650	<no-function>	%s\happy.txt
+0060d66c	<no-function>	Set music real data failed
+0060d6a4	<no-function>	 Color=%06x, Key=
+0060d6cc	<no-function>	Music: 
+0060d6dc	<no-function>	!!!!!!!!!!!nKIndex>200
+0060d70c	<no-function>	Music_Theard Exit
+0060d730	<no-function>	init_audiobar: Err, %s = %x
+0060d768	<no-function>	image/png
+0060d780	<no-function>	Audio device changed, Re StartRec
+0060d7c8	<no-function>	--------RecordAudioStream--------
+0060d810	<no-function>	GetDefaultAudioEndpoint Err, hr=%x, pDevice=%x
+0060d870	<no-function>	szDevID= %s
+0060d888	<no-function>	Get IAudioEndpointVolume Err, hr=%x
+0060d8d0	<no-function>	Activate Err, hr=%x
+0060d8f8	<no-function>	GetMixFormat Err, hr=%x
+0060d928	<no-function>	GetMixFormat: wFormatTag=0x%x, wBitsPerSample=%d, nSamplesPerSec=%d, nBlockAlign=%d, nAvgBytesPerSec=%d, nChannels=%d
+0060da14	<no-function>	AD_FLOAT
+0060da28	<no-function>	KSDATAFORMAT_SUBTYPE_PCM
+0060da5c	<no-function>	WAVE_FORMAT_PCM
+0060da7c	<no-function>	IsFormatSupported, hr=%x
+0060dab0	<no-function>	pwfxBackup: wFormatTag=0x%x, wBitsPerSample=%d, nSamplesPerSec=%d, nBlockAlign=%d, nAvgBytesPerSec=%d, nChannels=%d
+0060db98	<no-function>	AUDCLNT_E_UNSUPPORTED_FORMAT 0
+0060dbd8	<no-function>	After modify: wFormatTag=0x%x, wBitsPerSample=%d, nSamplesPerSec=%d, nBlockAlign=%d, nAvgBytesPerSec=%d, nChannels=%d
+0060dcc4	<no-function>	Initialize Err, hr=%x
+0060dcf0	<no-function>	AUDCLNT_E_UNSUPPORTED_FORMAT
+0060dd2c	<no-function>	Initialize 2 Err, hr=%x
+0060dd5c	<no-function>	AUDCLNT_E_UNSUPPORTED_FORMAT 2
+0060dd9c	<no-function>	E_INVALIDARG
+0060ddb8	<no-function>	AUDCLNT_E_SERVICE_NOT_RUNNING
+0060ddf4	<no-function>	GetBufferSize Err, hr=%x
+0060de28	<no-function>	GetService Err, hr=%x
+0060de54	<no-function>	GetDevicePeriod Err, hr=%x
+0060de8c	<no-function>	Start Err, hr=%x
+0060deb0	<no-function>	Start capture, nDataType=%d, nFFTSize=%d
+0060df04	<no-function>	GetNextPacketSize err, hr=0x%x
+0060df44	<no-function>	GetBuffer err, hr=0x%x
+0060df78	<no-function>	nAudioSize=%d, numFramesAvailable=%d
+0060dfc4	<no-function>	ReleaseBuffer err, hr=0x%x
+0060dffc	<no-function>	RecordAudioStream exit
+0060e02c	<no-function>	m_nNumSamples=%d is not 2^n
+0060e064	<no-function>	FFT::Compute
+0060e080	<no-function>	GetAudioData err, m_nNumSamples=%d, nChannels=%d, wBitsPerSample=%d
+0060e108	<no-function>	Invalid argument
+0060e11c	<no-function>	Number of samples must be power of 2
+0060e208	<no-function>	invalid vector<T> subscript
+0060e36c	<no-function>	ServiceThread_3632 Start...
+0060e3a4	<no-function>	hObject[1] is signal
+0060e3d0	<no-function>	WaitForMultipleObjects failed. err=%d
+0060e41c	<no-function>	ServiceThread ReadFile Err=%d
+0060e458	<no-function>	ServiceThread_3632 Exit
+0060e488	<no-function>	Read(3632): 
+0060e4a4	<no-function>	m_bOnline = %x
+0060e4c4	<no-function>	CDev3632::ClearHandle
+0060e4f0	<no-function>	CDev3632::FindHIDDevice for %s
+0060e530	<no-function>	FW Version=0x%x
+0060e550	<no-function>	CDev3632::AccessData param err, m_hDev=%x, nBytesToWrite=%d
+0060e5c8	<no-function>	CDev3632::AccessData Online=0, cmd=0x%x, package=%d, return
+0060e640	<no-function>	!! CDev3632::AccessData: send package %d err=0x%x
+0060e6a8	<no-function>	CDev3632::AccessData: abort by user, cmd=0x%x
+0060e708	<no-function>	!! CDev3632::AccessData: package index err, cmd=0x%x, send=0x%x, in=0x%x
+0060e7a0	<no-function>	CDev3632::AccessData Online=0, cmd=0x%x, package=%d, no more retry, return
+0060e838	<no-function>	timeout
+0060e850	<no-function>	!! CDev3632::AccessData: %s err, cmd=0x%x, package=%d
+0060e8c0	<no-function>	!! CDev3632::AccessData: read err, cmd=0x%x, nRet=%d, package=%d
+0060e948	<no-function>	CDev3632::SendCMD Online=0, cmd=0x%x, return
+0060e9a8	<no-function>	!!CDev3632::SendCMD: send err=0x%x, cmd=0x%x
+0060ea08	<no-function>	CDev3632::SendCMD: abort by user, cmd=0x%x
+0060ea60	<no-function>	CDev3632::SendCMD: get repeat package index, cmd=0x%x, index=%d, ignore it
+0060eaf8	<no-function>	CDev3632::SendCMD Online=0, cmd=0x%x, inx=%d, no more retry, return
+0060eb80	<no-function>	!!CDev3632::SendCMD: timeout, hDev=%x, cmd=0x%x, nPackages=%d, inx=%d, nCopys=%d
+0060ec28	<no-function>	!!CDev3632::SendCMD: read err, hDev=%x, cmd=0x%x, nPackages=%d, inx=%d, nCopys=%d
+0060eccc	<no-function>	CDev3632::SetMatrix layer=%d
+0060ed08	<no-function>	CDev3632::GetMatrix layer=%d
+0060ed44	<no-function>	WriteMacroData %d
+0060ed68	<no-function>	CDev3632::SetMacro
+0060ed90	<no-function>	SetMacro failed
+0060edb0	<no-function>	CDev3632::SetLED
+0060edd4	<no-function>	SetLED failed
+0060edf0	<no-function>	CDev3632::GetLED
+0060ee14	<no-function>	CDev3632::SetOnBoard
+0060ee40	<no-function>	SetOnBoard failed
+0060ee64	<no-function>	CDev3632::GetOnBoard
+0060ee90	<no-function>	GetOnBoard failed
+0060eeb4	<no-function>	SetGame failed
+0060eed4	<no-function>	SetLedRgbTab failed
+0060ef00	<no-function>	CDev3632::SetScreenParam failed
+0060ef40	<no-function>	ResetDevice failed
+0060ef68	<no-function>	GetData_3632 Err=0x%x, hDev=%x
+0060efa8	<no-function>	GetData_3632 Err, dev is plugout, hDev=%x
+0060effc	<no-function>	SendData_3632 TimeOut
+0060f028	<no-function>	SendData_3632 Err=0x%x
+0060f058	<no-function>	!! SendCMD_3632: send err=0x%x, cmd=0x%x
+0060f0b0	<no-function>	SendCMD_3632: cmd unmatch for cmd=0x%x, nRetCmd=0x%x, package_index=%d, reread it
+0060f158	<no-function>	SendCMD_3632: CRC check err for cmd=0x%x, redo it
+0060f1c0	<no-function>	SendCMD_3632: read length unmatch, cmd=0x%x, recvBytes=%d, nSize=%d
+0060f248	<no-function>	!! SendCMD_3632: timeout, hDev=%x, cmd=0x%x, nPackages=%d, inx=%d, nCopys=%d
+0060f2e8	<no-function>	!! SendCMD_3632: read err, hDev=%x, cmd=0x%x, nPackages=%d, inx=%d, nCopys=%d
+0060f384	<no-function>	SetRealData failed
+0060f3b0	<no-function>	CDev3632::ApplySetting: hWnd=%x, nFlag=%x, bBT=%x
+0060f548	<no-function>	CDev916KB::FindHIDDevice for %s, hDev=%x, hCmd=%x, hMusic=%x, bMedia=%d, id=%04x_%04x
+0060f5f8	<no-function>	Psd unmatch: gVar.nPsd=%x,%x,%x,%x,%x,%x, nDevPsd=%x,%x,%x,%x,%x,%x
+0060f680	<no-function>	GetVersionNumber failed!
+0060f6b4	<no-function>	SendCommand Err=%d
+0060f6dc	<no-function>	GetCommand Err=%d
+0060f700	<no-function>	GetPassword: Send Err
+0060f72c	<no-function>	GetPassword: GET Err
+0060f758	<no-function>	SendMusicData Err=0x%x
+0060f788	<no-function>	keyinfo_to_hardware_code can't find macro id 0x%x
+0060f7f0	<no-function>	StMacro_To_HdMacro: get wrong hid
+0060f838	<no-function>	FillMatrix (nMatrixNum=%d, nMaxFnNum=%d, bSyncKB=%d) ---------------------------------------
+0060f8f4	<no-function>	Read matrix err, bSyncKB=1
+0060f930	<no-function>	Matrix (Load)-------------------------
+0060f980	<no-function>	Get Invaild keycode, key index=%d, MatrixInx=%d
+0060f9e0	<no-function>	Key[%d][%d] Set To Macro NULL
+0060fa20	<no-function>	Key[%d][%d] Set To Macro %s(0x%08x), Macro_Buffer_ID=%d
+0060fa90	<no-function>	Matrix inx warning
+0060fab8	<no-function>	New Assign Buffer_ID= %d
+0060faec	<no-function>	Matrix[%d][%d] = 0x%08x
+0060fb20	<no-function>	Key Matrix----------------------------
+0060fb70	<no-function>	Fn Matrix (Single key func)----------------------------
+0060fbe0	<no-function>	Fn Matrix (Fn Combo key func)----------------------------
+0060fc58	<no-function>	CDev916KB::ApplySetting: hWnd=%x, nFlag=%x, nData=%x, nFw=%d
+0060fcd4	<no-function>	Macro(0x%X):
+0060fcf0	<no-function>	SetMacroData(%x) error, err=0x%x
+0060fd34	<no-function>	FillMatrix Err
+0060fd58	<no-function>	Matrix (Save)-------------------------
+0060fda8	<no-function>	SetKeyMatrix error, err=0x%x
+0060fde4	<no-function>	Cfg(Load-Global): 
+0060fe0c	<no-function>	Cfg(Load-Pro1): 
+0060fe30	<no-function>	rgbTab: 
+0060fe44	<no-function>	SetLedRgbTab error
+0060fe6c	<no-function>	ColorGroup[%d]: 
+0060fe90	<no-function>	SetLedMatrix(0x%X), err=0x%x
+0060fecc	<no-function>	Cfg(Save-Global): 
+0060fef4	<no-function>	Cfg(Save-Pro1): 
+0060ff18	<no-function>	SetProfile error, err=0x%x
+0060ffec	<no-function>	Read(Combo): 
+00610018	<no-function>	%s bOnline=%x
+00610038	<no-function>	ServiceThread_Combo(%s) Start...
+00610080	<no-function>	ServiceThread_Combo open err=0x%x
+006100c8	<no-function>	ServiceThread_Combo: hObject[1] is signal
+00610120	<no-function>	ServiceThread_Combo: WaitForMultipleObjects err=%d
+00610188	<no-function>	ServiceThread_Combo ReadFile Err=%d
+006101d0	<no-function>	ServiceThread_Combo(%s) exit
+0061020c	<no-function>	CDevComboFilm::ClearHandle
+00610248	<no-function>	CDevComboFilm::FindHIDDevice for %s
+00610290	<no-function>	CDevComboFilm::SyncCfg
+006102c0	<no-function>	SyncCfg: GetLED Err: read valid data, retry now
+00610320	<no-function>	SyncCfg: GetLED Err
+00610348	<no-function>	SyncCfg: nSensor=%d, nCurLevel=%d
+00610390	<no-function>	SyncCfg: UnSupport Sensor 0x%04x
+006103d4	<no-function>	SyncCfg: GetLED failed
+00610404	<no-function>	SyncCfg: nCurOnBoard=%d
+00610434	<no-function>	SyncCfg: Get Wrong OnBoard!!
+00610470	<no-function>	SyncCfg: GetOnBoard failed
+006104a8	<no-function>	SyncCfg: ReadPower=%d
+006104d8	<no-function>	CDevComboFilm::SendData param err, m_hDev=%x, nBytesToWrite=%d
+00610558	<no-function>	!! CDevComboFilm::SendData: send package %d err=0x%x
+006105c8	<no-function>	!! CDevComboFilm::SendData: %s err, cmd=0x%x, package=%d
+00610640	<no-function>	!! CDevComboFilm::SendData: read err, cmd=0x%x, nRet=%d, package=%d
+006106c8	<no-function>	!! ReadData: send err=0x%x, cmd=0x%x
+00610718	<no-function>	!! ReadData: timeout, hDev=%x, cmd=0x%x, nPackages=%d, inx=%d, nCopys=%d
+006107b0	<no-function>	!! ReadData: read err, hDev=%x, cmd=0x%x, nPackages=%d, inx=%d, nCopys=%d
+00610848	<no-function>	CDevComboFilm::SetMatrix layer=%d
+00610890	<no-function>	CDevComboFilm::GetMatrix layer=%d
+006108d4	<no-function>	CDevComboFilm::SetMacro
+00610904	<no-function>	CDevComboFilm::SetLED
+00610930	<no-function>	CDevComboFilm::GetLED
+0061095c	<no-function>	CDevComboFilm::SetOnBoard
+00610990	<no-function>	CDevComboFilm::GetOnBoard
+006109c8	<no-function>	CDevComboFilm::ApplySetting: hWnd=%x, nFlag=%x, nData=%x, bBT=%x
+00610ae4	<no-function>	ServiceThread_G5 Start...
+00610b18	<no-function>	ServiceThread_G5: hObject[1] is signal
+00610b68	<no-function>	WaitForMultipleObjects Err=%d
+00610ba4	<no-function>	ServiceThread_G5 Err=%d
+00610bd4	<no-function>	ServiceThread_G5 Exit
+00610c00	<no-function>	Read(Wired): 
+00610c20	<no-function>	CDevG5KB::FindHIDDevice CreateFile %s
+00610c70	<no-function>	CDevG5KB::FindHIDDevice for %s, hDev=%x, nFw=%d, id=%04x_%04x
+00610cf0	<no-function>	CDevG5KB::FindHIDDevice bFindMedida=%x, bFindWireless=%x
+00610d68	<no-function>	CDevG5KB::AccessData Param err, hDev=%x
+00610db8	<no-function>	CDevG5KB::AccessData nOper err
+00610df8	<no-function>	CDevG5KB::AccessData err=%d
+00610e30	<no-function>	CDevG5KB::AccessData read err=%d
+00610e74	<no-function>	GetMacro failed
+00610e94	<no-function>	GetLED failed
+00610eb0	<no-function>	GetGame failed
+00610ed0	<no-function>	GetRealData failed
+00610ef8	<no-function>	GetLedRgbTab failed
+00610f20	<no-function>	SetScreenParam failed
+00610f4c	<no-function>	GetPassword failed
+00610f78	<no-function>	Invaild keycode, Layer=%d, Key[%d](Major=%x, Minor=%x, Combo{modify=%x, vk1=%x, vk2=%x}, Parameter=%x), MatrixInx=%d, 
+00611068	<no-function>	!!!!Macro buffer too small
+006110a0	<no-function>	!!!!nTotalSize!=nAddr
+006110d0	<no-function>	Key Layer%d ---------------------
+00611114	<no-function>	nWheelMode=%d
+00611130	<no-function>	SideLED: mode=%d, nLight=%d, nSpeed=%d, nColor=%d
+00611194	<no-function>	Cfg[%d] = 0x%x
+006111b8	<no-function>	CDevG5KB::ApplySetting: hWnd=%x, nFlag=%x, nData=%x, nFw=%d, nMatrixLen=%d
+00611250	<no-function>	nMacroBufferSize > sizeof(bMacro)
+00611298	<no-function>	nKeyDirty=0x%x, nMacroNum=%d, nNeedWriteMacro=%d
+006112fc	<no-function>	SetMatrix Err, layer=%d
+0061132c	<no-function>	Macro data: (total size=%d)
+00611368	<no-function>	Macro[%d]: addr=0x%x(%d), size=0x%x(%d include name size), name=
+006113ec	<no-function>	, data= 
+00611400	<no-function>	Cfg(Load): 
+00611418	<no-function>	!!!Failed, Get wrong led profile data.
+00611468	<no-function>	!!!Get wrong led profile data, retry now.
+006114bc	<no-function>	Cfg(Save): 
+006114d4	<no-function>	bDirtyFlag = 0x%x
+006114f8	<no-function>	CDevG5KB::AccessData_Page Param err
+00611540	<no-function>	Send: 
+00611550	<no-function>	CDevG5KB::AccessData_Page err=%d
+00611598	<no-function>	CDevG5KB::AccessData_Page send package %d ok, dataUnit=%d
+00611610	<no-function>	CDevG5KB::AccessData_Page send this page, Buffer=%x %x %x %x %x
+00611690	<no-function>	CDevG5KB::AccessData_Page timeout, k=%d
+006116e0	<no-function>	CDevG5KB::AccessData_Page cancel by user
+00611738	<no-function>	SetGIFParam: nGifIndex=%d, nFrameNum=%d, nGifDelay=%d
+006117a4	<no-function>	SetGIFParam failed
+006117cc	<no-function>	SetGIFParam WaitData: 
+006117fc	<no-function>	SetGIFParam: respond unmatch
+00611838	<no-function>	SetGIFParam: timeout
+00611904	<no-function>	DevG5MS_ServiceThread Start...
+00611948	<no-function>	DevG5MS_ServiceThread hObject[1] is signal
+006119a0	<no-function>	WaitForMultipleObjects failed. err=%d 
+006119f0	<no-function>	DevG5MS_ServiceThread ReadFile Err=%d 
+00611a40	<no-function>	DevG5MS_ServiceThread Exit
+00611a78	<no-function>	CDevG5MS::Read: 
+00611a9c	<no-function>	CreateFile err=%d
+00611ac0	<no-function>	Wired
+00611acc	<no-function>	Wireless
+00611ae0	<no-function>	CDevG5MS::FindHIDDevice for %s, hDev=%x (%s), id=%04x_%04x
+00611b58	<no-function>	SyncCfg: FW Version=0x%x
+00611b90	<no-function>	SyncCfg: GetVersionNumber failed!
+00611bd8	<no-function>	AccessData CRC err for nCmdID=%x, retry now
+00611c30	<no-function>	AccessData: GetFeature Failed, cmd id unmatch, Buffer[2]=%x, bBuf[2]=%x
+00611cc0	<no-function>	AccessData: GetFeature nErr=%d, nCmdID=%x
+00611d18	<no-function>	AccessData: SetFeature nErr=%d, nCmdID=%x
+00611d70	<no-function>	AccessData: retry SetFeature now
+00611db4	<no-function>	SetOnBoard failed, nOnBoard=%d
+00611df4	<no-function>	GetPower failed
+00611e14	<no-function>	GetOnline failed
+00611e38	<no-function>	GetOnline = %d
+00611e58	<no-function>	ReadData_Mouse Err=0x%x, hDev=%x
+00611ea0	<no-function>	ReadData_Mouse Err, dev is plugout, hDev=%x
+00611ef8	<no-function>	Get Invaild keycode, nModes=%d, keyindex=%d, MatrixInx=%d, dwFunID=0x%08x
+00611f8c	<no-function>	FillGeneral param err
+00611fb8	<no-function>	-------- FillGeneral --------
+00611ff4	<no-function>	nCurLevel=%d, nNumOfLevel=%d
+00612030	<no-function>	DPI-X: 
+00612040	<no-function>	DPI-Y: 
+00612050	<no-function>	DPI-COLOR: 
+00612068	<no-function>	nCurMode = %d
+00612084	<no-function>	LED: 
+00612090	<no-function>	CDevG5MS::ApplySetting: hWnd=%x, nFlag=%x
+006120e8	<no-function>	nMacroBufferSize > hwParam.nMacroBufferSize
+00612140	<no-function>	nMacroNum=%d, nNeedWriteMacro=%d, nKeyDirty=0x%x, nModeNum=%d, hwParam.nMacroBufferSize=%d, nMacroBufferSize=%d
+00612220	<no-function>	SetMatrix(%d) Error
+006122f4	<no-function>	Content-Length:
+00612304	<no-function>	!!WSAStartup failed: %d
+0061231c	<no-function>	!!socket() failed: %d
+00612334	<no-function>	!!send_http: connect failed: %d
+00612354	<no-function>	POST %s HTTP/1.1 
+00612368	<no-function>	GET %s HTTP/1.1 
+0061237c	<no-function>	Host: %s  
+00612388	<no-function>	Content-Type: application/json 
+006123ac	<no-function>	Accept-Language: zh-cn,zh;q=0.5 
+006123d0	<no-function>	Accept-Charset: gb2312,utf-8;q=0.7,*;q=0.7 
+00612400	<no-function>	Keep-Alive: 300 
+00612414	<no-function>	Proxy-Connection: keep-alive 
+00612434	<no-function>	Content-Length: %d 
+0061244c	<no-function>	!!send failed: %d
+00612460	<no-function>	HTTP/1.1 200 OK
+00612470	<no-function>	HTTP/1.0 200 OK
+00612480	<no-function>	!!can't found 200 OK
+00612498	<no-function>	Transfer-Encoding: chunked
+006124b4	<no-function>	new CAutoMem error
+006124c8	<no-function>	!!PickNumber error
+006124dc	<no-function>	!!nContentLength<=0
+006124f4	<no-function>	"%s":"%s"
+00612508	<no-function>	submit_post: CAutoMem malloc err
+0061254c	<no-function>	submit_post: send_http err
+00612588	<no-function>	submit_post: server respond %d-----
+006125d0	<no-function>	http://%s/%s
+006125e0	<no-function>	%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X
+00612614	<no-function>	CBurnScreenDlg
+006126be	<no-function>	aBurnScreenThread: need frame extraction
+00612710	<no-function>	BurnScreenThread: nStep=%d, nFrameNum=%d, gVar.nDrawFrameTime=%d, m_nGIFDelay=%d
+006127b4	<no-function>	SetGIFParam: dev offline
+006127e8	<no-function>	Retry SetGIFParam
+0061280c	<no-function>	WriteBitmap Failed
+00612cb0	<no-function>	image/gif
+00612cc4	<no-function>	CPickImageDlg
+00612d86	<no-function>	aDelete File Error=0x%x
+00613010	<no-function>	Image Files|*.png;*.jpg;*bmp;*gif||
+006131a0	<no-function>	CScreenDlg
+006131ac	<no-function>	%sgif_delay.gcc
+006132ae	<no-function>	a%s  (%d %s)
+006132c8	<no-function>	screen_nr.png
+006132ec	<no-function>	Image Files|*.png;*.jpg;*bmp||
+0061332c	<no-function>	%s %d
+00613338	<no-function>	OnAddOrDel: Image count unmatch
+006135ae	<no-function>	apng(*.png)|*.png|
+006135d4	<no-function>	NewPNG
+006135e4	<no-function>	.png
+006135f0	<no-function>	gif(*.gif)|*.gif|
+00613614	<no-function>	NewGIF
+00613624	<no-function>	.gif
+00634b3e	<no-function>	CreateEventW
+00634b4e	<no-function>	WriteFile
+00634b5a	<no-function>	GetLastError
+00634b6a	<no-function>	WaitForSingleObject
+00634b80	<no-function>	CancelIo
+00634b8c	<no-function>	GetOverlappedResult
+00634ba2	<no-function>	CloseHandle
+00634bb0	<no-function>	ReadFile
+00634bbc	<no-function>	Sleep
+00634bc4	<no-function>	SizeofResource
+00634bd6	<no-function>	LockResource
+00634be6	<no-function>	LoadResource
+00634bf6	<no-function>	FindResourceW
+00634c06	<no-function>	SetEvent
+00634c12	<no-function>	ReleaseSemaphore
+00634c26	<no-function>	CreateSemaphoreW
+00634c3a	<no-function>	WaitForMultipleObjects
+00634c54	<no-function>	QueryPerformanceFrequency
+00634c70	<no-function>	QueryPerformanceCounter
+00634c8a	<no-function>	OutputDebugStringW
+00634ca0	<no-function>	GetLocalTime
+00634cb0	<no-function>	OutputDebugStringA
+00634cc6	<no-function>	CreateFileW
+00634cd4	<no-function>	GetModuleFileNameW
+00634cea	<no-function>	CreateThread
+00634cfa	<no-function>	FindFirstFileW
+00634d0c	<no-function>	FindNextFileW
+00634d1c	<no-function>	FindClose
+00634d28	<no-function>	GetPrivateProfileIntW
+00634d40	<no-function>	GetPrivateProfileStringW
+00634d5c	<no-function>	GlobalAlloc
+00634d6a	<no-function>	GlobalLock
+00634d78	<no-function>	GlobalUnlock
+00634d88	<no-function>	GlobalReAlloc
+00634d98	<no-function>	GlobalFree
+00634da6	<no-function>	GetFileSize
+00634db4	<no-function>	GetTickCount
+00634dc4	<no-function>	GetModuleHandleW
+00634dd8	<no-function>	lstrlenW
+00634de4	<no-function>	GetFileAttributesW
+00634dfa	<no-function>	CreateDirectoryW
+00634e0e	<no-function>	FormatMessageW
+00634e20	<no-function>	WideCharToMultiByte
+00634e36	<no-function>	MultiByteToWideChar
+00634e4c	<no-function>	GetCommandLineW
+00634e5e	<no-function>	LocalFree
+00634e6a	<no-function>	SetLastError
+00634e7a	<no-function>	CreateMutexW
+00634e8a	<no-function>	WritePrivateProfileStringW
+00634ea8	<no-function>	DeleteFileW
+00634eb6	<no-function>	FreeResource
+00634ec6	<no-function>	LoadLibraryW
+00634ed6	<no-function>	GetProcAddress
+00634ee8	<no-function>	FreeLibrary
+00634ef6	<no-function>	GetVersionExW
+00634f06	<no-function>	GetSystemTimes
+00634f18	<no-function>	GlobalMemoryStatusEx
+00634f30	<no-function>	lstrcmpiW
+00634f3c	<no-function>	InitializeCriticalSection
+00634f58	<no-function>	LeaveCriticalSection
+00634f70	<no-function>	EnterCriticalSection
+00634f88	<no-function>	DeleteCriticalSection
+00634fa0	<no-function>	InterlockedIncrement
+00634fb8	<no-function>	InterlockedDecrement
+00634fd0	<no-function>	CreateWaitableTimerW
+00634fe8	<no-function>	SetWaitableTimer
+00634ffc	<no-function>	ResetEvent
+0063500a	<no-function>	MulDiv
+00635014	<no-function>	GlobalSize
+00635022	<no-function>	CopyFileW
+0063502e	<no-function>	GetCurrentProcessId
+00635044	<no-function>	GetModuleHandleA
+00635058	<no-function>	GetVersionExA
+00635068	<no-function>	lstrcmpW
+00635074	<no-function>	LoadLibraryA
+00635084	<no-function>	CompareStringW
+00635096	<no-function>	GlobalDeleteAtom
+006350aa	<no-function>	GlobalFindAtomW
+006350bc	<no-function>	GlobalAddAtomW
+006350ce	<no-function>	GetCurrentThreadId
+006350e4	<no-function>	GetThreadLocale
+006350f6	<no-function>	SetFilePointer
+00635108	<no-function>	FlushFileBuffers
+0063511c	<no-function>	LockFile
+00635128	<no-function>	UnlockFile
+00635136	<no-function>	SetEndOfFile
+00635146	<no-function>	DuplicateHandle
+00635158	<no-function>	GetCurrentProcess
+0063516c	<no-function>	GetVolumeInformationW
+00635184	<no-function>	GetFullPathNameW
+00635198	<no-function>	InterlockedExchange
+006351ae	<no-function>	CompareStringA
+006351c0	<no-function>	GetLocaleInfoW
+006351d2	<no-function>	lstrcmpA
+006351de	<no-function>	EnumResourceLanguagesW
+006351f8	<no-function>	ConvertDefaultLocale
+00635210	<no-function>	GetCurrentThread
+00635224	<no-function>	ReleaseMutex
+00635234	<no-function>	SetThreadPriority
+00635248	<no-function>	ResumeThread
+00635258	<no-function>	FileTimeToSystemTime
+00635270	<no-function>	FileTimeToLocalFileTime
+0063528a	<no-function>	GetFileAttributesExW
+006352a2	<no-function>	GetFileSizeEx
+006352b2	<no-function>	GetFileTime
+006352c0	<no-function>	GlobalGetAtomNameW
+006352d6	<no-function>	lstrlenA
+006352e2	<no-function>	LocalAlloc
+006352f0	<no-function>	TlsGetValue
+006352fe	<no-function>	GlobalHandle
+0063530e	<no-function>	TlsAlloc
+0063531a	<no-function>	TlsSetValue
+00635328	<no-function>	LocalReAlloc
+00635338	<no-function>	TlsFree
+00635342	<no-function>	GlobalFlags
+00635350	<no-function>	SetErrorMode
+00635360	<no-function>	GetCurrentDirectoryW
+00635378	<no-function>	lstrcpyW
+00635384	<no-function>	GetTempFileNameW
+00635398	<no-function>	GetTempPathW
+006353a8	<no-function>	SearchPathW
+006353b6	<no-function>	GetProfileIntW
+006353c8	<no-function>	VirtualProtect
+006353da	<no-function>	FindResourceExW
+006353ec	<no-function>	GetStartupInfoW
+006353fe	<no-function>	HeapFree
+0063540a	<no-function>	HeapAlloc
+00635416	<no-function>	ExitThread
+00635424	<no-function>	GetSystemTimeAsFileTime
+0063543e	<no-function>	TerminateProcess
+00635452	<no-function>	UnhandledExceptionFilter
+0063546e	<no-function>	SetUnhandledExceptionFilter
+0063548c	<no-function>	IsDebuggerPresent
+006354a0	<no-function>	HeapReAlloc
+006354ae	<no-function>	RtlUnwind
+006354ba	<no-function>	RaiseException
+006354cc	<no-function>	ExitProcess
+006354da	<no-function>	SetStdHandle
+006354ea	<no-function>	GetFileType
+006354f8	<no-function>	HeapSize
+00635504	<no-function>	VirtualAlloc
+00635514	<no-function>	GetSystemInfo
+00635524	<no-function>	VirtualQuery
+00635534	<no-function>	GetStdHandle
+00635544	<no-function>	GetModuleFileNameA
+0063555a	<no-function>	FreeEnvironmentStringsW
+00635574	<no-function>	GetEnvironmentStringsW
+0063558e	<no-function>	SetHandleCount
+006355a0	<no-function>	GetStartupInfoA
+006355b2	<no-function>	HeapCreate
+006355c0	<no-function>	VirtualFree
+006355ce	<no-function>	GetCPInfo
+006355da	<no-function>	GetACP
+006355e4	<no-function>	GetOEMCP
+006355f0	<no-function>	IsValidCodePage
+00635602	<no-function>	GetConsoleCP
+00635612	<no-function>	GetConsoleMode
+00635624	<no-function>	InitializeCriticalSectionAndSpinCount
+0063564c	<no-function>	GetTimeZoneInformation
+00635666	<no-function>	LCMapStringA
+00635676	<no-function>	LCMapStringW
+00635686	<no-function>	GetStringTypeA
+00635698	<no-function>	GetStringTypeW
+006356aa	<no-function>	GetLocaleInfoA
+006356bc	<no-function>	CreateFileA
+006356ca	<no-function>	WriteConsoleA
+006356da	<no-function>	GetConsoleOutputCP
+006356f0	<no-function>	WriteConsoleW
+00635700	<no-function>	GetProcessHeap
+00635712	<no-function>	SetEnvironmentVariableA
+0063572a	<no-function>	KERNEL32.dll
+0063573a	<no-function>	InvalidateRect
+0063574c	<no-function>	FillRect
+00635758	<no-function>	SetRect
+00635762	<no-function>	GetClientRect
+00635772	<no-function>	TrackMouseEvent
+00635784	<no-function>	PostMessageW
+00635794	<no-function>	GetParent
+006357a0	<no-function>	UpdateWindow
+006357b0	<no-function>	GetCursorPos
+006357c0	<no-function>	ScreenToClient
+006357d2	<no-function>	LoadCursorW
+006357e0	<no-function>	SetCursor
+006357ec	<no-function>	GetWindowRect
+006357fc	<no-function>	EnableWindow
+0063580c	<no-function>	FrameRect
+00635818	<no-function>	FindWindowW
+00635826	<no-function>	MessageBoxW
+00635834	<no-function>	SetWindowRgn
+00635844	<no-function>	SendMessageW
+00635854	<no-function>	SetFocus
+00635860	<no-function>	GetDC
+00635868	<no-function>	GetFocus
+00635874	<no-function>	PtInRect
+00635880	<no-function>	GetSystemMetrics
+00635894	<no-function>	IsWindow
+006358a0	<no-function>	IsWindowVisible
+006358b2	<no-function>	SetTimer
+006358be	<no-function>	GetWindowTextA
+006358d0	<no-function>	ReleaseDC
+006358dc	<no-function>	KillTimer
+006358e8	<no-function>	GetWindowLongW
+006358fa	<no-function>	SetWindowLongW
+0063590c	<no-function>	CopyRect
+00635918	<no-function>	SetRectEmpty
+00635928	<no-function>	GetWindowTextW
+0063593a	<no-function>	DestroyWindow
+0063594a	<no-function>	CallWindowProcW
+0063595c	<no-function>	CreateWindowExW
+0063596e	<no-function>	GetSysColor
+0063597c	<no-function>	RedrawWindow
+0063598c	<no-function>	MoveWindow
+0063599a	<no-function>	InflateRect
+006359a8	<no-function>	SystemParametersInfoW
+006359c0	<no-function>	GetDoubleClickTime
+006359d6	<no-function>	SetCapture
+006359e4	<no-function>	ReleaseCapture
+006359f6	<no-function>	GetKeyState
+00635a04	<no-function>	SetWindowPos
+00635a14	<no-function>	SetLayeredWindowAttributes
+00635a32	<no-function>	EnumWindows
+00635a40	<no-function>	LoadIconW
+00635a4c	<no-function>	UnregisterDeviceNotification
+00635a6c	<no-function>	GetSystemMenu
+00635a7c	<no-function>	AppendMenuW
+00635a8a	<no-function>	LoadImageW
+00635a98	<no-function>	SetForegroundWindow
+00635aae	<no-function>	IsIconic
+00635aba	<no-function>	DrawIcon
+00635ac6	<no-function>	RegisterDeviceNotificationW
+00635ae4	<no-function>	GetLastActivePopup
+00635afa	<no-function>	CreatePopupMenu
+00635b0c	<no-function>	TrackPopupMenu
+00635b1e	<no-function>	DestroyMenu
+00635b2c	<no-function>	GetWindowDC
+00635b3a	<no-function>	ClientToScreen
+00635b4c	<no-function>	ShowScrollBar
+00635b5c	<no-function>	MapVirtualKeyW
+00635b6e	<no-function>	SetWindowTextW
+00635b80	<no-function>	GetKeyboardLayout
+00635b94	<no-function>	OffsetRect
+00635ba2	<no-function>	RemoveMenu
+00635bb0	<no-function>	GetSubMenu
+00635bbe	<no-function>	GetMenuItemCount
+00635bd2	<no-function>	InsertMenuW
+00635be0	<no-function>	GetMenuItemID
+00635bf0	<no-function>	GetMenuStringW
+00635c02	<no-function>	GetMenuState
+00635c12	<no-function>	IsWindowEnabled
+00635c24	<no-function>	GetWindowThreadProcessId
+00635c40	<no-function>	TabbedTextOutW
+00635c52	<no-function>	DrawTextW
+00635c5e	<no-function>	DrawTextExW
+00635c6c	<no-function>	GrayStringW
+00635c7a	<no-function>	BeginPaint
+00635c88	<no-function>	EndPaint
+00635c94	<no-function>	GetWindow
+00635ca0	<no-function>	GetWindowPlacement
+00635cb6	<no-function>	SystemParametersInfoA
+00635cce	<no-function>	IntersectRect
+00635cde	<no-function>	GetMenu
+00635ce8	<no-function>	DefWindowProcW
+00635cfa	<no-function>	GetDlgCtrlID
+00635d0a	<no-function>	SetWindowPlacement
+00635d20	<no-function>	SetScrollInfo
+00635d30	<no-function>	GetScrollInfo
+00635d40	<no-function>	DeferWindowPos
+00635d52	<no-function>	EqualRect
+00635d5e	<no-function>	AdjustWindowRectEx
+00635d74	<no-function>	RegisterClassW
+00635d86	<no-function>	GetClassInfoW
+00635d96	<no-function>	GetClassInfoExW
+00635da8	<no-function>	GetScrollPos
+00635db8	<no-function>	SetScrollPos
+00635dc8	<no-function>	GetScrollRange
+00635dda	<no-function>	SetScrollRange
+00635dec	<no-function>	SetMenu
+00635df6	<no-function>	ScrollWindow
+00635e06	<no-function>	MapWindowPoints
+00635e18	<no-function>	PeekMessageW
+00635e28	<no-function>	GetMessagePos
+00635e38	<no-function>	GetMessageTime
+00635e4a	<no-function>	UnhookWindowsHookEx
+00635e60	<no-function>	GetTopWindow
+00635e70	<no-function>	GetDlgItem
+00635e7e	<no-function>	EndDeferWindowPos
+00635e92	<no-function>	BeginDeferWindowPos
+00635ea8	<no-function>	DispatchMessageW
+00635ebc	<no-function>	SetActiveWindow
+00635ece	<no-function>	GetForegroundWindow
+00635ee4	<no-function>	GetWindowTextLengthW
+00635efc	<no-function>	RemovePropW
+00635f0a	<no-function>	GetPropW
+00635f16	<no-function>	SetPropW
+00635f22	<no-function>	GetClassNameW
+00635f32	<no-function>	GetClassLongW
+00635f42	<no-function>	CallNextHookEx
+00635f54	<no-function>	SetWindowsHookExW
+00635f68	<no-function>	GetCapture
+00635f76	<no-function>	IsChild
+00635f80	<no-function>	WinHelpW
+00635f8c	<no-function>	SendDlgItemMessageA
+00635fa2	<no-function>	SendDlgItemMessageW
+00635fb8	<no-function>	RegisterWindowMessageW
+00635fd2	<no-function>	CheckDlgButton
+00635fe4	<no-function>	IsDialogMessageW
+00635ff8	<no-function>	ShowWindow
+00636006	<no-function>	CheckMenuItem
+00636016	<no-function>	EnableMenuItem
+00636028	<no-function>	ModifyMenuW
+00636036	<no-function>	LoadBitmapW
+00636044	<no-function>	GetMenuCheckMarkDimensions
+00636062	<no-function>	SetMenuItemBitmaps
+00636078	<no-function>	EndDialog
+00636084	<no-function>	GetNextDlgTabItem
+00636098	<no-function>	CreateDialogIndirectParamW
+006360b6	<no-function>	GetActiveWindow
+006360c8	<no-function>	GetDesktopWindow
+006360dc	<no-function>	LoadMenuW
+006360e8	<no-function>	CharUpperW
+006360f6	<no-function>	GetKeyNameTextW
+00636108	<no-function>	PostQuitMessage
+0063611a	<no-function>	IsZoomed
+00636126	<no-function>	MessageBeep
+00636134	<no-function>	MapDialogRect
+00636144	<no-function>	SetWindowContextHelpId
+0063615e	<no-function>	ValidateRect
+0063616e	<no-function>	TranslateMessage
+00636182	<no-function>	GetMessageW
+00636190	<no-function>	ShowOwnedPopups
+006361a2	<no-function>	GetMenuItemInfoW
+006361b6	<no-function>	WindowFromPoint
+006361c8	<no-function>	GetSysColorBrush
+006361dc	<no-function>	WaitMessage
+006361ea	<no-function>	DeleteMenu
+006361f8	<no-function>	PostThreadMessageW
+0063620e	<no-function>	CopyAcceleratorTableW
+00636226	<no-function>	ToUnicodeEx
+00636234	<no-function>	GetKeyboardState
+00636248	<no-function>	GetAsyncKeyState
+0063625c	<no-function>	DestroyAcceleratorTable
+00636276	<no-function>	LoadAcceleratorsW
+0063628a	<no-function>	CreateAcceleratorTableW
+006362a4	<no-function>	NotifyWinEvent
+006362b6	<no-function>	SetParent
+006362c2	<no-function>	SetClassLongW
+006362d2	<no-function>	IsMenu
+006362dc	<no-function>	IsRectEmpty
+006362ea	<no-function>	BringWindowToTop
+006362fe	<no-function>	LockWindowUpdate
+00636312	<no-function>	EnumChildWindows
+00636326	<no-function>	RegisterClipboardFormatW
+00636342	<no-function>	DrawStateW
+00636350	<no-function>	OpenClipboard
+00636360	<no-function>	CopyImage
+0063636c	<no-function>	DestroyIcon
+0063637a	<no-function>	SetClipboardData
+0063638e	<no-function>	CloseClipboard
+006363a0	<no-function>	EmptyClipboard
+006363b2	<no-function>	CharNextW
+006363be	<no-function>	InvalidateRgn
+006363ce	<no-function>	GetNextDlgGroupItem
+006363e4	<no-function>	UnregisterClassW
+006363f8	<no-function>	TranslateAcceleratorW
+00636410	<no-function>	InsertMenuItemW
+00636422	<no-function>	ReuseDDElParam
+00636434	<no-function>	UnpackDDElParam
+00636446	<no-function>	DrawIconEx
+00636454	<no-function>	DrawEdge
+00636460	<no-function>	DrawFrameControl
+00636474	<no-function>	DrawFocusRect
+00636484	<no-function>	SetCursorPos
+00636494	<no-function>	UnionRect
+006364a0	<no-function>	EnableScrollBar
+006364b2	<no-function>	UpdateLayeredWindow
+006364c8	<no-function>	SetMenuDefaultItem
+006364de	<no-function>	GetMenuDefaultItem
+006364f4	<no-function>	IsCharLowerW
+00636504	<no-function>	MapVirtualKeyExW
+00636518	<no-function>	IsClipboardFormatAvailable
+00636536	<no-function>	DefFrameProcW
+00636546	<no-function>	DefMDIChildProcW
+0063655a	<no-function>	DrawMenuBar
+00636568	<no-function>	TranslateMDISysAccel
+00636580	<no-function>	GetUpdateRect
+00636590	<no-function>	CharUpperBuffW
+006365a2	<no-function>	CopyIcon
+006365ae	<no-function>	SubtractRect
+006365be	<no-function>	GetIconInfo
+006365cc	<no-function>	CreateMenu
+006365da	<no-function>	GetWindowRgn
+006365ea	<no-function>	DestroyCursor
+006365f8	<no-function>	USER32.dll
+00636606	<no-function>	CreateCompatibleDC
+0063661c	<no-function>	CreateCompatibleBitmap
+00636636	<no-function>	BitBlt
+00636640	<no-function>	CreateSolidBrush
+00636654	<no-function>	GetPixel
+00636660	<no-function>	CreateEllipticRgn
+00636674	<no-function>	PtInRegion
+00636682	<no-function>	CreateFontW
+00636690	<no-function>	SetPixel
+0063669c	<no-function>	GetObjectW
+006366aa	<no-function>	CreateDIBSection
+006366be	<no-function>	SelectObject
+006366ce	<no-function>	ExtCreateRegion
+006366e0	<no-function>	CombineRgn
+006366ee	<no-function>	DeleteObject
+006366fe	<no-function>	DeleteDC
+0063670a	<no-function>	StretchBlt
+00636718	<no-function>	GetStockObject
+0063672a	<no-function>	SelectPalette
+0063673a	<no-function>	RealizePalette
+0063674c	<no-function>	GetDIBits
+00636758	<no-function>	CreatePolygonRgn
+0063676c	<no-function>	GetTextMetricsW
+0063677e	<no-function>	CreateRectRgn
+0063678e	<no-function>	CreateFontIndirectW
+006367a4	<no-function>	Polyline
+006367b0	<no-function>	GetTextExtentPoint32W
+006367c8	<no-function>	GetDeviceCaps
+006367d8	<no-function>	CopyMetaFileW
+006367e8	<no-function>	SaveDC
+006367f2	<no-function>	RestoreDC
+006367fe	<no-function>	SetBkColor
+0063680c	<no-function>	SetBkMode
+00636818	<no-function>	SetPolyFillMode
+0063682a	<no-function>	SetROP2
+00636834	<no-function>	SetTextColor
+00636844	<no-function>	SetMapMode
+00636852	<no-function>	GetClipBox
+00636860	<no-function>	ExcludeClipRect
+00636872	<no-function>	IntersectClipRect
+00636886	<no-function>	LineTo
+00636890	<no-function>	MoveToEx
+0063689c	<no-function>	SetTextAlign
+006368ac	<no-function>	SelectClipRgn
+006368bc	<no-function>	GetViewportExtEx
+006368d0	<no-function>	GetWindowExtEx
+006368e2	<no-function>	PtVisible
+006368ee	<no-function>	RectVisible
+006368fc	<no-function>	TextOutW
+00636908	<no-function>	ExtTextOutW
+00636916	<no-function>	Escape
+00636920	<no-function>	SetViewportOrgEx
+00636934	<no-function>	OffsetViewportOrgEx
+0063694a	<no-function>	SetViewportExtEx
+0063695e	<no-function>	ScaleViewportExtEx
+00636974	<no-function>	SetWindowOrgEx
+00636986	<no-function>	OffsetWindowOrgEx
+0063699a	<no-function>	SetWindowExtEx
+006369ac	<no-function>	ScaleWindowExtEx
+006369c0	<no-function>	ExtSelectClipRgn
+006369d4	<no-function>	CreatePatternBrush
+006369ea	<no-function>	CreateBitmap
+006369fa	<no-function>	GetObjectType
+00636a0a	<no-function>	CreatePen
+00636a16	<no-function>	CreateHatchBrush
+00636a2a	<no-function>	GetDCOrgEx
+00636a38	<no-function>	CreateRectRgnIndirect
+00636a50	<no-function>	PatBlt
+00636a5a	<no-function>	SetRectRgn
+00636a68	<no-function>	GetMapMode
+00636a76	<no-function>	DPtoLP
+00636a80	<no-function>	OffsetRgn
+00636a8c	<no-function>	GetRgnBox
+00636a98	<no-function>	CreateDIBitmap
+00636aaa	<no-function>	EnumFontFamiliesW
+00636abe	<no-function>	GetTextCharsetInfo
+00636ad4	<no-function>	CreateRoundRectRgn
+00636aea	<no-function>	GetTextColor
+00636afa	<no-function>	SetDIBColorTable
+00636b0e	<no-function>	GetBkColor
+00636b1c	<no-function>	Ellipse
+00636b26	<no-function>	Polygon
+00636b30	<no-function>	Rectangle
+00636b3c	<no-function>	RoundRect
+00636b48	<no-function>	CreatePalette
+00636b58	<no-function>	GetPaletteEntries
+00636b6c	<no-function>	GetWindowOrgEx
+00636b7e	<no-function>	FillRgn
+00636b88	<no-function>	FrameRgn
+00636b94	<no-function>	GetBoundsRect
+00636ba4	<no-function>	GetViewportOrgEx
+00636bb8	<no-function>	LPtoDP
+00636bc2	<no-function>	ExtFloodFill
+00636bd2	<no-function>	SetPaletteEntries
+00636be6	<no-function>	GetNearestPaletteIndex
+00636c00	<no-function>	GetSystemPaletteEntries
+00636c1a	<no-function>	EnumFontFamiliesExW
+00636c30	<no-function>	GetTextFaceW
+00636c40	<no-function>	SetPixelV
+00636c4a	<no-function>	GDI32.dll
+00636c56	<no-function>	AlphaBlend
+00636c64	<no-function>	TransparentBlt
+00636c74	<no-function>	MSIMG32.dll
+00636c82	<no-function>	GetFileTitleW
+00636c90	<no-function>	COMDLG32.dll
+00636ca0	<no-function>	ClosePrinter
+00636cb0	<no-function>	DocumentPropertiesW
+00636cc6	<no-function>	OpenPrinterW
+00636cd4	<no-function>	WINSPOOL.DRV
+00636ce4	<no-function>	RegCloseKey
+00636cf2	<no-function>	RegOpenKeyExW
+00636d02	<no-function>	RegQueryValueExW
+00636d16	<no-function>	AllocateAndInitializeSid
+00636d32	<no-function>	CheckTokenMembership
+00636d4a	<no-function>	FreeSid
+00636d54	<no-function>	RegOpenKeyW
+00636d62	<no-function>	RegCreateKeyExW
+00636d74	<no-function>	RegSetValueExW
+00636d86	<no-function>	RegDeleteValueW
+00636d98	<no-function>	RegDeleteKeyW
+00636da8	<no-function>	RegEnumKeyW
+00636db6	<no-function>	RegQueryValueW
+00636dc8	<no-function>	RegEnumKeyExW
+00636dd6	<no-function>	ADVAPI32.dll
+00636de6	<no-function>	SHGetSpecialFolderPathW
+00636e00	<no-function>	SHGetSpecialFolderPathA
+00636e1a	<no-function>	SHBrowseForFolderW
+00636e30	<no-function>	SHGetPathFromIDListW
+00636e48	<no-function>	CommandLineToArgvW
+00636e5e	<no-function>	ShellExecuteW
+00636e6e	<no-function>	Shell_NotifyIconW
+00636e82	<no-function>	SHGetSpecialFolderLocation
+00636ea0	<no-function>	ShellExecuteExW
+00636eb2	<no-function>	SHGetFileInfoW
+00636ec4	<no-function>	SHAppBarMessage
+00636ed6	<no-function>	DragFinish
+00636ee4	<no-function>	DragQueryFileW
+00636ef4	<no-function>	SHELL32.dll
+00636f02	<no-function>	InitCommonControlsEx
+00636f1a	<no-function>	ImageList_GetIconSize
+00636f30	<no-function>	COMCTL32.dll
+00636f40	<no-function>	StrStrIW
+00636f4c	<no-function>	StrStrIA
+00636f58	<no-function>	PathFileExistsW
+00636f6a	<no-function>	StrStrW
+00636f74	<no-function>	PathStripToRootW
+00636f88	<no-function>	PathIsUNCW
+00636f96	<no-function>	PathRemoveFileSpecW
+00636fac	<no-function>	PathFindExtensionW
+00636fc2	<no-function>	PathRemoveExtensionW
+00636fda	<no-function>	PathFindFileNameW
+00636fec	<no-function>	SHLWAPI.dll
+00636ffa	<no-function>	OleUIBusyW
+00637006	<no-function>	oledlg.dll
+00637014	<no-function>	CreateStreamOnHGlobal
+0063702c	<no-function>	CoTaskMemFree
+0063703c	<no-function>	CoInitialize
+0063704c	<no-function>	CoCreateInstance
+00637060	<no-function>	CoUninitialize
+00637072	<no-function>	CoCreateGuid
+00637082	<no-function>	ReleaseStgMedium
+00637096	<no-function>	CoTaskMemAlloc
+006370a8	<no-function>	OleDuplicateData
+006370bc	<no-function>	CoInitializeEx
+006370ce	<no-function>	CLSIDFromProgID
+006370e0	<no-function>	CLSIDFromString
+006370f2	<no-function>	CoGetClassObject
+00637106	<no-function>	StgOpenStorageOnILockBytes
+00637124	<no-function>	StgCreateDocfileOnILockBytes
+00637144	<no-function>	CreateILockBytesOnHGlobal
+00637160	<no-function>	OleLockRunning
+00637172	<no-function>	OleIsCurrentClipboard
+0063718a	<no-function>	OleFlushClipboard
+0063719e	<no-function>	DoDragDrop
+006371ac	<no-function>	OleGetClipboard
+006371be	<no-function>	OleUninitialize
+006371d0	<no-function>	CoFreeUnusedLibraries
+006371e8	<no-function>	OleInitialize
+006371f8	<no-function>	OleCreateMenuDescriptor
+00637212	<no-function>	OleDestroyMenuDescriptor
+0063722e	<no-function>	OleTranslateAccelerator
+00637248	<no-function>	IsAccelerator
+00637258	<no-function>	RegisterDragDrop
+0063726c	<no-function>	CoLockObjectExternal
+00637284	<no-function>	RevokeDragDrop
+00637296	<no-function>	CoRevokeClassObject
+006372ac	<no-function>	CoRegisterMessageFilter
+006372c4	<no-function>	ole32.dll
+006372ce	<no-function>	OLEAUT32.dll
+006372de	<no-function>	URLDownloadToFileW
+006372f2	<no-function>	urlmon.dll
+00637300	<no-function>	GdipCreatePath
+00637312	<no-function>	GdipDeletePath
+00637324	<no-function>	GdipCreateFromHDC
+00637338	<no-function>	GdipDeleteGraphics
+0063734e	<no-function>	GdipSetSmoothingMode
+00637366	<no-function>	GdipCreateSolidFill
+0063737c	<no-function>	GdipDeleteBrush
+0063738e	<no-function>	GdipFree
+0063739a	<no-function>	GdipAlloc
+006373a6	<no-function>	GdipCloneBrush
+006373b8	<no-function>	GdipFillPath
+006373c8	<no-function>	GdipResetPath
+006373d8	<no-function>	GdipDisposeImage
+006373ec	<no-function>	GdipCloneImage
+006373fe	<no-function>	GdipGetImageHeight
+00637414	<no-function>	GdipGetImageWidth
+00637428	<no-function>	GdipDrawImageRectRect
+00637440	<no-function>	GdipCreateBitmapFromFile
+0063745c	<no-function>	GdipCreateHBITMAPFromBitmap
+0063747a	<no-function>	GdipCloneBitmapAreaI
+00637492	<no-function>	GdipCreatePen1
+006374a4	<no-function>	GdipDeletePen
+006374b4	<no-function>	GdipDrawPath
+006374c4	<no-function>	GdipDrawRectangle
+006374d8	<no-function>	GdipFillRectangle
+006374ec	<no-function>	GdipSetPenColor
+006374fe	<no-function>	GdipCreateBitmapFromScan0
+0063751a	<no-function>	GdipGetImageGraphicsContext
+00637538	<no-function>	GdipAddPathLineI
+0063754c	<no-function>	GdipIsVisiblePathPointI
+00637566	<no-function>	GdipDrawImageRectI
+0063757c	<no-function>	GdipAddPathArcI
+0063758e	<no-function>	GdiplusStartup
+006375a0	<no-function>	GdiplusShutdown
+006375b2	<no-function>	GdipBitmapGetPixel
+006375c8	<no-function>	GdipAddPathRectangleI
+006375e0	<no-function>	GdipCreateImageAttributes
+006375fc	<no-function>	GdipDisposeImageAttributes
+0063761a	<no-function>	GdipSetImageAttributesWrapMode
+0063763c	<no-function>	GdipSetInterpolationMode
+00637658	<no-function>	GdipSetPixelOffsetMode
+00637672	<no-function>	GdipDrawLineI
+00637682	<no-function>	GdipFillRectangleI
+00637698	<no-function>	GdipDrawImageRect
+006376ac	<no-function>	GdipImageSelectActiveFrame
+006376ca	<no-function>	GdipImageGetFrameDimensionsCount
+006376ee	<no-function>	GdipImageGetFrameDimensionsList
+00637710	<no-function>	GdipImageGetFrameCount
+0063772a	<no-function>	GdipSaveImageToFile
+00637740	<no-function>	GdipSaveAddImage
+00637754	<no-function>	GdipSetPropertyItem
+0063776a	<no-function>	GdipGetImageEncodersSize
+00637786	<no-function>	GdipGetImageEncoders
+0063779e	<no-function>	GdipTranslateWorldTransform
+006377bc	<no-function>	GdipRotateWorldTransform
+006377d8	<no-function>	GdipBitmapSetPixel
+006377ee	<no-function>	GdipDrawImageI
+00637800	<no-function>	GdipAddPathRectangle
+00637818	<no-function>	GdipGraphicsClear
+0063782c	<no-function>	GdipScaleWorldTransform
+00637846	<no-function>	GdipGetPropertySize
+0063785c	<no-function>	GdipGetAllPropertyItems
+00637876	<no-function>	GdipGetDC
+00637882	<no-function>	GdipReleaseDC
+00637892	<no-function>	GdipGetImagePixelFormat
+006378ac	<no-function>	GdipGetImagePaletteSize
+006378c6	<no-function>	GdipGetImagePalette
+006378dc	<no-function>	GdipCreateBitmapFromStream
+006378fa	<no-function>	GdipCreateBitmapFromStreamICM
+0063791a	<no-function>	GdipBitmapLockBits
+00637930	<no-function>	GdipBitmapUnlockBits
+00637946	<no-function>	gdiplus.dll
+00637954	<no-function>	SetupDiGetClassDevsW
+0063796c	<no-function>	SetupDiEnumDeviceInterfaces
+0063798a	<no-function>	SetupDiDestroyDeviceInfoList
+006379aa	<no-function>	SetupDiGetDeviceInterfaceDetailW
+006379cc	<no-function>	SETUPAPI.dll
+006379dc	<no-function>	HidD_GetAttributes
+006379f2	<no-function>	HidD_GetHidGuid
+00637a04	<no-function>	HidD_GetPreparsedData
+00637a1c	<no-function>	HidP_GetCaps
+00637a2c	<no-function>	HidD_FreePreparsedData
+00637a46	<no-function>	HidP_GetSpecificButtonCaps
+00637a64	<no-function>	HidP_GetSpecificValueCaps
+00637a80	<no-function>	HidD_SetFeature
+00637a92	<no-function>	HidD_GetFeature
+00637aa2	<no-function>	HID.DLL
+00637aac	<no-function>	PdhOpenQueryW
+00637abc	<no-function>	PdhAddCounterW
+00637ace	<no-function>	PdhCollectQueryData
+00637ae4	<no-function>	PdhGetRawCounterValue
+00637afc	<no-function>	PdhCalculateCounterFromRawValue
+00637b1e	<no-function>	PdhCloseQuery
+00637b2c	<no-function>	pdh.dll
+00637b36	<no-function>	DeleteUrlCacheEntryW
+00637b4c	<no-function>	WININET.dll
+00637b5a	<no-function>	timeGetDevCaps
+00637b6c	<no-function>	timeBeginPeriod
+00637b7e	<no-function>	timeEndPeriod
+00637b8e	<no-function>	timeKillEvent
+00637b9e	<no-function>	PlaySoundW
+00637baa	<no-function>	WINMM.dll
+00637bb4	<no-function>	WS2_32.dll
+00637bc2	<no-function>	ImmGetVirtualKey
+00637bd6	<no-function>	ImmReleaseContext
+00637bea	<no-function>	ImmGetOpenStatus
+00637bfe	<no-function>	ImmGetContext
+00637c0c	<no-function>	IMM32.dll
+0063800c	<no-function>	.?AVCAfxStringMgr@@
+00638028	<no-function>	.?AUIAtlStringMgr@ATL@@
+00638048	<no-function>	.?AVCOleException@@
+00638064	<no-function>	.?AVCException@@
+00638080	<no-function>	.PAVCOleException@@
+0063809c	<no-function>	.PAVCObject@@
+006380b4	<no-function>	.PAX
+006380c4	<no-function>	.PAVCMemoryException@@
+006380e4	<no-function>	.PAVCSimpleException@@
+00638104	<no-function>	.PAVCNotSupportedException@@
+0063812c	<no-function>	.PAVCInvalidArgException@@
+00638150	<no-function>	.?AVCSimpleException@@
+00638170	<no-function>	.?AVCMemoryException@@
+00638190	<no-function>	.?AVCNotSupportedException@@
+006381b8	<no-function>	.?AVCInvalidArgException@@
+00638528	<no-function>	.PAVCResourceException@@
+0063854c	<no-function>	.PAVCUserException@@
+0063856c	<no-function>	.?AVCResourceException@@
+00638590	<no-function>	.?AVCUserException@@
+006385b0	<no-function>	.?AVCDC@@
+006385c4	<no-function>	.?AVCClientDC@@
+006385dc	<no-function>	.?AVCWindowDC@@
+006385f4	<no-function>	.?AVCPaintDC@@
+006386ac	<no-function>	.?AVXAccessible@CWnd@@
+006386cc	<no-function>	.?AVXAccessibleServer@CWnd@@
+006386f4	<no-function>	.?AV_AFX_HTMLHELP_STATE@@
+00638718	<no-function>	.?AVCNoTrackObject@@
+00638738	<no-function>	.?AVCTestCmdUI@@
+00638754	<no-function>	.?AVCCmdUI@@
+00638770	<no-function>	.?AV?$IAccessibleProxyImpl@VCAccessibleProxy@ATL@@@ATL@@
+006387b4	<no-function>	.?AUIAccessible@@
+006387d0	<no-function>	.?AUIDispatch@@
+006387e8	<no-function>	.?AUIAccessibleProxy@@
+00638808	<no-function>	.?AV?$CMFCComObject@VCAccessibleProxy@ATL@@@@
+00638840	<no-function>	.?AVCAccessibleProxy@ATL@@
+00638868	<no-function>	.?AV?$CComObjectRootEx@VCComSingleThreadModel@ATL@@@ATL@@
+006388ac	<no-function>	.?AVCComObjectRootBase@ATL@@
+006388d4	<no-function>	.?AUIOleWindow@@
+006388fc	<no-function>	.?AV_AFX_COLOR_STATE@@
+0063891c	<no-function>	.?AVCColorDialog@@
+00638938	<no-function>	.?AVCStatic@@
+00638950	<no-function>	.?AVCComboBox@@
+00638968	<no-function>	.?AVCScrollBar@@
+00638984	<no-function>	.?AVCMenu@@
+00638998	<no-function>	.?AVCFile@@
+006389ac	<no-function>	.?AVCFileException@@
+00638a0c	<no-function>	.?AVXFileDialogEvents@CFileDialog@@
+00638a38	<no-function>	.?AUIFileDialogEvents@@
+00638a58	<no-function>	.?AVXFileDialogControlEvents@CFileDialog@@
+00638a8c	<no-function>	.?AUIFileDialogControlEvents@@
+00638ab4	<no-function>	.?AVCFileDialog@@
+00638ad0	<no-function>	.?AVCListCtrl@@
+00638ae8	<no-function>	.?AVCSpinButtonCtrl@@
+00638b08	<no-function>	.?AVCRichEditCtrl@@
+00638b24	<no-function>	.?AVCImageList@@
+00638bcc	<no-function>	.?AVCCommandLineInfo@@
+00638bec	<no-function>	.?AVIControlSiteFactory@@
+00638c10	<no-function>	.?AV?$CList@PAVIControlSiteFactory@@PAV1@@@
+00638c44	<no-function>	.?AVCOleControlSiteFactory@@
+00638c6c	<no-function>	.?AVCOccManager@@
+00638c88	<no-function>	.?AVCControlSiteFactoryMgr@@
+00638cb0	<no-function>	.?AVCMutex@@
+00638cc8	<no-function>	.?AV_AFX_THREAD_STATE@@
+00638ce8	<no-function>	.?AVAFX_MODULE_THREAD_STATE@@
+00638d10	<no-function>	.?AVAFX_MODULE_STATE@@
+00638d30	<no-function>	.?AVCDllIsolationWrapperBase@@
+00638d58	<no-function>	.?AVCComCtlWrapper@@
+00638d78	<no-function>	.?AVCCommDlgWrapper@@
+00638d98	<no-function>	.?AVCShellWrapper@@
+00638db4	<no-function>	.?AV_AFX_BASE_MODULE_STATE@@
+00638ddc	<no-function>	.?AVCChevronOwnerDrawMenu@@
+00638e00	<no-function>	.?AVCToolTipCtrl@@
+00638e1c	<no-function>	.?AVCStdioFile@@
+00638e38	<no-function>	.PAVCArchiveException@@
+00638e58	<no-function>	.?AVCFixedStringMgr@ATL@@
+00638e80	<no-function>	.?AV?$CFixedStringT@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@$0BAA@@ATL@@
+00638ee8	<no-function>	.?AV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@
+00638f34	<no-function>	.?AV?$CSimpleStringT@_W$0A@@ATL@@
+00638f60	<no-function>	.?AVCArchiveException@@
+00638f80	<no-function>	.?AUCThreadData@@
+00638f9c	<no-function>	.?AVCMapPtrToPtr@@
+00638fb8	<no-function>	.?AVCHandleMap@@
+00638fd4	<no-function>	.?AVCPtrList@@
+00638fec	<no-function>	.?AVCArchiveStream@@
+0063900c	<no-function>	.?AUIStream@@
+00639024	<no-function>	.?AUISequentialStream@@
+00639044	<no-function>	.?AVCMFCControlBarImpl@@
+0063906c	<no-function>	.?AVCMemDC@@
+00639084	<no-function>	.?AV?$CList@PAUHWND__@@PAU1@@@
+006390c8	<no-function>	.?AV?$CMap@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@PB_WHH@@
+00639124	<no-function>	.?AV?$CMap@HHII@@
+00639140	<no-function>	.?AVCMouseManager@@
+0063915c	<no-function>	.?AV?$CArray@HH@@
+00639178	<no-function>	.?AVCFrameWndEx@@
+00639194	<no-function>	.?AVCFrameWnd@@
+006391b0	<no-function>	.?AVCMDIFrameWndEx@@
+006391d0	<no-function>	.?AVCMDIFrameWnd@@
+00639208	<no-function>	.?AVCDockState@@
+00639244	<no-function>	.?AV?$CList@PAVCFrameWnd@@PAV1@@@
+00639270	<no-function>	.?AVCFrameImpl@@
+00639344	<no-function>	.?AVCMFCToolBarCmdUI@@
+00639364	<no-function>	.?AV?$CList@II@@
+00639380	<no-function>	.?AV?$CMap@IIHH@@
+0063939c	<no-function>	.?AV?$CMap@IAAIPAVCMFCToolBarButton@@AAPAV1@@@
+006393d4	<no-function>	.?AVCMFCToolBar@@
+006393f0	<no-function>	.?AVCMFCBaseToolBar@@
+00639410	<no-function>	.?AVCPane@@
+00639424	<no-function>	.?AVCBasePane@@
+00639458	<no-function>	.?AVCSmartDockingInfo@@
+00639478	<no-function>	.?AV?$CList@IAAI@@
+00639494	<no-function>	.?AV?$CList@UAFX_AUTOHIDE_DOCKSITE_SAVE_INFO@@AAU1@@@
+006394d4	<no-function>	.?AV?$CList@PAUHWND__@@AAPAU1@@@
+00639500	<no-function>	.?AV?$CMap@IIPAVCPane@@PAV1@@@
+00639528	<no-function>	.?AVCDockingManager@@
+00639588	<no-function>	.?AVCMFCToolBarButton@@
+006395a8	<no-function>	.?AVCCommandManager@@
+006395c8	<no-function>	.?AVCSettingsStore@@
+006395f0	<no-function>	.?AVCImage@ATL@@
+0063960c	<no-function>	.?AV?$CList@PAUHINSTANCE__@@PAU1@@@
+00639638	<no-function>	.?AVCMFCToolBarImages@@
+00639658	<no-function>	.?AVCPngImage@@
+00639678	<no-function>	.?AVCEnumUnknown@@
+00639694	<no-function>	.?AVCEnumArray@@
+006396b0	<no-function>	.?AV?$_CTypedPtrList@VCPtrList@@PAUCOleControlSiteOrWnd@@@@
+006396f8	<no-function>	.?AV?$CTypedPtrList@VCPtrList@@PAUCOleControlSiteOrWnd@@@@
+0063973c	<no-function>	.?AVCOleControlContainer@@
+00639760	<no-function>	.?AVXOleContainer@COleControlContainer@@
+00639794	<no-function>	.?AUIOleContainer@@
+006397b0	<no-function>	.?AUIParseDisplayName@@
+006397d0	<no-function>	.?AVXOleIPFrame@COleControlContainer@@
+00639800	<no-function>	.?AUIOleInPlaceFrame@@
+00639820	<no-function>	.?AUIOleInPlaceUIWindow@@
+00639844	<no-function>	.?AVCDataSourceControl@@
+00639868	<no-function>	.?AUINotifyDBEvents@@
+00639888	<no-function>	.?AVXOleClientSite@COleControlSite@@
+006398b8	<no-function>	.?AUIOleClientSite@@
+006398d8	<no-function>	.?AVXOleControlSite@COleControlSite@@
+00639908	<no-function>	.?AUIOleControlSite@@
+00639928	<no-function>	.?AVXAmbientProps@COleControlSite@@
+00639954	<no-function>	.?AVXPropertyNotifySink@COleControlSite@@
+00639988	<no-function>	.?AUIPropertyNotifySink@@
+006399ac	<no-function>	.?AVXEventSink@COleControlSite@@
+006399d8	<no-function>	.?AVXBoundObjectSite@COleControlSite@@
+00639a08	<no-function>	.?AUIBoundObjectSite@@
+00639a28	<no-function>	.?AVXNotifyDBEvents@COleControlSite@@
+00639a58	<no-function>	.?AVXRowsetNotify@COleControlSite@@
+00639a84	<no-function>	.?AUIRowsetNotify@@
+00639aa0	<no-function>	.?AVXOleIPSite@COleControlSite@@
+00639acc	<no-function>	.?AUIOleInPlaceSiteWindowless@@
+00639af4	<no-function>	.?AUIOleInPlaceSiteEx@@
+00639b14	<no-function>	.?AUIOleInPlaceSite@@
+00639b34	<no-function>	.?AVCOleControlSite@@
+00639b54	<no-function>	.?AVCMemFile@@
+00639b74	<no-function>	.?AVCControlBar@@
+00639b90	<no-function>	.?AVCMapStringToPtr@@
+00639bcc	<no-function>	.?AVCByteArray@@
+00639be0	<no-function>	Apartment
+00639c14	<no-function>	.?AV?$CTypedPtrArray@VCObArray@@PAVCBitmap@@@@
+00639c4c	<no-function>	.?AVCObArray@@
+00639c64	<no-function>	.?AV?$CArray@PAUHWND__@@PAU1@@@
+00639c9c	<no-function>	.?AV?$CList@UtagPOINT@@U1@@@
+00639cc4	<no-function>	.?AVCMFCBaseVisualManager@@
+00639ce8	<no-function>	.?AVCMFCVisualManager@@
+00639d0c	<no-function>	.?AVCMDIChildWndEx@@
+00639d2c	<no-function>	.?AVCMDIChildWnd@@
+00639d48	<no-function>	.?AVCOleDocIPFrameWndEx@@
+00639d6c	<no-function>	.?AVCOleDocIPFrameWnd@@
+00639d8c	<no-function>	.?AVCOleIPFrameWnd@@
+00639dac	<no-function>	.?AVCOleIPFrameWndEx@@
+00639dd0	<no-function>	.?AVCMFCVisualManagerBitmapCacheItem@CMFCVisualManagerBitmapCache@@
+00639e20	<no-function>	.?AV?$CArray@PAVCMFCVisualManagerBitmapCacheItem@CMFCVisualManagerBitmapCache@@PAV12@@@
+00639e80	<no-function>	.?AV?$CArray@VCSize@@V1@@@
+00639ea4	<no-function>	.?AV?$CMap@PAUHWND__@@PAU1@HH@@
+00639ecc	<no-function>	.?AVCMFCVisualManagerBitmapCache@@
+00639ef8	<no-function>	.?AVCMFCVisualManagerOffice2007@@
+00639f24	<no-function>	.?AVCMFCVisualManagerOffice2003@@
+00639f50	<no-function>	.?AVCMFCVisualManagerOfficeXP@@
+00639f78	<no-function>	.?AV?$CMap@PAUHMENU__@@AAPAU1@PAXAAPAX@@
+00639fac	<no-function>	.?AVCMenuHash@@
+0063a024	<no-function>	.?AV?$CMap@IIPAUHWND__@@PAU1@@@
+0063a04c	<no-function>	.?AVCPaneFrameWnd@@
+0063a068	<no-function>	.?AVCMFCToolTipCtrl@@
+0063a088	<no-function>	.?AV?$CArray@W4LoadArrayObjType@CArchive@@ABW412@@@
+0063a0e0	<no-function>	.?AVCStringList@@
+0063a128	<no-function>	.?AVCMFCShadowWnd@@
+0063a144	<no-function>	.?AVCMiniFrameWnd@@
+0063a160	<no-function>	.?AVCMFCPopupMenu@@
+0063a17c	<no-function>	.?AVCMFCPropertyPage@@
+0063a19c	<no-function>	.?AVCPropertyPage@@
+0063a1b8	<no-function>	.?AVCDialogEx@@
+0063a1ec	<no-function>	.?AVCObList@@
+0063a228	<no-function>	.?AV?$CMap@IIII@@
+0063a244	<no-function>	.?AVCMFCPopupMenuBar@@
+0063a264	<no-function>	.?AVCMFCAcceleratorKey@@
+0063a2a4	<no-function>	.?AVCUserTool@@
+0063a2bc	<no-function>	.?AVCMFCRibbonButton@@
+0063a2dc	<no-function>	.?AVCMFCRibbonBaseElement@@
+0063a300	<no-function>	.?AVCMFCDisableMenuAnimation@@
+0063a328	<no-function>	.?AVCMFCRibbonCmdUI@@
+0063a348	<no-function>	.?AVCMFCRibbonCaptionButton@@
+0063a370	<no-function>	.?AV?$CArray@PAVCMFCRibbonBaseElement@@PAV1@@@
+0063a3b4	<no-function>	.?AVCPaneDivider@@
+0063a3d0	<no-function>	.?AVCSmartDockingManager@@
+0063a3f4	<no-function>	.?AVCFullScreenImpl@@
+0063a430	<no-function>	.?AVCDocItem@@
+0063a44c	<no-function>	.?AVCMFCPrintPreviewToolBar@@
+0063a474	<no-function>	.?AVCPreviewViewEx@@
+0063a494	<no-function>	.?AVCPreviewView@@
+0063a4b0	<no-function>	.?AVCScrollView@@
+0063a4cc	<no-function>	.?AVCView@@
+0063a4e0	<no-function>	.?AV?$CMap@PAUHICON__@@PAU1@HH@@
+0063a50c	<no-function>	.?AV?$CArray@KK@@
+0063a528	<no-function>	.?AV?$CMap@PAVCWnd@@PAV1@PAVCImageList@@PAV2@@@
+0063a560	<no-function>	.?AV?$CList@PAVCMDIChildWndEx@@PAV1@@@
+0063a590	<no-function>	.?AVCMDIClientAreaWnd@@
+0063a5f4	<no-function>	.?AVCMFCMenuBar@@
+0063a610	<no-function>	.?AVCHelpComboBoxButton@@
+0063a634	<no-function>	.?AVCMFCToolBarComboBoxButton@@
+0063a67c	<no-function>	.?AVCMFCTabButton@@
+0063a698	<no-function>	.?AVCMFCButton@@
+0063a6b4	<no-function>	.?AV?$CMap@IIPAUHICON__@@PAU1@@@
+0063a6e0	<no-function>	.?AVCMFCTabCtrl@@
+0063a6fc	<no-function>	.?AVCMFCBaseTabCtrl@@
+0063a758	<no-function>	.?AV?$CTypedPtrArray@VCObArray@@PAVCMFCCaptionButton@@@@
+0063a79c	<no-function>	.?AVCDockablePane@@
+0063a7d4	<no-function>	.?AVCMFCToolBarMenuButton@@
+0063a7f8	<no-function>	.?AVCUIntArray@@
+0063a814	<no-function>	.?AVCPtrArray@@
+0063a82c	<no-function>	.?AVCDockBar@@
+0063a844	<no-function>	.?AVCMiniDockFrameWnd@@
+0063a864	<no-function>	.?AVCMFCCustomizeMenuButton@@
+0063a8b0	<no-function>	.?AVCMFCCaptionButton@@
+0063a8d0	<no-function>	.?AVCMFCCaptionButtonEx@@
+0063a8f8	<no-function>	.?AV?$CMap@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@PB_WPAVCObList@@PAV3@@@
+0063a964	<no-function>	.?AV?$CList@PAVCPropertyPage@@PAV1@@@
+0063a994	<no-function>	.?AVCMFCToolBarsCustomizeDialog@@
+0063a9c0	<no-function>	.?AVCPropertySheet@@
+0063aa38	<no-function>	.?AVCMFCDropDownToolBar@@
+0063aa5c	<no-function>	.?AVCMFCDropDownFrame@@
+0063aa7c	<no-function>	.?AVCMFCDropDownToolbarButton@@
+0063aac0	<no-function>	.?AVCMFCCustomizeButton@@
+0063aae8	<no-function>	.?AVCMFCToolBarButtonCustomizeDialog@@
+0063ab1c	<no-function>	.?AVCMFCCmdUsageCount@@
+0063ab3c	<no-function>	.?AVCDockingPanesRow@@
+0063ab5c	<no-function>	.?AVCDockSite@@
+0063ab90	<no-function>	.?AVCMFCToolBarSystemMenuButton@@
+0063abc4	<no-function>	.?AVCMFCTabDropTarget@@
+0063abe4	<no-function>	.?AVCOleDropTarget@@
+0063ac04	<no-function>	.?AV?$CList@UCMFCRestoredTabInfo@@U1@@@
+0063ac34	<no-function>	.?AVCMFCTabInfo@@
+0063ac50	<no-function>	.?AVCEnumFormatEtc@@
+0063ac70	<no-function>	.?AVXDataObject@COleDataSource@@
+0063ac9c	<no-function>	.?AUIDataObject@@
+0063acb8	<no-function>	.?AVCOleDataSource@@
+0063acd8	<no-function>	.?AVXDropSource@COleDropSource@@
+0063ad04	<no-function>	.?AUIDropSource@@
+0063ad20	<no-function>	.?AVCOleDropSource@@
+0063ad40	<no-function>	.?AVCMFCToolBarMenuButtonsButton@@
+0063ad70	<no-function>	.?AVCMFCToolBarDropTarget@@
+0063ad94	<no-function>	.?AVCMFCToolBarDropSource@@
+0063adc0	<no-function>	.?AVCMFCAutoHideBar@@
+0063ade0	<no-function>	.?AVCGlobalUtils@@
+0063ae08	<no-function>	.?AVCBaseTabbedPane@@
+0063ae78	<no-function>	.?AVCTabbedPane@@
+0063ae9c	<no-function>	.?AVCPaneContainerManager@@
+0063aedc	<no-function>	.?AVCMultiPaneFrameWnd@@
+0063af04	<no-function>	.?AVCAutoHideDockSite@@
+0063af24	<no-function>	.?AVCPaneContainer@@
+0063af58	<no-function>	.?AVCMFCAutoHideButton@@
+0063af9c	<no-function>	.?AVCMFCOutlookBar@@
+0063afbc	<no-function>	.?AVCSharedFile@@
+0063afd8	<no-function>	.?AVCDrawingManager@@
+0063aff8	<no-function>	.?AV?$CArray@VCVariantBoolPair@@ABV1@@@
+0063b028	<no-function>	.?AVCOleDispatchException@@
+0063b04c	<no-function>	.PAVCOleDispatchException@@
+0063b070	<no-function>	.?AVXEnumVOID@CEnumArray@@
+0063b094	<no-function>	.?AUIEnumVOID@@
+0063b0e8	<no-function>	.?AVCMFCOutlookBarPaneButton@@
+0063b110	<no-function>	.?AVCMFCShowAllButton@@
+0063b130	<no-function>	.?AVCMFCRibbonSeparator@@
+0063b154	<no-function>	.?AVCMFCRibbonSpinButtonCtrl@@
+0063b17c	<no-function>	.?AVCMFCSpinButtonCtrl@@
+0063b1a0	<no-function>	.?AVCMFCRibbonEdit@@
+0063b1c0	<no-function>	.?AVCMFCRibbonRichEditCtrl@@
+0063b1e8	<no-function>	.?AVCMFCCaptionBar@@
+0063b224	<no-function>	.?AVCMFCOutlookBarPane@@
+0063b248	<no-function>	.?AVCMFCRibbonTab@@
+0063b264	<no-function>	.?AVCRibbonCategoryScroll@@
+0063b288	<no-function>	.?AV?$CArray@PAVCMFCRibbonPanel@@PAV1@@@
+0063b2bc	<no-function>	.?AVCMFCRibbonCategory@@
+0063b2e4	<no-function>	.?AVCMFCDragFrameImpl@@
+0063b304	<no-function>	.?AVCDummyDockablePane@@
+0063b328	<no-function>	.?AVCRecentPaneContainerInfo@@
+0063b350	<no-function>	.?AVCRecentDockSiteInfo@@
+0063b374	<no-function>	.?AVCOleCntrFrameWndEx@@
+0063b398	<no-function>	.?AVCOleCntrFrameWnd@@
+0063b3d4	<no-function>	.?AVCDockablePaneAdapter@@
+0063b404	<no-function>	.?AVCMFCRibbonPanelMenuBar@@
+0063b42c	<no-function>	.?AVCMFCRibbonPanelMenu@@
+0063b450	<no-function>	.?AVCOutlookCustomizeButton@@
+0063b478	<no-function>	.?AVCMFCOutlookBarScrollButton@@
+0063b4a4	<no-function>	.?AV?$CMap@HHHH@@
+0063b4c0	<no-function>	.?AVCMFCOutlookBarToolBar@@
+0063b4e4	<no-function>	.?AVCMFCOutlookBarTabCtrl@@
+0063b508	<no-function>	.?AVCOutlookOptionsDlg@@
+0063b564	<no-function>	.?AVCMFCColorBarCmdUI@@
+0063b584	<no-function>	.?AV?$CList@KK@@
+0063b5a0	<no-function>	.?AV?$CMap@KKV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@PB_W@@
+0063b5fc	<no-function>	.?AVCPalette@@
+0063b614	<no-function>	.?AVCMFCColorBar@@
+0063b630	<no-function>	.?AVCMFCToolBarColorButton@@
+0063b690	<no-function>	.?AVCMFCTasksPaneFrameWnd@@
+0063b6b4	<no-function>	.?AV?$CArray@II@@
+0063b6d0	<no-function>	.?AVCMFCRibbonQuickAccessToolBar@@
+0063b6fc	<no-function>	.?AVCMFCRibbonButtonsGroup@@
+0063b724	<no-function>	.?AVCMFCRibbonQuickAccessCustomizeButton@@
+0063b758	<no-function>	.?AVCMFCRibbonGalleryIcon@@
+0063b77c	<no-function>	.?AVCMFCRibbonGallery@@
+0063b7b8	<no-function>	.?AVCMFCControlRenderer@@
+0063b7dc	<no-function>	.?AVCMFCShadowRenderer@@
+0063b804	<no-function>	.?AVCMFCRibbonLaunchButton@@
+0063b82c	<no-function>	.?AVCMFCRibbonDefaultPanelButton@@
+0063b858	<no-function>	.?AVCMFCRibbonPanel@@
+0063b878	<no-function>	.?AVCMFCRibbonRecentFilesList@@
+0063b8a0	<no-function>	.?AVCMFCRibbonMainPanel@@
+0063b970	<no-function>	.?AVCTagManager@@
+0063b98c	<no-function>	.?AVCMFCCaptionMenuButton@@
+0063b9b0	<no-function>	.?AVCMFCRibbonMiniToolBar@@
+0063b9d4	<no-function>	.?AVCMFCToolBarsMenuPropertyPage@@
+0063ba1c	<no-function>	.?AVCDialogImpl@@
+0063ba38	<no-function>	.?AVCMFCRibbonKeyTip@@
+0063ba58	<no-function>	.?AV_AFX_RICHEDIT_STATE@@
+0063ba7c	<no-function>	.?AV_AFX_EDIT_STATE@@
+0063ba9c	<no-function>	.?AV_AFX_OLE_STATE@@
+0063bad8	<no-function>	.?AVCStringArray@@
+0063baf4	<no-function>	.?AV?$CMap@IIPAVCMFCRibbonStatusBarPane@@PAV1@@@
+0063bb4c	<no-function>	.?AVCMFCRibbonLabel@@
+0063bb6c	<no-function>	.?AVCSmartDockingHighlighterWnd@@
+0063bb98	<no-function>	.?AVCSmartDockingStandaloneGuideWnd@@
+0063bbdc	<no-function>	.?AVCSmartDockingStandaloneGuide@@
+0063bc08	<no-function>	.?AVCSmartDockingGroupGuidesWnd@@
+0063bc34	<no-function>	.?AVCSmartDockingGroupGuide@@
+0063bc5c	<no-function>	.?AVCSmartDockingGroupGuidesManager@@
+0063bc8c	<no-function>	.?AVCOleStreamFile@@
+0063bcac	<no-function>	.?AV_AFX_MOUSEANCHORWND@@
+0063bcf4	<no-function>	.?AVCMFCToolBarComboBoxEdit@@
+0063bd1c	<no-function>	.?AVCMFCToolBarsListPropertyPage@@
+0063bd48	<no-function>	.?AVCMFCToolBarsCommandsPropertyPage@@
+0063bd78	<no-function>	.?AVCMFCImagePaintArea@@
+0063bd9c	<no-function>	.?AVCMFCImageEditorPaletteBar@@
+0063bdc4	<no-function>	.?AVCMFCImageEditorDialog@@
+0063bde8	<no-function>	.?AVCMFCToolBarsKeyboardPropertyPage@@
+0063be18	<no-function>	.?AVCMFCToolBarsOptionsPropertyPage@@
+0063be48	<no-function>	.?AVCVSToolsListBox@@
+0063be68	<no-function>	.?AVCVSListBox@@
+0063be84	<no-function>	.?AVCVSListBoxBase@@
+0063bea4	<no-function>	.?AVCMFCToolBarsToolsPropertyPage@@
+0063bed0	<no-function>	.?AVCMFCMousePropertyPage@@
+0063bef4	<no-function>	.?AVCMFCToolBarButtonsListButton@@
+0063bf20	<no-function>	.?AVXDropTarget@COleDropTarget@@
+0063bf4c	<no-function>	.?AUIDropTarget@@
+0063bf84	<no-function>	.?AVCMFCOutlookBarPaneAdapter@@
+0063bfac	<no-function>	.?AVCOleMessageFilter@@
+0063bfcc	<no-function>	.?AVXMessageFilter@COleMessageFilter@@
+0063bffc	<no-function>	.?AUIMessageFilter@@
+0063c03c	<no-function>	.?AVCMFCToolBarEditCtrl@@
+0063c060	<no-function>	.?AVCMFCEditBrowseCtrl@@
+0063c084	<no-function>	.?AVCMFCToolBarEditBoxButton@@
+0063c0ac	<no-function>	.?AVCCheckListBox@@
+0063c0c8	<no-function>	.?AVCMFCToolBarsListCheckBox@@
+0063c0f0	<no-function>	.?AV_AFX_CHECKLIST_STATE@@
+0063c114	<no-function>	.?AV?$CArray@HABH@@
+0063c130	<no-function>	.?AVCScreenWnd@@
+0063c14c	<no-function>	.?AVCMFCColorDialog@@
+0063c188	<no-function>	.?AVCMFCColorPopupMenu@@
+0063c1ac	<no-function>	.?AV?$CMap@IIKK@@
+0063c1c8	<no-function>	.?AVCMFCColorMenuButton@@
+0063c208	<no-function>	.?AVCMFCRibbonColorMenuButton@@
+0063c230	<no-function>	.?AV?$CArray@JJ@@
+0063c24c	<no-function>	.?AVCMFCRibbonColorButton@@
+0063c2fc	<no-function>	.?AVCMFCTasksPaneToolBar@@
+0063c320	<no-function>	.?AVCTasksPaneNavigateButton@@
+0063c348	<no-function>	.?AVCTasksPaneHistoryButton@@
+0063c370	<no-function>	.?AVCTasksPaneMenuButton@@
+0063c394	<no-function>	.?AVCMFCTasksPaneToolBarCmdUI@@
+0063c3bc	<no-function>	.?AVCMFCTasksPane@@
+0063c3d8	<no-function>	.?AVCMFCTasksPanePropertyPage@@
+0063c400	<no-function>	.?AVCRibbonUndoLabel@@
+0063c420	<no-function>	.?AVCMFCRibbonUndoButton@@
+0063c444	<no-function>	.?AU_AFX_PROPPAGEFONTINFO@@
+0063c468	<no-function>	.?AVCMFCToolBarsCommandsListBox@@
+0063c494	<no-function>	.?AVCMFCToolBarNameDialog@@
+0063c4b8	<no-function>	.?AVCMFCAcceleratorKeyAssignCtrl@@
+0063c4e4	<no-function>	.?AVCVSListBoxEditCtrl@@
+0063c508	<no-function>	.?AV?$CList@PAVCMFCButton@@PAV1@@@
+0063c534	<no-function>	.?AVCMFCMenuButton@@
+0063c554	<no-function>	.?AVCOleBusyDialog@@
+0063c574	<no-function>	.?AVCOleDialog@@
+0063c590	<no-function>	.?AVCCellObj@@
+0063c5a8	<no-function>	.?AVCMFCColorPickerCtrl@@
+0063c5cc	<no-function>	.?AVCMFCCustomColorsPropertyPage@@
+0063c5f8	<no-function>	.?AVCMFCStandardColorsPropertyPage@@
+0063c628	<no-function>	.?AVCMFCColorPropertySheet@@
+0063c658	<no-function>	.?AVtype_info@@
+0063cbde	<no-function>	abcdefghijklmnopqrstuvwxyz
+0063cbfe	<no-function>	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0063cde9	<no-function>	abcdefghijklmnopqrstuvwxyz
+0063ce09	<no-function>	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0063d42c	<no-function>	.?AVbad_exception@std@@
+0063dd6c	<no-function>	.?AVSolidBrush@Gdiplus@@
+0063dd90	<no-function>	.?AVGdiplusBase@Gdiplus@@
+0063ddb4	<no-function>	.?AVBrush@Gdiplus@@
+0063ddd0	<no-function>	.?AVCFont@@
+0063dde4	<no-function>	.?AVCBrush@@
+0063ddfc	<no-function>	.?AVCPen@@
+0063de10	<no-function>	.?AVCGdiObject@@
+0063de2c	<no-function>	.?AVCObject@@
+0063de44	<no-function>	.?AVCCmdTarget@@
+0063de60	<no-function>	.?AVCWnd@@
+0063de74	<no-function>	.?AVCScrollViewEx@@
+0063de90	<no-function>	.?AVCActionView@@
+0063e5dc	<no-function>	.PAVCException@@
+0063e5f8	<no-function>	.?AVImage@Gdiplus@@
+0063e614	<no-function>	.?AVBitmap@Gdiplus@@
+0063e634	<no-function>	.?AVCBitmap@@
+0063e64c	<no-function>	.?AVCDialog@@
+0063e664	<no-function>	.?AVCAdvDlg@@
+0063e67c	<no-function>	.?AVCColorBtnDlg@@
+0063e698	<no-function>	.?AVCCommonDialog@@
+0063e6b4	<no-function>	.?AVCEdit@@
+0063e6c8	<no-function>	.?AVCRgn@@
+0063e6dc	<no-function>	.?AVCColorPanel@@
+0063e6f8	<no-function>	.?AVCButton@@
+0063e710	<no-function>	.?AVCPngBtn@@
+0063e728	<no-function>	.?AVCComboBtn@@
+0063e740	<no-function>	.?AVCDevIcoDlg@@
+0063e75c	<no-function>	.?AVCDpiDlg@@
+0063e774	<no-function>	.?AVCDpiGridDlg@@
+0063e790	<no-function>	.?AVCFirekeyDlg@@
+0063e7ac	<no-function>	.?AVCHomeDlg@@
+0063e7c4	<no-function>	.PAVCFileException@@
+0063e7e4	<no-function>	.?AVCKBColorDlg@@
+0063e800	<no-function>	.?AVCKeyDlg@@
+0063e818	<no-function>	.?AVCKeyMarkDlg@@
+0063e834	<no-function>	.?AVCKeyMSDlg@@
+0063e84c	<no-function>	.?AVCLedDlg@@
+0063e864	<no-function>	.?AVCLedKBSideDlg@@
+0063e880	<no-function>	.?AVCLedMSDlg@@
+0063e898	<no-function>	.?AVCListBox@@
+0063e8b0	<no-function>	.?AVCLogOnDlg@@
+0063e8c8	<no-function>	.?AVCSkinList@@
+0063e8e0	<no-function>	.?AVCMacEditDlg@@
+0063e8fc	<no-function>	.?AVCMacroDlg@@
+0063e914	<no-function>	.?AVCMenuDlg@@
+0063e92c	<no-function>	.?AVCMsgDlg@@
+0063e944	<no-function>	.?AVCMSliderBar@@
+0063e960	<no-function>	.?AVCMusicDlg@@
+0063e978	<no-function>	.?AVCMyEdit@@
+0063e990	<no-function>	.?AVCMyList@@
+0063e9a8	<no-function>	.?AVCMyListBoxEx@@
+0063e9c4	<no-function>	.?AVCMyScrollBar@@
+0063e9e0	<no-function>	.?AVCNotifyDlg@@
+0063e9fc	<no-function>	.?AVCWinThread@@
+0063ea18	<no-function>	.?AVCWinApp@@
+0063ea30	<no-function>	.?AVCWinAppEx@@
+0063ea48	<no-function>	.?AVCOemDrvApp@@
+0063ea64	<no-function>	.?AVCOemDrvDlg@@
+0063ea80	<no-function>	.?AVCAudioClient@@
+0063ea9c	<no-function>	.?AVlength_error@std@@
+0063eabc	<no-function>	.?AVlogic_error@std@@
+0063eadc	<no-function>	.?AVexception@std@@
+0063eaf8	<no-function>	.?AVbad_alloc@std@@
+0063eb14	<no-function>	.?AVCPickMacroDlg@@
+0063eb30	<no-function>	.?AVCPreferencesDlg@@
+0063eb50	<no-function>	.?AUIUnknown@@
+0063eb68	<no-function>	.?AUIBindStatusCallback@@
+0063eb8c	<no-function>	.?AVDownloadProgress@@
+0063ebac	<no-function>	.?AVCProgressDlg@@
+0063ebc8	<no-function>	.?AVCRegisterDlg@@
+0063ebe4	<no-function>	.?AVCSettingKBDlg@@
+0063ec00	<no-function>	.?AVCSettingDlg@@
+0063ec1c	<no-function>	.?AVCProList@@
+0063ec34	<no-function>	.?AVCSettingMSDlg@@
+0063ec50	<no-function>	.?AVCAutoMem@@
+0063ec68	<no-function>	.?AVCShareDlg@@
+0063ec80	<no-function>	.?AVCShareInfoDlg@@
+0063ec9c	<no-function>	.?AVCServiceList@@
+0063ecb8	<no-function>	.?AVCDevList@@
+0063ecd0	<no-function>	.?AVCSysDlg@@
+0063ece8	<no-function>	.?AVCTipsDlg@@
+0063ed00	<no-function>	.?AVCTreeCtrl@@
+0063ed18	<no-function>	.?AVCTreeCtrlEx@@
+0063ed34	<no-function>	.?AVCListScrollBar@@
+0063ed54	<no-function>	.?AVCTreeCtrlExRk@@
+0063ed70	<no-function>	.?AVCVkbDlg@@
+0063ed88	<no-function>	.?AVCWelcomDlg@@
+0063eda4	<no-function>	.?AVCSyncObject@@
+0063edc0	<no-function>	.?AVCCriticalSection@@
+0063ede0	<no-function>	.?AUIMMNotificationClient@@
+0063ee04	<no-function>	.?AVCMMNotificationClient@@
+0063ee28	<no-function>	.?AVCRingBuffer@@
+0063ee44	<no-function>	.?AVCPeakMeterCtrl@@
+0063ee64	<no-function>	.?AVout_of_range@std@@
+0063ee84	<no-function>	.?AVCDev3632@@
+0063ee9c	<no-function>	.?AVCHidDev@@
+0063eeb4	<no-function>	.?AVCDev916KB@@
+0063eecc	<no-function>	.?AVCDevComboFilm@@
+0063eee8	<no-function>	.?AVCDevG5KB@@
+0063ef00	<no-function>	.?AVCDevG5MS@@
+0063ef18	<no-function>	.?AVCBurnScreenDlg@@
+0063ef38	<no-function>	.?AVCFrameEditView@@
+0063ef58	<no-function>	.?AVCFrameView@@
+0063ef74	<no-function>	.?AVCPickImageDlg@@
+0063ef90	<no-function>	.?AVCPreviewDlg@@
+0063efac	<no-function>	.?AVCOperList@@
+0063efc4	<no-function>	.?AVCScreenDlg@@
+0063efe0	<no-function>	.?AVCIMGList@@
+0063eff8	<no-function>	.?AVCScreenView@@
+0063f010	<no-function>	log10
+00671650	<no-function>	
+00671652	<no-function>	
+00671654	<no-function>	
+00671656	<no-function>	
+00671658	<no-function>	
+0067165a	<no-function>	&About OemDrv...
+0067167c	<no-function>	
+0067167e	<no-function>	
+00671680	<no-function>	
+00671682	<no-function>	
+00671684	<no-function>	
+00671686	<no-function>	
+00671688	<no-function>	
+0067168a	<no-function>	
+0067168c	<no-function>	
+0067168e	<no-function>	
+00671690	<no-function>	Open
+0067169a	<no-function>	Save As
+006716aa	<no-function>	All Files (*.*)
+006716ca	<no-function>	Untitled
+006716dc	<no-function>	
+006716de	<no-function>	
+006716e0	<no-function>	an unnamed file
+00671700	<no-function>	
+00671702	<no-function>	
+00671704	<no-function>	
+00671706	<no-function>	
+00671708	<no-function>	
+0067170a	<no-function>	
+0067170c	<no-function>	
+0067170e	<no-function>	
+00671710	<no-function>	
+00671714	<no-function>	
+00671716	<no-function>	&Hide
+00671722	<no-function>	
+00671724	<no-function>	
+00671726	<no-function>	
+00671728	<no-function>	
+0067172a	<no-function>	
+0067172c	<no-function>	
+0067172e	<no-function>	
+00671730	<no-function>	
+00671732	<no-function>	
+00671734	<no-function>	
+00671736	<no-function>	
+00671738	<no-function>	
+0067173a	<no-function>	
+0067173c	<no-function>	
+00671740	<no-function>	No error message is available.
+0067177e	<no-function>	Attempted an unsupported operation.
+006717c6	<no-function>	A required resource was unavailable.
+00671810	<no-function>	Out of memory.
+0067182e	<no-function>	An unknown error has occurred.
+0067186c	<no-function>	Encountered an improper argument.
+006718b0	<no-function>	
+006718b2	<no-function>	
+006718b4	<no-function>	
+006718b6	<no-function>	
+006718b8	<no-function>	
+006718ba	<no-function>	
+006718bc	<no-function>	
+006718be	<no-function>	
+006718c0	<no-function>	
+006718c2	<no-function>	
+006718c4	<no-function>	Incorrect filename.
+006718ec	<no-function>	Failed to open document.
+0067191e	<no-function>	Failed to save document.
+00671950	<no-function>	Save changes to %1?
+00671978	<no-function>	Failed to create empty document.
+006719ba	<no-function>	The file is too large to open.
+006719f8	<no-function>	Could not start print job.
+00671a2e	<no-function>	Failed to launch help.
+00671a5c	<no-function>	Internal application error.
+00671a94	<no-function>	Command failed.
+00671ab4	<no-function>	Insufficient memory to perform operation.
+00671b08	<no-function>	System registry entries have been removed and the INI file (if any) was deleted.
+00671baa	<no-function>	Not all of the system registry entries (or INI file) were removed.
+00671c30	<no-function>	This program requires the file %s, which was not found on this system.
+00671cbe	<no-function>	This program is linked to the missing export %s in the file %s. This machine may have an incompatible version of %s.
+00671da8	<no-function>	
+00671dac	<no-function>	Enter an integer.
+00671dd0	<no-function>	Enter a number.
+00671df0	<no-function>	Enter an integer between %1 and %2.
+00671e38	<no-function>	Enter a number between %1 and %2.
+00671e7c	<no-function>	Enter no more than %1 characters.
+00671ec0	<no-function>	Select a button.
+00671ee2	<no-function>	Enter an integer between 0 and 255.
+00671f2a	<no-function>	Enter a positive integer.
+00671f5e	<no-function>	Enter a date and/or time.
+00671f92	<no-function>	Enter a currency.
+00671fb6	<no-function>	Enter a GUID.
+00671fd2	<no-function>	Enter a time.
+00671fee	<no-function>	Enter a date.
+0067200a	<no-function>	
+0067200c	<no-function>	
+0067200e	<no-function>	
+00672010	<no-function>	Unexpected file format.
+00672040	<no-function>	%1 Cannot find this file. Verify that the correct path and file name are given.
+006720e0	<no-function>	Destination disk drive is full.
+00672120	<no-function>	Unable to read from %1, it is opened by someone else.
+0067218c	<no-function>	Unable to write to %1, it is read-only or opened by someone else.
+00672210	<no-function>	Encountered an unexpected error while reading %1.
+00672274	<no-function>	Encountered an unexpected error while writing %1.
+006722d8	<no-function>	
+006722da	<no-function>	
+006722dc	<no-function>	
+006722de	<no-function>	
+006722e0	<no-function>	
+006722e2	<no-function>	
+006722e4	<no-function>	
+006722e6	<no-function>	
+006722e8	<no-function>	
+006722ec	<no-function>	%1: %2 Continue running script?
+0067232c	<no-function>	Dispatch exception: %1
+0067235a	<no-function>	
+0067235c	<no-function>	
+0067235e	<no-function>	
+00672360	<no-function>	
+00672362	<no-function>	
+00672364	<no-function>	
+00672366	<no-function>	
+00672368	<no-function>	
+0067236a	<no-function>	
+0067236c	<no-function>	
+0067236e	<no-function>	
+00672370	<no-function>	
+00672372	<no-function>	
+00672374	<no-function>	
+00672378	<no-function>	
+0067237a	<no-function>	
+0067237c	<no-function>	
+0067237e	<no-function>	
+00672380	<no-function>	
+00672382	<no-function>	
+00672384	<no-function>	
+00672386	<no-function>	
+00672388	<no-function>	
+0067238a	<no-function>	
+0067238c	<no-function>	
+0067238e	<no-function>	
+00672390	<no-function>	Unable to read write-only property.
+006723d8	<no-function>	Unable to write read-only property.
+00672420	<no-function>	
+00672422	<no-function>	
+00672424	<no-function>	Unable to load mail system support.
+0067246c	<no-function>	Mail system DLL is invalid.
+006724a4	<no-function>	Send Mail failed to send message.
+006724e8	<no-function>	
+006724ea	<no-function>	
+006724ec	<no-function>	
+006724ee	<no-function>	
+006724f0	<no-function>	
+006724f2	<no-function>	
+006724f4	<no-function>	
+006724f6	<no-function>	
+006724f8	<no-function>	
+006724fa	<no-function>	
+006724fc	<no-function>	
+006724fe	<no-function>	
+00672500	<no-function>	
+00672504	<no-function>	No error occurred.
+0067252a	<no-function>	An unknown error occurred while accessing %1.
+00672586	<no-function>	%1 was not found.
+006725aa	<no-function>	%1 contains an incorrect path.
+006725e8	<no-function>	Could not open %1 because there are too many open files.
+0067265a	<no-function>	Access to %1 was denied.
+0067268c	<no-function>	An incorrect file handle was associated with %1.
+006726ee	<no-function>	Could not remove %1 because it is the current directory.
+00672760	<no-function>	Could not create %1 because the directory is full.
+006727c6	<no-function>	Seek failed on %1
+006727ea	<no-function>	Encountered a hardware I/O error while accessing %1.
+00672854	<no-function>	Encountered a sharing violation while accessing %1.
+006728bc	<no-function>	Encountered a locking violation while accessing %1.
+00672924	<no-function>	Disk full while accessing %1.
+00672960	<no-function>	Attempted to access %1 past its end.
+006729aa	<no-function>	
+006729ac	<no-function>	No error occurred.
+006729d2	<no-function>	An unknown error occurred while accessing %1.
+00672a2e	<no-function>	Attempted to write to the reading %1.
+00672a7a	<no-function>	Attempted to access %1 past its end.
+00672ac4	<no-function>	Attempted to read from the writing %1.
+00672b12	<no-function>	%1 has a bad format.
+00672b3c	<no-function>	%1 contained an unexpected object.
+00672b82	<no-function>	%1 contains an incorrect schema.
+00672bc4	<no-function>	
+00672bc6	<no-function>	
+00672bc8	<no-function>	
+00672bca	<no-function>	
+00672bcc	<no-function>	
+00672bce	<no-function>	
+00672bd0	<no-function>	
+00672bd2	<no-function>	
+00672bd4	<no-function>	pixels
+00672be2	<no-function>	
+00672be4	<no-function>	
+00672be6	<no-function>	
+00672be8	<no-function>	
+00672bea	<no-function>	
+00672bec	<no-function>	
+00672bee	<no-function>	
+00672bf0	<no-function>	
+00672bf2	<no-function>	
+00672bf4	<no-function>	
+00672bf6	<no-function>	
+00672bf8	<no-function>	
+00672bfa	<no-function>	
+00672bfc	<no-function>	
+00672bfe	<no-function>	
+00672c00	<no-function>	
+00672c02	<no-function>	Uncheck
+00672c12	<no-function>	Check
+00672c1e	<no-function>	Mixed
+00672c2a	<no-function>	
+00672c2c	<no-function>	
+00672c2e	<no-function>	
+00672c30	<no-function>	
+00672c32	<no-function>	
+00672c34	<no-function>	
+00672c36	<no-function>	
+00672c38	<no-function>	
+00672c3a	<no-function>	
+00672c3c	<no-function>	
+00672c3e	<no-function>	
+00672c40	<no-function>	
+00672e22	<no-function>	StringFileInfo
+00672e46	<no-function>	040904e4
+00672e5e	<no-function>	FileVersion
+00672e78	<no-function>	1, 0, 0, 0
+00672e96	<no-function>	ProductVersion
+00672eb4	<no-function>	1, 0, 0, 0
+00672ed2	<no-function>	VarFileInfo
+00672ef2	<no-function>	Translation
+00672f10	<no-function>	<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">     <security>       <requestedPrivileges>         <requestedExecutionLevel level="asInvoker" uiAccess="false"></requestedExecutionLevel>       </requestedPrivileges>     </security>   </trustInfo>   <dependency>     <dependentAssembly>       <assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="x86" publicKeyToken="6595b64144ccf1df" language="*"></assemblyIdentity>     </dependentAssembly>   </dependency> </assembly>PAPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDING
+ffdff1ac	<no-function>	
+ffdffc00	<no-function>	
+// total strings: 4147
