@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import threading
 import time
+from pathlib import Path
 from typing import Any
 
 from kreo_control.device.discovery import get_active_device
@@ -37,6 +38,9 @@ from kreo_control.lighting.matrix import (
 from kreo_control.lighting.models import KeyLedInfo, LightingState
 
 
+FRAME_CACHE_PATH = Path(__file__).resolve().parents[3] / "data" / "custom_frame.bin"
+
+
 class KreoKeyboard:
     """Unified hardware controller interface for the Kreo Swarm 75 keyboard."""
 
@@ -48,8 +52,33 @@ class KreoKeyboard:
         self._transport: HidTransport | None = None
         self._cached_profile: bytes | None = None
         self._cached_table: bytes | None = None
-        self._cached_custom_frame: bytes | None = None
+        self._cached_custom_frame: bytes | None = self._load_persisted_frame()
         self._current_mode_id: int | None = None
+
+    @staticmethod
+    def _load_persisted_frame() -> bytes:
+        if FRAME_CACHE_PATH.exists() and FRAME_CACHE_PATH.stat().st_size == CUSTOM_FRAME_SIZE:
+            try:
+                return FRAME_CACHE_PATH.read_bytes()
+            except Exception:
+                pass
+        led_map = load_swarm75_led_map()
+        baseline = {k.ui_key: "#00E5FF" for k in led_map}
+        frame = build_planar_custom_frame(baseline)
+        try:
+            FRAME_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+            FRAME_CACHE_PATH.write_bytes(frame)
+        except Exception:
+            pass
+        return frame
+
+    @staticmethod
+    def _save_persisted_frame(frame: bytes) -> None:
+        try:
+            FRAME_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+            FRAME_CACHE_PATH.write_bytes(frame)
+        except Exception:
+            pass
 
     @classmethod
     def get_shared_instance(cls) -> KreoKeyboard:
@@ -204,22 +233,11 @@ class KreoKeyboard:
             return parse_profile_to_state(updated_profile, self._cached_table)
 
     def get_per_key_lighting(self) -> list[KeyLedInfo]:
-        """Get RGB colors for all 82 keys."""
+        """Get RGB colors for all 82 keys from fast persistent memory."""
         led_map = load_swarm75_led_map()
 
-        with self._lock:
-            transport, dev = self._ensure_connected()
-
-            # Try to read custom frame from hardware
-            frame = self._cached_custom_frame
-            try:
-                if dev.connection_type == ConnectionType.WIRED:
-                    frame = read_custom_light_wired(transport)
-                else:
-                    frame = read_custom_light_wireless(transport)
-                self._cached_custom_frame = frame
-            except Exception:
-                pass
+        frame = self._cached_custom_frame or self._load_persisted_frame()
+        self._cached_custom_frame = frame
 
         keys: list[KeyLedInfo] = []
         for entry in led_map:
@@ -285,16 +303,7 @@ class KreoKeyboard:
             self._current_mode_id = CUSTOM_MODE_ID
 
             # 2. Build and write custom light frame (planar format for both wired and wireless)
-            base_frame = self._cached_custom_frame
-            if base_frame is None or len(base_frame) != CUSTOM_FRAME_SIZE:
-                try:
-                    if dev.connection_type == ConnectionType.WIRED:
-                        base_frame = read_custom_light_wired(transport)
-                    else:
-                        base_frame = read_custom_light_wireless(transport)
-                except Exception:
-                    base_frame = None
-
+            base_frame = self._cached_custom_frame or self._load_persisted_frame()
             new_frame = build_planar_custom_frame(edits, base_frame)
             if dev.connection_type == ConnectionType.WIRED:
                 write_custom_light_wired(transport, new_frame)
@@ -302,6 +311,7 @@ class KreoKeyboard:
                 write_custom_light_wireless(transport, new_frame)
 
             self._cached_custom_frame = new_frame
+            self._save_persisted_frame(new_frame)
 
             # 3. Construct updated key list directly from frame in memory
             led_map = load_swarm75_led_map()

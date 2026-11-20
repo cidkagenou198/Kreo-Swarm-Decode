@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import struct
 import time
+from collections.abc import Mapping, Sequence
+from typing import NamedTuple
 from kreo_control.device.transport import HidTransport, KreoProtocolError, KreoTimeoutError
 from kreo_control.lighting.constants import (
     CUSTOM_FRAME_SIZE,
@@ -9,6 +12,7 @@ from kreo_control.lighting.constants import (
     MAX_PROFILE_SIZE,
     LOGICAL_TO_HW_EFFECT,
     HW_EFFECT_TO_LOGICAL,
+    TOTAL_MATRIX_KEYS,
 )
 from kreo_control.lighting.matrix import hex_to_rgb, rgb_to_hex
 from kreo_control.lighting.models import LightingState, RGBColor
@@ -33,6 +37,8 @@ WIRELESS_PADDING_SIZE = 512
 
 WIRELESS_CMD_PROFILE_READ = 68
 WIRELESS_CMD_PROFILE_WRITE = 4
+WIRELESS_CMD_MATRIX_READ = 0x41
+WIRELESS_CMD_MATRIX_WRITE = 0x01
 WIRELESS_CMD_LIGHT_TABLE_READ = 73
 WIRELESS_CMD_LIGHT_TABLE_WRITE = 9
 WIRELESS_CMD_CUSTOM_LIGHT_READ = 66
@@ -41,6 +47,54 @@ WIRELESS_CMD_CUSTOM_LIGHT_WRITE = 2
 CUSTOM_MODE_ID = 277
 STATIC_MODE_ID = 1
 SNOW_MODE_ID = 19
+
+# Wired (CDevG5KB) feature-report constants, decoded from FUN_0048c600.
+G5KB_REPORT_ID_FW_18 = 0x06
+G5KB_REPORT_ID_OTHER = 0x09
+G5KB_FEATURE_REPORT_SIZE = 0x208
+G5KB_CHUNK_SIZE = 512
+G5KB_CHUNK_DELAY = 0.020
+G5KB_RETRY_DELAY = 0.046
+G5KB_MAX_ATTEMPTS = 3
+
+# Wired command IDs (CDevG5KB vtable slots +0x4c..+0x80).
+G5KB_CMD_SET_MATRIX = 0x03
+G5KB_CMD_GET_MATRIX = 0x83
+G5KB_CMD_SET_PROFILE = 0x04
+G5KB_CMD_GET_PROFILE = 0x84
+G5KB_CMD_SET_MACRO = 0x05
+G5KB_CMD_GET_MACRO = 0x85
+G5KB_CMD_SET_GAME = 0x06
+G5KB_CMD_GET_GAME = 0x86
+G5KB_CMD_SET_LED_TABLE = 0x0A
+G5KB_CMD_GET_LED_TABLE = 0x8A
+G5KB_CMD_SET_SCREEN_PARAM = 0x0B
+G5KB_CMD_RESET = 0x11
+G5KB_CMD_GET_PASSWORD = 0x82
+
+# Payload layout constants.
+KEYMAP_RECORD_SIZE = 4
+MATRIX_LAYER_POSITIONS = TOTAL_MATRIX_KEYS  # live GetMatrix returns 126 * 4 = 504 bytes
+MATRIX_LAYER_CAPACITY = 0x80  # vendor cfg+0x2ff4 default (pre-device-probe figure)
+RGB_TAB_ENTRY_SIZE = 21  # 7 RGB triples per key
+RGB_TAB_ZONES = 7
+RGB_TAB_PAD_SIZE = 0x200
+RGB_TAB_CRC_TAIL = b"\x5A\xA5"
+
+# Live evidence (2026-11-18): both transports return a 23-entry table
+# (23 * 21 = 483 bytes) followed by a 7-byte trailer whose first 6 bytes are
+# KB.ini's `Psd`. The vendor's own read constant requests 483 bytes
+# (`LIGHT_TABLE_READ_CMD` ends in `e3 01`). `LIGHT_TABLE_SIZE` (480) in the
+# lighting constants is 3 bytes short; see protocol_spec.md "Open items".
+RGB_TAB_ENTRY_COUNT = 23
+RGB_TAB_TABLE_BYTES = RGB_TAB_ENTRY_COUNT * RGB_TAB_ENTRY_SIZE  # 483
+RGB_TAB_PSD_TRAILER_SIZE = 7
+
+# Action pages observed in a live layer read.
+KEYMAP_PAGE_KEYBOARD = 0x00
+KEYMAP_PAGE_CONSUMER = 0x02
+KEYMAP_PAGE_VENDOR_07 = 0x07
+KEYMAP_PAGE_VENDOR_08 = 0x08
 
 
 def calculate_wireless_checksum(body: bytes) -> int:
@@ -222,6 +276,375 @@ parse_profile = parse_profile_to_state
 
 
 # ---------------------------------------------------------
+# Frame builders (decoded from the vendor binary)
+# ---------------------------------------------------------
+
+
+def build_wireless_frame(
+    command: int,
+    index: int,
+    total: int,
+    payload: bytes = b"",
+    *,
+    flag: int = 0,
+    length: int | None = None,
+) -> bytes:
+    """Build one 20-byte `0x13` wireless frame.
+
+    Layout (confirmed in `FUN_00487260` / `FUN_00487fa0`):
+
+    ``[0]=0x13, [1]=cmd, [2]=total, [3]=index, [4]=(flag<<4)|len,``
+    ``[5..18]=payload, [19]=checksum``.
+
+    The high nibble of byte 4 is a caller-supplied flag (layer for
+    ``SetMatrix``, group index for ``SetGame``, page for macro writes), *not* a
+    last-chunk marker.
+    """
+    if not 0 <= command <= 0xFF:
+        raise KreoProtocolError(f"Wireless command out of range: {command}")
+    if not 0 <= index <= 0xFF:
+        raise KreoProtocolError(f"Wireless chunk index out of range: {index}")
+    if not 0 <= total <= 0xFF:
+        raise KreoProtocolError(f"Wireless chunk total out of range: {total}")
+    if not 0 <= flag <= 0x0F:
+        raise KreoProtocolError(f"Wireless flag nibble out of range: {flag}")
+
+    if length is None:
+        length = len(payload)
+    if not 0 <= length <= WIRELESS_CHUNK_SIZE:
+        raise KreoProtocolError(f"Wireless chunk length out of range: {length}")
+
+    chunk = bytes(payload[:WIRELESS_CHUNK_SIZE])
+    chunk += b"\x00" * (WIRELESS_CHUNK_SIZE - len(chunk))
+
+    byte4 = ((flag & 0x0F) << 4) | (length & 0x0F)
+    body = bytes([command & 0xFF, total & 0xFF, index & 0xFF, byte4]) + chunk
+    return bytes([WIRELESS_REPORT_ID]) + body + bytes([calculate_wireless_checksum(body)])
+
+
+def build_wireless_packets(
+    command: int,
+    payload: bytes,
+    *,
+    flag: int = 0,
+    total: int | None = None,
+    chunk_size: int = WIRELESS_CHUNK_SIZE,
+    pad_to: int | None = None,
+) -> list[bytes]:
+    """Split `payload` into 20-byte `0x13` frames.
+
+    `total` overrides the advertised chunk count (the vendor sends a fixed
+    logical count, e.g. macro page count). `pad_to` zero-extends the payload to
+    a fixed device-side length before chunking.
+    """
+    if pad_to is not None:
+        if len(payload) > pad_to:
+            raise KreoProtocolError(f"Payload ({len(payload)}) exceeds pad_to ({pad_to})")
+        payload = bytes(payload) + bytes(pad_to - len(payload))
+
+    actual = max(1, (len(payload) + chunk_size - 1) // chunk_size)
+    advertised = actual if total is None else total
+    frames: list[bytes] = []
+    for index in range(actual):
+        start = index * chunk_size
+        chunk = payload[start : start + chunk_size]
+        frames.append(
+            build_wireless_frame(
+                command,
+                index,
+                advertised,
+                chunk,
+                flag=flag,
+                length=len(chunk),
+            )
+        )
+    return frames
+
+
+def g5kb_report_id(nfw: int) -> int:
+    """Report ID the wired device expects: 0x06 for Fw==0x18 else 0x09."""
+    return G5KB_REPORT_ID_FW_18 if (nfw & 0xFF) == 0x18 else G5KB_REPORT_ID_OTHER
+
+
+def build_feature_frame(
+    command: int,
+    payload: bytes = b"",
+    *,
+    param: int = 0,
+    index: int = 0,
+    total: int = 1,
+    length: int | None = None,
+    report_id: int = G5KB_REPORT_ID_FW_18,
+    report_size: int = G5KB_FEATURE_REPORT_SIZE,
+) -> bytes:
+    """Build one fixed-size HID feature frame for the wired transport.
+
+    Layout confirmed in `FUN_0048c600`:
+
+    ``[0]=report id, [1]=cmd, [2]=param, [3]=0, [4]=total, [5]=index,``
+    ``[6..7]=len LE16, [8..]=payload``.
+
+    For read commands the vendor sets `[6..7]` to the *requested* byte count
+    while leaving the payload empty; pass `length` for that case.
+    """
+    if not 0 <= command <= 0xFF:
+        raise KreoProtocolError(f"Feature command out of range: {command}")
+    if not 0 <= report_id <= 0xFF:
+        raise KreoProtocolError(f"Feature report ID out of range: {report_id}")
+    if report_size < 8:
+        raise KreoProtocolError(f"Feature report size too small: {report_size}")
+    capacity = report_size - 8
+    if len(payload) > capacity:
+        raise KreoProtocolError(f"Feature payload ({len(payload)}) exceeds capacity ({capacity})")
+    if length is None:
+        length = len(payload)
+    if not 0 <= length <= 0xFFFF:
+        raise KreoProtocolError(f"Feature length out of range: {length}")
+    if not 0 <= index <= 0xFF or not 0 <= total <= 0xFF:
+        raise KreoProtocolError("Feature chunk index/total out of range")
+
+    frame = bytearray(report_size)
+    frame[0] = report_id & 0xFF
+    frame[1] = command & 0xFF
+    frame[2] = param & 0xFF
+    frame[3] = 0
+    frame[4] = total & 0xFF
+    frame[5] = index & 0xFF
+    frame[6:8] = struct.pack("<H", length)
+    frame[8 : 8 + len(payload)] = payload
+    return bytes(frame)
+
+
+def parse_feature_frame(report_id: int, frame: bytes) -> bytes:
+    """Extract the payload from a 520-byte feature buffer.
+
+    The vendor buffer keeps the report ID at byte 0 (hidapi-style), so the
+    header is `[0]=report id, [1]=cmd, [2]=param, [4]=total, [5]=index,
+    [6..7]=len LE16` and the payload starts at byte 8.
+    """
+    data = bytes(frame)
+    if len(data) < 8:
+        raise KreoProtocolError(f"Feature response too short: {len(frame)} bytes")
+    if data[0] != (report_id & 0xFF):
+        raise KreoProtocolError(
+            f"Unexpected feature report ID {data[0]:#04x}, expected {report_id & 0xFF:#04x}"
+        )
+    length = struct.unpack_from("<H", data, 6)[0]
+    if 8 + length > len(data):
+        raise KreoProtocolError(
+            f"Feature response length {length} exceeds buffer ({len(data) - 8} payload bytes)"
+        )
+    return data[8 : 8 + length]
+
+
+def pack_keyboard_action(page: int, value: int) -> int:
+    """Pack a 32-bit keymap action: `page << 24 | value`.
+
+    The on-wire record is this value stored big-endian. Confirmed against a
+    live `GetMatrix` read: base keys use page `0x00`, FN1 uses `0x02/0x07/0x08`
+    and the values equal the `KB.ini` `[FN1]` 32-bit fields byte-for-byte.
+    """
+    if not 0 <= page <= 0xFF:
+        raise KreoProtocolError(f"Action page out of range: {page}")
+    if not 0 <= value <= 0xFFFFFF:
+        raise KreoProtocolError(f"Action value out of range: {value:#x}")
+    return ((page & 0xFF) << 24) | (value & 0xFFFFFF)
+
+
+def pack_base_key(hid_usage: int, modifier_mask: int = 0) -> int:
+    """Pack a base-layer key: page 0, `modifier_mask << 16 | hid_usage`.
+
+    Observed: Esc `0x00000029`, Q `0x00000014`, LShift `0x00020000`,
+    LCtrl `0x00010000`, LWin `0x00080000`.
+    """
+    if not 0 <= hid_usage <= 0xFF:
+        raise KreoProtocolError(f"HID usage out of range: {hid_usage}")
+    if not 0 <= modifier_mask <= 0xFF:
+        raise KreoProtocolError(f"Modifier mask out of range: {modifier_mask}")
+    return ((modifier_mask & 0xFF) << 16) | (hid_usage & 0xFF)
+
+
+def build_keymap_layer(
+    assignments: Mapping[int, int] | Sequence[int],
+    *,
+    matrix_len: int = MATRIX_LAYER_POSITIONS,
+    fill: int = 0,
+) -> bytes:
+    """Build one keymap layer: 4-byte big-endian action codes, 126 positions.
+
+    Live `GetMatrix` returns 36 chunks x 14 = 504 bytes (126 positions), and the
+    bytes are the 32-bit action value most-significant-byte first. Use
+    `pack_base_key` for page-0 keys and `pack_keyboard_action` for FN-layer
+    actions.
+    """
+    if matrix_len < 0:
+        raise KreoProtocolError(f"matrix_len must be non-negative, got {matrix_len}")
+
+    records = [fill & 0xFFFFFFFF] * matrix_len
+
+    if isinstance(assignments, Mapping):
+        items = assignments.items()
+    else:
+        items = enumerate(assignments)
+
+    for position, value in items:
+        if not 0 <= position < matrix_len:
+            raise KreoProtocolError(f"Keymap position {position} outside 0..{matrix_len - 1}")
+        if not 0 <= value <= 0xFFFFFFFF:
+            raise KreoProtocolError(f"Action code out of range: {value:#x}")
+        records[position] = value
+
+    return b"".join(struct.pack(">I", record) for record in records)
+
+
+class KeyAction(NamedTuple):
+    """One decoded 32-bit keymap action (live-confirmed layout)."""
+
+    position: int
+    page: int
+    value: int
+    kind: str  # empty | keyboard | modifier | keyboard+modifier | consumer | vendor
+
+    @property
+    def hid_usage(self) -> int | None:
+        """HID usage for page-0 keys, else ``None``."""
+        return (self.value & 0xFF) if self.page == KEYMAP_PAGE_KEYBOARD else None
+
+    @property
+    def modifier_mask(self) -> int | None:
+        """Modifier bitmask for page-0 keys, else ``None``."""
+        return ((self.value >> 16) & 0xFF) if self.page == KEYMAP_PAGE_KEYBOARD else None
+
+
+def decode_keymap_record(record: int, position: int = 0) -> KeyAction:
+    """Decode one big-endian 32-bit action code into a :class:`KeyAction`.
+
+    Live vectors: Esc `0x00000029`, LShift `0x00020000`, Mute `0x020000E2`,
+    FN1 Esc `0x07000004`, FN1 ```` `0x08070000``.
+    """
+    if not 0 <= record <= 0xFFFFFFFF:
+        raise KreoProtocolError(f"Action code out of range: {record:#x}")
+
+    page = (record >> 24) & 0xFF
+    value = record & 0xFFFFFF
+
+    if record == 0:
+        kind = "empty"
+    elif page == KEYMAP_PAGE_KEYBOARD:
+        modifier = (value >> 16) & 0xFF
+        usage = value & 0xFF
+        if usage == 0 and modifier:
+            kind = "modifier"
+        elif modifier:
+            kind = "keyboard+modifier"
+        else:
+            kind = "keyboard"
+    elif page == KEYMAP_PAGE_CONSUMER:
+        kind = "consumer"
+    else:
+        kind = "vendor"
+
+    return KeyAction(position=position, page=page, value=value, kind=kind)
+
+
+def decode_keymap_layer(
+    payload: bytes,
+    *,
+    positions: int = MATRIX_LAYER_POSITIONS,
+) -> list[KeyAction]:
+    """Decode a full `GetMatrix` layer (504 bytes = 126 x 4, big-endian)."""
+    expected = positions * KEYMAP_RECORD_SIZE
+    if len(payload) < expected:
+        raise KreoProtocolError(f"Keymap layer too short: {len(payload)} < {expected}")
+    return [
+        decode_keymap_record(
+            int.from_bytes(payload[i * 4 : i * 4 + 4], "big"), position=i
+        )
+        for i in range(positions)
+    ]
+
+
+def build_macro_block(macros: Sequence[bytes]) -> bytes:
+    """Build a macro block: `(offset, size)` LE16 table followed by the blobs.
+
+    Offsets include the `n * 4` byte header bias, so they are absolute from the
+    start of the block (confirmed in `FUN_0048e340`).
+    """
+    header_size = len(macros) * 4
+    if header_size > 0xFFFF:
+        raise KreoProtocolError("Too many macros for a 16-bit header")
+
+    table = bytearray()
+    offset = header_size
+    for blob in macros:
+        size = len(blob)
+        if offset > 0xFFFF or size > 0xFFFF:
+            raise KreoProtocolError("Macro block exceeds 16-bit offset/size space")
+        table += struct.pack("<HH", offset, size)
+        offset += size
+
+    return bytes(table) + b"".join(bytes(m) for m in macros)
+
+
+def build_rgb_table(
+    entries: Sequence[Sequence[tuple[int, int, int]]],
+    *,
+    crc: bool = True,
+    pad_size: int = RGB_TAB_PAD_SIZE,
+) -> bytes:
+    """Build the 21-byte-per-key RGB table used by `SetLedRgbTab`.
+
+    Each entry is 7 RGB triples (7 zones per key). When `crc` is set the table
+    is zero-padded to `pad_size` and terminated with `5A A5` at the last two
+    bytes, matching `cfg+0x2ff5` / `KB.ini CRC=1` (confirmed in
+    `FUN_0048ec30`).
+    """
+    out = bytearray()
+    for entry in entries:
+        if len(entry) != RGB_TAB_ZONES:
+            raise KreoProtocolError(
+                f"RGB table entry needs {RGB_TAB_ZONES} colours, got {len(entry)}"
+            )
+        for rgb in entry:
+            if len(rgb) != 3:
+                raise KreoProtocolError(f"RGB triple must have 3 components, got {rgb!r}")
+            out += bytes(
+                (int(rgb[0]) & 0xFF, int(rgb[1]) & 0xFF, int(rgb[2]) & 0xFF)
+            )
+
+    if not crc:
+        return bytes(out)
+
+    if len(out) > pad_size - len(RGB_TAB_CRC_TAIL):
+        raise KreoProtocolError(f"RGB table ({len(out)}) does not fit in {pad_size} bytes")
+    out += bytes(pad_size - len(out) - len(RGB_TAB_CRC_TAIL))
+    out += RGB_TAB_CRC_TAIL
+    return bytes(out)
+
+
+def split_rgb_table(
+    raw: bytes,
+    *,
+    entry_count: int = RGB_TAB_ENTRY_COUNT,
+) -> tuple[list[bytes], bytes]:
+    """Split a `GetLedRgbTab` reply into 21-byte entries plus its Psd trailer.
+
+    Live replies are `entry_count * 21` bytes (483) followed by a 7-byte trailer
+    whose first 6 bytes equal `KB.ini`'s `Psd`. The wired path additionally pads
+    with zeros, `5A A5` and `00 10 00 00`; that padding is ignored here.
+    """
+    expected = entry_count * RGB_TAB_ENTRY_SIZE
+    needed = expected + RGB_TAB_PSD_TRAILER_SIZE
+    if len(raw) < needed:
+        raise KreoProtocolError(f"RGB table reply too short: {len(raw)} < {needed}")
+    entries = [
+        raw[index * RGB_TAB_ENTRY_SIZE : (index + 1) * RGB_TAB_ENTRY_SIZE]
+        for index in range(entry_count)
+    ]
+    return entries, raw[expected:needed]
+
+
+# ---------------------------------------------------------
 # Wired HID Transmissions (Feature Reports)
 # ---------------------------------------------------------
 
@@ -308,15 +731,21 @@ def _read_wireless_stream(
     query_cmd: int,
     expected_response_cmd: int,
     expected_bytes: int,
+    *,
+    flag: int = 0,
 ) -> bytes:
-    """Send a query with proper 20-byte framing and assemble multi-packet response chunks from wireless receiver."""
+    """Send a query with proper 20-byte framing and assemble multi-packet response chunks from wireless receiver.
+
+    `flag` is the caller-supplied high nibble of byte 4 (layer / group / page),
+    the same value `AccessData` takes as its second argument.
+    """
     # Drain stale unread packets if any
     for _ in range(50):
         stale = transport.read(64, timeout_ms=5)
         if len(stale) == 0:
             break
 
-    body = bytes([query_cmd, 1] + [0] * 16)
+    body = bytes([query_cmd, 1, 0, (flag & 0x0F) << 4]) + bytes(14)
     chk = calculate_wireless_checksum(body)
     query = bytes([WIRELESS_REPORT_ID, *body, chk])
     transport.write(query)
@@ -352,7 +781,10 @@ def _read_wireless_stream(
 
         total_packets = payload[1]
         chunk_idx = payload[2]
-        packets[chunk_idx] = payload[4:-1]
+        declared = payload[3] & 0x0F
+        # Live frames carry the real chunk length in the low nibble, including a
+        # short final chunk (e.g. 2 bytes for the 128-byte profile).
+        packets[chunk_idx] = payload[4 : 4 + (declared or WIRELESS_CHUNK_SIZE)]
 
     assembled = b"".join(packets.get(i, b"\x00" * WIRELESS_CHUNK_SIZE) for i in range(total_packets))
     return assembled[:expected_bytes]
@@ -363,49 +795,135 @@ def _write_wireless_chunked(
     command: int,
     payload: bytes,
     *,
-    chunk_delay: float = 0.005,
+    flag: int = 0,
+    total: int | None = None,
+    chunk_delay: float = 0.015,
 ) -> None:
-    """Send payload in 14-byte chunks with 20-byte framing and verified per-chunk ACK to 2.4 GHz wireless receiver."""
-    # Drain stale input packets before starting chunk transmission
-    for _ in range(30):
-        stale = transport.read(64, timeout_ms=3)
-        if not stale:
-            break
+    """Send `payload` in 14-byte chunks using the 20-byte `0x13` framing.
 
-    total_chunks = max(1, (len(payload) + WIRELESS_CHUNK_SIZE - 1) // WIRELESS_CHUNK_SIZE)
-
-    for index in range(total_chunks):
-        start = index * WIRELESS_CHUNK_SIZE
-        chunk = payload[start : start + WIRELESS_CHUNK_SIZE]
-        padded_chunk = bytes([*chunk, *([0] * (WIRELESS_CHUNK_SIZE - len(chunk)))])
-
-        length_byte = len(chunk)
-        if index == total_chunks - 1 and len(chunk) == WIRELESS_CHUNK_SIZE:
-            length_byte = 2
-
-        body = bytes([command, total_chunks & 0xFF, index & 0xFF, length_byte, *padded_chunk])
-        checksum = calculate_wireless_checksum(body)
-        packet = bytes([WIRELESS_REPORT_ID, *body, checksum])
-
-        for attempt in range(3):
-            bytes_written = transport.write(packet)
-            if bytes_written <= 0:
-                time.sleep(0.004)
-                continue
-
-            # Read matching ACK packet from wireless receiver
-            ack = transport.read(64, timeout_ms=100)
-            if (
-                len(ack) > 3
-                and ack[0] == WIRELESS_REPORT_ID
-                and ack[1] == command
-                and ack[3] == index
-            ):
-                break
-            time.sleep(0.004)
-
+    `flag` is the caller-supplied high nibble of byte 4 (layer / group / page),
+    matching `AccessData(cmd, nibble, buf, len, ...)`.
+    """
+    for packet in build_wireless_packets(command, payload, flag=flag, total=total):
+        transport.write(packet)
         if chunk_delay > 0:
             time.sleep(chunk_delay)
+
+
+def write_g5kb_chunked(
+    transport: HidTransport,
+    command: int,
+    payload: bytes,
+    *,
+    param: int = 0,
+    report_id: int = G5KB_REPORT_ID_FW_18,
+    chunk_size: int = G5KB_CHUNK_SIZE,
+    chunk_delay: float = G5KB_CHUNK_DELAY,
+) -> None:
+    """Write a payload over HID feature reports in 512-byte chunks.
+
+    Mirrors `FUN_0048c600`: one fixed 520-byte frame per chunk, `Sleep(20 ms)`
+    before each transfer.
+    """
+    if chunk_size <= 0 or chunk_size > G5KB_FEATURE_REPORT_SIZE - 8:
+        raise KreoProtocolError(f"Invalid feature chunk size: {chunk_size}")
+
+    total = max(1, (len(payload) + chunk_size - 1) // chunk_size)
+    for index in range(total):
+        start = index * chunk_size
+        chunk = payload[start : start + chunk_size]
+        frame = build_feature_frame(
+            command,
+            chunk,
+            param=param,
+            index=index,
+            total=total,
+            report_id=report_id,
+        )
+        if chunk_delay > 0:
+            time.sleep(chunk_delay)
+        transport.send_feature_report(frame)
+
+
+def read_g5kb(
+    transport: HidTransport,
+    command: int,
+    *,
+    expected_bytes: int,
+    param: int = 0,
+    report_id: int = G5KB_REPORT_ID_FW_18,
+    chunk_delay: float = G5KB_CHUNK_DELAY,
+    poll_retries: int = 3,
+    poll_delay: float = G5KB_RETRY_DELAY,
+) -> bytes:
+    """Run a wired read command and assemble its chunked feature-reply payload.
+
+    Each chunk is a `SetFeature` request followed by a `GetFeature` reply with
+    the same command/index header.
+    """
+    total = max(1, (expected_bytes + G5KB_CHUNK_SIZE - 1) // G5KB_CHUNK_SIZE)
+    assembled = bytearray()
+
+    for index in range(total):
+        want = min(G5KB_CHUNK_SIZE, expected_bytes - len(assembled))
+        request = build_feature_frame(
+            command,
+            b"",
+            param=param,
+            index=index,
+            total=total,
+            length=want,
+            report_id=report_id,
+        )
+        if chunk_delay > 0:
+            time.sleep(chunk_delay)
+        transport.send_feature_report(request)
+
+        reply: bytes | None = None
+        for _ in range(poll_retries):
+            if chunk_delay > 0:
+                time.sleep(chunk_delay)
+            raw = transport.get_feature_report(report_id, G5KB_FEATURE_REPORT_SIZE)
+            candidate = parse_feature_frame(report_id, raw)
+            if candidate:
+                reply = candidate
+                break
+            if poll_delay > 0:
+                time.sleep(poll_delay)
+
+        if reply is None:
+            raise KreoTimeoutError(
+                f"No feature reply for command {command:#04x} chunk {index}"
+            )
+        assembled += reply[:want]
+
+    if len(assembled) < expected_bytes:
+        raise KreoProtocolError(
+            f"Short feature reply for command {command:#04x}: "
+            f"{len(assembled)} of {expected_bytes} bytes"
+        )
+    return bytes(assembled[:expected_bytes])
+
+
+def read_keymap_wired(transport: HidTransport, layer: int = 0) -> bytes:
+    """Read one 504-byte keymap layer over the wired feature transport (`0x83`)."""
+    return read_g5kb(
+        transport,
+        G5KB_CMD_GET_MATRIX,
+        expected_bytes=MATRIX_LAYER_POSITIONS * KEYMAP_RECORD_SIZE,
+        param=layer & 0xFF,
+    )
+
+
+def read_keymap_wireless(transport: HidTransport, layer: int = 0) -> bytes:
+    """Read one 504-byte keymap layer from the 2.4 GHz dongle (`0x41`)."""
+    return _read_wireless_stream(
+        transport,
+        WIRELESS_CMD_MATRIX_READ,
+        WIRELESS_CMD_MATRIX_READ,
+        MATRIX_LAYER_POSITIONS * KEYMAP_RECORD_SIZE,
+        flag=layer,
+    )
 
 
 def read_profile_wireless(transport: HidTransport) -> bytes:
