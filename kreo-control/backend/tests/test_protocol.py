@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pytest
+from kreo_control.device import protocol
 from kreo_control.device.protocol import (
     calculate_wireless_checksum,
     find_second_255_index,
@@ -342,3 +343,34 @@ def test_split_rgb_table_ignores_wired_padding():
     entries, trailer = split_rgb_table(raw)
     assert len(entries) == 23
     assert trailer == bytes.fromhex("0300000001be01")
+
+
+def test_read_write_light_table_wired_supports_490_bytes():
+    class FakeWiredTransport:
+        def __init__(self):
+            self.written: list[bytes] = []
+
+        def send_feature_report(self, payload: bytes) -> int:
+            self.written.append(bytes(payload))
+            return len(payload)
+
+        def get_feature_report(self, report_id: int, size: int) -> bytes:
+            # 8-byte header + 490-byte RGB table and trailer
+            header = bytes([report_id, 0x8A, 0, 0, 1, 0, 0xE3, 1])
+            data = bytes([0x77] * 483) + bytes.fromhex("0300000001be01")
+            return header + data + bytes([0] * (size - len(header) - len(data)))
+
+    fake = FakeWiredTransport()
+    table = protocol.read_light_table_wired(fake)
+    assert len(table) == 490
+    assert table[0:483] == bytes([0x77] * 483)
+    assert table[483:490] == bytes.fromhex("0300000001be01")
+
+    # Writing 490-byte table succeeds
+    protocol.write_light_table_wired(fake, table)
+    assert len(fake.written) == 2
+    write_frame = fake.written[1]
+    assert write_frame[0] == protocol.WIRED_WRITE_REPORT_ID
+    assert write_frame[1:8] == protocol.LIGHT_TABLE_WRITE_CMD
+    assert write_frame[8:498] == table
+

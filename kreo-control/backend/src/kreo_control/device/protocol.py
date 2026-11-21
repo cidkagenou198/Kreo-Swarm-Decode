@@ -89,6 +89,8 @@ RGB_TAB_CRC_TAIL = b"\x5A\xA5"
 RGB_TAB_ENTRY_COUNT = 23
 RGB_TAB_TABLE_BYTES = RGB_TAB_ENTRY_COUNT * RGB_TAB_ENTRY_SIZE  # 483
 RGB_TAB_PSD_TRAILER_SIZE = 7
+RGB_TAB_TOTAL_BYTES = RGB_TAB_TABLE_BYTES + RGB_TAB_PSD_TRAILER_SIZE  # 490
+RGB_TAB_DEFAULT_PSD_TRAILER = bytes([0x03, 0x00, 0x00, 0x00, 0x01, 0xBE, 0x01])
 
 # Action pages observed in a live layer read.
 KEYMAP_PAGE_KEYBOARD = 0x00
@@ -673,7 +675,7 @@ def write_profile_wired(transport: HidTransport, profile: bytes) -> None:
 
 
 def read_light_table_wired(transport: HidTransport) -> bytes:
-    """Read 480-byte light table over wired USB feature reports."""
+    """Read RGB palette table over wired USB feature reports (483 or 490 bytes)."""
     padding = [0] * (WIRED_FEATURE_REPORT_SIZE - 1 - len(LIGHT_TABLE_READ_CMD))
     payload = bytes([WIRED_WRITE_REPORT_ID, *LIGHT_TABLE_READ_CMD, *padding])
     transport.send_feature_report(payload)
@@ -682,14 +684,24 @@ def read_light_table_wired(transport: HidTransport) -> bytes:
     if len(response) < 8 + LIGHT_TABLE_SIZE:
         raise KreoProtocolError(f"Incomplete wired light table response: {len(response)} bytes")
 
-    return response[8 : 8 + LIGHT_TABLE_SIZE]
+    avail = len(response) - 8
+    read_len = min(avail, RGB_TAB_TOTAL_BYTES)
+    return response[8 : 8 + read_len]
 
 
 def write_light_table_wired(transport: HidTransport, light_table: bytes) -> None:
-    """Write 480-byte light table over wired USB feature reports."""
-    if len(light_table) != LIGHT_TABLE_SIZE:
-        raise KreoProtocolError(f"Light table requires {LIGHT_TABLE_SIZE} bytes, got {len(light_table)}")
-    command = LIGHT_TABLE_WRITE_CMD + light_table
+    """Write RGB palette table over wired USB feature reports."""
+    if len(light_table) not in (LIGHT_TABLE_SIZE, RGB_TAB_TABLE_BYTES, RGB_TAB_TOTAL_BYTES):
+        raise KreoProtocolError(
+            f"Light table requires {LIGHT_TABLE_SIZE}, {RGB_TAB_TABLE_BYTES}, or {RGB_TAB_TOTAL_BYTES} bytes, got {len(light_table)}"
+        )
+    table_payload = light_table
+    if len(table_payload) == RGB_TAB_TABLE_BYTES:
+        table_payload = table_payload + RGB_TAB_DEFAULT_PSD_TRAILER
+    elif len(table_payload) == LIGHT_TABLE_SIZE:
+        table_payload = table_payload + bytes([0] * 3) + RGB_TAB_DEFAULT_PSD_TRAILER
+
+    command = LIGHT_TABLE_WRITE_CMD + table_payload
     padding = [0] * (WIRED_FEATURE_REPORT_SIZE - 1 - len(command))
     payload = bytes([WIRED_WRITE_REPORT_ID, *command, *padding])
     transport.send_feature_report(payload)
@@ -948,19 +960,21 @@ def write_profile_wireless(transport: HidTransport, profile: bytes) -> None:
 
 
 def read_light_table_wireless(transport: HidTransport) -> bytes:
-    """Read 480-byte light table from 2.4 GHz RF dongle."""
+    """Read RGB palette table from 2.4 GHz RF dongle."""
     return _read_wireless_stream(
         transport=transport,
         query_cmd=WIRELESS_CMD_LIGHT_TABLE_READ,
         expected_response_cmd=WIRELESS_CMD_LIGHT_TABLE_READ,
-        expected_bytes=LIGHT_TABLE_SIZE,
+        expected_bytes=RGB_TAB_TOTAL_BYTES,
     )
 
 
 def write_light_table_wireless(transport: HidTransport, light_table: bytes) -> None:
-    """Write 480-byte light table (padded to 512 bytes) to 2.4 GHz RF dongle."""
-    if len(light_table) != LIGHT_TABLE_SIZE:
-        raise KreoProtocolError(f"Light table requires {LIGHT_TABLE_SIZE} bytes, got {len(light_table)}")
+    """Write RGB palette table (padded to 512 bytes) to 2.4 GHz RF dongle."""
+    if len(light_table) not in (LIGHT_TABLE_SIZE, RGB_TAB_TABLE_BYTES, RGB_TAB_TOTAL_BYTES):
+        raise KreoProtocolError(
+            f"Light table requires {LIGHT_TABLE_SIZE}, {RGB_TAB_TABLE_BYTES}, or {RGB_TAB_TOTAL_BYTES} bytes, got {len(light_table)}"
+        )
     padded = bytes([*light_table, *([0] * (WIRELESS_PADDING_SIZE - len(light_table)))])
     _write_wireless_chunked(
         transport=transport,
