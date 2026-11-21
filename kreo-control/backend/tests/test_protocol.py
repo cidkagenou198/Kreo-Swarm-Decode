@@ -374,3 +374,36 @@ def test_read_write_light_table_wired_supports_490_bytes():
     assert write_frame[1:8] == protocol.LIGHT_TABLE_WRITE_CMD
     assert write_frame[8:498] == table
 
+
+def test_build_keymap_layer_preserves_base_layer_records():
+    # Simulate a 126-slot base layer with existing actions (e.g. Esc=0x29 at pos 0, Mute at pos 90)
+    base = bytearray(504)
+    base[0:4] = (0x00000029).to_bytes(4, "big")  # Esc
+    base[360:364] = (0x020000E2).to_bytes(4, "big")  # Mute at pos 90
+
+    # Only remap position 14 (W) to usage 0x14 (Q)
+    q_action = protocol.encode_keyboard_action(0x14)
+    layer = protocol.build_keymap_layer({14: q_action}, base_layer=bytes(base))
+
+    assert len(layer) == 504
+    actions = protocol.decode_keymap_layer(layer)
+    assert actions[0].hid_usage == 0x29  # Esc preserved
+    assert actions[90].value == 0x00E2   # Mute preserved
+    assert actions[14].hid_usage == 0x14 # W changed to Q
+
+
+def test_encode_keyboard_and_consumer_actions():
+    # Keyboard with Shift modifier
+    shift_a = protocol.encode_keyboard_action(0x04, modifier_mask=0x02)
+    decoded = protocol.decode_keymap_record(shift_a)
+    assert decoded.kind == "keyboard+modifier"
+    assert decoded.hid_usage == 0x04
+    assert decoded.modifier_mask == 0x02
+
+    # Consumer Play/Pause
+    play_pause = protocol.encode_consumer_action(0x00CD)
+    decoded_consumer = protocol.decode_keymap_record(play_pause)
+    assert decoded_consumer.kind == "consumer"
+    assert decoded_consumer.value == 0x00CD
+
+

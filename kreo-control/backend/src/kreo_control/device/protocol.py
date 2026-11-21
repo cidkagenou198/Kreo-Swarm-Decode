@@ -466,23 +466,42 @@ def pack_base_key(hid_usage: int, modifier_mask: int = 0) -> int:
     return ((modifier_mask & 0xFF) << 16) | (hid_usage & 0xFF)
 
 
+def encode_keyboard_action(hid_usage: int, modifier_mask: int = 0) -> int:
+    """Encode a standard page-0 keyboard usage + modifier into a 32-bit action code."""
+    return pack_keyboard_action(KEYMAP_PAGE_KEYBOARD, pack_base_key(hid_usage, modifier_mask))
+
+
+def encode_consumer_action(consumer_usage: int) -> int:
+    """Encode a page-2 consumer key (e.g. media keys) into a 32-bit action code."""
+    return pack_keyboard_action(KEYMAP_PAGE_CONSUMER, consumer_usage & 0xFFFF)
+
+
 def build_keymap_layer(
     assignments: Mapping[int, int] | Sequence[int],
     *,
     matrix_len: int = MATRIX_LAYER_POSITIONS,
     fill: int = 0,
+    base_layer: bytes | None = None,
 ) -> bytes:
-    """Build one keymap layer: 4-byte big-endian action codes, 126 positions.
+    """Build one keymap layer: 4-byte big-endian action codes, 126 positions (504 bytes).
 
-    Live `GetMatrix` returns 36 chunks x 14 = 504 bytes (126 positions), and the
-    bytes are the 32-bit action value most-significant-byte first. Use
-    `pack_base_key` for page-0 keys and `pack_keyboard_action` for FN-layer
-    actions.
+    If ``base_layer`` is supplied (e.g. read from hardware), unassigned positions
+    retain their existing hardware action code rather than being overwritten with
+    ``fill``. This protects the 13 unpopulated hardware matrix slots from being wiped.
     """
     if matrix_len < 0:
         raise KreoProtocolError(f"matrix_len must be non-negative, got {matrix_len}")
 
-    records = [fill & 0xFFFFFFFF] * matrix_len
+    if base_layer is not None:
+        needed = matrix_len * KEYMAP_RECORD_SIZE
+        if len(base_layer) < needed:
+            raise KreoProtocolError(f"base_layer too short: {len(base_layer)} < {needed}")
+        records = [
+            int.from_bytes(base_layer[i * 4 : i * 4 + 4], "big")
+            for i in range(matrix_len)
+        ]
+    else:
+        records = [fill & 0xFFFFFFFF] * matrix_len
 
     if isinstance(assignments, Mapping):
         items = assignments.items()
@@ -934,6 +953,32 @@ def read_keymap_wireless(transport: HidTransport, layer: int = 0) -> bytes:
         WIRELESS_CMD_MATRIX_READ,
         WIRELESS_CMD_MATRIX_READ,
         MATRIX_LAYER_POSITIONS * KEYMAP_RECORD_SIZE,
+        flag=layer,
+    )
+
+
+def write_keymap_wired(transport: HidTransport, layer_bytes: bytes, layer: int = 0) -> None:
+    """Write one 504-byte keymap layer over the wired feature transport (`0x03`)."""
+    expected = MATRIX_LAYER_POSITIONS * KEYMAP_RECORD_SIZE
+    if len(layer_bytes) != expected:
+        raise KreoProtocolError(f"Keymap layer requires {expected} bytes, got {len(layer_bytes)}")
+    write_g5kb_chunked(
+        transport,
+        G5KB_CMD_SET_MATRIX,
+        layer_bytes,
+        param=layer & 0xFF,
+    )
+
+
+def write_keymap_wireless(transport: HidTransport, layer_bytes: bytes, layer: int = 0) -> None:
+    """Write one 504-byte keymap layer to the 2.4 GHz dongle (`0x01`)."""
+    expected = MATRIX_LAYER_POSITIONS * KEYMAP_RECORD_SIZE
+    if len(layer_bytes) != expected:
+        raise KreoProtocolError(f"Keymap layer requires {expected} bytes, got {len(layer_bytes)}")
+    _write_wireless_chunked(
+        transport=transport,
+        command=WIRELESS_CMD_MATRIX_WRITE,
+        payload=layer_bytes,
         flag=layer,
     )
 
