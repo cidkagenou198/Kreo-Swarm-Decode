@@ -19,3 +19,16 @@ def test_device_status():
     data = res.json()
     assert "connected" in data
 
+
+def test_device_diagnostics():
+    res = client.get("/api/device/diagnostics")
+    assert res.status_code == 200
+    data = res.json()
+    assert "connected" in data
+    assert data["matrix_slots"] == 126
+    assert data["physical_keys"] == 82
+    assert data["planar_frame_bytes"] == 378
+    assert data["light_table_bytes"] == 490
+    assert data["keymap_layer_bytes"] == 504
+
+

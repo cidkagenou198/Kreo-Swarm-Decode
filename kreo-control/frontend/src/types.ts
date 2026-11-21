@@ -18,6 +18,22 @@ export interface DeviceStatusResponse {
   device: DeviceDescriptor | null;
 }
 
+export interface DeviceDiagnostics {
+  connected: boolean;
+  connection_type: ConnectionType | null;
+  vendor_id: number | null;
+  product_id: number | null;
+  usage_page: number | null;
+  usage: number | null;
+  firmware_id: number;
+  report_id: number;
+  matrix_slots: number;
+  physical_keys: number;
+  planar_frame_bytes: number;
+  light_table_bytes: number;
+  keymap_layer_bytes: number;
+}
+
 export interface RGBColor {
   r: number;
   g: number;

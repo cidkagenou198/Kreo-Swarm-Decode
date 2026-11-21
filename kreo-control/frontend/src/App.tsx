@@ -12,9 +12,13 @@ import {
   Plus,
   Check,
   Sliders,
+  Info,
+  Cpu,
+  X,
 } from "lucide-react";
 import {
   DeviceStatusResponse,
+  DeviceDiagnostics,
   KeyLedInfo,
   LightingState,
   KeyboardProfile,
@@ -81,6 +85,8 @@ export default function App() {
   const [activeProfileId, setActiveProfileId] = useState<string | null>(null);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState<boolean>(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState<boolean>(false);
+  const [isDiagOpen, setIsDiagOpen] = useState<boolean>(false);
+  const [diagnostics, setDiagnostics] = useState<DeviceDiagnostics | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Staged Editing & History Stack
@@ -142,11 +148,12 @@ export default function App() {
   const fetchAll = async () => {
     try {
       setLoading(true);
-      const [devData, state, keyList, pData] = await Promise.all([
+      const [devData, state, keyList, pData, diagData] = await Promise.all([
         safeFetchJson<DeviceStatusResponse>("/api/device/status"),
         safeFetchJson<LightingState>("/api/lighting/state"),
         safeFetchJson<KeyLedInfo[]>("/api/lighting/per-key"),
         safeFetchJson<ProfilesListResponse>("/api/profiles"),
+        safeFetchJson<DeviceDiagnostics>("/api/device/diagnostics"),
       ]);
 
       if (!devData) {
@@ -160,6 +167,9 @@ export default function App() {
 
       setBackendOnline(true);
       setDeviceStatus(devData);
+      if (diagData) {
+        setDiagnostics(diagData);
+      }
 
       if (state) {
         setLightingState(state);
@@ -736,6 +746,13 @@ export default function App() {
                   {lightingState.mode_name}
                 </span>
               )}
+              <button
+                onClick={() => setIsDiagOpen(true)}
+                title="Hardware Diagnostics & Protocol Spec"
+                className="ml-1 p-0.5 rounded text-slate-400 hover:text-purple-300 hover:bg-slate-800 transition"
+              >
+                <Info className="w-3.5 h-3.5" />
+              </button>
             </div>
 
             {/* Profile Dropdown Selector */}
@@ -1012,6 +1029,84 @@ export default function App() {
         onImportProfile={handleImportProfile}
         isSyncing={syncing}
       />
+
+      {/* Hardware Diagnostics Modal */}
+      {isDiagOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+          <div className="bg-[#0f1420] border border-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-5 animate-fade-in">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div className="flex items-center space-x-2">
+                <Cpu className="w-5 h-5 text-purple-400" />
+                <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+                  Hardware Diagnostics
+                </h3>
+              </div>
+              <button
+                onClick={() => setIsDiagOpen(false)}
+                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="space-y-3 text-xs">
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Target MCU:</span>
+                <span className="font-mono text-purple-300 font-semibold">SinoWealth SH68F90 (G5KB)</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Connection:</span>
+                <span className="font-mono text-emerald-400 font-semibold">
+                  {diagnostics?.connection_type === "wireless" ? "2.4 GHz RF Dongle (3554:FA09)" : diagnostics?.connected ? "Wired USB (258A:010C)" : "Not Connected"}
+                </span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Transport Report ID:</span>
+                <span className="font-mono text-slate-200">
+                  {diagnostics?.report_id ? `0x${diagnostics.report_id.toString(16).padStart(2, "0").toUpperCase()}` : "0x06"}
+                </span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Firmware Definition (nFw):</span>
+                <span className="font-mono text-slate-200">24 (0x18)</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Physical Keys / Matrix Slots:</span>
+                <span className="font-mono text-slate-200">
+                  {diagnostics?.physical_keys ?? 82} physical / {diagnostics?.matrix_slots ?? 126} slots
+                </span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Planar Frame Buffer:</span>
+                <span className="font-mono text-slate-200">
+                  {diagnostics?.planar_frame_bytes ?? 378} bytes (3 × 126 B)
+                </span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Color Palette Table:</span>
+                <span className="font-mono text-slate-200">
+                  {diagnostics?.light_table_bytes ?? 490} bytes (483 B + 7 B PSD)
+                </span>
+              </div>
+              <div className="flex justify-between py-1">
+                <span className="text-slate-400">Keymap Layer Size:</span>
+                <span className="font-mono text-slate-200">
+                  {diagnostics?.keymap_layer_bytes ?? 504} bytes (126 × 4 B)
+                </span>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <button
+                onClick={() => setIsDiagOpen(false)}
+                className="w-full py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-semibold text-xs transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
